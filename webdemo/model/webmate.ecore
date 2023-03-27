@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="webmate" nsURI="http://eclipse/webmate" nsPrefix="eclipse.webmate">
+  <eClassifiers xsi:type="ecore:EClass" name="StringInput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputword" eType="#//InputWord"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stringinput" upperBound="-1"
+        eType="#//StringInput" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputsymbol" eType="#//InputSymbol"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputSymbol">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sym" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputword" eType="#//InputWord"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputWord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="word" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputsymbol" eType="#//InputSymbol"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

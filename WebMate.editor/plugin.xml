@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated WebMate -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="webmate.presentation.WebmateModelWizardID"
+            name="%_UI_WebmateModelWizard_label"
+            class="webmate.presentation.WebmateModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/WebmateModelFile.gif">
+         <description>%_UI_WebmateModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated WebMate -->
+      <editor
+            id="webmate.presentation.WebmateEditorID"
+            name="%_UI_WebmateEditor_label"
+            icon="icons/full/obj16/WebmateModelFile.gif"
+            extensions="webmate"
+            class="webmate.presentation.WebmateEditor"
+            contributorClass="webmate.presentation.WebmateActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

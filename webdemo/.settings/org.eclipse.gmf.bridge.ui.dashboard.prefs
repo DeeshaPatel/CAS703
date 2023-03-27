@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/webdemo/model/webmate.genmodel
+gmf_dashboard/domainModel=platform\:/resource/webdemo/model/webmate.ecore
+gmf_dashboard/generationModel=platform\:/resource/webdemo/model/webmate.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/webdemo/model/webmate.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/webdemo/model/webmate.gmfmap
+gmf_dashboard/option_rcp=*
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/webdemo/model/webmate.gmftool

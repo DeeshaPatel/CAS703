@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="webmate" nsURI="http://cas703.webmate" nsPrefix="cas703.webmate">
+  <eClassifiers xsi:type="ecore:EClass" name="Emmet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abbreviation" lowerBound="1"
+        upperBound="-1" eType="#//Abbreviation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Abbreviation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prefix" eType="#//Prefix"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//Element" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="suffix" eType="#//Suffix"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Prefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementName" eType="#//Tag"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementClass" eType="#//Class"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementID" eType="#//ID"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Suffix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementName" eType="#//Tag"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementClass" eType="#//Class"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementID" eType="#//ID"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementName" eType="#//Tag"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementClass" eType="#//Class"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementID" eType="#//ID"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
