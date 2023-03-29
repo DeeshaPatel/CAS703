@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import webmate.HTMLTag;
 import webmate.Tag;
 import webmate.WebmatePackage;
 
@@ -106,7 +107,8 @@ public class TagItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Tag)object).getTagName();
+		HTMLTag labelValue = ((Tag)object).getTagName();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Tag_type") :
 			getString("_UI_Tag_type") + " " + label;

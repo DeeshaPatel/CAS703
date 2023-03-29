@@ -9,11 +9,10 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import webmate.Abbreviation;
 import webmate.Attribute;
-import webmate.Element;
-import webmate.Emmet;
+import webmate.Group;
+import webmate.HTML;
 import webmate.ID;
-import webmate.Prefix;
-import webmate.Suffix;
+import webmate.Symbol;
 import webmate.Tag;
 import webmate.WebmatePackage;
 
@@ -74,33 +73,15 @@ public class WebmateSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case WebmatePackage.EMMET: {
-				Emmet emmet = (Emmet)theEObject;
-				T result = caseEmmet(emmet);
+			case WebmatePackage.HTML: {
+				HTML html = (HTML)theEObject;
+				T result = caseHTML(html);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebmatePackage.ABBREVIATION: {
 				Abbreviation abbreviation = (Abbreviation)theEObject;
 				T result = caseAbbreviation(abbreviation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebmatePackage.PREFIX: {
-				Prefix prefix = (Prefix)theEObject;
-				T result = casePrefix(prefix);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebmatePackage.SUFFIX: {
-				Suffix suffix = (Suffix)theEObject;
-				T result = caseSuffix(suffix);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebmatePackage.ELEMENT: {
-				Element element = (Element)theEObject;
-				T result = caseElement(element);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -128,22 +109,34 @@ public class WebmateSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebmatePackage.SYMBOL: {
+				Symbol symbol = (Symbol)theEObject;
+				T result = caseSymbol(symbol);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebmatePackage.GROUP: {
+				Group group = (Group)theEObject;
+				T result = caseGroup(group);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Emmet</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>HTML</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Emmet</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>HTML</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEmmet(Emmet object) {
+	public T caseHTML(HTML object) {
 		return null;
 	}
 
@@ -159,51 +152,6 @@ public class WebmateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbbreviation(Abbreviation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Prefix</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Prefix</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePrefix(Prefix object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Suffix</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Suffix</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSuffix(Suffix object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -264,6 +212,36 @@ public class WebmateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseID(ID object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbol(Symbol object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Group</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGroup(Group object) {
 		return null;
 	}
 

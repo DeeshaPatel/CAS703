@@ -10,13 +10,13 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
-import webmate.Emmet
+import webmate.HTML
 
 @ExtendWith(InjectionExtension)
 @InjectWith(WebMateInjectorProvider)
 class WebMateParsingTest {
 	@Inject
-	ParseHelper<Emmet> parseHelper
+	ParseHelper<HTML> parseHelper
 	
 	@Test
 	def void loadModel() {

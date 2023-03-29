@@ -8,27 +8,28 @@ import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.xtext.example.mydsl.services.WebMateGrammarAccess
 import webmate.Abbreviation
-import webmate.Emmet
+import webmate.HTML
 
 class WebMateFormatter extends AbstractFormatter2 {
 	
 	@Inject extension WebMateGrammarAccess
 
-	def dispatch void format(Emmet emmet, extension IFormattableDocument document) {
+	def dispatch void format(HTML hTML, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (abbreviation : emmet.abbreviation) {
+		for (abbreviation : hTML.abbreviation) {
 			abbreviation.format
 		}
 	}
 
 	def dispatch void format(Abbreviation abbreviation, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		abbreviation.prefix.format
-		for (element : abbreviation.element) {
-			element.format
-		}
-		abbreviation.suffix.format
+		abbreviation.tags.format
+		abbreviation.classes.format
+		abbreviation.ids.format
+		abbreviation.symbols.format
+		abbreviation.attributes.format
+		abbreviation.group.format
 	}
 	
-	// TODO: implement for Prefix, Element, Suffix
+	// TODO: implement for Group
 }

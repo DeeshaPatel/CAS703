@@ -22,13 +22,13 @@ public interface WebmateFactory extends EFactory {
 	WebmateFactory eINSTANCE = webmate.impl.WebmateFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Emmet</em>'.
+	 * Returns a new object of class '<em>HTML</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Emmet</em>'.
+	 * @return a new object of class '<em>HTML</em>'.
 	 * @generated
 	 */
-	Emmet createEmmet();
+	HTML createHTML();
 
 	/**
 	 * Returns a new object of class '<em>Abbreviation</em>'.
@@ -38,33 +38,6 @@ public interface WebmateFactory extends EFactory {
 	 * @generated
 	 */
 	Abbreviation createAbbreviation();
-
-	/**
-	 * Returns a new object of class '<em>Prefix</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Prefix</em>'.
-	 * @generated
-	 */
-	Prefix createPrefix();
-
-	/**
-	 * Returns a new object of class '<em>Suffix</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Suffix</em>'.
-	 * @generated
-	 */
-	Suffix createSuffix();
-
-	/**
-	 * Returns a new object of class '<em>Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Element</em>'.
-	 * @generated
-	 */
-	Element createElement();
 
 	/**
 	 * Returns a new object of class '<em>Attribute</em>'.
@@ -101,6 +74,24 @@ public interface WebmateFactory extends EFactory {
 	 * @generated
 	 */
 	ID createID();
+
+	/**
+	 * Returns a new object of class '<em>Symbol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol</em>'.
+	 * @generated
+	 */
+	Symbol createSymbol();
+
+	/**
+	 * Returns a new object of class '<em>Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group</em>'.
+	 * @generated
+	 */
+	Group createGroup();
 
 	/**
 	 * Returns the package supported by this factory.

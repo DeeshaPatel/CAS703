@@ -72,26 +72,26 @@ public class WebmateItemProviderAdapterFactory extends WebmateAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link webmate.Emmet} instances.
+	 * This keeps track of the one adapter used for all {@link webmate.HTML} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EmmetItemProvider emmetItemProvider;
+	protected HTMLItemProvider htmlItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link webmate.Emmet}.
+	 * This creates an adapter for a {@link webmate.HTML}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEmmetAdapter() {
-		if (emmetItemProvider == null) {
-			emmetItemProvider = new EmmetItemProvider(this);
+	public Adapter createHTMLAdapter() {
+		if (htmlItemProvider == null) {
+			htmlItemProvider = new HTMLItemProvider(this);
 		}
 
-		return emmetItemProvider;
+		return htmlItemProvider;
 	}
 
 	/**
@@ -115,75 +115,6 @@ public class WebmateItemProviderAdapterFactory extends WebmateAdapterFactory imp
 		}
 
 		return abbreviationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link webmate.Prefix} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrefixItemProvider prefixItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link webmate.Prefix}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPrefixAdapter() {
-		if (prefixItemProvider == null) {
-			prefixItemProvider = new PrefixItemProvider(this);
-		}
-
-		return prefixItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link webmate.Suffix} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SuffixItemProvider suffixItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link webmate.Suffix}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSuffixAdapter() {
-		if (suffixItemProvider == null) {
-			suffixItemProvider = new SuffixItemProvider(this);
-		}
-
-		return suffixItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link webmate.Element} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ElementItemProvider elementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link webmate.Element}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createElementAdapter() {
-		if (elementItemProvider == null) {
-			elementItemProvider = new ElementItemProvider(this);
-		}
-
-		return elementItemProvider;
 	}
 
 	/**
@@ -276,6 +207,52 @@ public class WebmateItemProviderAdapterFactory extends WebmateAdapterFactory imp
 		}
 
 		return idItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webmate.Symbol} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SymbolItemProvider symbolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webmate.Symbol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSymbolAdapter() {
+		if (symbolItemProvider == null) {
+			symbolItemProvider = new SymbolItemProvider(this);
+		}
+
+		return symbolItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webmate.Group} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GroupItemProvider groupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webmate.Group}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGroupAdapter() {
+		if (groupItemProvider == null) {
+			groupItemProvider = new GroupItemProvider(this);
+		}
+
+		return groupItemProvider;
 	}
 
 	/**
@@ -377,15 +354,14 @@ public class WebmateItemProviderAdapterFactory extends WebmateAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (emmetItemProvider != null) emmetItemProvider.dispose();
+		if (htmlItemProvider != null) htmlItemProvider.dispose();
 		if (abbreviationItemProvider != null) abbreviationItemProvider.dispose();
-		if (prefixItemProvider != null) prefixItemProvider.dispose();
-		if (suffixItemProvider != null) suffixItemProvider.dispose();
-		if (elementItemProvider != null) elementItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (tagItemProvider != null) tagItemProvider.dispose();
 		if (classItemProvider != null) classItemProvider.dispose();
 		if (idItemProvider != null) idItemProvider.dispose();
+		if (symbolItemProvider != null) symbolItemProvider.dispose();
+		if (groupItemProvider != null) groupItemProvider.dispose();
 	}
 
 }

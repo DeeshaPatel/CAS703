@@ -11,15 +11,16 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.services.WebMateGrammarAccess;
 import webmate.Abbreviation;
 import webmate.Attribute;
-import webmate.Element;
-import webmate.Emmet;
+import webmate.Group;
+import webmate.HTML;
 import webmate.ID;
-import webmate.Prefix;
-import webmate.Suffix;
+import webmate.Symbol;
 import webmate.Tag;
 import webmate.WebmatePackage;
 
@@ -46,20 +47,17 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case WebmatePackage.CLASS:
 				sequence_Class(context, (webmate.Class) semanticObject); 
 				return; 
-			case WebmatePackage.ELEMENT:
-				sequence_Element(context, (Element) semanticObject); 
+			case WebmatePackage.GROUP:
+				sequence_Group(context, (Group) semanticObject); 
 				return; 
-			case WebmatePackage.EMMET:
-				sequence_Emmet(context, (Emmet) semanticObject); 
+			case WebmatePackage.HTML:
+				sequence_HTML(context, (HTML) semanticObject); 
 				return; 
 			case WebmatePackage.ID:
 				sequence_ID0(context, (ID) semanticObject); 
 				return; 
-			case WebmatePackage.PREFIX:
-				sequence_Prefix(context, (Prefix) semanticObject); 
-				return; 
-			case WebmatePackage.SUFFIX:
-				sequence_Suffix(context, (Suffix) semanticObject); 
+			case WebmatePackage.SYMBOL:
+				sequence_Symbol(context, (Symbol) semanticObject); 
 				return; 
 			case WebmatePackage.TAG:
 				sequence_Tag(context, (Tag) semanticObject); 
@@ -75,7 +73,15 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Abbreviation returns Abbreviation
 	 *
 	 * Constraint:
-	 *     (prefix=Prefix? (element+=Element element+=Element*)? suffix=Suffix?)
+	 *     (
+	 *         abbreviation+=[Abbreviation|EString]* 
+	 *         tags=Tag 
+	 *         classes=Class? 
+	 *         ids=ID0? 
+	 *         symbols=Symbol? 
+	 *         attributes=Attribute? 
+	 *         group=Group?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Abbreviation(ISerializationContext context, Abbreviation semanticObject) {
@@ -89,7 +95,7 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (attributeName=EString? attributeValue=EString?)
+	 *     (attributeName=EString attributeValue=EString?)
 	 * </pre>
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
@@ -103,10 +109,30 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Class returns Class
 	 *
 	 * Constraint:
-	 *     className=EString?
+	 *     className=EString
 	 * </pre>
 	 */
 	protected void sequence_Class(ISerializationContext context, webmate.Class semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.CLASS__CLASS_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.CLASS__CLASS_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getClassAccess().getClassNameEStringParserRuleCall_2_0(), semanticObject.getClassName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Group returns Group
+	 *
+	 * Constraint:
+	 *     ((abbreviation+=Abbreviation+ abbreviation+=Abbreviation) | count=INT | abbreviation+=Abbreviation)
+	 * </pre>
+	 */
+	protected void sequence_Group(ISerializationContext context, Group semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -114,27 +140,13 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Element returns Element
+	 *     HTML returns HTML
 	 *
 	 * Constraint:
-	 *     (count=EInt? elementName=Tag? elementClass=Class? elementID=ID0? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     abbreviation+=Abbreviation+
 	 * </pre>
 	 */
-	protected void sequence_Element(ISerializationContext context, Element semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Emmet returns Emmet
-	 *
-	 * Constraint:
-	 *     (abbreviation+=Abbreviation abbreviation+=Abbreviation*)
-	 * </pre>
-	 */
-	protected void sequence_Emmet(ISerializationContext context, Emmet semanticObject) {
+	protected void sequence_HTML(ISerializationContext context, HTML semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -145,39 +157,40 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ID0 returns ID
 	 *
 	 * Constraint:
-	 *     idName=EString?
+	 *     idName=EString
 	 * </pre>
 	 */
 	protected void sequence_ID0(ISerializationContext context, ID semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.ID__ID_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.ID__ID_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getID0Access().getIdNameEStringParserRuleCall_1_1_0(), semanticObject.getIdName());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Prefix returns Prefix
+	 *     Symbol returns Symbol
 	 *
 	 * Constraint:
-	 *     (count=EInt? elementName=Tag? elementClass=Class? elementID=ID0?)
+	 *     (sym=ValidSymbol tag=[Tag|EString])
 	 * </pre>
 	 */
-	protected void sequence_Prefix(ISerializationContext context, Prefix semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Suffix returns Suffix
-	 *
-	 * Constraint:
-	 *     (text=EString? elementName=Tag? elementClass=Class? elementID=ID0?)
-	 * </pre>
-	 */
-	protected void sequence_Suffix(ISerializationContext context, Suffix semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Symbol(ISerializationContext context, Symbol semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.SYMBOL__SYM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.SYMBOL__SYM));
+			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.SYMBOL__TAG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.SYMBOL__TAG));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_1_0(), semanticObject.getSym());
+		feeder.accept(grammarAccess.getSymbolAccess().getTagTagEStringParserRuleCall_2_0_1(), semanticObject.eGet(WebmatePackage.Literals.SYMBOL__TAG, false));
+		feeder.finish();
 	}
 	
 	
@@ -187,11 +200,17 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Tag returns Tag
 	 *
 	 * Constraint:
-	 *     tagName=EString?
+	 *     tagName=HTMLTag
 	 * </pre>
 	 */
 	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.TAG__TAG_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.TAG__TAG_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTagAccess().getTagNameHTMLTagEnumRuleCall_1_0(), semanticObject.getTagName());
+		feeder.finish();
 	}
 	
 	

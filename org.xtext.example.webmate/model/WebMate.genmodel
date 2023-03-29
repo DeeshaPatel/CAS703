@@ -5,32 +5,32 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>WebMate.ecore</foreignModel>
   <genPackages prefix="Webmate" disposableProviderFactory="true" ecorePackage="WebMate.ecore#/">
-    <genClasses ecoreClass="WebMate.ecore#//Emmet">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Emmet/abbreviation"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebMate.ecore#//HTMLTag">
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/div"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/h1"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/p"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/ul"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/li"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebMate.ecore#//ValidSymbol">
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/plus"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/multiply"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/dot"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/hash"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/greaterthan"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/caret"/>
+    </genEnums>
+    <genClasses ecoreClass="WebMate.ecore#//HTML">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//HTML/abbreviation"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Abbreviation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/prefix"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/element"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/suffix"/>
-    </genClasses>
-    <genClasses ecoreClass="WebMate.ecore#//Prefix">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Prefix/count"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Prefix/elementName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Prefix/elementClass"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Prefix/elementID"/>
-    </genClasses>
-    <genClasses ecoreClass="WebMate.ecore#//Suffix">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Suffix/text"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Suffix/elementName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Suffix/elementClass"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Suffix/elementID"/>
-    </genClasses>
-    <genClasses ecoreClass="WebMate.ecore#//Element">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Element/count"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Element/elementName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Element/elementClass"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Element/elementID"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Element/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/ids"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/symbols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/tags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/classes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/abbreviation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Abbreviation/group"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Attribute/attributeName"/>
@@ -44,6 +44,14 @@
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//ID">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//ID/idName"/>
+    </genClasses>
+    <genClasses ecoreClass="WebMate.ecore#//Symbol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/sym"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Symbol/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="WebMate.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Group/abbreviation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Group/count"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

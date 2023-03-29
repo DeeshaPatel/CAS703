@@ -3,6 +3,7 @@
 package webmate.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -12,12 +13,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import webmate.Abbreviation;
 import webmate.Attribute;
-import webmate.Element;
-import webmate.Emmet;
+import webmate.Group;
+import webmate.HTML;
+import webmate.HTMLTag;
 import webmate.ID;
-import webmate.Prefix;
-import webmate.Suffix;
+import webmate.Symbol;
 import webmate.Tag;
+import webmate.ValidSymbol;
 import webmate.WebmateFactory;
 import webmate.WebmatePackage;
 
@@ -65,15 +67,14 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case WebmatePackage.EMMET: return createEmmet();
+			case WebmatePackage.HTML: return createHTML();
 			case WebmatePackage.ABBREVIATION: return createAbbreviation();
-			case WebmatePackage.PREFIX: return createPrefix();
-			case WebmatePackage.SUFFIX: return createSuffix();
-			case WebmatePackage.ELEMENT: return createElement();
 			case WebmatePackage.ATTRIBUTE: return createAttribute();
 			case WebmatePackage.TAG: return createTag();
 			case WebmatePackage.CLASS: return createClass();
 			case WebmatePackage.ID: return createID();
+			case WebmatePackage.SYMBOL: return createSymbol();
+			case WebmatePackage.GROUP: return createGroup();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,9 +85,43 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Emmet createEmmet() {
-		EmmetImpl emmet = new EmmetImpl();
-		return emmet;
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case WebmatePackage.HTML_TAG:
+				return createHTMLTagFromString(eDataType, initialValue);
+			case WebmatePackage.VALID_SYMBOL:
+				return createValidSymbolFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case WebmatePackage.HTML_TAG:
+				return convertHTMLTagToString(eDataType, instanceValue);
+			case WebmatePackage.VALID_SYMBOL:
+				return convertValidSymbolToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HTML createHTML() {
+		HTMLImpl html = new HTMLImpl();
+		return html;
 	}
 
 	/**
@@ -97,36 +132,6 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 	public Abbreviation createAbbreviation() {
 		AbbreviationImpl abbreviation = new AbbreviationImpl();
 		return abbreviation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Prefix createPrefix() {
-		PrefixImpl prefix = new PrefixImpl();
-		return prefix;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Suffix createSuffix() {
-		SuffixImpl suffix = new SuffixImpl();
-		return suffix;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Element createElement() {
-		ElementImpl element = new ElementImpl();
-		return element;
 	}
 
 	/**
@@ -167,6 +172,66 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 	public ID createID() {
 		IDImpl id = new IDImpl();
 		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Symbol createSymbol() {
+		SymbolImpl symbol = new SymbolImpl();
+		return symbol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Group createGroup() {
+		GroupImpl group = new GroupImpl();
+		return group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HTMLTag createHTMLTagFromString(EDataType eDataType, String initialValue) {
+		HTMLTag result = HTMLTag.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHTMLTagToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValidSymbol createValidSymbolFromString(EDataType eDataType, String initialValue) {
+		ValidSymbol result = ValidSymbol.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertValidSymbolToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

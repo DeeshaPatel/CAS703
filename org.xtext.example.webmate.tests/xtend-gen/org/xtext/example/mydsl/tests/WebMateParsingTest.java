@@ -15,14 +15,14 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import webmate.Emmet;
+import webmate.HTML;
 
 @ExtendWith(InjectionExtension.class)
 @InjectWith(WebMateInjectorProvider.class)
 @SuppressWarnings("all")
 public class WebMateParsingTest {
   @Inject
-  private ParseHelper<Emmet> parseHelper;
+  private ParseHelper<HTML> parseHelper;
 
   @Test
   public void loadModel() {
@@ -30,7 +30,7 @@ public class WebMateParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final Emmet result = this.parseHelper.parse(_builder);
+      final HTML result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

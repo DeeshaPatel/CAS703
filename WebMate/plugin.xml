@@ -9,8 +9,9 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated webmate -->
       <package
-            uri="http://www.webmate.org/example/webmate"
+            uri="http://cas703.webmate"
             class="webmate.WebmatePackage"
+            genModel="model/WebMate.genmodel"
             />
    </extension>
 

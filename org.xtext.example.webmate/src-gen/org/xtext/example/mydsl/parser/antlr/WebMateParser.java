@@ -27,7 +27,7 @@ public class WebMateParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Emmet";
+		return "HTML";
 	}
 
 	public WebMateGrammarAccess getGrammarAccess() {

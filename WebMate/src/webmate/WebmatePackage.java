@@ -4,6 +4,7 @@ package webmate;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -57,14 +58,14 @@ public interface WebmatePackage extends EPackage {
 	WebmatePackage eINSTANCE = webmate.impl.WebmatePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link webmate.impl.EmmetImpl <em>Emmet</em>}' class.
+	 * The meta object id for the '{@link webmate.impl.HTMLImpl <em>HTML</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see webmate.impl.EmmetImpl
-	 * @see webmate.impl.WebmatePackageImpl#getEmmet()
+	 * @see webmate.impl.HTMLImpl
+	 * @see webmate.impl.WebmatePackageImpl#getHTML()
 	 * @generated
 	 */
-	int EMMET = 0;
+	int HTML = 0;
 
 	/**
 	 * The feature id for the '<em><b>Abbreviation</b></em>' containment reference list.
@@ -73,25 +74,25 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMMET__ABBREVIATION = 0;
+	int HTML__ABBREVIATION = 0;
 
 	/**
-	 * The number of structural features of the '<em>Emmet</em>' class.
+	 * The number of structural features of the '<em>HTML</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMMET_FEATURE_COUNT = 1;
+	int HTML_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Emmet</em>' class.
+	 * The number of operations of the '<em>HTML</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMMET_OPERATION_COUNT = 0;
+	int HTML_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link webmate.impl.AbbreviationImpl <em>Abbreviation</em>}' class.
@@ -104,31 +105,67 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Prefix</b></em>' containment reference.
+	 * The feature id for the '<em><b>Ids</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABBREVIATION__PREFIX = 0;
+	int ABBREVIATION__IDS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Element</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Symbols</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABBREVIATION__ELEMENT = 1;
+	int ABBREVIATION__SYMBOLS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Suffix</b></em>' containment reference.
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABBREVIATION__SUFFIX = 2;
+	int ABBREVIATION__TAGS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Classes</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABBREVIATION__CLASSES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABBREVIATION__ATTRIBUTES = 4;
+
+	/**
+	 * The feature id for the '<em><b>Abbreviation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABBREVIATION__ABBREVIATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABBREVIATION__GROUP = 6;
 
 	/**
 	 * The number of structural features of the '<em>Abbreviation</em>' class.
@@ -137,7 +174,7 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABBREVIATION_FEATURE_COUNT = 3;
+	int ABBREVIATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Abbreviation</em>' class.
@@ -149,207 +186,6 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link webmate.impl.PrefixImpl <em>Prefix</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webmate.impl.PrefixImpl
-	 * @see webmate.impl.WebmatePackageImpl#getPrefix()
-	 * @generated
-	 */
-	int PREFIX = 2;
-
-	/**
-	 * The feature id for the '<em><b>Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREFIX__COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Element Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREFIX__ELEMENT_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Element Class</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREFIX__ELEMENT_CLASS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Element ID</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREFIX__ELEMENT_ID = 3;
-
-	/**
-	 * The number of structural features of the '<em>Prefix</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREFIX_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Prefix</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREFIX_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link webmate.impl.SuffixImpl <em>Suffix</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webmate.impl.SuffixImpl
-	 * @see webmate.impl.WebmatePackageImpl#getSuffix()
-	 * @generated
-	 */
-	int SUFFIX = 3;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUFFIX__TEXT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Element Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUFFIX__ELEMENT_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Element Class</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUFFIX__ELEMENT_CLASS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Element ID</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUFFIX__ELEMENT_ID = 3;
-
-	/**
-	 * The number of structural features of the '<em>Suffix</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUFFIX_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Suffix</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUFFIX_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link webmate.impl.ElementImpl <em>Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webmate.impl.ElementImpl
-	 * @see webmate.impl.WebmatePackageImpl#getElement()
-	 * @generated
-	 */
-	int ELEMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Element Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__ELEMENT_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Element Class</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__ELEMENT_CLASS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Element ID</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__ELEMENT_ID = 3;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__ATTRIBUTES = 4;
-
-	/**
-	 * The number of structural features of the '<em>Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link webmate.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,7 +193,7 @@ public interface WebmatePackage extends EPackage {
 	 * @see webmate.impl.WebmatePackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 5;
+	int ATTRIBUTE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Attribute Name</b></em>' attribute.
@@ -403,7 +239,7 @@ public interface WebmatePackage extends EPackage {
 	 * @see webmate.impl.WebmatePackageImpl#getTag()
 	 * @generated
 	 */
-	int TAG = 6;
+	int TAG = 3;
 
 	/**
 	 * The feature id for the '<em><b>Tag Name</b></em>' attribute.
@@ -440,7 +276,7 @@ public interface WebmatePackage extends EPackage {
 	 * @see webmate.impl.WebmatePackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 7;
+	int CLASS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -477,7 +313,7 @@ public interface WebmatePackage extends EPackage {
 	 * @see webmate.impl.WebmatePackageImpl#getID()
 	 * @generated
 	 */
-	int ID = 8;
+	int ID = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id Name</b></em>' attribute.
@@ -506,27 +342,139 @@ public interface WebmatePackage extends EPackage {
 	 */
 	int ID_OPERATION_COUNT = 0;
 
-
 	/**
-	 * Returns the meta object for class '{@link webmate.Emmet <em>Emmet</em>}'.
+	 * The meta object id for the '{@link webmate.impl.SymbolImpl <em>Symbol</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Emmet</em>'.
-	 * @see webmate.Emmet
+	 * @see webmate.impl.SymbolImpl
+	 * @see webmate.impl.WebmatePackageImpl#getSymbol()
 	 * @generated
 	 */
-	EClass getEmmet();
+	int SYMBOL = 6;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webmate.Emmet#getAbbreviation <em>Abbreviation</em>}'.
+	 * The feature id for the '<em><b>Sym</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL__SYM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL__TAG = 1;
+
+	/**
+	 * The number of structural features of the '<em>Symbol</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Symbol</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webmate.impl.GroupImpl <em>Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webmate.impl.GroupImpl
+	 * @see webmate.impl.WebmatePackageImpl#getGroup()
+	 * @generated
+	 */
+	int GROUP = 7;
+
+	/**
+	 * The feature id for the '<em><b>Abbreviation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__ABBREVIATION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__COUNT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webmate.HTMLTag <em>HTML Tag</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webmate.HTMLTag
+	 * @see webmate.impl.WebmatePackageImpl#getHTMLTag()
+	 * @generated
+	 */
+	int HTML_TAG = 8;
+
+	/**
+	 * The meta object id for the '{@link webmate.ValidSymbol <em>Valid Symbol</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webmate.ValidSymbol
+	 * @see webmate.impl.WebmatePackageImpl#getValidSymbol()
+	 * @generated
+	 */
+	int VALID_SYMBOL = 9;
+
+
+	/**
+	 * Returns the meta object for class '{@link webmate.HTML <em>HTML</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>HTML</em>'.
+	 * @see webmate.HTML
+	 * @generated
+	 */
+	EClass getHTML();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webmate.HTML#getAbbreviation <em>Abbreviation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Abbreviation</em>'.
-	 * @see webmate.Emmet#getAbbreviation()
-	 * @see #getEmmet()
+	 * @see webmate.HTML#getAbbreviation()
+	 * @see #getHTML()
 	 * @generated
 	 */
-	EReference getEmmet_Abbreviation();
+	EReference getHTML_Abbreviation();
 
 	/**
 	 * Returns the meta object for class '{@link webmate.Abbreviation <em>Abbreviation</em>}'.
@@ -539,210 +487,81 @@ public interface WebmatePackage extends EPackage {
 	EClass getAbbreviation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getPrefix <em>Prefix</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getIds <em>Ids</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Prefix</em>'.
-	 * @see webmate.Abbreviation#getPrefix()
+	 * @return the meta object for the containment reference '<em>Ids</em>'.
+	 * @see webmate.Abbreviation#getIds()
 	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EReference getAbbreviation_Prefix();
+	EReference getAbbreviation_Ids();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getElement <em>Element</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getSymbols <em>Symbols</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Element</em>'.
-	 * @see webmate.Abbreviation#getElement()
+	 * @return the meta object for the containment reference '<em>Symbols</em>'.
+	 * @see webmate.Abbreviation#getSymbols()
 	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EReference getAbbreviation_Element();
+	EReference getAbbreviation_Symbols();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getSuffix <em>Suffix</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getTags <em>Tags</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Suffix</em>'.
-	 * @see webmate.Abbreviation#getSuffix()
+	 * @return the meta object for the containment reference '<em>Tags</em>'.
+	 * @see webmate.Abbreviation#getTags()
 	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EReference getAbbreviation_Suffix();
+	EReference getAbbreviation_Tags();
 
 	/**
-	 * Returns the meta object for class '{@link webmate.Prefix <em>Prefix</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getClasses <em>Classes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Prefix</em>'.
-	 * @see webmate.Prefix
+	 * @return the meta object for the containment reference '<em>Classes</em>'.
+	 * @see webmate.Abbreviation#getClasses()
+	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EClass getPrefix();
+	EReference getAbbreviation_Classes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link webmate.Prefix#getCount <em>Count</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Count</em>'.
-	 * @see webmate.Prefix#getCount()
-	 * @see #getPrefix()
+	 * @return the meta object for the containment reference '<em>Attributes</em>'.
+	 * @see webmate.Abbreviation#getAttributes()
+	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EAttribute getPrefix_Count();
+	EReference getAbbreviation_Attributes();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Prefix#getElementName <em>Element Name</em>}'.
+	 * Returns the meta object for the reference list '{@link webmate.Abbreviation#getAbbreviation <em>Abbreviation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element Name</em>'.
-	 * @see webmate.Prefix#getElementName()
-	 * @see #getPrefix()
+	 * @return the meta object for the reference list '<em>Abbreviation</em>'.
+	 * @see webmate.Abbreviation#getAbbreviation()
+	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EReference getPrefix_ElementName();
+	EReference getAbbreviation_Abbreviation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Prefix#getElementClass <em>Element Class</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element Class</em>'.
-	 * @see webmate.Prefix#getElementClass()
-	 * @see #getPrefix()
+	 * @return the meta object for the containment reference '<em>Group</em>'.
+	 * @see webmate.Abbreviation#getGroup()
+	 * @see #getAbbreviation()
 	 * @generated
 	 */
-	EReference getPrefix_ElementClass();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Prefix#getElementID <em>Element ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element ID</em>'.
-	 * @see webmate.Prefix#getElementID()
-	 * @see #getPrefix()
-	 * @generated
-	 */
-	EReference getPrefix_ElementID();
-
-	/**
-	 * Returns the meta object for class '{@link webmate.Suffix <em>Suffix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Suffix</em>'.
-	 * @see webmate.Suffix
-	 * @generated
-	 */
-	EClass getSuffix();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webmate.Suffix#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see webmate.Suffix#getText()
-	 * @see #getSuffix()
-	 * @generated
-	 */
-	EAttribute getSuffix_Text();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Suffix#getElementName <em>Element Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element Name</em>'.
-	 * @see webmate.Suffix#getElementName()
-	 * @see #getSuffix()
-	 * @generated
-	 */
-	EReference getSuffix_ElementName();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Suffix#getElementClass <em>Element Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element Class</em>'.
-	 * @see webmate.Suffix#getElementClass()
-	 * @see #getSuffix()
-	 * @generated
-	 */
-	EReference getSuffix_ElementClass();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Suffix#getElementID <em>Element ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element ID</em>'.
-	 * @see webmate.Suffix#getElementID()
-	 * @see #getSuffix()
-	 * @generated
-	 */
-	EReference getSuffix_ElementID();
-
-	/**
-	 * Returns the meta object for class '{@link webmate.Element <em>Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Element</em>'.
-	 * @see webmate.Element
-	 * @generated
-	 */
-	EClass getElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webmate.Element#getCount <em>Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Count</em>'.
-	 * @see webmate.Element#getCount()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EAttribute getElement_Count();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Element#getElementName <em>Element Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element Name</em>'.
-	 * @see webmate.Element#getElementName()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_ElementName();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Element#getElementClass <em>Element Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element Class</em>'.
-	 * @see webmate.Element#getElementClass()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_ElementClass();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Element#getElementID <em>Element ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Element ID</em>'.
-	 * @see webmate.Element#getElementID()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_ElementID();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link webmate.Element#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see webmate.Element#getAttributes()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_Attributes();
+	EReference getAbbreviation_Group();
 
 	/**
 	 * Returns the meta object for class '{@link webmate.Attribute <em>Attribute</em>}'.
@@ -840,6 +659,90 @@ public interface WebmatePackage extends EPackage {
 	EAttribute getID_IdName();
 
 	/**
+	 * Returns the meta object for class '{@link webmate.Symbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol</em>'.
+	 * @see webmate.Symbol
+	 * @generated
+	 */
+	EClass getSymbol();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webmate.Symbol#getSym <em>Sym</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sym</em>'.
+	 * @see webmate.Symbol#getSym()
+	 * @see #getSymbol()
+	 * @generated
+	 */
+	EAttribute getSymbol_Sym();
+
+	/**
+	 * Returns the meta object for the reference '{@link webmate.Symbol#getTag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tag</em>'.
+	 * @see webmate.Symbol#getTag()
+	 * @see #getSymbol()
+	 * @generated
+	 */
+	EReference getSymbol_Tag();
+
+	/**
+	 * Returns the meta object for class '{@link webmate.Group <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group</em>'.
+	 * @see webmate.Group
+	 * @generated
+	 */
+	EClass getGroup();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webmate.Group#getAbbreviation <em>Abbreviation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Abbreviation</em>'.
+	 * @see webmate.Group#getAbbreviation()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Abbreviation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webmate.Group#getCount <em>Count</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Count</em>'.
+	 * @see webmate.Group#getCount()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EAttribute getGroup_Count();
+
+	/**
+	 * Returns the meta object for enum '{@link webmate.HTMLTag <em>HTML Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>HTML Tag</em>'.
+	 * @see webmate.HTMLTag
+	 * @generated
+	 */
+	EEnum getHTMLTag();
+
+	/**
+	 * Returns the meta object for enum '{@link webmate.ValidSymbol <em>Valid Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Valid Symbol</em>'.
+	 * @see webmate.ValidSymbol
+	 * @generated
+	 */
+	EEnum getValidSymbol();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -863,14 +766,14 @@ public interface WebmatePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link webmate.impl.EmmetImpl <em>Emmet</em>}' class.
+		 * The meta object literal for the '{@link webmate.impl.HTMLImpl <em>HTML</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see webmate.impl.EmmetImpl
-		 * @see webmate.impl.WebmatePackageImpl#getEmmet()
+		 * @see webmate.impl.HTMLImpl
+		 * @see webmate.impl.WebmatePackageImpl#getHTML()
 		 * @generated
 		 */
-		EClass EMMET = eINSTANCE.getEmmet();
+		EClass HTML = eINSTANCE.getHTML();
 
 		/**
 		 * The meta object literal for the '<em><b>Abbreviation</b></em>' containment reference list feature.
@@ -878,7 +781,7 @@ public interface WebmatePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EMMET__ABBREVIATION = eINSTANCE.getEmmet_Abbreviation();
+		EReference HTML__ABBREVIATION = eINSTANCE.getHTML_Abbreviation();
 
 		/**
 		 * The meta object literal for the '{@link webmate.impl.AbbreviationImpl <em>Abbreviation</em>}' class.
@@ -891,162 +794,60 @@ public interface WebmatePackage extends EPackage {
 		EClass ABBREVIATION = eINSTANCE.getAbbreviation();
 
 		/**
-		 * The meta object literal for the '<em><b>Prefix</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Ids</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABBREVIATION__PREFIX = eINSTANCE.getAbbreviation_Prefix();
+		EReference ABBREVIATION__IDS = eINSTANCE.getAbbreviation_Ids();
 
 		/**
-		 * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Symbols</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABBREVIATION__ELEMENT = eINSTANCE.getAbbreviation_Element();
+		EReference ABBREVIATION__SYMBOLS = eINSTANCE.getAbbreviation_Symbols();
 
 		/**
-		 * The meta object literal for the '<em><b>Suffix</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABBREVIATION__SUFFIX = eINSTANCE.getAbbreviation_Suffix();
+		EReference ABBREVIATION__TAGS = eINSTANCE.getAbbreviation_Tags();
 
 		/**
-		 * The meta object literal for the '{@link webmate.impl.PrefixImpl <em>Prefix</em>}' class.
+		 * The meta object literal for the '<em><b>Classes</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see webmate.impl.PrefixImpl
-		 * @see webmate.impl.WebmatePackageImpl#getPrefix()
 		 * @generated
 		 */
-		EClass PREFIX = eINSTANCE.getPrefix();
+		EReference ABBREVIATION__CLASSES = eINSTANCE.getAbbreviation_Classes();
 
 		/**
-		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PREFIX__COUNT = eINSTANCE.getPrefix_Count();
+		EReference ABBREVIATION__ATTRIBUTES = eINSTANCE.getAbbreviation_Attributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Element Name</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Abbreviation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PREFIX__ELEMENT_NAME = eINSTANCE.getPrefix_ElementName();
+		EReference ABBREVIATION__ABBREVIATION = eINSTANCE.getAbbreviation_Abbreviation();
 
 		/**
-		 * The meta object literal for the '<em><b>Element Class</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Group</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PREFIX__ELEMENT_CLASS = eINSTANCE.getPrefix_ElementClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Element ID</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PREFIX__ELEMENT_ID = eINSTANCE.getPrefix_ElementID();
-
-		/**
-		 * The meta object literal for the '{@link webmate.impl.SuffixImpl <em>Suffix</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webmate.impl.SuffixImpl
-		 * @see webmate.impl.WebmatePackageImpl#getSuffix()
-		 * @generated
-		 */
-		EClass SUFFIX = eINSTANCE.getSuffix();
-
-		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SUFFIX__TEXT = eINSTANCE.getSuffix_Text();
-
-		/**
-		 * The meta object literal for the '<em><b>Element Name</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SUFFIX__ELEMENT_NAME = eINSTANCE.getSuffix_ElementName();
-
-		/**
-		 * The meta object literal for the '<em><b>Element Class</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SUFFIX__ELEMENT_CLASS = eINSTANCE.getSuffix_ElementClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Element ID</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SUFFIX__ELEMENT_ID = eINSTANCE.getSuffix_ElementID();
-
-		/**
-		 * The meta object literal for the '{@link webmate.impl.ElementImpl <em>Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webmate.impl.ElementImpl
-		 * @see webmate.impl.WebmatePackageImpl#getElement()
-		 * @generated
-		 */
-		EClass ELEMENT = eINSTANCE.getElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ELEMENT__COUNT = eINSTANCE.getElement_Count();
-
-		/**
-		 * The meta object literal for the '<em><b>Element Name</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__ELEMENT_NAME = eINSTANCE.getElement_ElementName();
-
-		/**
-		 * The meta object literal for the '<em><b>Element Class</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__ELEMENT_CLASS = eINSTANCE.getElement_ElementClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Element ID</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__ELEMENT_ID = eINSTANCE.getElement_ElementID();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__ATTRIBUTES = eINSTANCE.getElement_Attributes();
+		EReference ABBREVIATION__GROUP = eINSTANCE.getAbbreviation_Group();
 
 		/**
 		 * The meta object literal for the '{@link webmate.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -1127,6 +928,78 @@ public interface WebmatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ID__ID_NAME = eINSTANCE.getID_IdName();
+
+		/**
+		 * The meta object literal for the '{@link webmate.impl.SymbolImpl <em>Symbol</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webmate.impl.SymbolImpl
+		 * @see webmate.impl.WebmatePackageImpl#getSymbol()
+		 * @generated
+		 */
+		EClass SYMBOL = eINSTANCE.getSymbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Sym</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL__SYM = eINSTANCE.getSymbol_Sym();
+
+		/**
+		 * The meta object literal for the '<em><b>Tag</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL__TAG = eINSTANCE.getSymbol_Tag();
+
+		/**
+		 * The meta object literal for the '{@link webmate.impl.GroupImpl <em>Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webmate.impl.GroupImpl
+		 * @see webmate.impl.WebmatePackageImpl#getGroup()
+		 * @generated
+		 */
+		EClass GROUP = eINSTANCE.getGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Abbreviation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__ABBREVIATION = eINSTANCE.getGroup_Abbreviation();
+
+		/**
+		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP__COUNT = eINSTANCE.getGroup_Count();
+
+		/**
+		 * The meta object literal for the '{@link webmate.HTMLTag <em>HTML Tag</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webmate.HTMLTag
+		 * @see webmate.impl.WebmatePackageImpl#getHTMLTag()
+		 * @generated
+		 */
+		EEnum HTML_TAG = eINSTANCE.getHTMLTag();
+
+		/**
+		 * The meta object literal for the '{@link webmate.ValidSymbol <em>Valid Symbol</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webmate.ValidSymbol
+		 * @see webmate.impl.WebmatePackageImpl#getValidSymbol()
+		 * @generated
+		 */
+		EEnum VALID_SYMBOL = eINSTANCE.getValidSymbol();
 
 	}
 

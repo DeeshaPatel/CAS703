@@ -4,6 +4,7 @@ package webmate.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -11,11 +12,11 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import webmate.Abbreviation;
 import webmate.Attribute;
-import webmate.Element;
-import webmate.Emmet;
-import webmate.Prefix;
-import webmate.Suffix;
+import webmate.Group;
+import webmate.HTMLTag;
+import webmate.Symbol;
 import webmate.Tag;
+import webmate.ValidSymbol;
 import webmate.WebmateFactory;
 import webmate.WebmatePackage;
 
@@ -31,7 +32,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass emmetEClass = null;
+	private EClass htmlEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -39,27 +40,6 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * @generated
 	 */
 	private EClass abbreviationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass prefixEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass suffixEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass elementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,6 +68,34 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * @generated
 	 */
 	private EClass idEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass groupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum htmlTagEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum validSymbolEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -154,8 +162,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEmmet() {
-		return emmetEClass;
+	public EClass getHTML() {
+		return htmlEClass;
 	}
 
 	/**
@@ -163,8 +171,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEmmet_Abbreviation() {
-		return (EReference)emmetEClass.getEStructuralFeatures().get(0);
+	public EReference getHTML_Abbreviation() {
+		return (EReference)htmlEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -181,7 +189,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbbreviation_Prefix() {
+	public EReference getAbbreviation_Ids() {
 		return (EReference)abbreviationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -190,7 +198,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbbreviation_Element() {
+	public EReference getAbbreviation_Symbols() {
 		return (EReference)abbreviationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -199,7 +207,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbbreviation_Suffix() {
+	public EReference getAbbreviation_Tags() {
 		return (EReference)abbreviationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -208,8 +216,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPrefix() {
-		return prefixEClass;
+	public EReference getAbbreviation_Classes() {
+		return (EReference)abbreviationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -217,8 +225,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPrefix_Count() {
-		return (EAttribute)prefixEClass.getEStructuralFeatures().get(0);
+	public EReference getAbbreviation_Attributes() {
+		return (EReference)abbreviationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -226,8 +234,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPrefix_ElementName() {
-		return (EReference)prefixEClass.getEStructuralFeatures().get(1);
+	public EReference getAbbreviation_Abbreviation() {
+		return (EReference)abbreviationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -235,116 +243,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPrefix_ElementClass() {
-		return (EReference)prefixEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPrefix_ElementID() {
-		return (EReference)prefixEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSuffix() {
-		return suffixEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSuffix_Text() {
-		return (EAttribute)suffixEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSuffix_ElementName() {
-		return (EReference)suffixEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSuffix_ElementClass() {
-		return (EReference)suffixEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSuffix_ElementID() {
-		return (EReference)suffixEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getElement() {
-		return elementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getElement_Count() {
-		return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getElement_ElementName() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getElement_ElementClass() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getElement_ElementID() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getElement_Attributes() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(4);
+	public EReference getAbbreviation_Group() {
+		return (EReference)abbreviationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -433,6 +333,78 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSymbol() {
+		return symbolEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbol_Sym() {
+		return (EAttribute)symbolEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbol_Tag() {
+		return (EReference)symbolEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGroup() {
+		return groupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGroup_Abbreviation() {
+		return (EReference)groupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGroup_Count() {
+		return (EAttribute)groupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getHTMLTag() {
+		return htmlTagEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getValidSymbol() {
+		return validSymbolEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public WebmateFactory getWebmateFactory() {
 		return (WebmateFactory)getEFactoryInstance();
 	}
@@ -456,32 +428,17 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		isCreated = true;
 
 		// Create classes and their features
-		emmetEClass = createEClass(EMMET);
-		createEReference(emmetEClass, EMMET__ABBREVIATION);
+		htmlEClass = createEClass(HTML);
+		createEReference(htmlEClass, HTML__ABBREVIATION);
 
 		abbreviationEClass = createEClass(ABBREVIATION);
-		createEReference(abbreviationEClass, ABBREVIATION__PREFIX);
-		createEReference(abbreviationEClass, ABBREVIATION__ELEMENT);
-		createEReference(abbreviationEClass, ABBREVIATION__SUFFIX);
-
-		prefixEClass = createEClass(PREFIX);
-		createEAttribute(prefixEClass, PREFIX__COUNT);
-		createEReference(prefixEClass, PREFIX__ELEMENT_NAME);
-		createEReference(prefixEClass, PREFIX__ELEMENT_CLASS);
-		createEReference(prefixEClass, PREFIX__ELEMENT_ID);
-
-		suffixEClass = createEClass(SUFFIX);
-		createEAttribute(suffixEClass, SUFFIX__TEXT);
-		createEReference(suffixEClass, SUFFIX__ELEMENT_NAME);
-		createEReference(suffixEClass, SUFFIX__ELEMENT_CLASS);
-		createEReference(suffixEClass, SUFFIX__ELEMENT_ID);
-
-		elementEClass = createEClass(ELEMENT);
-		createEAttribute(elementEClass, ELEMENT__COUNT);
-		createEReference(elementEClass, ELEMENT__ELEMENT_NAME);
-		createEReference(elementEClass, ELEMENT__ELEMENT_CLASS);
-		createEReference(elementEClass, ELEMENT__ELEMENT_ID);
-		createEReference(elementEClass, ELEMENT__ATTRIBUTES);
+		createEReference(abbreviationEClass, ABBREVIATION__IDS);
+		createEReference(abbreviationEClass, ABBREVIATION__SYMBOLS);
+		createEReference(abbreviationEClass, ABBREVIATION__TAGS);
+		createEReference(abbreviationEClass, ABBREVIATION__CLASSES);
+		createEReference(abbreviationEClass, ABBREVIATION__ATTRIBUTES);
+		createEReference(abbreviationEClass, ABBREVIATION__ABBREVIATION);
+		createEReference(abbreviationEClass, ABBREVIATION__GROUP);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__ATTRIBUTE_NAME);
@@ -495,6 +452,18 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 
 		idEClass = createEClass(ID);
 		createEAttribute(idEClass, ID__ID_NAME);
+
+		symbolEClass = createEClass(SYMBOL);
+		createEAttribute(symbolEClass, SYMBOL__SYM);
+		createEReference(symbolEClass, SYMBOL__TAG);
+
+		groupEClass = createEClass(GROUP);
+		createEReference(groupEClass, GROUP__ABBREVIATION);
+		createEAttribute(groupEClass, GROUP__COUNT);
+
+		// Create enums
+		htmlTagEEnum = createEEnum(HTML_TAG);
+		validSymbolEEnum = createEEnum(VALID_SYMBOL);
 	}
 
 	/**
@@ -527,45 +496,54 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(emmetEClass, Emmet.class, "Emmet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEmmet_Abbreviation(), this.getAbbreviation(), null, "abbreviation", null, 1, -1, Emmet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(htmlEClass, webmate.HTML.class, "HTML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHTML_Abbreviation(), this.getAbbreviation(), null, "abbreviation", null, 1, -1, webmate.HTML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abbreviationEClass, Abbreviation.class, "Abbreviation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbbreviation_Prefix(), this.getPrefix(), null, "prefix", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbbreviation_Element(), this.getElement(), null, "element", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbbreviation_Suffix(), this.getSuffix(), null, "suffix", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(prefixEClass, Prefix.class, "Prefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrefix_Count(), ecorePackage.getEInt(), "count", null, 0, 1, Prefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrefix_ElementName(), this.getTag(), null, "elementName", null, 0, 1, Prefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrefix_ElementClass(), this.getClass_(), null, "elementClass", null, 0, 1, Prefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrefix_ElementID(), this.getID(), null, "elementID", null, 0, 1, Prefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(suffixEClass, Suffix.class, "Suffix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSuffix_Text(), ecorePackage.getEString(), "text", null, 0, 1, Suffix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSuffix_ElementName(), this.getTag(), null, "elementName", null, 0, 1, Suffix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSuffix_ElementClass(), this.getClass_(), null, "elementClass", null, 0, 1, Suffix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSuffix_ElementID(), this.getID(), null, "elementID", null, 0, 1, Suffix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getElement_Count(), ecorePackage.getEInt(), "count", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_ElementName(), this.getTag(), null, "elementName", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_ElementClass(), this.getClass_(), null, "elementClass", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_ElementID(), this.getID(), null, "elementID", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Ids(), this.getID(), null, "ids", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Symbols(), this.getSymbol(), null, "symbols", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Tags(), this.getTag(), null, "tags", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Classes(), this.getClass_(), null, "classes", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Attributes(), this.getAttribute(), null, "attributes", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Abbreviation(), this.getAbbreviation(), null, "abbreviation", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Group(), this.getGroup(), null, "group", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_AttributeValue(), ecorePackage.getEString(), "attributeValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTag_TagName(), ecorePackage.getEString(), "tagName", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_TagName(), this.getHTMLTag(), "tagName", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classEClass, webmate.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClass_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, webmate.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(idEClass, webmate.ID.class, "ID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getID_IdName(), ecorePackage.getEString(), "idName", null, 0, 1, webmate.ID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSymbol_Sym(), this.getValidSymbol(), "sym", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbol_Tag(), this.getTag(), null, "tag", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGroup_Abbreviation(), this.getAbbreviation(), null, "abbreviation", null, 1, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGroup_Count(), ecorePackage.getEInt(), "count", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(htmlTagEEnum, HTMLTag.class, "HTMLTag");
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.DIV);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.H1);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.P);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.UL);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.LI);
+
+		initEEnum(validSymbolEEnum, ValidSymbol.class, "ValidSymbol");
+		addEEnumLiteral(validSymbolEEnum, ValidSymbol.PLUS);
+		addEEnumLiteral(validSymbolEEnum, ValidSymbol.MULTIPLY);
+		addEEnumLiteral(validSymbolEEnum, ValidSymbol.DOT);
+		addEEnumLiteral(validSymbolEEnum, ValidSymbol.HASH);
+		addEEnumLiteral(validSymbolEEnum, ValidSymbol.GREATERTHAN);
+		addEEnumLiteral(validSymbolEEnum, ValidSymbol.CARET);
 
 		// Create resource
 		createResource(eNS_URI);

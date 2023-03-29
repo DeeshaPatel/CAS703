@@ -11,11 +11,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import webmate.Abbreviation;
 import webmate.Attribute;
-import webmate.Element;
-import webmate.Emmet;
+import webmate.Group;
+import webmate.HTML;
 import webmate.ID;
-import webmate.Prefix;
-import webmate.Suffix;
+import webmate.Symbol;
 import webmate.Tag;
 import webmate.WebmatePackage;
 
@@ -76,24 +75,12 @@ public class WebmateAdapterFactory extends AdapterFactoryImpl {
 	protected WebmateSwitch<Adapter> modelSwitch =
 		new WebmateSwitch<Adapter>() {
 			@Override
-			public Adapter caseEmmet(Emmet object) {
-				return createEmmetAdapter();
+			public Adapter caseHTML(HTML object) {
+				return createHTMLAdapter();
 			}
 			@Override
 			public Adapter caseAbbreviation(Abbreviation object) {
 				return createAbbreviationAdapter();
-			}
-			@Override
-			public Adapter casePrefix(Prefix object) {
-				return createPrefixAdapter();
-			}
-			@Override
-			public Adapter caseSuffix(Suffix object) {
-				return createSuffixAdapter();
-			}
-			@Override
-			public Adapter caseElement(Element object) {
-				return createElementAdapter();
 			}
 			@Override
 			public Adapter caseAttribute(Attribute object) {
@@ -110,6 +97,14 @@ public class WebmateAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseID(ID object) {
 				return createIDAdapter();
+			}
+			@Override
+			public Adapter caseSymbol(Symbol object) {
+				return createSymbolAdapter();
+			}
+			@Override
+			public Adapter caseGroup(Group object) {
+				return createGroupAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -132,16 +127,16 @@ public class WebmateAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link webmate.Emmet <em>Emmet</em>}'.
+	 * Creates a new adapter for an object of class '{@link webmate.HTML <em>HTML</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see webmate.Emmet
+	 * @see webmate.HTML
 	 * @generated
 	 */
-	public Adapter createEmmetAdapter() {
+	public Adapter createHTMLAdapter() {
 		return null;
 	}
 
@@ -156,48 +151,6 @@ public class WebmateAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbbreviationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link webmate.Prefix <em>Prefix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see webmate.Prefix
-	 * @generated
-	 */
-	public Adapter createPrefixAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link webmate.Suffix <em>Suffix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see webmate.Suffix
-	 * @generated
-	 */
-	public Adapter createSuffixAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link webmate.Element <em>Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see webmate.Element
-	 * @generated
-	 */
-	public Adapter createElementAdapter() {
 		return null;
 	}
 
@@ -254,6 +207,34 @@ public class WebmateAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIDAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link webmate.Symbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see webmate.Symbol
+	 * @generated
+	 */
+	public Adapter createSymbolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link webmate.Group <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see webmate.Group
+	 * @generated
+	 */
+	public Adapter createGroupAdapter() {
 		return null;
 	}
 

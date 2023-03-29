@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import webmate.HTMLTag;
 import webmate.Tag;
 import webmate.WebmatePackage;
 
@@ -34,7 +35,7 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TAG_NAME_EDEFAULT = null;
+	protected static final HTMLTag TAG_NAME_EDEFAULT = HTMLTag.DIV;
 
 	/**
 	 * The cached value of the '{@link #getTagName() <em>Tag Name</em>}' attribute.
@@ -44,7 +45,7 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	 * @generated
 	 * @ordered
 	 */
-	protected String tagName = TAG_NAME_EDEFAULT;
+	protected HTMLTag tagName = TAG_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +71,7 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTagName() {
+	public HTMLTag getTagName() {
 		return tagName;
 	}
 
@@ -79,9 +80,9 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTagName(String newTagName) {
-		String oldTagName = tagName;
-		tagName = newTagName;
+	public void setTagName(HTMLTag newTagName) {
+		HTMLTag oldTagName = tagName;
+		tagName = newTagName == null ? TAG_NAME_EDEFAULT : newTagName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.TAG__TAG_NAME, oldTagName, tagName));
 	}
@@ -109,7 +110,7 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebmatePackage.TAG__TAG_NAME:
-				setTagName((String)newValue);
+				setTagName((HTMLTag)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,7 +140,7 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebmatePackage.TAG__TAG_NAME:
-				return TAG_NAME_EDEFAULT == null ? tagName != null : !TAG_NAME_EDEFAULT.equals(tagName);
+				return tagName != TAG_NAME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

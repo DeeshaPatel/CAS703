@@ -13,10 +13,12 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.xtext.example.mydsl.services.WebMateGrammarAccess;
 import webmate.Abbreviation;
-import webmate.Element;
-import webmate.Emmet;
-import webmate.Prefix;
-import webmate.Suffix;
+import webmate.Attribute;
+import webmate.Group;
+import webmate.HTML;
+import webmate.ID;
+import webmate.Symbol;
+import webmate.Tag;
 
 @SuppressWarnings("all")
 public class WebMateFormatter extends AbstractFormatter2 {
@@ -24,20 +26,20 @@ public class WebMateFormatter extends AbstractFormatter2 {
   @Extension
   private WebMateGrammarAccess _webMateGrammarAccess;
 
-  protected void _format(final Emmet emmet, @Extension final IFormattableDocument document) {
-    EList<Abbreviation> _abbreviation = emmet.getAbbreviation();
+  protected void _format(final HTML hTML, @Extension final IFormattableDocument document) {
+    EList<Abbreviation> _abbreviation = hTML.getAbbreviation();
     for (final Abbreviation abbreviation : _abbreviation) {
       document.<Abbreviation>format(abbreviation);
     }
   }
 
   protected void _format(final Abbreviation abbreviation, @Extension final IFormattableDocument document) {
-    document.<Prefix>format(abbreviation.getPrefix());
-    EList<Element> _element = abbreviation.getElement();
-    for (final Element element : _element) {
-      document.<Element>format(element);
-    }
-    document.<Suffix>format(abbreviation.getSuffix());
+    document.<Tag>format(abbreviation.getTags());
+    document.<webmate.Class>format(abbreviation.getClasses());
+    document.<ID>format(abbreviation.getIds());
+    document.<Symbol>format(abbreviation.getSymbols());
+    document.<Attribute>format(abbreviation.getAttributes());
+    document.<Group>format(abbreviation.getGroup());
   }
 
   public void format(final Object abbreviation, final IFormattableDocument document) {
@@ -47,8 +49,8 @@ public class WebMateFormatter extends AbstractFormatter2 {
     } else if (abbreviation instanceof Abbreviation) {
       _format((Abbreviation)abbreviation, document);
       return;
-    } else if (abbreviation instanceof Emmet) {
-      _format((Emmet)abbreviation, document);
+    } else if (abbreviation instanceof HTML) {
+      _format((HTML)abbreviation, document);
       return;
     } else if (abbreviation instanceof EObject) {
       _format((EObject)abbreviation, document);

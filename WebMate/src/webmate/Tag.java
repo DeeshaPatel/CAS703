@@ -23,24 +23,27 @@ import org.eclipse.emf.ecore.EObject;
 public interface Tag extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Tag Name</b></em>' attribute.
+	 * The literals are from the enumeration {@link webmate.HTMLTag}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tag Name</em>' attribute.
-	 * @see #setTagName(String)
+	 * @see webmate.HTMLTag
+	 * @see #setTagName(HTMLTag)
 	 * @see webmate.WebmatePackage#getTag_TagName()
 	 * @model
 	 * @generated
 	 */
-	String getTagName();
+	HTMLTag getTagName();
 
 	/**
 	 * Sets the value of the '{@link webmate.Tag#getTagName <em>Tag Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Tag Name</em>' attribute.
+	 * @see webmate.HTMLTag
 	 * @see #getTagName()
 	 * @generated
 	 */
-	void setTagName(String value);
+	void setTagName(HTMLTag value);
 
 } // Tag

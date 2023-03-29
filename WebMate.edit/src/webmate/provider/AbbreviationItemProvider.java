@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,7 +21,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import webmate.Abbreviation;
+import webmate.WebmateFactory;
 import webmate.WebmatePackage;
 
 /**
@@ -57,27 +62,25 @@ public class AbbreviationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPrefixPropertyDescriptor(object);
-			addElementPropertyDescriptor(object);
-			addSuffixPropertyDescriptor(object);
+			addAbbreviationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Prefix feature.
+	 * This adds a property descriptor for the Abbreviation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPrefixPropertyDescriptor(Object object) {
+	protected void addAbbreviationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Abbreviation_prefix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Abbreviation_prefix_feature", "_UI_Abbreviation_type"),
-				 WebmatePackage.Literals.ABBREVIATION__PREFIX,
+				 getString("_UI_Abbreviation_abbreviation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Abbreviation_abbreviation_feature", "_UI_Abbreviation_type"),
+				 WebmatePackage.Literals.ABBREVIATION__ABBREVIATION,
 				 true,
 				 false,
 				 true,
@@ -87,47 +90,38 @@ public class AbbreviationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Element feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Abbreviation_element_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Abbreviation_element_feature", "_UI_Abbreviation_type"),
-				 WebmatePackage.Literals.ABBREVIATION__ELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebmatePackage.Literals.ABBREVIATION__IDS);
+			childrenFeatures.add(WebmatePackage.Literals.ABBREVIATION__SYMBOLS);
+			childrenFeatures.add(WebmatePackage.Literals.ABBREVIATION__TAGS);
+			childrenFeatures.add(WebmatePackage.Literals.ABBREVIATION__CLASSES);
+			childrenFeatures.add(WebmatePackage.Literals.ABBREVIATION__ATTRIBUTES);
+			childrenFeatures.add(WebmatePackage.Literals.ABBREVIATION__GROUP);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Suffix feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSuffixPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Abbreviation_suffix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Abbreviation_suffix_feature", "_UI_Abbreviation_type"),
-				 WebmatePackage.Literals.ABBREVIATION__SUFFIX,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -163,6 +157,17 @@ public class AbbreviationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Abbreviation.class)) {
+			case WebmatePackage.ABBREVIATION__IDS:
+			case WebmatePackage.ABBREVIATION__SYMBOLS:
+			case WebmatePackage.ABBREVIATION__TAGS:
+			case WebmatePackage.ABBREVIATION__CLASSES:
+			case WebmatePackage.ABBREVIATION__ATTRIBUTES:
+			case WebmatePackage.ABBREVIATION__GROUP:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -176,6 +181,36 @@ public class AbbreviationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.ABBREVIATION__IDS,
+				 WebmateFactory.eINSTANCE.createID()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.ABBREVIATION__SYMBOLS,
+				 WebmateFactory.eINSTANCE.createSymbol()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.ABBREVIATION__TAGS,
+				 WebmateFactory.eINSTANCE.createTag()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.ABBREVIATION__CLASSES,
+				 WebmateFactory.eINSTANCE.createClass()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.ABBREVIATION__ATTRIBUTES,
+				 WebmateFactory.eINSTANCE.createAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.ABBREVIATION__GROUP,
+				 WebmateFactory.eINSTANCE.createGroup()));
 	}
 
 	/**
