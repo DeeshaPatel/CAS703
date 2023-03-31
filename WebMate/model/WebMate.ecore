@@ -6,25 +6,32 @@
         upperBound="-1" eType="#//Abbreviation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Abbreviation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ids" eType="#//ID" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" eType="#//Symbol"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ids" upperBound="-1" eType="#//ID"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" eType="#//Tag" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" eType="#//Class"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
+        eType="#//Symbol" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//Attribute"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
+        eType="#//Class" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="abbreviation" upperBound="-1"
         eType="#//Abbreviation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//Group"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" upperBound="-1"
+        eType="#//Group" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tag">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagName" eType="#//HTMLTag"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ID" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+        eType="#//Class" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -32,28 +39,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ID">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="idName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="HTMLTag">
-    <eLiterals name="div"/>
-    <eLiterals name="h1" value="1"/>
-    <eLiterals name="p" value="2"/>
-    <eLiterals name="ul" value="3"/>
-    <eLiterals name="li" value="4"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Symbol">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sym" eType="#//ValidSymbol"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ValidSymbol">
-    <eLiterals name="plus" literal="+"/>
-    <eLiterals name="multiply" value="1"/>
-    <eLiterals name="dot" value="2"/>
-    <eLiterals name="hash" value="3"/>
-    <eLiterals name="greaterthan" value="4"/>
-    <eLiterals name="caret" value="5"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abbreviation" lowerBound="1"
-        upperBound="-1" eType="#//Abbreviation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abbreviation" upperBound="-1"
+        eType="#//Abbreviation" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

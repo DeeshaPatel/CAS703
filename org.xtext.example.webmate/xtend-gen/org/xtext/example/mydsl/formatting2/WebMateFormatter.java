@@ -34,12 +34,27 @@ public class WebMateFormatter extends AbstractFormatter2 {
   }
 
   protected void _format(final Abbreviation abbreviation, @Extension final IFormattableDocument document) {
-    document.<Tag>format(abbreviation.getTags());
-    document.<webmate.Class>format(abbreviation.getClasses());
     document.<ID>format(abbreviation.getIds());
-    document.<Symbol>format(abbreviation.getSymbols());
-    document.<Attribute>format(abbreviation.getAttributes());
-    document.<Group>format(abbreviation.getGroup());
+    EList<Symbol> _symbols = abbreviation.getSymbols();
+    for (final Symbol symbol : _symbols) {
+      document.<Symbol>format(symbol);
+    }
+    EList<Tag> _tags = abbreviation.getTags();
+    for (final Tag tag : _tags) {
+      document.<Tag>format(tag);
+    }
+    EList<webmate.Class> _classes = abbreviation.getClasses();
+    for (final webmate.Class _class : _classes) {
+      document.<webmate.Class>format(_class);
+    }
+    EList<Attribute> _attributes = abbreviation.getAttributes();
+    for (final Attribute attribute : _attributes) {
+      document.<Attribute>format(attribute);
+    }
+    EList<Group> _group = abbreviation.getGroup();
+    for (final Group group : _group) {
+      document.<Group>format(group);
+    }
   }
 
   public void format(final Object abbreviation, final IFormattableDocument document) {

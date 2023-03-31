@@ -129,138 +129,151 @@ ruleAbbreviation returns [EObject current=null]
 					$current);
 			}
 		)
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAbbreviationRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getAbbreviationAccess().getAbbreviationAbbreviationCrossReference_1_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAbbreviationAccess().getLeftCurlyBracketKeyword_1());
+		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAbbreviationAccess().getTagsTagParserRuleCall_2_0_0());
-					}
-					lv_tags_2_0=ruleTag
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+							$current = createModelElement(grammarAccess.getAbbreviationRule());
 						}
-						set(
-							$current,
-							"tags",
-							lv_tags_2_0,
-							"org.xtext.example.mydsl.WebMate.Tag");
+					}
+					{
+						newCompositeNode(grammarAccess.getAbbreviationAccess().getAbbreviationAbbreviationCrossReference_2_0_0());
+					}
+					ruleEString
+					{
 						afterParserOrEnumRuleCall();
 					}
+				)
+			)*
+			    |
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAbbreviationAccess().getTagsTagParserRuleCall_2_1_0_0());
+						}
+						lv_tags_3_0=ruleTag
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+							}
+							add(
+								$current,
+								"tags",
+								lv_tags_3_0,
+								"org.xtext.example.mydsl.WebMate.Tag");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)+
+				(
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getAbbreviationAccess().getIdsID0ParserRuleCall_2_1_1_0_0());
+							}
+							lv_ids_4_0=ruleID0
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+								}
+								add(
+									$current,
+									"ids",
+									lv_ids_4_0,
+									"org.xtext.example.mydsl.WebMate.ID0");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)*
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getAbbreviationAccess().getSymbolsSymbolParserRuleCall_2_1_1_1_0());
+							}
+							lv_symbols_5_0=ruleSymbol
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+								}
+								add(
+									$current,
+									"symbols",
+									lv_symbols_5_0,
+									"org.xtext.example.mydsl.WebMate.Symbol");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)*
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getAbbreviationAccess().getClassesClassParserRuleCall_2_1_1_2_0());
+							}
+							lv_classes_6_0=ruleClass
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+								}
+								add(
+									$current,
+									"classes",
+									lv_classes_6_0,
+									"org.xtext.example.mydsl.WebMate.Class");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)*
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getAbbreviationAccess().getAttributesAttributeParserRuleCall_2_1_1_3_0());
+							}
+							lv_attributes_7_0=ruleAttribute
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+								}
+								add(
+									$current,
+									"attributes",
+									lv_attributes_7_0,
+									"org.xtext.example.mydsl.WebMate.Attribute");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)*
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getAbbreviationAccess().getGroupGroupParserRuleCall_2_1_1_4_0());
+							}
+							lv_group_8_0=ruleGroup
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+								}
+								add(
+									$current,
+									"group",
+									lv_group_8_0,
+									"org.xtext.example.mydsl.WebMate.Group");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)*
 				)
 			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAbbreviationAccess().getClassesClassParserRuleCall_2_1_0());
-					}
-					lv_classes_3_0=ruleClass
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-						}
-						set(
-							$current,
-							"classes",
-							lv_classes_3_0,
-							"org.xtext.example.mydsl.WebMate.Class");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAbbreviationAccess().getIdsID0ParserRuleCall_2_2_0());
-					}
-					lv_ids_4_0=ruleID0
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-						}
-						set(
-							$current,
-							"ids",
-							lv_ids_4_0,
-							"org.xtext.example.mydsl.WebMate.ID0");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAbbreviationAccess().getSymbolsSymbolParserRuleCall_2_3_0());
-					}
-					lv_symbols_5_0=ruleSymbol
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-						}
-						set(
-							$current,
-							"symbols",
-							lv_symbols_5_0,
-							"org.xtext.example.mydsl.WebMate.Symbol");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAbbreviationAccess().getAttributesAttributeParserRuleCall_2_4_0());
-					}
-					lv_attributes_6_0=ruleAttribute
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-						}
-						set(
-							$current,
-							"attributes",
-							lv_attributes_6_0,
-							"org.xtext.example.mydsl.WebMate.Attribute");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAbbreviationAccess().getGroupGroupParserRuleCall_2_5_0());
-					}
-					lv_group_7_0=ruleGroup
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-						}
-						set(
-							$current,
-							"group",
-							lv_group_7_0,
-							"org.xtext.example.mydsl.WebMate.Group");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
 		)
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getAbbreviationAccess().getRightCurlyBracketKeyword_3());
+		}
 	)
 ;
 
@@ -332,18 +345,124 @@ ruleSymbol returns [EObject current=null]
 }:
 	(
 		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getSymbolAccess().getSymbolAction_0(),
-					$current);
-			}
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSymbolAccess().getSymbolAction_0_0(),
+						$current);
+				}
+			)
+			(
+				otherlv_1='*'
+				{
+					newLeafNode(otherlv_1, grammarAccess.getSymbolAccess().getAsteriskKeyword_0_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSymbolAccess().getCountEIntParserRuleCall_0_1_1_0());
+						}
+						lv_count_2_0=ruleEInt
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSymbolRule());
+							}
+							set(
+								$current,
+								"count",
+								lv_count_2_0,
+								"org.xtext.example.mydsl.WebMate.EInt");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
 		)
+		    |
+		(
+			otherlv_3='+'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getSymbolAccess().getPlusSignKeyword_1_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_1_1_0());
+					}
+					lv_tag_4_0=ruleTag
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSymbolRule());
+						}
+						set(
+							$current,
+							"tag",
+							lv_tag_4_0,
+							"org.xtext.example.mydsl.WebMate.Tag");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_5='>'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getSymbolAccess().getGreaterThanSignKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_2_1_0());
+					}
+					lv_tag_6_0=ruleTag
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSymbolRule());
+						}
+						set(
+							$current,
+							"tag",
+							lv_tag_6_0,
+							"org.xtext.example.mydsl.WebMate.Tag");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_7='^'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getSymbolAccess().getCircumflexAccentKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0());
+					}
+					lv_tag_8_0=ruleTag
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSymbolRule());
+						}
+						set(
+							$current,
+							"tag",
+							lv_tag_8_0,
+							"org.xtext.example.mydsl.WebMate.Tag");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_1_0());
+					newCompositeNode(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_4_0());
 				}
-				lv_sym_1_0=ruleValidSymbol
+				lv_sym_9_0=ruleValidSymbol
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSymbolRule());
@@ -351,24 +470,8 @@ ruleSymbol returns [EObject current=null]
 					set(
 						$current,
 						"sym",
-						lv_sym_1_0,
+						lv_sym_9_0,
 						"org.xtext.example.mydsl.WebMate.ValidSymbol");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSymbolRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getSymbolAccess().getTagTagCrossReference_2_0());
-				}
-				ruleEString
-				{
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -418,6 +521,63 @@ ruleTag returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTagAccess().getClassClassParserRuleCall_2_0());
+				}
+				lv_class_2_0=ruleClass
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTagRule());
+					}
+					add(
+						$current,
+						"class",
+						lv_class_2_0,
+						"org.xtext.example.mydsl.WebMate.Class");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTagAccess().getIdID0ParserRuleCall_3_0());
+				}
+				lv_id_3_0=ruleID0
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTagRule());
+					}
+					set(
+						$current,
+						"id",
+						lv_id_3_0,
+						"org.xtext.example.mydsl.WebMate.ID0");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTagAccess().getAttributeAttributeParserRuleCall_4_0());
+				}
+				lv_attribute_4_0=ruleAttribute
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTagRule());
+					}
+					add(
+						$current,
+						"attribute",
+						lv_attribute_4_0,
+						"org.xtext.example.mydsl.WebMate.Attribute");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -465,137 +625,6 @@ ruleClass returns [EObject current=null]
 						"org.xtext.example.mydsl.WebMate.EString");
 					afterParserOrEnumRuleCall();
 				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleGroup
-entryRuleGroup returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGroupRule()); }
-	iv_ruleGroup=ruleGroup
-	{ $current=$iv_ruleGroup.current; }
-	EOF;
-
-// Rule Group
-ruleGroup returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getGroupAccess().getGroupAction_0_0(),
-						$current);
-				}
-			)
-			otherlv_1='('
-			{
-				newLeafNode(otherlv_1, grammarAccess.getGroupAccess().getLeftParenthesisKeyword_0_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_0_2_0());
-					}
-					lv_abbreviation_2_0=ruleAbbreviation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGroupRule());
-						}
-						add(
-							$current,
-							"abbreviation",
-							lv_abbreviation_2_0,
-							"org.xtext.example.mydsl.WebMate.Abbreviation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)+
-			(
-				otherlv_3=')'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getGroupAccess().getRightParenthesisKeyword_0_3());
-				}
-			)?
-			otherlv_4='>'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getGroupAccess().getGreaterThanSignKeyword_0_4());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_0_5_0());
-					}
-					lv_abbreviation_5_0=ruleAbbreviation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGroupRule());
-						}
-						add(
-							$current,
-							"abbreviation",
-							lv_abbreviation_5_0,
-							"org.xtext.example.mydsl.WebMate.Abbreviation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_6='*'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getGroupAccess().getAsteriskKeyword_1_0());
-			}
-			(
-				(
-					lv_count_7_0=RULE_INT
-					{
-						newLeafNode(lv_count_7_0, grammarAccess.getGroupAccess().getCountINTTerminalRuleCall_1_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getGroupRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"count",
-							lv_count_7_0,
-							"org.xtext.example.mydsl.WebMate.INT");
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_8='+'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getGroupAccess().getPlusSignKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_2_1_0());
-					}
-					lv_abbreviation_9_0=ruleAbbreviation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGroupRule());
-						}
-						add(
-							$current,
-							"abbreviation",
-							lv_abbreviation_9_0,
-							"org.xtext.example.mydsl.WebMate.Abbreviation");
-						afterParserOrEnumRuleCall();
-					}
-				)
 			)
 		)
 	)
@@ -681,6 +710,59 @@ ruleAttribute returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleGroup
+entryRuleGroup returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGroupRule()); }
+	iv_ruleGroup=ruleGroup
+	{ $current=$iv_ruleGroup.current; }
+	EOF;
+
+// Rule Group
+ruleGroup returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGroupAccess().getGroupAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGroupAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_2_0());
+				}
+				lv_abbreviation_2_0=ruleAbbreviation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGroupRule());
+					}
+					add(
+						$current,
+						"abbreviation",
+						lv_abbreviation_2_0,
+						"org.xtext.example.mydsl.WebMate.Abbreviation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGroupAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
 // Entry rule entryRuleEString
 entryRuleEString returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getEStringRule()); }
@@ -705,12 +787,45 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
 		}
 		    |
+		this_ID_1=RULE_ID
+		{
+			$current.merge(this_ID_1);
+		}
+		{
+			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleEInt
+entryRuleEInt returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEIntRule()); }
+	iv_ruleEInt=ruleEInt
+	{ $current=$iv_ruleEInt.current.getText(); }
+	EOF;
+
+// Rule EInt
+ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			kw='-'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
+			}
+		)?
 		this_INT_1=RULE_INT
 		{
 			$current.merge(this_INT_1);
 		}
 		{
-			newLeafNode(this_INT_1, grammarAccess.getEStringAccess().getINTTerminalRuleCall_1());
+			newLeafNode(this_INT_1, grammarAccess.getEIntAccess().getINTTerminalRuleCall_1());
 		}
 	)
 ;

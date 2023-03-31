@@ -15,7 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import webmate.Abbreviation;
 import webmate.Attribute;
@@ -56,44 +58,44 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	protected ID ids;
 
 	/**
-	 * The cached value of the '{@link #getSymbols() <em>Symbols</em>}' containment reference.
+	 * The cached value of the '{@link #getSymbols() <em>Symbols</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSymbols()
 	 * @generated
 	 * @ordered
 	 */
-	protected Symbol symbols;
+	protected EList<Symbol> symbols;
 
 	/**
-	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference.
+	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTags()
 	 * @generated
 	 * @ordered
 	 */
-	protected Tag tags;
+	protected EList<Tag> tags;
 
 	/**
-	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference.
+	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getClasses()
 	 * @generated
 	 * @ordered
 	 */
-	protected webmate.Class classes;
+	protected EList<webmate.Class> classes;
 
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute attributes;
+	protected EList<Attribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' reference list.
@@ -106,14 +108,14 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	protected EList<Abbreviation> abbreviation;
 
 	/**
-	 * The cached value of the '{@link #getGroup() <em>Group</em>}' containment reference.
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
 	 */
-	protected Group group;
+	protected EList<Group> group;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +184,10 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Symbol getSymbols() {
+	public EList<Symbol> getSymbols() {
+		if (symbols == null) {
+			symbols = new EObjectContainmentEList<Symbol>(Symbol.class, this, WebmatePackage.ABBREVIATION__SYMBOLS);
+		}
 		return symbols;
 	}
 
@@ -191,41 +196,10 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSymbols(Symbol newSymbols, NotificationChain msgs) {
-		Symbol oldSymbols = symbols;
-		symbols = newSymbols;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__SYMBOLS, oldSymbols, newSymbols);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Tag> getTags() {
+		if (tags == null) {
+			tags = new EObjectContainmentEList<Tag>(Tag.class, this, WebmatePackage.ABBREVIATION__TAGS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSymbols(Symbol newSymbols) {
-		if (newSymbols != symbols) {
-			NotificationChain msgs = null;
-			if (symbols != null)
-				msgs = ((InternalEObject)symbols).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__SYMBOLS, null, msgs);
-			if (newSymbols != null)
-				msgs = ((InternalEObject)newSymbols).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__SYMBOLS, null, msgs);
-			msgs = basicSetSymbols(newSymbols, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__SYMBOLS, newSymbols, newSymbols));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Tag getTags() {
 		return tags;
 	}
 
@@ -234,41 +208,10 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTags(Tag newTags, NotificationChain msgs) {
-		Tag oldTags = tags;
-		tags = newTags;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__TAGS, oldTags, newTags);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<webmate.Class> getClasses() {
+		if (classes == null) {
+			classes = new EObjectContainmentEList<webmate.Class>(webmate.Class.class, this, WebmatePackage.ABBREVIATION__CLASSES);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTags(Tag newTags) {
-		if (newTags != tags) {
-			NotificationChain msgs = null;
-			if (tags != null)
-				msgs = ((InternalEObject)tags).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__TAGS, null, msgs);
-			if (newTags != null)
-				msgs = ((InternalEObject)newTags).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__TAGS, null, msgs);
-			msgs = basicSetTags(newTags, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__TAGS, newTags, newTags));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public webmate.Class getClasses() {
 		return classes;
 	}
 
@@ -277,76 +220,11 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetClasses(webmate.Class newClasses, NotificationChain msgs) {
-		webmate.Class oldClasses = classes;
-		classes = newClasses;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__CLASSES, oldClasses, newClasses);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Attribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, WebmatePackage.ABBREVIATION__ATTRIBUTES);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClasses(webmate.Class newClasses) {
-		if (newClasses != classes) {
-			NotificationChain msgs = null;
-			if (classes != null)
-				msgs = ((InternalEObject)classes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__CLASSES, null, msgs);
-			if (newClasses != null)
-				msgs = ((InternalEObject)newClasses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__CLASSES, null, msgs);
-			msgs = basicSetClasses(newClasses, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__CLASSES, newClasses, newClasses));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute getAttributes() {
 		return attributes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAttributes(Attribute newAttributes, NotificationChain msgs) {
-		Attribute oldAttributes = attributes;
-		attributes = newAttributes;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__ATTRIBUTES, oldAttributes, newAttributes);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAttributes(Attribute newAttributes) {
-		if (newAttributes != attributes) {
-			NotificationChain msgs = null;
-			if (attributes != null)
-				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__ATTRIBUTES, null, msgs);
-			if (newAttributes != null)
-				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__ATTRIBUTES, null, msgs);
-			msgs = basicSetAttributes(newAttributes, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__ATTRIBUTES, newAttributes, newAttributes));
 	}
 
 	/**
@@ -366,42 +244,11 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Group getGroup() {
+	public EList<Group> getGroup() {
+		if (group == null) {
+			group = new EObjectContainmentEList<Group>(Group.class, this, WebmatePackage.ABBREVIATION__GROUP);
+		}
 		return group;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGroup(Group newGroup, NotificationChain msgs) {
-		Group oldGroup = group;
-		group = newGroup;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__GROUP, oldGroup, newGroup);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGroup(Group newGroup) {
-		if (newGroup != group) {
-			NotificationChain msgs = null;
-			if (group != null)
-				msgs = ((InternalEObject)group).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__GROUP, null, msgs);
-			if (newGroup != null)
-				msgs = ((InternalEObject)newGroup).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__GROUP, null, msgs);
-			msgs = basicSetGroup(newGroup, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__GROUP, newGroup, newGroup));
 	}
 
 	/**
@@ -415,15 +262,15 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 			case WebmatePackage.ABBREVIATION__IDS:
 				return basicSetIds(null, msgs);
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
-				return basicSetSymbols(null, msgs);
+				return ((InternalEList<?>)getSymbols()).basicRemove(otherEnd, msgs);
 			case WebmatePackage.ABBREVIATION__TAGS:
-				return basicSetTags(null, msgs);
+				return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
 			case WebmatePackage.ABBREVIATION__CLASSES:
-				return basicSetClasses(null, msgs);
+				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
 			case WebmatePackage.ABBREVIATION__ATTRIBUTES:
-				return basicSetAttributes(null, msgs);
+				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 			case WebmatePackage.ABBREVIATION__GROUP:
-				return basicSetGroup(null, msgs);
+				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -467,23 +314,28 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 				setIds((ID)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
-				setSymbols((Symbol)newValue);
+				getSymbols().clear();
+				getSymbols().addAll((Collection<? extends Symbol>)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__TAGS:
-				setTags((Tag)newValue);
+				getTags().clear();
+				getTags().addAll((Collection<? extends Tag>)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__CLASSES:
-				setClasses((webmate.Class)newValue);
+				getClasses().clear();
+				getClasses().addAll((Collection<? extends webmate.Class>)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__ATTRIBUTES:
-				setAttributes((Attribute)newValue);
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__ABBREVIATION:
 				getAbbreviation().clear();
 				getAbbreviation().addAll((Collection<? extends Abbreviation>)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__GROUP:
-				setGroup((Group)newValue);
+				getGroup().clear();
+				getGroup().addAll((Collection<? extends Group>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -501,22 +353,22 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 				setIds((ID)null);
 				return;
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
-				setSymbols((Symbol)null);
+				getSymbols().clear();
 				return;
 			case WebmatePackage.ABBREVIATION__TAGS:
-				setTags((Tag)null);
+				getTags().clear();
 				return;
 			case WebmatePackage.ABBREVIATION__CLASSES:
-				setClasses((webmate.Class)null);
+				getClasses().clear();
 				return;
 			case WebmatePackage.ABBREVIATION__ATTRIBUTES:
-				setAttributes((Attribute)null);
+				getAttributes().clear();
 				return;
 			case WebmatePackage.ABBREVIATION__ABBREVIATION:
 				getAbbreviation().clear();
 				return;
 			case WebmatePackage.ABBREVIATION__GROUP:
-				setGroup((Group)null);
+				getGroup().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -533,17 +385,17 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 			case WebmatePackage.ABBREVIATION__IDS:
 				return ids != null;
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
-				return symbols != null;
+				return symbols != null && !symbols.isEmpty();
 			case WebmatePackage.ABBREVIATION__TAGS:
-				return tags != null;
+				return tags != null && !tags.isEmpty();
 			case WebmatePackage.ABBREVIATION__CLASSES:
-				return classes != null;
+				return classes != null && !classes.isEmpty();
 			case WebmatePackage.ABBREVIATION__ATTRIBUTES:
-				return attributes != null;
+				return attributes != null && !attributes.isEmpty();
 			case WebmatePackage.ABBREVIATION__ABBREVIATION:
 				return abbreviation != null && !abbreviation.isEmpty();
 			case WebmatePackage.ABBREVIATION__GROUP:
-				return group != null;
+				return group != null && !group.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -74,14 +74,16 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         abbreviation+=[Abbreviation|EString]* 
-	 *         tags=Tag 
-	 *         classes=Class? 
-	 *         ids=ID0? 
-	 *         symbols=Symbol? 
-	 *         attributes=Attribute? 
-	 *         group=Group?
-	 *     )
+	 *         abbreviation+=[Abbreviation|EString]+ | 
+	 *         (
+	 *             tags+=Tag+ 
+	 *             ids+=ID0* 
+	 *             symbols+=Symbol* 
+	 *             classes+=Class* 
+	 *             attributes+=Attribute* 
+	 *             group+=Group*
+	 *         )
+	 *     )?
 	 * </pre>
 	 */
 	protected void sequence_Abbreviation(ISerializationContext context, Abbreviation semanticObject) {
@@ -129,7 +131,7 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Group returns Group
 	 *
 	 * Constraint:
-	 *     ((abbreviation+=Abbreviation+ abbreviation+=Abbreviation) | count=INT | abbreviation+=Abbreviation)
+	 *     abbreviation+=Abbreviation+
 	 * </pre>
 	 */
 	protected void sequence_Group(ISerializationContext context, Group semanticObject) {
@@ -177,20 +179,11 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Symbol returns Symbol
 	 *
 	 * Constraint:
-	 *     (sym=ValidSymbol tag=[Tag|EString])
+	 *     (count=EInt | tag=Tag | tag=Tag | tag=Tag | sym=ValidSymbol)
 	 * </pre>
 	 */
 	protected void sequence_Symbol(ISerializationContext context, Symbol semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.SYMBOL__SYM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.SYMBOL__SYM));
-			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.SYMBOL__TAG) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.SYMBOL__TAG));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_1_0(), semanticObject.getSym());
-		feeder.accept(grammarAccess.getSymbolAccess().getTagTagEStringParserRuleCall_2_0_1(), semanticObject.eGet(WebmatePackage.Literals.SYMBOL__TAG, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -200,17 +193,11 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Tag returns Tag
 	 *
 	 * Constraint:
-	 *     tagName=HTMLTag
+	 *     (tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*)
 	 * </pre>
 	 */
 	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WebmatePackage.Literals.TAG__TAG_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WebmatePackage.Literals.TAG__TAG_NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTagAccess().getTagNameHTMLTagEnumRuleCall_1_0(), semanticObject.getTagName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -25,6 +25,7 @@ import webmate.WebmatePackage;
  * <ul>
  *   <li>{@link webmate.impl.SymbolImpl#getSym <em>Sym</em>}</li>
  *   <li>{@link webmate.impl.SymbolImpl#getTag <em>Tag</em>}</li>
+ *   <li>{@link webmate.impl.SymbolImpl#getCount <em>Count</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +60,26 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @ordered
 	 */
 	protected Tag tag;
+
+	/**
+	 * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int COUNT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected int count = COUNT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +164,27 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getCount() {
+		return count;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCount(int newCount) {
+		int oldCount = count;
+		count = newCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.SYMBOL__COUNT, oldCount, count));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -151,6 +193,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			case WebmatePackage.SYMBOL__TAG:
 				if (resolve) return getTag();
 				return basicGetTag();
+			case WebmatePackage.SYMBOL__COUNT:
+				return getCount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,6 +212,9 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 				return;
 			case WebmatePackage.SYMBOL__TAG:
 				setTag((Tag)newValue);
+				return;
+			case WebmatePackage.SYMBOL__COUNT:
+				setCount((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,6 +234,9 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			case WebmatePackage.SYMBOL__TAG:
 				setTag((Tag)null);
 				return;
+			case WebmatePackage.SYMBOL__COUNT:
+				setCount(COUNT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +253,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 				return sym != SYM_EDEFAULT;
 			case WebmatePackage.SYMBOL__TAG:
 				return tag != null;
+			case WebmatePackage.SYMBOL__COUNT:
+				return count != COUNT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,6 +271,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (sym: ");
 		result.append(sym);
+		result.append(", count: ");
+		result.append(count);
 		result.append(')');
 		return result.toString();
 	}

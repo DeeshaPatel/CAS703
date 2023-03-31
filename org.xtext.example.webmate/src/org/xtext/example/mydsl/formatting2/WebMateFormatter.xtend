@@ -23,13 +23,23 @@ class WebMateFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Abbreviation abbreviation, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		abbreviation.tags.format
-		abbreviation.classes.format
 		abbreviation.ids.format
-		abbreviation.symbols.format
-		abbreviation.attributes.format
-		abbreviation.group.format
+		for (symbol : abbreviation.symbols) {
+			symbol.format
+		}
+		for (tag : abbreviation.tags) {
+			tag.format
+		}
+		for (_class : abbreviation.classes) {
+			_class.format
+		}
+		for (attribute : abbreviation.attributes) {
+			attribute.format
+		}
+		for (group : abbreviation.group) {
+			group.format
+		}
 	}
 	
-	// TODO: implement for Group
+	// TODO: implement for Tag, Group
 }

@@ -52,92 +52,52 @@ public interface Abbreviation extends EObject {
 	void setIds(ID value);
 
 	/**
-	 * Returns the value of the '<em><b>Symbols</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Symbols</b></em>' containment reference list.
+	 * The list contents are of type {@link webmate.Symbol}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Symbols</em>' containment reference.
-	 * @see #setSymbols(Symbol)
+	 * @return the value of the '<em>Symbols</em>' containment reference list.
 	 * @see webmate.WebmatePackage#getAbbreviation_Symbols()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Symbol getSymbols();
+	EList<Symbol> getSymbols();
 
 	/**
-	 * Sets the value of the '{@link webmate.Abbreviation#getSymbols <em>Symbols</em>}' containment reference.
+	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
+	 * The list contents are of type {@link webmate.Tag}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Symbols</em>' containment reference.
-	 * @see #getSymbols()
-	 * @generated
-	 */
-	void setSymbols(Symbol value);
-
-	/**
-	 * Returns the value of the '<em><b>Tags</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tags</em>' containment reference.
-	 * @see #setTags(Tag)
+	 * @return the value of the '<em>Tags</em>' containment reference list.
 	 * @see webmate.WebmatePackage#getAbbreviation_Tags()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Tag getTags();
+	EList<Tag> getTags();
 
 	/**
-	 * Sets the value of the '{@link webmate.Abbreviation#getTags <em>Tags</em>}' containment reference.
+	 * Returns the value of the '<em><b>Classes</b></em>' containment reference list.
+	 * The list contents are of type {@link webmate.Class}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tags</em>' containment reference.
-	 * @see #getTags()
-	 * @generated
-	 */
-	void setTags(Tag value);
-
-	/**
-	 * Returns the value of the '<em><b>Classes</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classes</em>' containment reference.
-	 * @see #setClasses(webmate.Class)
+	 * @return the value of the '<em>Classes</em>' containment reference list.
 	 * @see webmate.WebmatePackage#getAbbreviation_Classes()
 	 * @model containment="true"
 	 * @generated
 	 */
-	webmate.Class getClasses();
+	EList<webmate.Class> getClasses();
 
 	/**
-	 * Sets the value of the '{@link webmate.Abbreviation#getClasses <em>Classes</em>}' containment reference.
+	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link webmate.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Classes</em>' containment reference.
-	 * @see #getClasses()
-	 * @generated
-	 */
-	void setClasses(webmate.Class value);
-
-	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' containment reference.
-	 * @see #setAttributes(Attribute)
+	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see webmate.WebmatePackage#getAbbreviation_Attributes()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Attribute getAttributes();
-
-	/**
-	 * Sets the value of the '{@link webmate.Abbreviation#getAttributes <em>Attributes</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attributes</em>' containment reference.
-	 * @see #getAttributes()
-	 * @generated
-	 */
-	void setAttributes(Attribute value);
+	EList<Attribute> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Abbreviation</b></em>' reference list.
@@ -152,25 +112,15 @@ public interface Abbreviation extends EObject {
 	EList<Abbreviation> getAbbreviation();
 
 	/**
-	 * Returns the value of the '<em><b>Group</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Group</b></em>' containment reference list.
+	 * The list contents are of type {@link webmate.Group}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Group</em>' containment reference.
-	 * @see #setGroup(Group)
+	 * @return the value of the '<em>Group</em>' containment reference list.
 	 * @see webmate.WebmatePackage#getAbbreviation_Group()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Group getGroup();
-
-	/**
-	 * Sets the value of the '{@link webmate.Abbreviation#getGroup <em>Group</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Group</em>' containment reference.
-	 * @see #getGroup()
-	 * @generated
-	 */
-	void setGroup(Group value);
+	EList<Group> getGroup();
 
 } // Abbreviation

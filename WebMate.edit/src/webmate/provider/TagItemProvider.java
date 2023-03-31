@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,6 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import webmate.HTMLTag;
 import webmate.Tag;
+import webmate.WebmateFactory;
 import webmate.WebmatePackage;
 
 /**
@@ -62,6 +65,9 @@ public class TagItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTagNamePropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
+			addClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +92,104 @@ public class TagItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Tag_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_attribute_feature", "_UI_Tag_type"),
+				 WebmatePackage.Literals.TAG__ATTRIBUTE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Tag_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_id_feature", "_UI_Tag_type"),
+				 WebmatePackage.Literals.TAG__ID,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Tag_class_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_class_feature", "_UI_Tag_type"),
+				 WebmatePackage.Literals.TAG__CLASS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebmatePackage.Literals.TAG__ATTRIBUTE);
+			childrenFeatures.add(WebmatePackage.Literals.TAG__ID);
+			childrenFeatures.add(WebmatePackage.Literals.TAG__CLASS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -130,6 +234,11 @@ public class TagItemProvider
 			case WebmatePackage.TAG__TAG_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebmatePackage.TAG__ATTRIBUTE:
+			case WebmatePackage.TAG__ID:
+			case WebmatePackage.TAG__CLASS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -144,6 +253,21 @@ public class TagItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.TAG__ATTRIBUTE,
+				 WebmateFactory.eINSTANCE.createAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.TAG__ID,
+				 WebmateFactory.eINSTANCE.createID()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebmatePackage.Literals.TAG__CLASS,
+				 WebmateFactory.eINSTANCE.createClass()));
 	}
 
 	/**

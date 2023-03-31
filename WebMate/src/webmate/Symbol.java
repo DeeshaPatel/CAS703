@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link webmate.Symbol#getSym <em>Sym</em>}</li>
  *   <li>{@link webmate.Symbol#getTag <em>Tag</em>}</li>
+ *   <li>{@link webmate.Symbol#getCount <em>Count</em>}</li>
  * </ul>
  *
  * @see webmate.WebmatePackage#getSymbol()
@@ -68,5 +69,27 @@ public interface Symbol extends EObject {
 	 * @generated
 	 */
 	void setTag(Tag value);
+
+	/**
+	 * Returns the value of the '<em><b>Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Count</em>' attribute.
+	 * @see #setCount(int)
+	 * @see webmate.WebmatePackage#getSymbol_Count()
+	 * @model
+	 * @generated
+	 */
+	int getCount();
+
+	/**
+	 * Sets the value of the '{@link webmate.Symbol#getCount <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Count</em>' attribute.
+	 * @see #getCount()
+	 * @generated
+	 */
+	void setCount(int value);
 
 } // Symbol

@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWebMateParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'#'", "'.'", "'('", "')'", "'>'", "'*'", "'+'", "'['", "'='", "']'", "'plus'", "'multiply'", "'dot'", "'hash'", "'greaterthan'", "'caret'", "'div'", "'h1'", "'p'", "'ul'", "'li'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'#'", "'*'", "'+'", "'>'", "'^'", "'.'", "'['", "'='", "']'", "'('", "')'", "'-'", "'plus'", "'multiply'", "'dot'", "'hash'", "'greaterthan'", "'caret'", "'div'", "'h1'", "'p'", "'ul'", "'li'"
     };
-    public static final int RULE_STRING=5;
+    public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -32,19 +32,23 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_ID=6;
+    public static final int T__32=32;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=4;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -165,7 +169,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_STRING)||(LA1_0>=27 && LA1_0<=31)) ) {
+                if ( (LA1_0==11) ) {
                     alt1=1;
                 }
 
@@ -271,32 +275,34 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbbreviation"
-    // InternalWebMate.g:117:1: ruleAbbreviation returns [EObject current=null] : ( () ( ( ruleEString ) )* ( ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )? ) ) ;
+    // InternalWebMate.g:117:1: ruleAbbreviation returns [EObject current=null] : ( () otherlv_1= '{' ( ( ( ruleEString ) )* | ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) ) ) otherlv_9= '}' ) ;
     public final EObject ruleAbbreviation() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_tags_2_0 = null;
-
-        EObject lv_classes_3_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_9=null;
+        EObject lv_tags_3_0 = null;
 
         EObject lv_ids_4_0 = null;
 
         EObject lv_symbols_5_0 = null;
 
-        EObject lv_attributes_6_0 = null;
+        EObject lv_classes_6_0 = null;
 
-        EObject lv_group_7_0 = null;
+        EObject lv_attributes_7_0 = null;
+
+        EObject lv_group_8_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalWebMate.g:123:2: ( ( () ( ( ruleEString ) )* ( ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )? ) ) )
-            // InternalWebMate.g:124:2: ( () ( ( ruleEString ) )* ( ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )? ) )
+            // InternalWebMate.g:123:2: ( ( () otherlv_1= '{' ( ( ( ruleEString ) )* | ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) ) ) otherlv_9= '}' ) )
+            // InternalWebMate.g:124:2: ( () otherlv_1= '{' ( ( ( ruleEString ) )* | ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) ) ) otherlv_9= '}' )
             {
-            // InternalWebMate.g:124:2: ( () ( ( ruleEString ) )* ( ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )? ) )
-            // InternalWebMate.g:125:3: () ( ( ruleEString ) )* ( ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )? )
+            // InternalWebMate.g:124:2: ( () otherlv_1= '{' ( ( ( ruleEString ) )* | ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) ) ) otherlv_9= '}' )
+            // InternalWebMate.g:125:3: () otherlv_1= '{' ( ( ( ruleEString ) )* | ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) ) ) otherlv_9= '}'
             {
             // InternalWebMate.g:125:3: ()
             // InternalWebMate.g:126:4: 
@@ -309,119 +315,390 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWebMate.g:132:3: ( ( ruleEString ) )*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+            otherlv_1=(Token)match(input,11,FOLLOW_4); 
 
-                if ( ((LA2_0>=RULE_INT && LA2_0<=RULE_STRING)) ) {
-                    alt2=1;
-                }
+            			newLeafNode(otherlv_1, grammarAccess.getAbbreviationAccess().getLeftCurlyBracketKeyword_1());
+            		
+            // InternalWebMate.g:136:3: ( ( ( ruleEString ) )* | ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) ) )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-
-                switch (alt2) {
-            	case 1 :
-            	    // InternalWebMate.g:133:4: ( ruleEString )
-            	    {
-            	    // InternalWebMate.g:133:4: ( ruleEString )
-            	    // InternalWebMate.g:134:5: ruleEString
-            	    {
-
-            	    					if (current==null) {
-            	    						current = createModelElement(grammarAccess.getAbbreviationRule());
-            	    					}
-            	    				
-
-            	    					newCompositeNode(grammarAccess.getAbbreviationAccess().getAbbreviationAbbreviationCrossReference_1_0());
-            	    				
-            	    pushFollow(FOLLOW_4);
-            	    ruleEString();
-
-            	    state._fsp--;
-
-
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
-            // InternalWebMate.g:148:3: ( ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )? )
-            // InternalWebMate.g:149:4: ( (lv_tags_2_0= ruleTag ) ) ( (lv_classes_3_0= ruleClass ) )? ( (lv_ids_4_0= ruleID0 ) )? ( (lv_symbols_5_0= ruleSymbol ) )? ( (lv_attributes_6_0= ruleAttribute ) )? ( (lv_group_7_0= ruleGroup ) )?
-            {
-            // InternalWebMate.g:149:4: ( (lv_tags_2_0= ruleTag ) )
-            // InternalWebMate.g:150:5: (lv_tags_2_0= ruleTag )
-            {
-            // InternalWebMate.g:150:5: (lv_tags_2_0= ruleTag )
-            // InternalWebMate.g:151:6: lv_tags_2_0= ruleTag
-            {
-
-            						newCompositeNode(grammarAccess.getAbbreviationAccess().getTagsTagParserRuleCall_2_0_0());
-            					
-            pushFollow(FOLLOW_5);
-            lv_tags_2_0=ruleTag();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-            						}
-            						set(
-            							current,
-            							"tags",
-            							lv_tags_2_0,
-            							"org.xtext.example.mydsl.WebMate.Tag");
-            						afterParserOrEnumRuleCall();
-            					
-
+            if ( ((LA9_0>=RULE_STRING && LA9_0<=RULE_ID)||LA9_0==12) ) {
+                alt9=1;
             }
-
-
+            else if ( ((LA9_0>=31 && LA9_0<=35)) ) {
+                alt9=2;
             }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
 
-            // InternalWebMate.g:168:4: ( (lv_classes_3_0= ruleClass ) )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==12) ) {
-                alt3=1;
+                throw nvae;
             }
-            switch (alt3) {
+            switch (alt9) {
                 case 1 :
-                    // InternalWebMate.g:169:5: (lv_classes_3_0= ruleClass )
+                    // InternalWebMate.g:137:4: ( ( ruleEString ) )*
                     {
-                    // InternalWebMate.g:169:5: (lv_classes_3_0= ruleClass )
-                    // InternalWebMate.g:170:6: lv_classes_3_0= ruleClass
+                    // InternalWebMate.g:137:4: ( ( ruleEString ) )*
+                    loop2:
+                    do {
+                        int alt2=2;
+                        int LA2_0 = input.LA(1);
+
+                        if ( ((LA2_0>=RULE_STRING && LA2_0<=RULE_ID)) ) {
+                            alt2=1;
+                        }
+
+
+                        switch (alt2) {
+                    	case 1 :
+                    	    // InternalWebMate.g:138:5: ( ruleEString )
+                    	    {
+                    	    // InternalWebMate.g:138:5: ( ruleEString )
+                    	    // InternalWebMate.g:139:6: ruleEString
+                    	    {
+
+                    	    						if (current==null) {
+                    	    							current = createModelElement(grammarAccess.getAbbreviationRule());
+                    	    						}
+                    	    					
+
+                    	    						newCompositeNode(grammarAccess.getAbbreviationAccess().getAbbreviationAbbreviationCrossReference_2_0_0());
+                    	    					
+                    	    pushFollow(FOLLOW_5);
+                    	    ruleEString();
+
+                    	    state._fsp--;
+
+
+                    	    						afterParserOrEnumRuleCall();
+                    	    					
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop2;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalWebMate.g:154:4: ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) )
                     {
+                    // InternalWebMate.g:154:4: ( ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* ) )
+                    // InternalWebMate.g:155:5: ( (lv_tags_3_0= ruleTag ) )+ ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* )
+                    {
+                    // InternalWebMate.g:155:5: ( (lv_tags_3_0= ruleTag ) )+
+                    int cnt3=0;
+                    loop3:
+                    do {
+                        int alt3=2;
+                        int LA3_0 = input.LA(1);
 
-                    						newCompositeNode(grammarAccess.getAbbreviationAccess().getClassesClassParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_6);
-                    lv_classes_3_0=ruleClass();
-
-                    state._fsp--;
+                        if ( ((LA3_0>=31 && LA3_0<=35)) ) {
+                            alt3=1;
+                        }
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"classes",
-                    							lv_classes_3_0,
-                    							"org.xtext.example.mydsl.WebMate.Class");
-                    						afterParserOrEnumRuleCall();
-                    					
+                        switch (alt3) {
+                    	case 1 :
+                    	    // InternalWebMate.g:156:6: (lv_tags_3_0= ruleTag )
+                    	    {
+                    	    // InternalWebMate.g:156:6: (lv_tags_3_0= ruleTag )
+                    	    // InternalWebMate.g:157:7: lv_tags_3_0= ruleTag
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getAbbreviationAccess().getTagsTagParserRuleCall_2_1_0_0());
+                    	    						
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_tags_3_0=ruleTag();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"tags",
+                    	    								lv_tags_3_0,
+                    	    								"org.xtext.example.mydsl.WebMate.Tag");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt3 >= 1 ) break loop3;
+                                EarlyExitException eee =
+                                    new EarlyExitException(3, input);
+                                throw eee;
+                        }
+                        cnt3++;
+                    } while (true);
+
+                    // InternalWebMate.g:174:5: ( ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )* )
+                    // InternalWebMate.g:175:6: ( (lv_ids_4_0= ruleID0 ) )* ( (lv_symbols_5_0= ruleSymbol ) )* ( (lv_classes_6_0= ruleClass ) )* ( (lv_attributes_7_0= ruleAttribute ) )* ( (lv_group_8_0= ruleGroup ) )*
+                    {
+                    // InternalWebMate.g:175:6: ( (lv_ids_4_0= ruleID0 ) )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0==13) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // InternalWebMate.g:176:7: (lv_ids_4_0= ruleID0 )
+                    	    {
+                    	    // InternalWebMate.g:176:7: (lv_ids_4_0= ruleID0 )
+                    	    // InternalWebMate.g:177:8: lv_ids_4_0= ruleID0
+                    	    {
+
+                    	    								newCompositeNode(grammarAccess.getAbbreviationAccess().getIdsID0ParserRuleCall_2_1_1_0_0());
+                    	    							
+                    	    pushFollow(FOLLOW_7);
+                    	    lv_ids_4_0=ruleID0();
+
+                    	    state._fsp--;
+
+
+                    	    								if (current==null) {
+                    	    									current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+                    	    								}
+                    	    								add(
+                    	    									current,
+                    	    									"ids",
+                    	    									lv_ids_4_0,
+                    	    									"org.xtext.example.mydsl.WebMate.ID0");
+                    	    								afterParserOrEnumRuleCall();
+                    	    							
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop4;
+                        }
+                    } while (true);
+
+                    // InternalWebMate.g:194:6: ( (lv_symbols_5_0= ruleSymbol ) )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( ((LA5_0>=14 && LA5_0<=17)||(LA5_0>=25 && LA5_0<=30)) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // InternalWebMate.g:195:7: (lv_symbols_5_0= ruleSymbol )
+                    	    {
+                    	    // InternalWebMate.g:195:7: (lv_symbols_5_0= ruleSymbol )
+                    	    // InternalWebMate.g:196:8: lv_symbols_5_0= ruleSymbol
+                    	    {
+
+                    	    								newCompositeNode(grammarAccess.getAbbreviationAccess().getSymbolsSymbolParserRuleCall_2_1_1_1_0());
+                    	    							
+                    	    pushFollow(FOLLOW_8);
+                    	    lv_symbols_5_0=ruleSymbol();
+
+                    	    state._fsp--;
+
+
+                    	    								if (current==null) {
+                    	    									current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+                    	    								}
+                    	    								add(
+                    	    									current,
+                    	    									"symbols",
+                    	    									lv_symbols_5_0,
+                    	    									"org.xtext.example.mydsl.WebMate.Symbol");
+                    	    								afterParserOrEnumRuleCall();
+                    	    							
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+                    // InternalWebMate.g:213:6: ( (lv_classes_6_0= ruleClass ) )*
+                    loop6:
+                    do {
+                        int alt6=2;
+                        int LA6_0 = input.LA(1);
+
+                        if ( (LA6_0==18) ) {
+                            alt6=1;
+                        }
+
+
+                        switch (alt6) {
+                    	case 1 :
+                    	    // InternalWebMate.g:214:7: (lv_classes_6_0= ruleClass )
+                    	    {
+                    	    // InternalWebMate.g:214:7: (lv_classes_6_0= ruleClass )
+                    	    // InternalWebMate.g:215:8: lv_classes_6_0= ruleClass
+                    	    {
+
+                    	    								newCompositeNode(grammarAccess.getAbbreviationAccess().getClassesClassParserRuleCall_2_1_1_2_0());
+                    	    							
+                    	    pushFollow(FOLLOW_9);
+                    	    lv_classes_6_0=ruleClass();
+
+                    	    state._fsp--;
+
+
+                    	    								if (current==null) {
+                    	    									current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+                    	    								}
+                    	    								add(
+                    	    									current,
+                    	    									"classes",
+                    	    									lv_classes_6_0,
+                    	    									"org.xtext.example.mydsl.WebMate.Class");
+                    	    								afterParserOrEnumRuleCall();
+                    	    							
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop6;
+                        }
+                    } while (true);
+
+                    // InternalWebMate.g:232:6: ( (lv_attributes_7_0= ruleAttribute ) )*
+                    loop7:
+                    do {
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
+
+                        if ( (LA7_0==19) ) {
+                            alt7=1;
+                        }
+
+
+                        switch (alt7) {
+                    	case 1 :
+                    	    // InternalWebMate.g:233:7: (lv_attributes_7_0= ruleAttribute )
+                    	    {
+                    	    // InternalWebMate.g:233:7: (lv_attributes_7_0= ruleAttribute )
+                    	    // InternalWebMate.g:234:8: lv_attributes_7_0= ruleAttribute
+                    	    {
+
+                    	    								newCompositeNode(grammarAccess.getAbbreviationAccess().getAttributesAttributeParserRuleCall_2_1_1_3_0());
+                    	    							
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_attributes_7_0=ruleAttribute();
+
+                    	    state._fsp--;
+
+
+                    	    								if (current==null) {
+                    	    									current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+                    	    								}
+                    	    								add(
+                    	    									current,
+                    	    									"attributes",
+                    	    									lv_attributes_7_0,
+                    	    									"org.xtext.example.mydsl.WebMate.Attribute");
+                    	    								afterParserOrEnumRuleCall();
+                    	    							
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop7;
+                        }
+                    } while (true);
+
+                    // InternalWebMate.g:251:6: ( (lv_group_8_0= ruleGroup ) )*
+                    loop8:
+                    do {
+                        int alt8=2;
+                        int LA8_0 = input.LA(1);
+
+                        if ( (LA8_0==22) ) {
+                            alt8=1;
+                        }
+
+
+                        switch (alt8) {
+                    	case 1 :
+                    	    // InternalWebMate.g:252:7: (lv_group_8_0= ruleGroup )
+                    	    {
+                    	    // InternalWebMate.g:252:7: (lv_group_8_0= ruleGroup )
+                    	    // InternalWebMate.g:253:8: lv_group_8_0= ruleGroup
+                    	    {
+
+                    	    								newCompositeNode(grammarAccess.getAbbreviationAccess().getGroupGroupParserRuleCall_2_1_1_4_0());
+                    	    							
+                    	    pushFollow(FOLLOW_11);
+                    	    lv_group_8_0=ruleGroup();
+
+                    	    state._fsp--;
+
+
+                    	    								if (current==null) {
+                    	    									current = createModelElementForParent(grammarAccess.getAbbreviationRule());
+                    	    								}
+                    	    								add(
+                    	    									current,
+                    	    									"group",
+                    	    									lv_group_8_0,
+                    	    									"org.xtext.example.mydsl.WebMate.Group");
+                    	    								afterParserOrEnumRuleCall();
+                    	    							
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop8;
+                        }
+                    } while (true);
+
+
+                    }
+
 
                     }
 
@@ -431,177 +708,10 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWebMate.g:187:4: ( (lv_ids_4_0= ruleID0 ) )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            otherlv_9=(Token)match(input,12,FOLLOW_2); 
 
-            if ( (LA4_0==11) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalWebMate.g:188:5: (lv_ids_4_0= ruleID0 )
-                    {
-                    // InternalWebMate.g:188:5: (lv_ids_4_0= ruleID0 )
-                    // InternalWebMate.g:189:6: lv_ids_4_0= ruleID0
-                    {
-
-                    						newCompositeNode(grammarAccess.getAbbreviationAccess().getIdsID0ParserRuleCall_2_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_ids_4_0=ruleID0();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"ids",
-                    							lv_ids_4_0,
-                    							"org.xtext.example.mydsl.WebMate.ID0");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalWebMate.g:206:4: ( (lv_symbols_5_0= ruleSymbol ) )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( ((LA5_0>=21 && LA5_0<=26)) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // InternalWebMate.g:207:5: (lv_symbols_5_0= ruleSymbol )
-                    {
-                    // InternalWebMate.g:207:5: (lv_symbols_5_0= ruleSymbol )
-                    // InternalWebMate.g:208:6: lv_symbols_5_0= ruleSymbol
-                    {
-
-                    						newCompositeNode(grammarAccess.getAbbreviationAccess().getSymbolsSymbolParserRuleCall_2_3_0());
-                    					
-                    pushFollow(FOLLOW_8);
-                    lv_symbols_5_0=ruleSymbol();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"symbols",
-                    							lv_symbols_5_0,
-                    							"org.xtext.example.mydsl.WebMate.Symbol");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalWebMate.g:225:4: ( (lv_attributes_6_0= ruleAttribute ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==18) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalWebMate.g:226:5: (lv_attributes_6_0= ruleAttribute )
-                    {
-                    // InternalWebMate.g:226:5: (lv_attributes_6_0= ruleAttribute )
-                    // InternalWebMate.g:227:6: lv_attributes_6_0= ruleAttribute
-                    {
-
-                    						newCompositeNode(grammarAccess.getAbbreviationAccess().getAttributesAttributeParserRuleCall_2_4_0());
-                    					
-                    pushFollow(FOLLOW_9);
-                    lv_attributes_6_0=ruleAttribute();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"attributes",
-                    							lv_attributes_6_0,
-                    							"org.xtext.example.mydsl.WebMate.Attribute");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalWebMate.g:244:4: ( (lv_group_7_0= ruleGroup ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==13||(LA7_0>=16 && LA7_0<=17)) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // InternalWebMate.g:245:5: (lv_group_7_0= ruleGroup )
-                    {
-                    // InternalWebMate.g:245:5: (lv_group_7_0= ruleGroup )
-                    // InternalWebMate.g:246:6: lv_group_7_0= ruleGroup
-                    {
-
-                    						newCompositeNode(grammarAccess.getAbbreviationAccess().getGroupGroupParserRuleCall_2_5_0());
-                    					
-                    pushFollow(FOLLOW_2);
-                    lv_group_7_0=ruleGroup();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAbbreviationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"group",
-                    							lv_group_7_0,
-                    							"org.xtext.example.mydsl.WebMate.Group");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
+            			newLeafNode(otherlv_9, grammarAccess.getAbbreviationAccess().getRightCurlyBracketKeyword_3());
+            		
 
             }
 
@@ -625,7 +735,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleID0"
-    // InternalWebMate.g:268:1: entryRuleID0 returns [EObject current=null] : iv_ruleID0= ruleID0 EOF ;
+    // InternalWebMate.g:281:1: entryRuleID0 returns [EObject current=null] : iv_ruleID0= ruleID0 EOF ;
     public final EObject entryRuleID0() throws RecognitionException {
         EObject current = null;
 
@@ -633,8 +743,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWebMate.g:268:44: (iv_ruleID0= ruleID0 EOF )
-            // InternalWebMate.g:269:2: iv_ruleID0= ruleID0 EOF
+            // InternalWebMate.g:281:44: (iv_ruleID0= ruleID0 EOF )
+            // InternalWebMate.g:282:2: iv_ruleID0= ruleID0 EOF
             {
              newCompositeNode(grammarAccess.getID0Rule()); 
             pushFollow(FOLLOW_1);
@@ -661,7 +771,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleID0"
-    // InternalWebMate.g:275:1: ruleID0 returns [EObject current=null] : ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) ) ;
+    // InternalWebMate.g:288:1: ruleID0 returns [EObject current=null] : ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) ) ;
     public final EObject ruleID0() throws RecognitionException {
         EObject current = null;
 
@@ -673,14 +783,14 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWebMate.g:281:2: ( ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) ) )
-            // InternalWebMate.g:282:2: ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) )
+            // InternalWebMate.g:294:2: ( ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) ) )
+            // InternalWebMate.g:295:2: ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) )
             {
-            // InternalWebMate.g:282:2: ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) )
-            // InternalWebMate.g:283:3: () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) )
+            // InternalWebMate.g:295:2: ( () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) ) )
+            // InternalWebMate.g:296:3: () (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) )
             {
-            // InternalWebMate.g:283:3: ()
-            // InternalWebMate.g:284:4: 
+            // InternalWebMate.g:296:3: ()
+            // InternalWebMate.g:297:4: 
             {
 
             				current = forceCreateModelElement(
@@ -690,18 +800,18 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWebMate.g:290:3: (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) )
-            // InternalWebMate.g:291:4: otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) )
+            // InternalWebMate.g:303:3: (otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) ) )
+            // InternalWebMate.g:304:4: otherlv_1= '#' ( (lv_idName_2_0= ruleEString ) )
             {
-            otherlv_1=(Token)match(input,11,FOLLOW_10); 
+            otherlv_1=(Token)match(input,13,FOLLOW_12); 
 
             				newLeafNode(otherlv_1, grammarAccess.getID0Access().getNumberSignKeyword_1_0());
             			
-            // InternalWebMate.g:295:4: ( (lv_idName_2_0= ruleEString ) )
-            // InternalWebMate.g:296:5: (lv_idName_2_0= ruleEString )
+            // InternalWebMate.g:308:4: ( (lv_idName_2_0= ruleEString ) )
+            // InternalWebMate.g:309:5: (lv_idName_2_0= ruleEString )
             {
-            // InternalWebMate.g:296:5: (lv_idName_2_0= ruleEString )
-            // InternalWebMate.g:297:6: lv_idName_2_0= ruleEString
+            // InternalWebMate.g:309:5: (lv_idName_2_0= ruleEString )
+            // InternalWebMate.g:310:6: lv_idName_2_0= ruleEString
             {
 
             						newCompositeNode(grammarAccess.getID0Access().getIdNameEStringParserRuleCall_1_1_0());
@@ -754,7 +864,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSymbol"
-    // InternalWebMate.g:319:1: entryRuleSymbol returns [EObject current=null] : iv_ruleSymbol= ruleSymbol EOF ;
+    // InternalWebMate.g:332:1: entryRuleSymbol returns [EObject current=null] : iv_ruleSymbol= ruleSymbol EOF ;
     public final EObject entryRuleSymbol() throws RecognitionException {
         EObject current = null;
 
@@ -762,8 +872,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWebMate.g:319:47: (iv_ruleSymbol= ruleSymbol EOF )
-            // InternalWebMate.g:320:2: iv_ruleSymbol= ruleSymbol EOF
+            // InternalWebMate.g:332:47: (iv_ruleSymbol= ruleSymbol EOF )
+            // InternalWebMate.g:333:2: iv_ruleSymbol= ruleSymbol EOF
             {
              newCompositeNode(grammarAccess.getSymbolRule()); 
             pushFollow(FOLLOW_1);
@@ -790,93 +900,315 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSymbol"
-    // InternalWebMate.g:326:1: ruleSymbol returns [EObject current=null] : ( () ( (lv_sym_1_0= ruleValidSymbol ) ) ( ( ruleEString ) ) ) ;
+    // InternalWebMate.g:339:1: ruleSymbol returns [EObject current=null] : ( ( () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) ) ) | (otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) ) ) | (otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) ) ) | (otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) ) ) | ( (lv_sym_9_0= ruleValidSymbol ) ) ) ;
     public final EObject ruleSymbol() throws RecognitionException {
         EObject current = null;
 
-        Enumerator lv_sym_1_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        AntlrDatatypeRuleToken lv_count_2_0 = null;
+
+        EObject lv_tag_4_0 = null;
+
+        EObject lv_tag_6_0 = null;
+
+        EObject lv_tag_8_0 = null;
+
+        Enumerator lv_sym_9_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalWebMate.g:332:2: ( ( () ( (lv_sym_1_0= ruleValidSymbol ) ) ( ( ruleEString ) ) ) )
-            // InternalWebMate.g:333:2: ( () ( (lv_sym_1_0= ruleValidSymbol ) ) ( ( ruleEString ) ) )
+            // InternalWebMate.g:345:2: ( ( ( () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) ) ) | (otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) ) ) | (otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) ) ) | (otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) ) ) | ( (lv_sym_9_0= ruleValidSymbol ) ) ) )
+            // InternalWebMate.g:346:2: ( ( () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) ) ) | (otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) ) ) | (otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) ) ) | (otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) ) ) | ( (lv_sym_9_0= ruleValidSymbol ) ) )
             {
-            // InternalWebMate.g:333:2: ( () ( (lv_sym_1_0= ruleValidSymbol ) ) ( ( ruleEString ) ) )
-            // InternalWebMate.g:334:3: () ( (lv_sym_1_0= ruleValidSymbol ) ) ( ( ruleEString ) )
-            {
-            // InternalWebMate.g:334:3: ()
-            // InternalWebMate.g:335:4: 
-            {
+            // InternalWebMate.g:346:2: ( ( () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) ) ) | (otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) ) ) | (otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) ) ) | (otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) ) ) | ( (lv_sym_9_0= ruleValidSymbol ) ) )
+            int alt10=5;
+            switch ( input.LA(1) ) {
+            case 14:
+                {
+                alt10=1;
+                }
+                break;
+            case 15:
+                {
+                alt10=2;
+                }
+                break;
+            case 16:
+                {
+                alt10=3;
+                }
+                break;
+            case 17:
+                {
+                alt10=4;
+                }
+                break;
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
+                {
+                alt10=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 10, 0, input);
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getSymbolAccess().getSymbolAction_0(),
-            					current);
-            			
-
+                throw nvae;
             }
 
-            // InternalWebMate.g:341:3: ( (lv_sym_1_0= ruleValidSymbol ) )
-            // InternalWebMate.g:342:4: (lv_sym_1_0= ruleValidSymbol )
-            {
-            // InternalWebMate.g:342:4: (lv_sym_1_0= ruleValidSymbol )
-            // InternalWebMate.g:343:5: lv_sym_1_0= ruleValidSymbol
-            {
+            switch (alt10) {
+                case 1 :
+                    // InternalWebMate.g:347:3: ( () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) ) )
+                    {
+                    // InternalWebMate.g:347:3: ( () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) ) )
+                    // InternalWebMate.g:348:4: () (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) )
+                    {
+                    // InternalWebMate.g:348:4: ()
+                    // InternalWebMate.g:349:5: 
+                    {
 
-            					newCompositeNode(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_10);
-            lv_sym_1_0=ruleValidSymbol();
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getSymbolAccess().getSymbolAction_0_0(),
+                    						current);
+                    				
 
-            state._fsp--;
+                    }
 
+                    // InternalWebMate.g:355:4: (otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) ) )
+                    // InternalWebMate.g:356:5: otherlv_1= '*' ( (lv_count_2_0= ruleEInt ) )
+                    {
+                    otherlv_1=(Token)match(input,14,FOLLOW_13); 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getSymbolRule());
-            					}
-            					set(
-            						current,
-            						"sym",
-            						lv_sym_1_0,
-            						"org.xtext.example.mydsl.WebMate.ValidSymbol");
-            					afterParserOrEnumRuleCall();
-            				
+                    					newLeafNode(otherlv_1, grammarAccess.getSymbolAccess().getAsteriskKeyword_0_1_0());
+                    				
+                    // InternalWebMate.g:360:5: ( (lv_count_2_0= ruleEInt ) )
+                    // InternalWebMate.g:361:6: (lv_count_2_0= ruleEInt )
+                    {
+                    // InternalWebMate.g:361:6: (lv_count_2_0= ruleEInt )
+                    // InternalWebMate.g:362:7: lv_count_2_0= ruleEInt
+                    {
 
-            }
+                    							newCompositeNode(grammarAccess.getSymbolAccess().getCountEIntParserRuleCall_0_1_1_0());
+                    						
+                    pushFollow(FOLLOW_2);
+                    lv_count_2_0=ruleEInt();
 
-
-            }
-
-            // InternalWebMate.g:360:3: ( ( ruleEString ) )
-            // InternalWebMate.g:361:4: ( ruleEString )
-            {
-            // InternalWebMate.g:361:4: ( ruleEString )
-            // InternalWebMate.g:362:5: ruleEString
-            {
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getSymbolRule());
-            					}
-            				
-
-            					newCompositeNode(grammarAccess.getSymbolAccess().getTagTagCrossReference_2_0());
-            				
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
+                    state._fsp--;
 
 
-            					afterParserOrEnumRuleCall();
-            				
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getSymbolRule());
+                    							}
+                    							set(
+                    								current,
+                    								"count",
+                    								lv_count_2_0,
+                    								"org.xtext.example.mydsl.WebMate.EInt");
+                    							afterParserOrEnumRuleCall();
+                    						
 
-            }
+                    }
 
 
-            }
+                    }
 
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalWebMate.g:382:3: (otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) ) )
+                    {
+                    // InternalWebMate.g:382:3: (otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) ) )
+                    // InternalWebMate.g:383:4: otherlv_3= '+' ( (lv_tag_4_0= ruleTag ) )
+                    {
+                    otherlv_3=(Token)match(input,15,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getSymbolAccess().getPlusSignKeyword_1_0());
+                    			
+                    // InternalWebMate.g:387:4: ( (lv_tag_4_0= ruleTag ) )
+                    // InternalWebMate.g:388:5: (lv_tag_4_0= ruleTag )
+                    {
+                    // InternalWebMate.g:388:5: (lv_tag_4_0= ruleTag )
+                    // InternalWebMate.g:389:6: lv_tag_4_0= ruleTag
+                    {
+
+                    						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_1_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_tag_4_0=ruleTag();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getSymbolRule());
+                    						}
+                    						set(
+                    							current,
+                    							"tag",
+                    							lv_tag_4_0,
+                    							"org.xtext.example.mydsl.WebMate.Tag");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalWebMate.g:408:3: (otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) ) )
+                    {
+                    // InternalWebMate.g:408:3: (otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) ) )
+                    // InternalWebMate.g:409:4: otherlv_5= '>' ( (lv_tag_6_0= ruleTag ) )
+                    {
+                    otherlv_5=(Token)match(input,16,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getSymbolAccess().getGreaterThanSignKeyword_2_0());
+                    			
+                    // InternalWebMate.g:413:4: ( (lv_tag_6_0= ruleTag ) )
+                    // InternalWebMate.g:414:5: (lv_tag_6_0= ruleTag )
+                    {
+                    // InternalWebMate.g:414:5: (lv_tag_6_0= ruleTag )
+                    // InternalWebMate.g:415:6: lv_tag_6_0= ruleTag
+                    {
+
+                    						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_tag_6_0=ruleTag();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getSymbolRule());
+                    						}
+                    						set(
+                    							current,
+                    							"tag",
+                    							lv_tag_6_0,
+                    							"org.xtext.example.mydsl.WebMate.Tag");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalWebMate.g:434:3: (otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) ) )
+                    {
+                    // InternalWebMate.g:434:3: (otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) ) )
+                    // InternalWebMate.g:435:4: otherlv_7= '^' ( (lv_tag_8_0= ruleTag ) )
+                    {
+                    otherlv_7=(Token)match(input,17,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getSymbolAccess().getCircumflexAccentKeyword_3_0());
+                    			
+                    // InternalWebMate.g:439:4: ( (lv_tag_8_0= ruleTag ) )
+                    // InternalWebMate.g:440:5: (lv_tag_8_0= ruleTag )
+                    {
+                    // InternalWebMate.g:440:5: (lv_tag_8_0= ruleTag )
+                    // InternalWebMate.g:441:6: lv_tag_8_0= ruleTag
+                    {
+
+                    						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_tag_8_0=ruleTag();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getSymbolRule());
+                    						}
+                    						set(
+                    							current,
+                    							"tag",
+                    							lv_tag_8_0,
+                    							"org.xtext.example.mydsl.WebMate.Tag");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalWebMate.g:460:3: ( (lv_sym_9_0= ruleValidSymbol ) )
+                    {
+                    // InternalWebMate.g:460:3: ( (lv_sym_9_0= ruleValidSymbol ) )
+                    // InternalWebMate.g:461:4: (lv_sym_9_0= ruleValidSymbol )
+                    {
+                    // InternalWebMate.g:461:4: (lv_sym_9_0= ruleValidSymbol )
+                    // InternalWebMate.g:462:5: lv_sym_9_0= ruleValidSymbol
+                    {
+
+                    					newCompositeNode(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_4_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_sym_9_0=ruleValidSymbol();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getSymbolRule());
+                    					}
+                    					set(
+                    						current,
+                    						"sym",
+                    						lv_sym_9_0,
+                    						"org.xtext.example.mydsl.WebMate.ValidSymbol");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -900,7 +1232,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTag"
-    // InternalWebMate.g:380:1: entryRuleTag returns [EObject current=null] : iv_ruleTag= ruleTag EOF ;
+    // InternalWebMate.g:483:1: entryRuleTag returns [EObject current=null] : iv_ruleTag= ruleTag EOF ;
     public final EObject entryRuleTag() throws RecognitionException {
         EObject current = null;
 
@@ -908,8 +1240,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWebMate.g:380:44: (iv_ruleTag= ruleTag EOF )
-            // InternalWebMate.g:381:2: iv_ruleTag= ruleTag EOF
+            // InternalWebMate.g:483:44: (iv_ruleTag= ruleTag EOF )
+            // InternalWebMate.g:484:2: iv_ruleTag= ruleTag EOF
             {
              newCompositeNode(grammarAccess.getTagRule()); 
             pushFollow(FOLLOW_1);
@@ -936,25 +1268,31 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTag"
-    // InternalWebMate.g:387:1: ruleTag returns [EObject current=null] : ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) ) ;
+    // InternalWebMate.g:490:1: ruleTag returns [EObject current=null] : ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) ( (lv_class_2_0= ruleClass ) )* ( (lv_id_3_0= ruleID0 ) )? ( (lv_attribute_4_0= ruleAttribute ) )* ) ;
     public final EObject ruleTag() throws RecognitionException {
         EObject current = null;
 
         Enumerator lv_tagName_1_0 = null;
+
+        EObject lv_class_2_0 = null;
+
+        EObject lv_id_3_0 = null;
+
+        EObject lv_attribute_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalWebMate.g:393:2: ( ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) ) )
-            // InternalWebMate.g:394:2: ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) )
+            // InternalWebMate.g:496:2: ( ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) ( (lv_class_2_0= ruleClass ) )* ( (lv_id_3_0= ruleID0 ) )? ( (lv_attribute_4_0= ruleAttribute ) )* ) )
+            // InternalWebMate.g:497:2: ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) ( (lv_class_2_0= ruleClass ) )* ( (lv_id_3_0= ruleID0 ) )? ( (lv_attribute_4_0= ruleAttribute ) )* )
             {
-            // InternalWebMate.g:394:2: ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) )
-            // InternalWebMate.g:395:3: () ( (lv_tagName_1_0= ruleHTMLTag ) )
+            // InternalWebMate.g:497:2: ( () ( (lv_tagName_1_0= ruleHTMLTag ) ) ( (lv_class_2_0= ruleClass ) )* ( (lv_id_3_0= ruleID0 ) )? ( (lv_attribute_4_0= ruleAttribute ) )* )
+            // InternalWebMate.g:498:3: () ( (lv_tagName_1_0= ruleHTMLTag ) ) ( (lv_class_2_0= ruleClass ) )* ( (lv_id_3_0= ruleID0 ) )? ( (lv_attribute_4_0= ruleAttribute ) )*
             {
-            // InternalWebMate.g:395:3: ()
-            // InternalWebMate.g:396:4: 
+            // InternalWebMate.g:498:3: ()
+            // InternalWebMate.g:499:4: 
             {
 
             				current = forceCreateModelElement(
@@ -964,16 +1302,16 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWebMate.g:402:3: ( (lv_tagName_1_0= ruleHTMLTag ) )
-            // InternalWebMate.g:403:4: (lv_tagName_1_0= ruleHTMLTag )
+            // InternalWebMate.g:505:3: ( (lv_tagName_1_0= ruleHTMLTag ) )
+            // InternalWebMate.g:506:4: (lv_tagName_1_0= ruleHTMLTag )
             {
-            // InternalWebMate.g:403:4: (lv_tagName_1_0= ruleHTMLTag )
-            // InternalWebMate.g:404:5: lv_tagName_1_0= ruleHTMLTag
+            // InternalWebMate.g:506:4: (lv_tagName_1_0= ruleHTMLTag )
+            // InternalWebMate.g:507:5: lv_tagName_1_0= ruleHTMLTag
             {
 
             					newCompositeNode(grammarAccess.getTagAccess().getTagNameHTMLTagEnumRuleCall_1_0());
             				
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_14);
             lv_tagName_1_0=ruleHTMLTag();
 
             state._fsp--;
@@ -994,6 +1332,231 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
             }
+
+            // InternalWebMate.g:524:3: ( (lv_class_2_0= ruleClass ) )*
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==18) ) {
+                    int LA11_2 = input.LA(2);
+
+                    if ( (LA11_2==RULE_STRING) ) {
+                        alt11=1;
+                    }
+                    else if ( (LA11_2==RULE_ID) ) {
+                        alt11=1;
+                    }
+
+
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // InternalWebMate.g:525:4: (lv_class_2_0= ruleClass )
+            	    {
+            	    // InternalWebMate.g:525:4: (lv_class_2_0= ruleClass )
+            	    // InternalWebMate.g:526:5: lv_class_2_0= ruleClass
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getTagAccess().getClassClassParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_14);
+            	    lv_class_2_0=ruleClass();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getTagRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"class",
+            	    						lv_class_2_0,
+            	    						"org.xtext.example.mydsl.WebMate.Class");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop11;
+                }
+            } while (true);
+
+            // InternalWebMate.g:543:3: ( (lv_id_3_0= ruleID0 ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==13) ) {
+                int LA12_1 = input.LA(2);
+
+                if ( (LA12_1==RULE_STRING) ) {
+                    alt12=1;
+                }
+                else if ( (LA12_1==RULE_ID) ) {
+                    alt12=1;
+                }
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalWebMate.g:544:4: (lv_id_3_0= ruleID0 )
+                    {
+                    // InternalWebMate.g:544:4: (lv_id_3_0= ruleID0 )
+                    // InternalWebMate.g:545:5: lv_id_3_0= ruleID0
+                    {
+
+                    					newCompositeNode(grammarAccess.getTagAccess().getIdID0ParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_15);
+                    lv_id_3_0=ruleID0();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getTagRule());
+                    					}
+                    					set(
+                    						current,
+                    						"id",
+                    						lv_id_3_0,
+                    						"org.xtext.example.mydsl.WebMate.ID0");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalWebMate.g:562:3: ( (lv_attribute_4_0= ruleAttribute ) )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( (LA13_0==19) ) {
+                    int LA13_2 = input.LA(2);
+
+                    if ( (LA13_2==RULE_STRING) ) {
+                        int LA13_3 = input.LA(3);
+
+                        if ( (LA13_3==20) ) {
+                            int LA13_5 = input.LA(4);
+
+                            if ( (LA13_5==RULE_STRING) ) {
+                                int LA13_7 = input.LA(5);
+
+                                if ( (LA13_7==21) ) {
+                                    alt13=1;
+                                }
+
+
+                            }
+                            else if ( (LA13_5==RULE_ID) ) {
+                                int LA13_8 = input.LA(5);
+
+                                if ( (LA13_8==21) ) {
+                                    alt13=1;
+                                }
+
+
+                            }
+
+
+                        }
+                        else if ( (LA13_3==21) ) {
+                            alt13=1;
+                        }
+
+
+                    }
+                    else if ( (LA13_2==RULE_ID) ) {
+                        int LA13_4 = input.LA(3);
+
+                        if ( (LA13_4==20) ) {
+                            int LA13_5 = input.LA(4);
+
+                            if ( (LA13_5==RULE_STRING) ) {
+                                int LA13_7 = input.LA(5);
+
+                                if ( (LA13_7==21) ) {
+                                    alt13=1;
+                                }
+
+
+                            }
+                            else if ( (LA13_5==RULE_ID) ) {
+                                int LA13_8 = input.LA(5);
+
+                                if ( (LA13_8==21) ) {
+                                    alt13=1;
+                                }
+
+
+                            }
+
+
+                        }
+                        else if ( (LA13_4==21) ) {
+                            alt13=1;
+                        }
+
+
+                    }
+
+
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // InternalWebMate.g:563:4: (lv_attribute_4_0= ruleAttribute )
+            	    {
+            	    // InternalWebMate.g:563:4: (lv_attribute_4_0= ruleAttribute )
+            	    // InternalWebMate.g:564:5: lv_attribute_4_0= ruleAttribute
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getTagAccess().getAttributeAttributeParserRuleCall_4_0());
+            	    				
+            	    pushFollow(FOLLOW_15);
+            	    lv_attribute_4_0=ruleAttribute();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getTagRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"attribute",
+            	    						lv_attribute_4_0,
+            	    						"org.xtext.example.mydsl.WebMate.Attribute");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
 
 
             }
@@ -1018,7 +1581,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClass"
-    // InternalWebMate.g:425:1: entryRuleClass returns [EObject current=null] : iv_ruleClass= ruleClass EOF ;
+    // InternalWebMate.g:585:1: entryRuleClass returns [EObject current=null] : iv_ruleClass= ruleClass EOF ;
     public final EObject entryRuleClass() throws RecognitionException {
         EObject current = null;
 
@@ -1026,8 +1589,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWebMate.g:425:46: (iv_ruleClass= ruleClass EOF )
-            // InternalWebMate.g:426:2: iv_ruleClass= ruleClass EOF
+            // InternalWebMate.g:585:46: (iv_ruleClass= ruleClass EOF )
+            // InternalWebMate.g:586:2: iv_ruleClass= ruleClass EOF
             {
              newCompositeNode(grammarAccess.getClassRule()); 
             pushFollow(FOLLOW_1);
@@ -1054,7 +1617,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClass"
-    // InternalWebMate.g:432:1: ruleClass returns [EObject current=null] : ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) ) ;
+    // InternalWebMate.g:592:1: ruleClass returns [EObject current=null] : ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) ) ;
     public final EObject ruleClass() throws RecognitionException {
         EObject current = null;
 
@@ -1066,14 +1629,14 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWebMate.g:438:2: ( ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) ) )
-            // InternalWebMate.g:439:2: ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) )
+            // InternalWebMate.g:598:2: ( ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) ) )
+            // InternalWebMate.g:599:2: ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) )
             {
-            // InternalWebMate.g:439:2: ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) )
-            // InternalWebMate.g:440:3: () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) )
+            // InternalWebMate.g:599:2: ( () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) ) )
+            // InternalWebMate.g:600:3: () otherlv_1= '.' ( (lv_className_2_0= ruleEString ) )
             {
-            // InternalWebMate.g:440:3: ()
-            // InternalWebMate.g:441:4: 
+            // InternalWebMate.g:600:3: ()
+            // InternalWebMate.g:601:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1083,15 +1646,15 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_10); 
+            otherlv_1=(Token)match(input,18,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getClassAccess().getFullStopKeyword_1());
             		
-            // InternalWebMate.g:451:3: ( (lv_className_2_0= ruleEString ) )
-            // InternalWebMate.g:452:4: (lv_className_2_0= ruleEString )
+            // InternalWebMate.g:611:3: ( (lv_className_2_0= ruleEString ) )
+            // InternalWebMate.g:612:4: (lv_className_2_0= ruleEString )
             {
-            // InternalWebMate.g:452:4: (lv_className_2_0= ruleEString )
-            // InternalWebMate.g:453:5: lv_className_2_0= ruleEString
+            // InternalWebMate.g:612:4: (lv_className_2_0= ruleEString )
+            // InternalWebMate.g:613:5: lv_className_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getClassAccess().getClassNameEStringParserRuleCall_2_0());
@@ -1140,343 +1703,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleClass"
 
 
-    // $ANTLR start "entryRuleGroup"
-    // InternalWebMate.g:474:1: entryRuleGroup returns [EObject current=null] : iv_ruleGroup= ruleGroup EOF ;
-    public final EObject entryRuleGroup() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleGroup = null;
-
-
-        try {
-            // InternalWebMate.g:474:46: (iv_ruleGroup= ruleGroup EOF )
-            // InternalWebMate.g:475:2: iv_ruleGroup= ruleGroup EOF
-            {
-             newCompositeNode(grammarAccess.getGroupRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleGroup=ruleGroup();
-
-            state._fsp--;
-
-             current =iv_ruleGroup; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleGroup"
-
-
-    // $ANTLR start "ruleGroup"
-    // InternalWebMate.g:481:1: ruleGroup returns [EObject current=null] : ( ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) ) ) | (otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) ) ) | (otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) ) ) ) ;
-    public final EObject ruleGroup() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token lv_count_7_0=null;
-        Token otherlv_8=null;
-        EObject lv_abbreviation_2_0 = null;
-
-        EObject lv_abbreviation_5_0 = null;
-
-        EObject lv_abbreviation_9_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalWebMate.g:487:2: ( ( ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) ) ) | (otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) ) ) | (otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) ) ) ) )
-            // InternalWebMate.g:488:2: ( ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) ) ) | (otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) ) ) | (otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) ) ) )
-            {
-            // InternalWebMate.g:488:2: ( ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) ) ) | (otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) ) ) | (otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) ) ) )
-            int alt10=3;
-            switch ( input.LA(1) ) {
-            case 13:
-                {
-                alt10=1;
-                }
-                break;
-            case 16:
-                {
-                alt10=2;
-                }
-                break;
-            case 17:
-                {
-                alt10=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt10) {
-                case 1 :
-                    // InternalWebMate.g:489:3: ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) ) )
-                    {
-                    // InternalWebMate.g:489:3: ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) ) )
-                    // InternalWebMate.g:490:4: () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ (otherlv_3= ')' )? otherlv_4= '>' ( (lv_abbreviation_5_0= ruleAbbreviation ) )
-                    {
-                    // InternalWebMate.g:490:4: ()
-                    // InternalWebMate.g:491:5: 
-                    {
-
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getGroupAccess().getGroupAction_0_0(),
-                    						current);
-                    				
-
-                    }
-
-                    otherlv_1=(Token)match(input,13,FOLLOW_11); 
-
-                    				newLeafNode(otherlv_1, grammarAccess.getGroupAccess().getLeftParenthesisKeyword_0_1());
-                    			
-                    // InternalWebMate.g:501:4: ( (lv_abbreviation_2_0= ruleAbbreviation ) )+
-                    int cnt8=0;
-                    loop8:
-                    do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
-
-                        if ( ((LA8_0>=RULE_INT && LA8_0<=RULE_STRING)||(LA8_0>=27 && LA8_0<=31)) ) {
-                            alt8=1;
-                        }
-
-
-                        switch (alt8) {
-                    	case 1 :
-                    	    // InternalWebMate.g:502:5: (lv_abbreviation_2_0= ruleAbbreviation )
-                    	    {
-                    	    // InternalWebMate.g:502:5: (lv_abbreviation_2_0= ruleAbbreviation )
-                    	    // InternalWebMate.g:503:6: lv_abbreviation_2_0= ruleAbbreviation
-                    	    {
-
-                    	    						newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_0_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_11);
-                    	    lv_abbreviation_2_0=ruleAbbreviation();
-
-                    	    state._fsp--;
-
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getGroupRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"abbreviation",
-                    	    							lv_abbreviation_2_0,
-                    	    							"org.xtext.example.mydsl.WebMate.Abbreviation");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    if ( cnt8 >= 1 ) break loop8;
-                                EarlyExitException eee =
-                                    new EarlyExitException(8, input);
-                                throw eee;
-                        }
-                        cnt8++;
-                    } while (true);
-
-                    // InternalWebMate.g:520:4: (otherlv_3= ')' )?
-                    int alt9=2;
-                    int LA9_0 = input.LA(1);
-
-                    if ( (LA9_0==14) ) {
-                        alt9=1;
-                    }
-                    switch (alt9) {
-                        case 1 :
-                            // InternalWebMate.g:521:5: otherlv_3= ')'
-                            {
-                            otherlv_3=(Token)match(input,14,FOLLOW_12); 
-
-                            					newLeafNode(otherlv_3, grammarAccess.getGroupAccess().getRightParenthesisKeyword_0_3());
-                            				
-
-                            }
-                            break;
-
-                    }
-
-                    otherlv_4=(Token)match(input,15,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getGroupAccess().getGreaterThanSignKeyword_0_4());
-                    			
-                    // InternalWebMate.g:530:4: ( (lv_abbreviation_5_0= ruleAbbreviation ) )
-                    // InternalWebMate.g:531:5: (lv_abbreviation_5_0= ruleAbbreviation )
-                    {
-                    // InternalWebMate.g:531:5: (lv_abbreviation_5_0= ruleAbbreviation )
-                    // InternalWebMate.g:532:6: lv_abbreviation_5_0= ruleAbbreviation
-                    {
-
-                    						newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_0_5_0());
-                    					
-                    pushFollow(FOLLOW_2);
-                    lv_abbreviation_5_0=ruleAbbreviation();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getGroupRule());
-                    						}
-                    						add(
-                    							current,
-                    							"abbreviation",
-                    							lv_abbreviation_5_0,
-                    							"org.xtext.example.mydsl.WebMate.Abbreviation");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalWebMate.g:551:3: (otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) ) )
-                    {
-                    // InternalWebMate.g:551:3: (otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) ) )
-                    // InternalWebMate.g:552:4: otherlv_6= '*' ( (lv_count_7_0= RULE_INT ) )
-                    {
-                    otherlv_6=(Token)match(input,16,FOLLOW_14); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getGroupAccess().getAsteriskKeyword_1_0());
-                    			
-                    // InternalWebMate.g:556:4: ( (lv_count_7_0= RULE_INT ) )
-                    // InternalWebMate.g:557:5: (lv_count_7_0= RULE_INT )
-                    {
-                    // InternalWebMate.g:557:5: (lv_count_7_0= RULE_INT )
-                    // InternalWebMate.g:558:6: lv_count_7_0= RULE_INT
-                    {
-                    lv_count_7_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-                    						newLeafNode(lv_count_7_0, grammarAccess.getGroupAccess().getCountINTTerminalRuleCall_1_1_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getGroupRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"count",
-                    							lv_count_7_0,
-                    							"org.xtext.example.mydsl.WebMate.INT");
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalWebMate.g:576:3: (otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) ) )
-                    {
-                    // InternalWebMate.g:576:3: (otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) ) )
-                    // InternalWebMate.g:577:4: otherlv_8= '+' ( (lv_abbreviation_9_0= ruleAbbreviation ) )
-                    {
-                    otherlv_8=(Token)match(input,17,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getGroupAccess().getPlusSignKeyword_2_0());
-                    			
-                    // InternalWebMate.g:581:4: ( (lv_abbreviation_9_0= ruleAbbreviation ) )
-                    // InternalWebMate.g:582:5: (lv_abbreviation_9_0= ruleAbbreviation )
-                    {
-                    // InternalWebMate.g:582:5: (lv_abbreviation_9_0= ruleAbbreviation )
-                    // InternalWebMate.g:583:6: lv_abbreviation_9_0= ruleAbbreviation
-                    {
-
-                    						newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_2);
-                    lv_abbreviation_9_0=ruleAbbreviation();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getGroupRule());
-                    						}
-                    						add(
-                    							current,
-                    							"abbreviation",
-                    							lv_abbreviation_9_0,
-                    							"org.xtext.example.mydsl.WebMate.Abbreviation");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleGroup"
-
-
     // $ANTLR start "entryRuleAttribute"
-    // InternalWebMate.g:605:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // InternalWebMate.g:634:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1484,8 +1712,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWebMate.g:605:50: (iv_ruleAttribute= ruleAttribute EOF )
-            // InternalWebMate.g:606:2: iv_ruleAttribute= ruleAttribute EOF
+            // InternalWebMate.g:634:50: (iv_ruleAttribute= ruleAttribute EOF )
+            // InternalWebMate.g:635:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -1512,7 +1740,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalWebMate.g:612:1: ruleAttribute returns [EObject current=null] : ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) ) ;
+    // InternalWebMate.g:641:1: ruleAttribute returns [EObject current=null] : ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1528,14 +1756,14 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWebMate.g:618:2: ( ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) ) )
-            // InternalWebMate.g:619:2: ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) )
+            // InternalWebMate.g:647:2: ( ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) ) )
+            // InternalWebMate.g:648:2: ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) )
             {
-            // InternalWebMate.g:619:2: ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) )
-            // InternalWebMate.g:620:3: () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' )
+            // InternalWebMate.g:648:2: ( () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' ) )
+            // InternalWebMate.g:649:3: () (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' )
             {
-            // InternalWebMate.g:620:3: ()
-            // InternalWebMate.g:621:4: 
+            // InternalWebMate.g:649:3: ()
+            // InternalWebMate.g:650:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1545,23 +1773,23 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWebMate.g:627:3: (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' )
-            // InternalWebMate.g:628:4: otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']'
+            // InternalWebMate.g:656:3: (otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']' )
+            // InternalWebMate.g:657:4: otherlv_1= '[' ( (lv_attributeName_2_0= ruleEString ) ) (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )? otherlv_5= ']'
             {
-            otherlv_1=(Token)match(input,18,FOLLOW_10); 
+            otherlv_1=(Token)match(input,19,FOLLOW_12); 
 
             				newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_1_0());
             			
-            // InternalWebMate.g:632:4: ( (lv_attributeName_2_0= ruleEString ) )
-            // InternalWebMate.g:633:5: (lv_attributeName_2_0= ruleEString )
+            // InternalWebMate.g:661:4: ( (lv_attributeName_2_0= ruleEString ) )
+            // InternalWebMate.g:662:5: (lv_attributeName_2_0= ruleEString )
             {
-            // InternalWebMate.g:633:5: (lv_attributeName_2_0= ruleEString )
-            // InternalWebMate.g:634:6: lv_attributeName_2_0= ruleEString
+            // InternalWebMate.g:662:5: (lv_attributeName_2_0= ruleEString )
+            // InternalWebMate.g:663:6: lv_attributeName_2_0= ruleEString
             {
 
             						newCompositeNode(grammarAccess.getAttributeAccess().getAttributeNameEStringParserRuleCall_1_1_0());
             					
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             lv_attributeName_2_0=ruleEString();
 
             state._fsp--;
@@ -1583,31 +1811,31 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWebMate.g:651:4: (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalWebMate.g:680:4: (otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) ) )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA11_0==19) ) {
-                alt11=1;
+            if ( (LA14_0==20) ) {
+                alt14=1;
             }
-            switch (alt11) {
+            switch (alt14) {
                 case 1 :
-                    // InternalWebMate.g:652:5: otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) )
+                    // InternalWebMate.g:681:5: otherlv_3= '=' ( (lv_attributeValue_4_0= ruleEString ) )
                     {
-                    otherlv_3=(Token)match(input,19,FOLLOW_10); 
+                    otherlv_3=(Token)match(input,20,FOLLOW_12); 
 
                     					newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getEqualsSignKeyword_1_2_0());
                     				
-                    // InternalWebMate.g:656:5: ( (lv_attributeValue_4_0= ruleEString ) )
-                    // InternalWebMate.g:657:6: (lv_attributeValue_4_0= ruleEString )
+                    // InternalWebMate.g:685:5: ( (lv_attributeValue_4_0= ruleEString ) )
+                    // InternalWebMate.g:686:6: (lv_attributeValue_4_0= ruleEString )
                     {
-                    // InternalWebMate.g:657:6: (lv_attributeValue_4_0= ruleEString )
-                    // InternalWebMate.g:658:7: lv_attributeValue_4_0= ruleEString
+                    // InternalWebMate.g:686:6: (lv_attributeValue_4_0= ruleEString )
+                    // InternalWebMate.g:687:7: lv_attributeValue_4_0= ruleEString
                     {
 
                     							newCompositeNode(grammarAccess.getAttributeAccess().getAttributeValueEStringParserRuleCall_1_2_1_0());
                     						
-                    pushFollow(FOLLOW_16);
+                    pushFollow(FOLLOW_17);
                     lv_attributeValue_4_0=ruleEString();
 
                     state._fsp--;
@@ -1635,7 +1863,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_2); 
+            otherlv_5=(Token)match(input,21,FOLLOW_2); 
 
             				newLeafNode(otherlv_5, grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_1_3());
             			
@@ -1664,8 +1892,159 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAttribute"
 
 
+    // $ANTLR start "entryRuleGroup"
+    // InternalWebMate.g:714:1: entryRuleGroup returns [EObject current=null] : iv_ruleGroup= ruleGroup EOF ;
+    public final EObject entryRuleGroup() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleGroup = null;
+
+
+        try {
+            // InternalWebMate.g:714:46: (iv_ruleGroup= ruleGroup EOF )
+            // InternalWebMate.g:715:2: iv_ruleGroup= ruleGroup EOF
+            {
+             newCompositeNode(grammarAccess.getGroupRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleGroup=ruleGroup();
+
+            state._fsp--;
+
+             current =iv_ruleGroup; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleGroup"
+
+
+    // $ANTLR start "ruleGroup"
+    // InternalWebMate.g:721:1: ruleGroup returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ otherlv_3= ')' ) ;
+    public final EObject ruleGroup() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_abbreviation_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalWebMate.g:727:2: ( ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ otherlv_3= ')' ) )
+            // InternalWebMate.g:728:2: ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ otherlv_3= ')' )
+            {
+            // InternalWebMate.g:728:2: ( () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ otherlv_3= ')' )
+            // InternalWebMate.g:729:3: () otherlv_1= '(' ( (lv_abbreviation_2_0= ruleAbbreviation ) )+ otherlv_3= ')'
+            {
+            // InternalWebMate.g:729:3: ()
+            // InternalWebMate.g:730:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getGroupAccess().getGroupAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,22,FOLLOW_18); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getGroupAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalWebMate.g:740:3: ( (lv_abbreviation_2_0= ruleAbbreviation ) )+
+            int cnt15=0;
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( (LA15_0==11) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // InternalWebMate.g:741:4: (lv_abbreviation_2_0= ruleAbbreviation )
+            	    {
+            	    // InternalWebMate.g:741:4: (lv_abbreviation_2_0= ruleAbbreviation )
+            	    // InternalWebMate.g:742:5: lv_abbreviation_2_0= ruleAbbreviation
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_18);
+            	    lv_abbreviation_2_0=ruleAbbreviation();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getGroupRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"abbreviation",
+            	    						lv_abbreviation_2_0,
+            	    						"org.xtext.example.mydsl.WebMate.Abbreviation");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt15 >= 1 ) break loop15;
+                        EarlyExitException eee =
+                            new EarlyExitException(15, input);
+                        throw eee;
+                }
+                cnt15++;
+            } while (true);
+
+            otherlv_3=(Token)match(input,23,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getGroupAccess().getRightParenthesisKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGroup"
+
+
     // $ANTLR start "entryRuleEString"
-    // InternalWebMate.g:685:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalWebMate.g:767:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1673,8 +2052,8 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWebMate.g:685:47: (iv_ruleEString= ruleEString EOF )
-            // InternalWebMate.g:686:2: iv_ruleEString= ruleEString EOF
+            // InternalWebMate.g:767:47: (iv_ruleEString= ruleEString EOF )
+            // InternalWebMate.g:768:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -1701,39 +2080,39 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalWebMate.g:692:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT ) ;
+    // InternalWebMate.g:774:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_STRING_0=null;
-        Token this_INT_1=null;
+        Token this_ID_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalWebMate.g:698:2: ( (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT ) )
-            // InternalWebMate.g:699:2: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT )
+            // InternalWebMate.g:780:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalWebMate.g:781:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalWebMate.g:699:2: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalWebMate.g:781:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA12_0==RULE_STRING) ) {
-                alt12=1;
+            if ( (LA16_0==RULE_STRING) ) {
+                alt16=1;
             }
-            else if ( (LA12_0==RULE_INT) ) {
-                alt12=2;
+            else if ( (LA16_0==RULE_ID) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt16) {
                 case 1 :
-                    // InternalWebMate.g:700:3: this_STRING_0= RULE_STRING
+                    // InternalWebMate.g:782:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1746,14 +2125,14 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:708:3: this_INT_1= RULE_INT
+                    // InternalWebMate.g:790:3: this_ID_1= RULE_ID
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_2); 
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-                    			current.merge(this_INT_1);
+                    			current.merge(this_ID_1);
                     		
 
-                    			newLeafNode(this_INT_1, grammarAccess.getEStringAccess().getINTTerminalRuleCall_1());
+                    			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
                     		
 
                     }
@@ -1780,8 +2159,113 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEString"
 
 
+    // $ANTLR start "entryRuleEInt"
+    // InternalWebMate.g:801:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    public final String entryRuleEInt() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleEInt = null;
+
+
+        try {
+            // InternalWebMate.g:801:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalWebMate.g:802:2: iv_ruleEInt= ruleEInt EOF
+            {
+             newCompositeNode(grammarAccess.getEIntRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEInt=ruleEInt();
+
+            state._fsp--;
+
+             current =iv_ruleEInt.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEInt"
+
+
+    // $ANTLR start "ruleEInt"
+    // InternalWebMate.g:808:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        Token this_INT_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWebMate.g:814:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalWebMate.g:815:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            {
+            // InternalWebMate.g:815:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalWebMate.g:816:3: (kw= '-' )? this_INT_1= RULE_INT
+            {
+            // InternalWebMate.g:816:3: (kw= '-' )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==24) ) {
+                alt17=1;
+            }
+            switch (alt17) {
+                case 1 :
+                    // InternalWebMate.g:817:4: kw= '-'
+                    {
+                    kw=(Token)match(input,24,FOLLOW_19); 
+
+                    				current.merge(kw);
+                    				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            			current.merge(this_INT_1);
+            		
+
+            			newLeafNode(this_INT_1, grammarAccess.getEIntAccess().getINTTerminalRuleCall_1());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEInt"
+
+
     // $ANTLR start "ruleValidSymbol"
-    // InternalWebMate.g:719:1: ruleValidSymbol returns [Enumerator current=null] : ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) ) ;
+    // InternalWebMate.g:834:1: ruleValidSymbol returns [Enumerator current=null] : ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) ) ;
     public final Enumerator ruleValidSymbol() throws RecognitionException {
         Enumerator current = null;
 
@@ -1796,57 +2280,57 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWebMate.g:725:2: ( ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) ) )
-            // InternalWebMate.g:726:2: ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) )
+            // InternalWebMate.g:840:2: ( ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) ) )
+            // InternalWebMate.g:841:2: ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) )
             {
-            // InternalWebMate.g:726:2: ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) )
-            int alt13=6;
+            // InternalWebMate.g:841:2: ( (enumLiteral_0= 'plus' ) | (enumLiteral_1= 'multiply' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'hash' ) | (enumLiteral_4= 'greaterthan' ) | (enumLiteral_5= 'caret' ) )
+            int alt18=6;
             switch ( input.LA(1) ) {
-            case 21:
-                {
-                alt13=1;
-                }
-                break;
-            case 22:
-                {
-                alt13=2;
-                }
-                break;
-            case 23:
-                {
-                alt13=3;
-                }
-                break;
-            case 24:
-                {
-                alt13=4;
-                }
-                break;
             case 25:
                 {
-                alt13=5;
+                alt18=1;
                 }
                 break;
             case 26:
                 {
-                alt13=6;
+                alt18=2;
+                }
+                break;
+            case 27:
+                {
+                alt18=3;
+                }
+                break;
+            case 28:
+                {
+                alt18=4;
+                }
+                break;
+            case 29:
+                {
+                alt18=5;
+                }
+                break;
+            case 30:
+                {
+                alt18=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt13) {
+            switch (alt18) {
                 case 1 :
-                    // InternalWebMate.g:727:3: (enumLiteral_0= 'plus' )
+                    // InternalWebMate.g:842:3: (enumLiteral_0= 'plus' )
                     {
-                    // InternalWebMate.g:727:3: (enumLiteral_0= 'plus' )
-                    // InternalWebMate.g:728:4: enumLiteral_0= 'plus'
+                    // InternalWebMate.g:842:3: (enumLiteral_0= 'plus' )
+                    // InternalWebMate.g:843:4: enumLiteral_0= 'plus'
                     {
-                    enumLiteral_0=(Token)match(input,21,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,25,FOLLOW_2); 
 
                     				current = grammarAccess.getValidSymbolAccess().getPlusEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getValidSymbolAccess().getPlusEnumLiteralDeclaration_0());
@@ -1858,12 +2342,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:735:3: (enumLiteral_1= 'multiply' )
+                    // InternalWebMate.g:850:3: (enumLiteral_1= 'multiply' )
                     {
-                    // InternalWebMate.g:735:3: (enumLiteral_1= 'multiply' )
-                    // InternalWebMate.g:736:4: enumLiteral_1= 'multiply'
+                    // InternalWebMate.g:850:3: (enumLiteral_1= 'multiply' )
+                    // InternalWebMate.g:851:4: enumLiteral_1= 'multiply'
                     {
-                    enumLiteral_1=(Token)match(input,22,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,26,FOLLOW_2); 
 
                     				current = grammarAccess.getValidSymbolAccess().getMultiplyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getValidSymbolAccess().getMultiplyEnumLiteralDeclaration_1());
@@ -1875,12 +2359,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalWebMate.g:743:3: (enumLiteral_2= 'dot' )
+                    // InternalWebMate.g:858:3: (enumLiteral_2= 'dot' )
                     {
-                    // InternalWebMate.g:743:3: (enumLiteral_2= 'dot' )
-                    // InternalWebMate.g:744:4: enumLiteral_2= 'dot'
+                    // InternalWebMate.g:858:3: (enumLiteral_2= 'dot' )
+                    // InternalWebMate.g:859:4: enumLiteral_2= 'dot'
                     {
-                    enumLiteral_2=(Token)match(input,23,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,27,FOLLOW_2); 
 
                     				current = grammarAccess.getValidSymbolAccess().getDotEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getValidSymbolAccess().getDotEnumLiteralDeclaration_2());
@@ -1892,12 +2376,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalWebMate.g:751:3: (enumLiteral_3= 'hash' )
+                    // InternalWebMate.g:866:3: (enumLiteral_3= 'hash' )
                     {
-                    // InternalWebMate.g:751:3: (enumLiteral_3= 'hash' )
-                    // InternalWebMate.g:752:4: enumLiteral_3= 'hash'
+                    // InternalWebMate.g:866:3: (enumLiteral_3= 'hash' )
+                    // InternalWebMate.g:867:4: enumLiteral_3= 'hash'
                     {
-                    enumLiteral_3=(Token)match(input,24,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,28,FOLLOW_2); 
 
                     				current = grammarAccess.getValidSymbolAccess().getHashEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getValidSymbolAccess().getHashEnumLiteralDeclaration_3());
@@ -1909,12 +2393,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalWebMate.g:759:3: (enumLiteral_4= 'greaterthan' )
+                    // InternalWebMate.g:874:3: (enumLiteral_4= 'greaterthan' )
                     {
-                    // InternalWebMate.g:759:3: (enumLiteral_4= 'greaterthan' )
-                    // InternalWebMate.g:760:4: enumLiteral_4= 'greaterthan'
+                    // InternalWebMate.g:874:3: (enumLiteral_4= 'greaterthan' )
+                    // InternalWebMate.g:875:4: enumLiteral_4= 'greaterthan'
                     {
-                    enumLiteral_4=(Token)match(input,25,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,29,FOLLOW_2); 
 
                     				current = grammarAccess.getValidSymbolAccess().getGreaterthanEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getValidSymbolAccess().getGreaterthanEnumLiteralDeclaration_4());
@@ -1926,12 +2410,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalWebMate.g:767:3: (enumLiteral_5= 'caret' )
+                    // InternalWebMate.g:882:3: (enumLiteral_5= 'caret' )
                     {
-                    // InternalWebMate.g:767:3: (enumLiteral_5= 'caret' )
-                    // InternalWebMate.g:768:4: enumLiteral_5= 'caret'
+                    // InternalWebMate.g:882:3: (enumLiteral_5= 'caret' )
+                    // InternalWebMate.g:883:4: enumLiteral_5= 'caret'
                     {
-                    enumLiteral_5=(Token)match(input,26,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,30,FOLLOW_2); 
 
                     				current = grammarAccess.getValidSymbolAccess().getCaretEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getValidSymbolAccess().getCaretEnumLiteralDeclaration_5());
@@ -1965,7 +2449,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHTMLTag"
-    // InternalWebMate.g:778:1: ruleHTMLTag returns [Enumerator current=null] : ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) ) ;
+    // InternalWebMate.g:893:1: ruleHTMLTag returns [Enumerator current=null] : ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) ) ;
     public final Enumerator ruleHTMLTag() throws RecognitionException {
         Enumerator current = null;
 
@@ -1979,52 +2463,52 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWebMate.g:784:2: ( ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) ) )
-            // InternalWebMate.g:785:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) )
+            // InternalWebMate.g:899:2: ( ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) ) )
+            // InternalWebMate.g:900:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) )
             {
-            // InternalWebMate.g:785:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) )
-            int alt14=5;
+            // InternalWebMate.g:900:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) )
+            int alt19=5;
             switch ( input.LA(1) ) {
-            case 27:
-                {
-                alt14=1;
-                }
-                break;
-            case 28:
-                {
-                alt14=2;
-                }
-                break;
-            case 29:
-                {
-                alt14=3;
-                }
-                break;
-            case 30:
-                {
-                alt14=4;
-                }
-                break;
             case 31:
                 {
-                alt14=5;
+                alt19=1;
+                }
+                break;
+            case 32:
+                {
+                alt19=2;
+                }
+                break;
+            case 33:
+                {
+                alt19=3;
+                }
+                break;
+            case 34:
+                {
+                alt19=4;
+                }
+                break;
+            case 35:
+                {
+                alt19=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt19) {
                 case 1 :
-                    // InternalWebMate.g:786:3: (enumLiteral_0= 'div' )
+                    // InternalWebMate.g:901:3: (enumLiteral_0= 'div' )
                     {
-                    // InternalWebMate.g:786:3: (enumLiteral_0= 'div' )
-                    // InternalWebMate.g:787:4: enumLiteral_0= 'div'
+                    // InternalWebMate.g:901:3: (enumLiteral_0= 'div' )
+                    // InternalWebMate.g:902:4: enumLiteral_0= 'div'
                     {
-                    enumLiteral_0=(Token)match(input,27,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,31,FOLLOW_2); 
 
                     				current = grammarAccess.getHTMLTagAccess().getDivEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getHTMLTagAccess().getDivEnumLiteralDeclaration_0());
@@ -2036,12 +2520,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:794:3: (enumLiteral_1= 'h1' )
+                    // InternalWebMate.g:909:3: (enumLiteral_1= 'h1' )
                     {
-                    // InternalWebMate.g:794:3: (enumLiteral_1= 'h1' )
-                    // InternalWebMate.g:795:4: enumLiteral_1= 'h1'
+                    // InternalWebMate.g:909:3: (enumLiteral_1= 'h1' )
+                    // InternalWebMate.g:910:4: enumLiteral_1= 'h1'
                     {
-                    enumLiteral_1=(Token)match(input,28,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,32,FOLLOW_2); 
 
                     				current = grammarAccess.getHTMLTagAccess().getH1EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getHTMLTagAccess().getH1EnumLiteralDeclaration_1());
@@ -2053,12 +2537,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalWebMate.g:802:3: (enumLiteral_2= 'p' )
+                    // InternalWebMate.g:917:3: (enumLiteral_2= 'p' )
                     {
-                    // InternalWebMate.g:802:3: (enumLiteral_2= 'p' )
-                    // InternalWebMate.g:803:4: enumLiteral_2= 'p'
+                    // InternalWebMate.g:917:3: (enumLiteral_2= 'p' )
+                    // InternalWebMate.g:918:4: enumLiteral_2= 'p'
                     {
-                    enumLiteral_2=(Token)match(input,29,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,33,FOLLOW_2); 
 
                     				current = grammarAccess.getHTMLTagAccess().getPEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getHTMLTagAccess().getPEnumLiteralDeclaration_2());
@@ -2070,12 +2554,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalWebMate.g:810:3: (enumLiteral_3= 'ul' )
+                    // InternalWebMate.g:925:3: (enumLiteral_3= 'ul' )
                     {
-                    // InternalWebMate.g:810:3: (enumLiteral_3= 'ul' )
-                    // InternalWebMate.g:811:4: enumLiteral_3= 'ul'
+                    // InternalWebMate.g:925:3: (enumLiteral_3= 'ul' )
+                    // InternalWebMate.g:926:4: enumLiteral_3= 'ul'
                     {
-                    enumLiteral_3=(Token)match(input,30,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,34,FOLLOW_2); 
 
                     				current = grammarAccess.getHTMLTagAccess().getUlEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getHTMLTagAccess().getUlEnumLiteralDeclaration_3());
@@ -2087,12 +2571,12 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalWebMate.g:818:3: (enumLiteral_4= 'li' )
+                    // InternalWebMate.g:933:3: (enumLiteral_4= 'li' )
                     {
-                    // InternalWebMate.g:818:3: (enumLiteral_4= 'li' )
-                    // InternalWebMate.g:819:4: enumLiteral_4= 'li'
+                    // InternalWebMate.g:933:3: (enumLiteral_4= 'li' )
+                    // InternalWebMate.g:934:4: enumLiteral_4= 'li'
                     {
-                    enumLiteral_4=(Token)match(input,31,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,35,FOLLOW_2); 
 
                     				current = grammarAccess.getHTMLTagAccess().getLiEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getHTMLTagAccess().getLiEnumLiteralDeclaration_4());
@@ -2131,19 +2615,22 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000F8000032L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000000FFE73830L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000007E73802L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000007E72802L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000007E72002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000072002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000032002L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00000000F800C030L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000000F8000030L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000F80001030L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001030L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000FFE4FF030L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000007E4FF000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000007E4FD000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000004C1000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000481000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000401000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001000040L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x00000000000C2002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000800800L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
 
 }

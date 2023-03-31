@@ -10,8 +10,15 @@ HTML returns HTML:
 
 Abbreviation returns Abbreviation:
 	{Abbreviation}
-	(abbreviation+=[Abbreviation|EString])*
-	(tags=Tag classes=Class? ids=ID0? symbols=Symbol? attributes=Attribute? group=Group?);
+	'{'
+	((abbreviation+=[Abbreviation|EString])* | (tags+=Tag)+
+	((ids+=ID0)* 
+	(symbols+=Symbol)* 
+	(classes+=Class)* 
+	(attributes+=Attribute)* 
+	(group+=Group)* ))
+	'}'
+	;
 
 ID0 returns ID:
 	{ID}
@@ -19,36 +26,33 @@ ID0 returns ID:
 
 Symbol returns Symbol:
 	{Symbol}
-	sym=ValidSymbol tag=[Tag|EString];
+	('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag);
+
 
 Tag returns Tag:
 	{Tag}
-	tagName=HTMLTag;
+	tagName=STRING class+=Class* id=ID0? attribute+=Attribute*;
 
 Class returns Class:
 	{Class}
 	'.' className=EString;
 
-Group returns Group:
-	{Group}
-	'(' (abbreviation+=Abbreviation)+ ')'?
-	'>' (abbreviation+=Abbreviation) | '*' (count=INT) | '+' (abbreviation+=Abbreviation);
-
 Attribute returns Attribute:
 	{Attribute}
 	('[' attributeName=EString ( '=' attributeValue=EString)? ']');
 
+Group returns Group:
+	{Group}
+	'(' (abbreviation+=Abbreviation)+ ')' ;
+
 EString returns ecore::EString:
-	STRING | INT;
-
-enum ValidSymbol returns ValidSymbol:
-				plus = 'plus' | multiply = 'multiply' | dot = 'dot' | hash = 'hash' | greaterthan = 'greaterthan' | caret = 'caret';
-
-enum HTMLTag returns HTMLTag:
-				div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li';
+	STRING | ID;
 						
 @Override	
 terminal INT returns ecore::EInt:('0'..'9')+;
 
 @Override
 terminal STRING:('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+EInt returns ecore::EInt:
+	'-'? INT;

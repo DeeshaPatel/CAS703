@@ -38,6 +38,9 @@
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Tag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Tag/tagName"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Tag/attribute"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Tag/id"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Tag/class"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Class/className"/>
@@ -48,10 +51,10 @@
     <genClasses ecoreClass="WebMate.ecore#//Symbol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/sym"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Symbol/tag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/count"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Group">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Group/abbreviation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Group/count"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

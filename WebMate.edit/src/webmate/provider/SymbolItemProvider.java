@@ -63,6 +63,7 @@ public class SymbolItemProvider
 
 			addSymPropertyDescriptor(object);
 			addTagPropertyDescriptor(object);
+			addCountPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,6 +113,28 @@ public class SymbolItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Count feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCountPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Symbol_count_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Symbol_count_feature", "_UI_Symbol_type"),
+				 WebmatePackage.Literals.SYMBOL__COUNT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Symbol.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,6 +174,7 @@ public class SymbolItemProvider
 
 		switch (notification.getFeatureID(Symbol.class)) {
 			case WebmatePackage.SYMBOL__SYM:
+			case WebmatePackage.SYMBOL__COUNT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

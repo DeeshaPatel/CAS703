@@ -114,7 +114,7 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION__IDS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Symbols</b></em>' containment reference.
+	 * The feature id for the '<em><b>Symbols</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION__SYMBOLS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Tags</b></em>' containment reference.
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +132,7 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION__TAGS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Classes</b></em>' containment reference.
+	 * The feature id for the '<em><b>Classes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,7 +141,7 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION__CLASSES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,7 +159,7 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION__ABBREVIATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Group</b></em>' containment reference.
+	 * The feature id for the '<em><b>Group</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -251,13 +251,40 @@ public interface WebmatePackage extends EPackage {
 	int TAG__TAG_NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__ATTRIBUTE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__ID = 2;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__CLASS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_FEATURE_COUNT = 1;
+	int TAG_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Tag</em>' class.
@@ -371,13 +398,22 @@ public interface WebmatePackage extends EPackage {
 	int SYMBOL__TAG = 1;
 
 	/**
+	 * The feature id for the '<em><b>Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL__COUNT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Symbol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_FEATURE_COUNT = 2;
+	int SYMBOL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Symbol</em>' class.
@@ -408,22 +444,13 @@ public interface WebmatePackage extends EPackage {
 	int GROUP__ABBREVIATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__COUNT = 1;
-
-	/**
 	 * The number of structural features of the '<em>Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_FEATURE_COUNT = 2;
+	int GROUP_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Group</em>' class.
@@ -498,10 +525,10 @@ public interface WebmatePackage extends EPackage {
 	EReference getAbbreviation_Ids();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getSymbols <em>Symbols</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getSymbols <em>Symbols</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Symbols</em>'.
+	 * @return the meta object for the containment reference list '<em>Symbols</em>'.
 	 * @see webmate.Abbreviation#getSymbols()
 	 * @see #getAbbreviation()
 	 * @generated
@@ -509,10 +536,10 @@ public interface WebmatePackage extends EPackage {
 	EReference getAbbreviation_Symbols();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getTags <em>Tags</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getTags <em>Tags</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Tags</em>'.
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
 	 * @see webmate.Abbreviation#getTags()
 	 * @see #getAbbreviation()
 	 * @generated
@@ -520,10 +547,10 @@ public interface WebmatePackage extends EPackage {
 	EReference getAbbreviation_Tags();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getClasses <em>Classes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getClasses <em>Classes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Classes</em>'.
+	 * @return the meta object for the containment reference list '<em>Classes</em>'.
 	 * @see webmate.Abbreviation#getClasses()
 	 * @see #getAbbreviation()
 	 * @generated
@@ -531,10 +558,10 @@ public interface WebmatePackage extends EPackage {
 	EReference getAbbreviation_Classes();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Attributes</em>'.
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
 	 * @see webmate.Abbreviation#getAttributes()
 	 * @see #getAbbreviation()
 	 * @generated
@@ -553,10 +580,10 @@ public interface WebmatePackage extends EPackage {
 	EReference getAbbreviation_Abbreviation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getGroup <em>Group</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Group</em>'.
+	 * @return the meta object for the containment reference list '<em>Group</em>'.
 	 * @see webmate.Abbreviation#getGroup()
 	 * @see #getAbbreviation()
 	 * @generated
@@ -615,6 +642,39 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTag_TagName();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webmate.Tag#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attribute</em>'.
+	 * @see webmate.Tag#getAttribute()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EReference getTag_Attribute();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link webmate.Tag#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Id</em>'.
+	 * @see webmate.Tag#getId()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EReference getTag_Id();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webmate.Tag#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Class</em>'.
+	 * @see webmate.Tag#getClass_()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EReference getTag_Class();
 
 	/**
 	 * Returns the meta object for class '{@link webmate.Class <em>Class</em>}'.
@@ -691,6 +751,17 @@ public interface WebmatePackage extends EPackage {
 	EReference getSymbol_Tag();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webmate.Symbol#getCount <em>Count</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Count</em>'.
+	 * @see webmate.Symbol#getCount()
+	 * @see #getSymbol()
+	 * @generated
+	 */
+	EAttribute getSymbol_Count();
+
+	/**
 	 * Returns the meta object for class '{@link webmate.Group <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -710,17 +781,6 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGroup_Abbreviation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webmate.Group#getCount <em>Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Count</em>'.
-	 * @see webmate.Group#getCount()
-	 * @see #getGroup()
-	 * @generated
-	 */
-	EAttribute getGroup_Count();
 
 	/**
 	 * Returns the meta object for enum '{@link webmate.HTMLTag <em>HTML Tag</em>}'.
@@ -802,7 +862,7 @@ public interface WebmatePackage extends EPackage {
 		EReference ABBREVIATION__IDS = eINSTANCE.getAbbreviation_Ids();
 
 		/**
-		 * The meta object literal for the '<em><b>Symbols</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Symbols</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -810,7 +870,7 @@ public interface WebmatePackage extends EPackage {
 		EReference ABBREVIATION__SYMBOLS = eINSTANCE.getAbbreviation_Symbols();
 
 		/**
-		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -818,7 +878,7 @@ public interface WebmatePackage extends EPackage {
 		EReference ABBREVIATION__TAGS = eINSTANCE.getAbbreviation_Tags();
 
 		/**
-		 * The meta object literal for the '<em><b>Classes</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -826,7 +886,7 @@ public interface WebmatePackage extends EPackage {
 		EReference ABBREVIATION__CLASSES = eINSTANCE.getAbbreviation_Classes();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -842,7 +902,7 @@ public interface WebmatePackage extends EPackage {
 		EReference ABBREVIATION__ABBREVIATION = eINSTANCE.getAbbreviation_Abbreviation();
 
 		/**
-		 * The meta object literal for the '<em><b>Group</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Group</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -892,6 +952,30 @@ public interface WebmatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TAG__TAG_NAME = eINSTANCE.getTag_TagName();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TAG__ATTRIBUTE = eINSTANCE.getTag_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TAG__ID = eINSTANCE.getTag_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TAG__CLASS = eINSTANCE.getTag_Class();
 
 		/**
 		 * The meta object literal for the '{@link webmate.impl.ClassImpl <em>Class</em>}' class.
@@ -956,6 +1040,14 @@ public interface WebmatePackage extends EPackage {
 		EReference SYMBOL__TAG = eINSTANCE.getSymbol_Tag();
 
 		/**
+		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL__COUNT = eINSTANCE.getSymbol_Count();
+
+		/**
 		 * The meta object literal for the '{@link webmate.impl.GroupImpl <em>Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -972,14 +1064,6 @@ public interface WebmatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference GROUP__ABBREVIATION = eINSTANCE.getGroup_Abbreviation();
-
-		/**
-		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GROUP__COUNT = eINSTANCE.getGroup_Count();
 
 		/**
 		 * The meta object literal for the '{@link webmate.HTMLTag <em>HTML Tag</em>}' enum.

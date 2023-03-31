@@ -10,8 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.example.mydsl.services.WebMateGrammarAccess;
@@ -20,12 +18,10 @@ import org.xtext.example.mydsl.services.WebMateGrammarAccess;
 public class WebMateSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected WebMateGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Group_RightParenthesisKeyword_0_3_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (WebMateGrammarAccess) access;
-		match_Group_RightParenthesisKeyword_0_3_q = new TokenAlias(false, true, grammarAccess.getGroupAccess().getRightParenthesisKeyword_0_3());
 	}
 	
 	@Override
@@ -40,24 +36,8 @@ public class WebMateSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Group_RightParenthesisKeyword_0_3_q.equals(syntax))
-				emit_Group_RightParenthesisKeyword_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     ')'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     abbreviation+=Abbreviation (ambiguity) '&gt;' abbreviation+=Abbreviation
-	 
-	 * </pre>
-	 */
-	protected void emit_Group_RightParenthesisKeyword_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }
