@@ -5,6 +5,13 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>WebMate.ecore</foreignModel>
   <genPackages prefix="Webmate" disposableProviderFactory="true" ecorePackage="WebMate.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebMate.ecore#//HTMLTag">
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/div"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/h1"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/p"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/ul"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/li"/>
+    </genEnums>
     <genClasses ecoreClass="WebMate.ecore#//HTML">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//HTML/abbreviation"/>
     </genClasses>

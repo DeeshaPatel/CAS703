@@ -31,7 +31,7 @@ Symbol returns Symbol:
 
 Tag returns Tag:
 	{Tag}
-	tagName=STRING class+=Class* id=ID0? attribute+=Attribute*;
+	tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*;
 
 Class returns Class:
 	{Class}
@@ -47,6 +47,9 @@ Group returns Group:
 
 EString returns ecore::EString:
 	STRING | ID;
+
+enum HTMLTag returns HTMLTag:
+				div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li';
 						
 @Override	
 terminal INT returns ecore::EInt:('0'..'9')+;

@@ -456,26 +456,6 @@ ruleSymbol returns [EObject current=null]
 				)
 			)
 		)
-		    |
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_4_0());
-				}
-				lv_sym_9_0=ruleValidSymbol
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSymbolRule());
-					}
-					set(
-						$current,
-						"sym",
-						lv_sym_9_0,
-						"org.xtext.example.mydsl.WebMate.ValidSymbol");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
 	)
 ;
 
@@ -827,65 +807,6 @@ ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 		{
 			newLeafNode(this_INT_1, grammarAccess.getEIntAccess().getINTTerminalRuleCall_1());
 		}
-	)
-;
-
-// Rule ValidSymbol
-ruleValidSymbol returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='plus'
-			{
-				$current = grammarAccess.getValidSymbolAccess().getPlusEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getValidSymbolAccess().getPlusEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='multiply'
-			{
-				$current = grammarAccess.getValidSymbolAccess().getMultiplyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getValidSymbolAccess().getMultiplyEnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='dot'
-			{
-				$current = grammarAccess.getValidSymbolAccess().getDotEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getValidSymbolAccess().getDotEnumLiteralDeclaration_2());
-			}
-		)
-		    |
-		(
-			enumLiteral_3='hash'
-			{
-				$current = grammarAccess.getValidSymbolAccess().getHashEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getValidSymbolAccess().getHashEnumLiteralDeclaration_3());
-			}
-		)
-		    |
-		(
-			enumLiteral_4='greaterthan'
-			{
-				$current = grammarAccess.getValidSymbolAccess().getGreaterthanEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getValidSymbolAccess().getGreaterthanEnumLiteralDeclaration_4());
-			}
-		)
-		    |
-		(
-			enumLiteral_5='caret'
-			{
-				$current = grammarAccess.getValidSymbolAccess().getCaretEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getValidSymbolAccess().getCaretEnumLiteralDeclaration_5());
-			}
-		)
 	)
 ;
 

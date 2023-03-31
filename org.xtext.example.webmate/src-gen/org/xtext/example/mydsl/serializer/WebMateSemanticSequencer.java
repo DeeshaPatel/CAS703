@@ -179,7 +179,7 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Symbol returns Symbol
 	 *
 	 * Constraint:
-	 *     (count=EInt | tag=Tag | tag=Tag | tag=Tag | sym=ValidSymbol)
+	 *     (count=EInt | tag=Tag | tag=Tag | tag=Tag)
 	 * </pre>
 	 */
 	protected void sequence_Symbol(ISerializationContext context, Symbol semanticObject) {

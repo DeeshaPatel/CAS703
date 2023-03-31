@@ -26,7 +26,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tag">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagName" eType="#//HTMLTag"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
         eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ID" containment="true"/>
@@ -38,6 +38,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ID">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="idName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HTMLTag">
+    <eLiterals name="div"/>
+    <eLiterals name="h1" value="1"/>
+    <eLiterals name="p" value="2"/>
+    <eLiterals name="ul" value="3"/>
+    <eLiterals name="li" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Symbol">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag" containment="true"/>

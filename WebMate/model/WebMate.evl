@@ -1,0 +1,11 @@
+context HTML {
+
+    constraint checkAbbreviationIsNotEmpty {
+
+        check: not self.abbreviation.isEmpty()
+
+        message: "Abbriviation cannot be empty"
+
+    }
+
+}

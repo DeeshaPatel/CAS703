@@ -299,22 +299,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule ValidSymbol
-ruleValidSymbol
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getAlternatives()); }
-		(rule__ValidSymbol__Alternatives)
-		{ after(grammarAccess.getValidSymbolAccess().getAlternatives()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Rule HTMLTag
 ruleHTMLTag
 	@init {
@@ -380,12 +364,6 @@ rule__Symbol__Alternatives
 		(rule__Symbol__Group_3__0)
 		{ after(grammarAccess.getSymbolAccess().getGroup_3()); }
 	)
-	|
-	(
-		{ before(grammarAccess.getSymbolAccess().getSymAssignment_4()); }
-		(rule__Symbol__SymAssignment_4)
-		{ after(grammarAccess.getSymbolAccess().getSymAssignment_4()); }
-	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -406,51 +384,6 @@ rule__EString__Alternatives
 		{ before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
 		RULE_ID
 		{ after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ValidSymbol__Alternatives
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getPlusEnumLiteralDeclaration_0()); }
-		('plus')
-		{ after(grammarAccess.getValidSymbolAccess().getPlusEnumLiteralDeclaration_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getMultiplyEnumLiteralDeclaration_1()); }
-		('multiply')
-		{ after(grammarAccess.getValidSymbolAccess().getMultiplyEnumLiteralDeclaration_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getDotEnumLiteralDeclaration_2()); }
-		('dot')
-		{ after(grammarAccess.getValidSymbolAccess().getDotEnumLiteralDeclaration_2()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getHashEnumLiteralDeclaration_3()); }
-		('hash')
-		{ after(grammarAccess.getValidSymbolAccess().getHashEnumLiteralDeclaration_3()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getGreaterthanEnumLiteralDeclaration_4()); }
-		('greaterthan')
-		{ after(grammarAccess.getValidSymbolAccess().getGreaterthanEnumLiteralDeclaration_4()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getValidSymbolAccess().getCaretEnumLiteralDeclaration_5()); }
-		('caret')
-		{ after(grammarAccess.getValidSymbolAccess().getCaretEnumLiteralDeclaration_5()); }
 	)
 ;
 finally {
@@ -2033,21 +1966,6 @@ rule__Symbol__TagAssignment_3_1
 		{ before(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0()); }
 		ruleTag
 		{ after(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Symbol__SymAssignment_4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_4_0()); }
-		ruleValidSymbol
-		{ after(grammarAccess.getSymbolAccess().getSymValidSymbolEnumRuleCall_4_0()); }
 	)
 ;
 finally {

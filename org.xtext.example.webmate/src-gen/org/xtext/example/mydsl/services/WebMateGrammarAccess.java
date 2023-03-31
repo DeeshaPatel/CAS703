@@ -231,16 +231,14 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cCircumflexAccentKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cTagAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTagTagParserRuleCall_3_1_0 = (RuleCall)cTagAssignment_3_1.eContents().get(0);
-		private final Assignment cSymAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cSymValidSymbolEnumRuleCall_4_0 = (RuleCall)cSymAssignment_4.eContents().get(0);
 		
 		//Symbol returns Symbol:
 		//    {Symbol}
-		//    ('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag) | sym=ValidSymbol;
+		//    ('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Symbol}
-		//('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag) | sym=ValidSymbol
+		//('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{Symbol}
@@ -297,12 +295,6 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//Tag
 		public RuleCall getTagTagParserRuleCall_3_1_0() { return cTagTagParserRuleCall_3_1_0; }
-		
-		//sym=ValidSymbol
-		public Assignment getSymAssignment_4() { return cSymAssignment_4; }
-		
-		//ValidSymbol
-		public RuleCall getSymValidSymbolEnumRuleCall_4_0() { return cSymValidSymbolEnumRuleCall_4_0; }
 	}
 	public class TagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.WebMate.Tag");
@@ -507,65 +499,6 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 	}
 	
-	public class ValidSymbolElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.WebMate.ValidSymbol");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cPlusEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cPlusPlusKeyword_0_0 = (Keyword)cPlusEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cMultiplyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cMultiplyMultiplyKeyword_1_0 = (Keyword)cMultiplyEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cDotEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cDotDotKeyword_2_0 = (Keyword)cDotEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cHashEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cHashHashKeyword_3_0 = (Keyword)cHashEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cGreaterthanEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cGreaterthanGreaterthanKeyword_4_0 = (Keyword)cGreaterthanEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cCaretEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cCaretCaretKeyword_5_0 = (Keyword)cCaretEnumLiteralDeclaration_5.eContents().get(0);
-		
-		//enum ValidSymbol returns ValidSymbol:
-		//                plus = 'plus' | multiply = 'multiply' | dot = 'dot' | hash = 'hash' | greaterthan = 'greaterthan' | caret = 'caret';
-		public EnumRule getRule() { return rule; }
-		
-		//plus = 'plus' | multiply = 'multiply' | dot = 'dot' | hash = 'hash' | greaterthan = 'greaterthan' | caret = 'caret'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//plus = 'plus'
-		public EnumLiteralDeclaration getPlusEnumLiteralDeclaration_0() { return cPlusEnumLiteralDeclaration_0; }
-		
-		//'plus'
-		public Keyword getPlusPlusKeyword_0_0() { return cPlusPlusKeyword_0_0; }
-		
-		//multiply = 'multiply'
-		public EnumLiteralDeclaration getMultiplyEnumLiteralDeclaration_1() { return cMultiplyEnumLiteralDeclaration_1; }
-		
-		//'multiply'
-		public Keyword getMultiplyMultiplyKeyword_1_0() { return cMultiplyMultiplyKeyword_1_0; }
-		
-		//dot = 'dot'
-		public EnumLiteralDeclaration getDotEnumLiteralDeclaration_2() { return cDotEnumLiteralDeclaration_2; }
-		
-		//'dot'
-		public Keyword getDotDotKeyword_2_0() { return cDotDotKeyword_2_0; }
-		
-		//hash = 'hash'
-		public EnumLiteralDeclaration getHashEnumLiteralDeclaration_3() { return cHashEnumLiteralDeclaration_3; }
-		
-		//'hash'
-		public Keyword getHashHashKeyword_3_0() { return cHashHashKeyword_3_0; }
-		
-		//greaterthan = 'greaterthan'
-		public EnumLiteralDeclaration getGreaterthanEnumLiteralDeclaration_4() { return cGreaterthanEnumLiteralDeclaration_4; }
-		
-		//'greaterthan'
-		public Keyword getGreaterthanGreaterthanKeyword_4_0() { return cGreaterthanGreaterthanKeyword_4_0; }
-		
-		//caret = 'caret'
-		public EnumLiteralDeclaration getCaretEnumLiteralDeclaration_5() { return cCaretEnumLiteralDeclaration_5; }
-		
-		//'caret'
-		public Keyword getCaretCaretKeyword_5_0() { return cCaretCaretKeyword_5_0; }
-	}
 	public class HTMLTagElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.WebMate.HTMLTag");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -627,7 +560,6 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final AttributeElements pAttribute;
 	private final GroupElements pGroup;
 	private final EStringElements pEString;
-	private final ValidSymbolElements eValidSymbol;
 	private final HTMLTagElements eHTMLTag;
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
@@ -651,7 +583,6 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pAttribute = new AttributeElements();
 		this.pGroup = new GroupElements();
 		this.pEString = new EStringElements();
-		this.eValidSymbol = new ValidSymbolElements();
 		this.eHTMLTag = new HTMLTagElements();
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.WebMate.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.WebMate.STRING");
@@ -728,7 +659,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//Symbol returns Symbol:
 	//    {Symbol}
-	//    ('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag) | sym=ValidSymbol;
+	//    ('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag);
 	public SymbolElements getSymbolAccess() {
 		return pSymbol;
 	}
@@ -789,16 +720,6 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getEStringRule() {
 		return getEStringAccess().getRule();
-	}
-	
-	//enum ValidSymbol returns ValidSymbol:
-	//                plus = 'plus' | multiply = 'multiply' | dot = 'dot' | hash = 'hash' | greaterthan = 'greaterthan' | caret = 'caret';
-	public ValidSymbolElements getValidSymbolAccess() {
-		return eValidSymbol;
-	}
-	
-	public EnumRule getValidSymbolRule() {
-		return getValidSymbolAccess().getRule();
 	}
 	
 	//enum HTMLTag returns HTMLTag:

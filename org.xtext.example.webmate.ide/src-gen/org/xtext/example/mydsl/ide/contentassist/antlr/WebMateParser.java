@@ -34,7 +34,6 @@ public class WebMateParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAbbreviationAccess().getAlternatives_2(), "rule__Abbreviation__Alternatives_2");
 			builder.put(grammarAccess.getSymbolAccess().getAlternatives(), "rule__Symbol__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getValidSymbolAccess().getAlternatives(), "rule__ValidSymbol__Alternatives");
 			builder.put(grammarAccess.getHTMLTagAccess().getAlternatives(), "rule__HTMLTag__Alternatives");
 			builder.put(grammarAccess.getHTMLAccess().getGroup(), "rule__HTML__Group__0");
 			builder.put(grammarAccess.getAbbreviationAccess().getGroup(), "rule__Abbreviation__Group__0");
@@ -67,7 +66,6 @@ public class WebMateParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSymbolAccess().getTagAssignment_1_1(), "rule__Symbol__TagAssignment_1_1");
 			builder.put(grammarAccess.getSymbolAccess().getTagAssignment_2_1(), "rule__Symbol__TagAssignment_2_1");
 			builder.put(grammarAccess.getSymbolAccess().getTagAssignment_3_1(), "rule__Symbol__TagAssignment_3_1");
-			builder.put(grammarAccess.getSymbolAccess().getSymAssignment_4(), "rule__Symbol__SymAssignment_4");
 			builder.put(grammarAccess.getTagAccess().getTagNameAssignment_1(), "rule__Tag__TagNameAssignment_1");
 			builder.put(grammarAccess.getTagAccess().getClassAssignment_2(), "rule__Tag__ClassAssignment_2");
 			builder.put(grammarAccess.getTagAccess().getIdAssignment_3(), "rule__Tag__IdAssignment_3");
