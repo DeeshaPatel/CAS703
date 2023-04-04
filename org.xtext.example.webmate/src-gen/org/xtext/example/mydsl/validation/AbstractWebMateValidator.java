@@ -5,10 +5,26 @@ package org.xtext.example.mydsl.validation;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.epsilon.evl.EvlModule;
+import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
 public abstract class AbstractWebMateValidator extends AbstractDeclarativeValidator {
+	
+	
+//	public boolean validate(EObject object) {
+//		EvlModule evlModule = new EvlModule();
+//		XtextResource resource = (XtextResource)object.eResource();
+//		URI uri = URI.createURI(resource.getURI().toString());
+//		uri = uri.trimSegments(1).appendSegment("model").appendSegment("WebMate.evl");
+//		evlModule.getContext().getModelRepository().addModel(resource.getResourceSet());
+//		evlModule.parse(uri);
+//	}
+
 	
 	@Override
 	protected List<EPackage> getEPackages() {

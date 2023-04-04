@@ -2,6 +2,9 @@ module org.xtext.example.mydsl.GenerateWebMate
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
+import org.eclipse.xtext.validation.ValidationPackage
+import org.eclipse.xtext.generator.validation.ValidatorFragment2
+
 
 var rootPath = ".."
 
@@ -36,6 +39,7 @@ Workflow {
 			referencedResource = "platform:/resource/WebMate/model/WebMate.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
+			
 
 			formatter = {
 				generateStub = true
@@ -46,10 +50,11 @@ Workflow {
 				generateStub = false
 			}
 			validator = {
-				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				composedCheck = "org.xtext.example.mydsl.validation.WebMateValidator"
 				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
 				generateDeprecationValidation = true
 			}
+			
 			generator = {
 				generateXtendStub = true
 			}
@@ -57,5 +62,6 @@ Workflow {
 				junitVersion = "5"
 			}
 		}
+		
 	}
 }

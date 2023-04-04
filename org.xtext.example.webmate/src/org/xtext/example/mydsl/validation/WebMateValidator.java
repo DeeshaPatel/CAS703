@@ -3,6 +3,18 @@
  */
 package org.xtext.example.mydsl.validation;
 
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.validation.Check;
+import webmate.HTML;
+import webmate.WebmatePackage;
+
+import javax.swing.text.html.parser.Entity;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.epsilon.evl.EvlModule;
+import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +23,20 @@ package org.xtext.example.mydsl.validation;
  */
 public class WebMateValidator extends AbstractWebMateValidator {
 	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					WebMatePackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	public static final String INVALID_NAME = "Please Deesha complete this project for us";
+	
+	
+/*	public void checkValid(HTML html) {
+		EvlModule evlModule = new EvlModule();
+		evlModule.parse(getClass().getResourceAsStream("/model"))
+	}
+
+	@Check
+	public void checkValidInput(HTML html) {
+		if(html.getAbbreviation() != null) {
+			error(INVALID_NAME, WebmatePackage.Literals.HTML__ABBREVIATION);
+		}
+	}
+*/
 	
 }

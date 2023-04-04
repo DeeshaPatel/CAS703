@@ -145,12 +145,6 @@ public abstract class AbstractWebMateRuntimeModule extends DefaultRuntimeModule 
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
-	@SingletonBinding(eager=true)
-	public Class<? extends WebMateValidator> bindWebMateValidator() {
-		return WebMateValidator.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
 	public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
 		return WebMateConfigurableIssueCodesProvider.class;
 	}
@@ -218,6 +212,12 @@ public abstract class AbstractWebMateRuntimeModule extends DefaultRuntimeModule 
 	// contributed by org.eclipse.xtext.xtext.generator.ecore2xtext.Ecore2XtextValueConverterServiceFragment2
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return Ecore2XtextTerminalConverters.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
+	@SingletonBinding(eager=true)
+	public Class<? extends WebMateValidator> bindWebMateValidator() {
+		return WebMateValidator.class;
 	}
 	
 }

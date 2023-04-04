@@ -311,11 +311,11 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//Tag returns Tag:
 		//    {Tag}
-		//    tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*;
+		//     tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute* ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Tag}
-		//tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*
+		// tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*
 		public Group getGroup() { return cGroup; }
 		
 		//{Tag}
@@ -670,7 +670,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//Tag returns Tag:
 	//    {Tag}
-	//    tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*;
+	//     tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute* ;
 	public TagElements getTagAccess() {
 		return pTag;
 	}
