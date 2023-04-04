@@ -424,6 +424,48 @@ rule__HTMLTag__Alternatives
 		('li')
 		{ after(grammarAccess.getHTMLTagAccess().getLiEnumLiteralDeclaration_4()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5()); }
+		('a')
+		{ after(grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6()); }
+		('img')
+		{ after(grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7()); }
+		('form')
+		{ after(grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8()); }
+		('input')
+		{ after(grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9()); }
+		('button')
+		{ after(grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10()); }
+		('option')
+		{ after(grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11()); }
+		('select')
+		{ after(grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

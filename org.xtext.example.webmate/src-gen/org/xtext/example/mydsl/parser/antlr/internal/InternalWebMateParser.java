@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWebMateParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'#'", "'*'", "'+'", "'>'", "'^'", "'.'", "'['", "'='", "']'", "'('", "')'", "'-'", "'div'", "'h1'", "'p'", "'ul'", "'li'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'#'", "'*'", "'+'", "'>'", "'^'", "'.'", "'['", "'='", "']'", "'('", "')'", "'-'", "'div'", "'h1'", "'p'", "'ul'", "'li'", "'a'", "'img'", "'form'", "'input'", "'button'", "'option'", "'select'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -32,10 +32,17 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -320,7 +327,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
             if ( ((LA9_0>=RULE_STRING && LA9_0<=RULE_ID)||LA9_0==12) ) {
                 alt9=1;
             }
-            else if ( ((LA9_0>=25 && LA9_0<=29)) ) {
+            else if ( ((LA9_0>=25 && LA9_0<=36)) ) {
                 alt9=2;
             }
             else {
@@ -395,7 +402,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
                         int alt3=2;
                         int LA3_0 = input.LA(1);
 
-                        if ( ((LA3_0>=25 && LA3_0<=29)) ) {
+                        if ( ((LA3_0>=25 && LA3_0<=36)) ) {
                             alt3=1;
                         }
 
@@ -2210,7 +2217,7 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHTMLTag"
-    // InternalWebMate.g:814:1: ruleHTMLTag returns [Enumerator current=null] : ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) ) ;
+    // InternalWebMate.g:814:1: ruleHTMLTag returns [Enumerator current=null] : ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) | (enumLiteral_5= 'a' ) | (enumLiteral_6= 'img' ) | (enumLiteral_7= 'form' ) | (enumLiteral_8= 'input' ) | (enumLiteral_9= 'button' ) | (enumLiteral_10= 'option' ) | (enumLiteral_11= 'select' ) ) ;
     public final Enumerator ruleHTMLTag() throws RecognitionException {
         Enumerator current = null;
 
@@ -2219,16 +2226,23 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
         Token enumLiteral_2=null;
         Token enumLiteral_3=null;
         Token enumLiteral_4=null;
+        Token enumLiteral_5=null;
+        Token enumLiteral_6=null;
+        Token enumLiteral_7=null;
+        Token enumLiteral_8=null;
+        Token enumLiteral_9=null;
+        Token enumLiteral_10=null;
+        Token enumLiteral_11=null;
 
 
         	enterRule();
 
         try {
-            // InternalWebMate.g:820:2: ( ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) ) )
-            // InternalWebMate.g:821:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) )
+            // InternalWebMate.g:820:2: ( ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) | (enumLiteral_5= 'a' ) | (enumLiteral_6= 'img' ) | (enumLiteral_7= 'form' ) | (enumLiteral_8= 'input' ) | (enumLiteral_9= 'button' ) | (enumLiteral_10= 'option' ) | (enumLiteral_11= 'select' ) ) )
+            // InternalWebMate.g:821:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) | (enumLiteral_5= 'a' ) | (enumLiteral_6= 'img' ) | (enumLiteral_7= 'form' ) | (enumLiteral_8= 'input' ) | (enumLiteral_9= 'button' ) | (enumLiteral_10= 'option' ) | (enumLiteral_11= 'select' ) )
             {
-            // InternalWebMate.g:821:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) )
-            int alt18=5;
+            // InternalWebMate.g:821:2: ( (enumLiteral_0= 'div' ) | (enumLiteral_1= 'h1' ) | (enumLiteral_2= 'p' ) | (enumLiteral_3= 'ul' ) | (enumLiteral_4= 'li' ) | (enumLiteral_5= 'a' ) | (enumLiteral_6= 'img' ) | (enumLiteral_7= 'form' ) | (enumLiteral_8= 'input' ) | (enumLiteral_9= 'button' ) | (enumLiteral_10= 'option' ) | (enumLiteral_11= 'select' ) )
+            int alt18=12;
             switch ( input.LA(1) ) {
             case 25:
                 {
@@ -2253,6 +2267,41 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
             case 29:
                 {
                 alt18=5;
+                }
+                break;
+            case 30:
+                {
+                alt18=6;
+                }
+                break;
+            case 31:
+                {
+                alt18=7;
+                }
+                break;
+            case 32:
+                {
+                alt18=8;
+                }
+                break;
+            case 33:
+                {
+                alt18=9;
+                }
+                break;
+            case 34:
+                {
+                alt18=10;
+                }
+                break;
+            case 35:
+                {
+                alt18=11;
+                }
+                break;
+            case 36:
+                {
+                alt18=12;
                 }
                 break;
             default:
@@ -2348,6 +2397,125 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 6 :
+                    // InternalWebMate.g:862:3: (enumLiteral_5= 'a' )
+                    {
+                    // InternalWebMate.g:862:3: (enumLiteral_5= 'a' )
+                    // InternalWebMate.g:863:4: enumLiteral_5= 'a'
+                    {
+                    enumLiteral_5=(Token)match(input,30,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalWebMate.g:870:3: (enumLiteral_6= 'img' )
+                    {
+                    // InternalWebMate.g:870:3: (enumLiteral_6= 'img' )
+                    // InternalWebMate.g:871:4: enumLiteral_6= 'img'
+                    {
+                    enumLiteral_6=(Token)match(input,31,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_6, grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalWebMate.g:878:3: (enumLiteral_7= 'form' )
+                    {
+                    // InternalWebMate.g:878:3: (enumLiteral_7= 'form' )
+                    // InternalWebMate.g:879:4: enumLiteral_7= 'form'
+                    {
+                    enumLiteral_7=(Token)match(input,32,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_7, grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // InternalWebMate.g:886:3: (enumLiteral_8= 'input' )
+                    {
+                    // InternalWebMate.g:886:3: (enumLiteral_8= 'input' )
+                    // InternalWebMate.g:887:4: enumLiteral_8= 'input'
+                    {
+                    enumLiteral_8=(Token)match(input,33,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_8, grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalWebMate.g:894:3: (enumLiteral_9= 'button' )
+                    {
+                    // InternalWebMate.g:894:3: (enumLiteral_9= 'button' )
+                    // InternalWebMate.g:895:4: enumLiteral_9= 'button'
+                    {
+                    enumLiteral_9=(Token)match(input,34,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_9, grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 11 :
+                    // InternalWebMate.g:902:3: (enumLiteral_10= 'option' )
+                    {
+                    // InternalWebMate.g:902:3: (enumLiteral_10= 'option' )
+                    // InternalWebMate.g:903:4: enumLiteral_10= 'option'
+                    {
+                    enumLiteral_10=(Token)match(input,35,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_10, grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 12 :
+                    // InternalWebMate.g:910:3: (enumLiteral_11= 'select' )
+                    {
+                    // InternalWebMate.g:910:3: (enumLiteral_11= 'select' )
+                    // InternalWebMate.g:911:4: enumLiteral_11= 'select'
+                    {
+                    enumLiteral_11=(Token)match(input,36,FOLLOW_2); 
+
+                    				current = grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_11, grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11());
+                    			
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2377,9 +2545,9 @@ public class InternalWebMateParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000003E001030L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000001FFE001030L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001030L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000003E4FF030L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000001FFE4FF030L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000004FF000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000004FD000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000004C1000L});

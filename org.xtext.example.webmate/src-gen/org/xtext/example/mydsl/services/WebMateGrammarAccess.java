@@ -512,12 +512,26 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cUlUlKeyword_3_0 = (Keyword)cUlEnumLiteralDeclaration_3.eContents().get(0);
 		private final EnumLiteralDeclaration cLiEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
 		private final Keyword cLiLiKeyword_4_0 = (Keyword)cLiEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cAEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cAAKeyword_5_0 = (Keyword)cAEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cImgEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cImgImgKeyword_6_0 = (Keyword)cImgEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cFormEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cFormFormKeyword_7_0 = (Keyword)cFormEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cInputEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cInputInputKeyword_8_0 = (Keyword)cInputEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cButtonEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cButtonButtonKeyword_9_0 = (Keyword)cButtonEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cOptionEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cOptionOptionKeyword_10_0 = (Keyword)cOptionEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cSelectEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cSelectSelectKeyword_11_0 = (Keyword)cSelectEnumLiteralDeclaration_11.eContents().get(0);
 		
 		//enum HTMLTag returns HTMLTag:
-		//                div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li';
+		//                div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li' | a = 'a' | img = 'img' | form = 'form' | input = 'input' | button = 'button' | option = 'option' | select = 'select';
 		public EnumRule getRule() { return rule; }
 		
-		//div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li'
+		//div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li' | a = 'a' | img = 'img' | form = 'form' | input = 'input' | button = 'button' | option = 'option' | select = 'select'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//div = 'div'
@@ -549,6 +563,48 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//'li'
 		public Keyword getLiLiKeyword_4_0() { return cLiLiKeyword_4_0; }
+		
+		//a = 'a'
+		public EnumLiteralDeclaration getAEnumLiteralDeclaration_5() { return cAEnumLiteralDeclaration_5; }
+		
+		//'a'
+		public Keyword getAAKeyword_5_0() { return cAAKeyword_5_0; }
+		
+		//img = 'img'
+		public EnumLiteralDeclaration getImgEnumLiteralDeclaration_6() { return cImgEnumLiteralDeclaration_6; }
+		
+		//'img'
+		public Keyword getImgImgKeyword_6_0() { return cImgImgKeyword_6_0; }
+		
+		//form = 'form'
+		public EnumLiteralDeclaration getFormEnumLiteralDeclaration_7() { return cFormEnumLiteralDeclaration_7; }
+		
+		//'form'
+		public Keyword getFormFormKeyword_7_0() { return cFormFormKeyword_7_0; }
+		
+		//input = 'input'
+		public EnumLiteralDeclaration getInputEnumLiteralDeclaration_8() { return cInputEnumLiteralDeclaration_8; }
+		
+		//'input'
+		public Keyword getInputInputKeyword_8_0() { return cInputInputKeyword_8_0; }
+		
+		//button = 'button'
+		public EnumLiteralDeclaration getButtonEnumLiteralDeclaration_9() { return cButtonEnumLiteralDeclaration_9; }
+		
+		//'button'
+		public Keyword getButtonButtonKeyword_9_0() { return cButtonButtonKeyword_9_0; }
+		
+		//option = 'option'
+		public EnumLiteralDeclaration getOptionEnumLiteralDeclaration_10() { return cOptionEnumLiteralDeclaration_10; }
+		
+		//'option'
+		public Keyword getOptionOptionKeyword_10_0() { return cOptionOptionKeyword_10_0; }
+		
+		//select = 'select'
+		public EnumLiteralDeclaration getSelectEnumLiteralDeclaration_11() { return cSelectEnumLiteralDeclaration_11; }
+		
+		//'select'
+		public Keyword getSelectSelectKeyword_11_0() { return cSelectSelectKeyword_11_0; }
 	}
 	
 	private final HTMLElements pHTML;
@@ -723,7 +779,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//enum HTMLTag returns HTMLTag:
-	//                div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li';
+	//                div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li' | a = 'a' | img = 'img' | form = 'form' | input = 'input' | button = 'button' | option = 'option' | select = 'select';
 	public HTMLTagElements getHTMLTagAccess() {
 		return eHTMLTag;
 	}

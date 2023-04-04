@@ -50,7 +50,7 @@ EString returns ecore::EString:
 	STRING | ID;
 
 enum HTMLTag returns HTMLTag:
-				div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li';
+				div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li' | a = 'a' | img = 'img' | form = 'form' | input = 'input' | button = 'button' | option = 'option' | select = 'select';
 						
 @Override	
 terminal INT returns ecore::EInt:('0'..'9')+;

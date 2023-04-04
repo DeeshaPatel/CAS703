@@ -858,6 +858,62 @@ ruleHTMLTag returns [Enumerator current=null]
 				newLeafNode(enumLiteral_4, grammarAccess.getHTMLTagAccess().getLiEnumLiteralDeclaration_4());
 			}
 		)
+		    |
+		(
+			enumLiteral_5='a'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5());
+			}
+		)
+		    |
+		(
+			enumLiteral_6='img'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6());
+			}
+		)
+		    |
+		(
+			enumLiteral_7='form'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_7, grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7());
+			}
+		)
+		    |
+		(
+			enumLiteral_8='input'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_8, grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8());
+			}
+		)
+		    |
+		(
+			enumLiteral_9='button'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_9, grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9());
+			}
+		)
+		    |
+		(
+			enumLiteral_10='option'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_10, grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10());
+			}
+		)
+		    |
+		(
+			enumLiteral_11='select'
+			{
+				$current = grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_11, grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11());
+			}
+		)
 	)
 ;
 

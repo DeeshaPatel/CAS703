@@ -45,6 +45,14 @@
     <eLiterals name="p" value="2"/>
     <eLiterals name="ul" value="3"/>
     <eLiterals name="li" value="4"/>
+    <eLiterals name="a" value="5" literal="a"/>
+    <eLiterals name="img" value="6" literal="img"/>
+    <eLiterals name="form" value="7" literal="form"/>
+    <eLiterals name="input" value="8" literal="input"/>
+    <eLiterals name="textarea" value="9" literal="textarea"/>
+    <eLiterals name="button" value="10" literal="button"/>
+    <eLiterals name="select" value="11" literal="select"/>
+    <eLiterals name="option" value="12" literal="option"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Symbol">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag" containment="true"/>
