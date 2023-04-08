@@ -12,7 +12,7 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;resources&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate.ide&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate.ui&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate.ui.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtext.example.webmate.ui.tests&quot; type=&quot;4&quot;/&gt;&#10;;&lt;/resources&gt;}"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="org.xtext.example.mydsl.GenerateWebMate"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="org.xtext.example.mydsl1.GenerateWebMate"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.xtext.example.webmate"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m"/>
 </launchConfiguration>

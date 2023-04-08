@@ -11,14 +11,14 @@
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/p"/>
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/ul"/>
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/li"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebMate.ecore#//ValidSymbol">
-      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/plus"/>
-      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/multiply"/>
-      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/dot"/>
-      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/hash"/>
-      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/greaterthan"/>
-      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//ValidSymbol/caret"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/a"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/img"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/form"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/input"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/textarea"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/button"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/select"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/option"/>
     </genEnums>
     <genClasses ecoreClass="WebMate.ecore#//HTML">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//HTML/abbreviation"/>
@@ -49,8 +49,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//ID/idName"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Symbol">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/sym"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Symbol/tag"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Symbol/tag"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/count"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Group">

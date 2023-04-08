@@ -4,6 +4,7 @@ package webmate.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -12,7 +13,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import webmate.Symbol;
 import webmate.Tag;
-import webmate.ValidSymbol;
 import webmate.WebmatePackage;
 
 /**
@@ -23,7 +23,6 @@ import webmate.WebmatePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link webmate.impl.SymbolImpl#getSym <em>Sym</em>}</li>
  *   <li>{@link webmate.impl.SymbolImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link webmate.impl.SymbolImpl#getCount <em>Count</em>}</li>
  * </ul>
@@ -32,27 +31,7 @@ import webmate.WebmatePackage;
  */
 public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	/**
-	 * The default value of the '{@link #getSym() <em>Sym</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSym()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ValidSymbol SYM_EDEFAULT = ValidSymbol.PLUS;
-
-	/**
-	 * The cached value of the '{@link #getSym() <em>Sym</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSym()
-	 * @generated
-	 * @ordered
-	 */
-	protected ValidSymbol sym = SYM_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTag() <em>Tag</em>}' reference.
+	 * The cached value of the '{@link #getTag() <em>Tag</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTag()
@@ -105,36 +84,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ValidSymbol getSym() {
-		return sym;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSym(ValidSymbol newSym) {
-		ValidSymbol oldSym = sym;
-		sym = newSym == null ? SYM_EDEFAULT : newSym;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.SYMBOL__SYM, oldSym, sym));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Tag getTag() {
-		if (tag != null && tag.eIsProxy()) {
-			InternalEObject oldTag = (InternalEObject)tag;
-			tag = (Tag)eResolveProxy(oldTag);
-			if (tag != oldTag) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebmatePackage.SYMBOL__TAG, oldTag, tag));
-			}
-		}
 		return tag;
 	}
 
@@ -143,8 +93,14 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Tag basicGetTag() {
-		return tag;
+	public NotificationChain basicSetTag(Tag newTag, NotificationChain msgs) {
+		Tag oldTag = tag;
+		tag = newTag;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.SYMBOL__TAG, oldTag, newTag);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -153,10 +109,17 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @generated
 	 */
 	public void setTag(Tag newTag) {
-		Tag oldTag = tag;
-		tag = newTag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.SYMBOL__TAG, oldTag, tag));
+		if (newTag != tag) {
+			NotificationChain msgs = null;
+			if (tag != null)
+				msgs = ((InternalEObject)tag).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.SYMBOL__TAG, null, msgs);
+			if (newTag != null)
+				msgs = ((InternalEObject)newTag).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.SYMBOL__TAG, null, msgs);
+			msgs = basicSetTag(newTag, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.SYMBOL__TAG, newTag, newTag));
 	}
 
 	/**
@@ -186,13 +149,24 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebmatePackage.SYMBOL__TAG:
+				return basicSetTag(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebmatePackage.SYMBOL__SYM:
-				return getSym();
 			case WebmatePackage.SYMBOL__TAG:
-				if (resolve) return getTag();
-				return basicGetTag();
+				return getTag();
 			case WebmatePackage.SYMBOL__COUNT:
 				return getCount();
 		}
@@ -207,9 +181,6 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebmatePackage.SYMBOL__SYM:
-				setSym((ValidSymbol)newValue);
-				return;
 			case WebmatePackage.SYMBOL__TAG:
 				setTag((Tag)newValue);
 				return;
@@ -228,9 +199,6 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebmatePackage.SYMBOL__SYM:
-				setSym(SYM_EDEFAULT);
-				return;
 			case WebmatePackage.SYMBOL__TAG:
 				setTag((Tag)null);
 				return;
@@ -249,8 +217,6 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebmatePackage.SYMBOL__SYM:
-				return sym != SYM_EDEFAULT;
 			case WebmatePackage.SYMBOL__TAG:
 				return tag != null;
 			case WebmatePackage.SYMBOL__COUNT:
@@ -269,9 +235,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (sym: ");
-		result.append(sym);
-		result.append(", count: ");
+		result.append(" (count: ");
 		result.append(count);
 		result.append(')');
 		return result.toString();

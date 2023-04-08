@@ -13,8 +13,8 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.shared.SharedStateModule;
 import org.eclipse.xtext.util.Modules2;
 import org.osgi.framework.BundleContext;
-import org.xtext.example.mydsl.WebMateRuntimeModule;
-import org.xtext.example.mydsl.ui.WebMateUiModule;
+import org.xtext.example.mydsl1.WebMateRuntimeModule;
+import org.xtext.example.mydsl1.ui.WebMateUiModule;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -23,7 +23,7 @@ import org.xtext.example.mydsl.ui.WebMateUiModule;
 public class WebmateActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "org.xtext.example.webmate.ui";
-	public static final String ORG_XTEXT_EXAMPLE_MYDSL_WEBMATE = "org.xtext.example.mydsl.WebMate";
+	public static final String ORG_XTEXT_EXAMPLE_MYDSL1_WEBMATE = "org.xtext.example.mydsl1.WebMate";
 	
 	private static final Logger logger = Logger.getLogger(WebmateActivator.class);
 	
@@ -73,14 +73,14 @@ public class WebmateActivator extends AbstractUIPlugin {
 	}
 	
 	protected com.google.inject.Module getRuntimeModule(String grammar) {
-		if (ORG_XTEXT_EXAMPLE_MYDSL_WEBMATE.equals(grammar)) {
+		if (ORG_XTEXT_EXAMPLE_MYDSL1_WEBMATE.equals(grammar)) {
 			return new WebMateRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
-		if (ORG_XTEXT_EXAMPLE_MYDSL_WEBMATE.equals(grammar)) {
+		if (ORG_XTEXT_EXAMPLE_MYDSL1_WEBMATE.equals(grammar)) {
 			return new WebMateUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);

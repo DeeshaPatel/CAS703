@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link webmate.Symbol#getSym <em>Sym</em>}</li>
  *   <li>{@link webmate.Symbol#getTag <em>Tag</em>}</li>
  *   <li>{@link webmate.Symbol#getCount <em>Count</em>}</li>
  * </ul>
@@ -24,47 +23,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Symbol extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Sym</b></em>' attribute.
-	 * The literals are from the enumeration {@link webmate.ValidSymbol}.
+	 * Returns the value of the '<em><b>Tag</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sym</em>' attribute.
-	 * @see webmate.ValidSymbol
-	 * @see #setSym(ValidSymbol)
-	 * @see webmate.WebmatePackage#getSymbol_Sym()
-	 * @model
-	 * @generated
-	 */
-	ValidSymbol getSym();
-
-	/**
-	 * Sets the value of the '{@link webmate.Symbol#getSym <em>Sym</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sym</em>' attribute.
-	 * @see webmate.ValidSymbol
-	 * @see #getSym()
-	 * @generated
-	 */
-	void setSym(ValidSymbol value);
-
-	/**
-	 * Returns the value of the '<em><b>Tag</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tag</em>' reference.
+	 * @return the value of the '<em>Tag</em>' containment reference.
 	 * @see #setTag(Tag)
 	 * @see webmate.WebmatePackage#getSymbol_Tag()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Tag getTag();
 
 	/**
-	 * Sets the value of the '{@link webmate.Symbol#getTag <em>Tag</em>}' reference.
+	 * Sets the value of the '{@link webmate.Symbol#getTag <em>Tag</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tag</em>' reference.
+	 * @param value the new value of the '<em>Tag</em>' containment reference.
 	 * @see #getTag()
 	 * @generated
 	 */

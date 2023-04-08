@@ -19,7 +19,6 @@ import webmate.HTMLTag;
 import webmate.ID;
 import webmate.Symbol;
 import webmate.Tag;
-import webmate.ValidSymbol;
 import webmate.WebmateFactory;
 import webmate.WebmatePackage;
 
@@ -90,8 +89,6 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 		switch (eDataType.getClassifierID()) {
 			case WebmatePackage.HTML_TAG:
 				return createHTMLTagFromString(eDataType, initialValue);
-			case WebmatePackage.VALID_SYMBOL:
-				return createValidSymbolFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -107,8 +104,6 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 		switch (eDataType.getClassifierID()) {
 			case WebmatePackage.HTML_TAG:
 				return convertHTMLTagToString(eDataType, instanceValue);
-			case WebmatePackage.VALID_SYMBOL:
-				return convertValidSymbolToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -211,26 +206,6 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 	 * @generated
 	 */
 	public String convertHTMLTagToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ValidSymbol createValidSymbolFromString(EDataType eDataType, String initialValue) {
-		ValidSymbol result = ValidSymbol.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertValidSymbolToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

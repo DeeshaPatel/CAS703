@@ -3,16 +3,12 @@
 package webmate.impl;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -48,14 +44,14 @@ import webmate.WebmatePackage;
  */
 public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Abbreviation {
 	/**
-	 * The cached value of the '{@link #getIds() <em>Ids</em>}' containment reference.
+	 * The cached value of the '{@link #getIds() <em>Ids</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected ID ids;
+	protected EList<ID> ids;
 
 	/**
 	 * The cached value of the '{@link #getSymbols() <em>Symbols</em>}' containment reference list.
@@ -141,42 +137,11 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ID getIds() {
+	public EList<ID> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<ID>(ID.class, this, WebmatePackage.ABBREVIATION__IDS);
+		}
 		return ids;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIds(ID newIds, NotificationChain msgs) {
-		ID oldIds = ids;
-		ids = newIds;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__IDS, oldIds, newIds);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIds(ID newIds) {
-		if (newIds != ids) {
-			NotificationChain msgs = null;
-			if (ids != null)
-				msgs = ((InternalEObject)ids).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__IDS, null, msgs);
-			if (newIds != null)
-				msgs = ((InternalEObject)newIds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebmatePackage.ABBREVIATION__IDS, null, msgs);
-			msgs = basicSetIds(newIds, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.ABBREVIATION__IDS, newIds, newIds));
 	}
 
 	/**
@@ -260,7 +225,7 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case WebmatePackage.ABBREVIATION__IDS:
-				return basicSetIds(null, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
 				return ((InternalEList<?>)getSymbols()).basicRemove(otherEnd, msgs);
 			case WebmatePackage.ABBREVIATION__TAGS:
@@ -311,7 +276,8 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebmatePackage.ABBREVIATION__IDS:
-				setIds((ID)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends ID>)newValue);
 				return;
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
 				getSymbols().clear();
@@ -350,7 +316,7 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebmatePackage.ABBREVIATION__IDS:
-				setIds((ID)null);
+				getIds().clear();
 				return;
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
 				getSymbols().clear();
@@ -383,7 +349,7 @@ public class AbbreviationImpl extends MinimalEObjectImpl.Container implements Ab
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebmatePackage.ABBREVIATION__IDS:
-				return ids != null;
+				return ids != null && !ids.isEmpty();
 			case WebmatePackage.ABBREVIATION__SYMBOLS:
 				return symbols != null && !symbols.isEmpty();
 			case WebmatePackage.ABBREVIATION__TAGS:

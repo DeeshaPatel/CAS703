@@ -30,26 +30,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Abbreviation extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Ids</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Ids</b></em>' containment reference list.
+	 * The list contents are of type {@link webmate.ID}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ids</em>' containment reference.
-	 * @see #setIds(ID)
+	 * @return the value of the '<em>Ids</em>' containment reference list.
 	 * @see webmate.WebmatePackage#getAbbreviation_Ids()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ID getIds();
-
-	/**
-	 * Sets the value of the '{@link webmate.Abbreviation#getIds <em>Ids</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ids</em>' containment reference.
-	 * @see #getIds()
-	 * @generated
-	 */
-	void setIds(ID value);
+	EList<ID> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Symbols</b></em>' containment reference list.

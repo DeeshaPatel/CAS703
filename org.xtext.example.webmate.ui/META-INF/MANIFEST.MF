@@ -19,7 +19,7 @@ Require-Bundle: org.xtext.example.webmate,
  org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: org.xtext.example.mydsl.ui.contentassist,
+Export-Package: org.xtext.example.mydsl1.ui.quickfix,
  org.xtext.example.webmate.ui.internal,
- org.xtext.example.mydsl.ui.quickfix
+ org.xtext.example.mydsl1.ui.contentassist
 Bundle-Activator: org.xtext.example.webmate.ui.internal.WebmateActivator

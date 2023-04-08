@@ -16,7 +16,6 @@ import webmate.Group;
 import webmate.HTMLTag;
 import webmate.Symbol;
 import webmate.Tag;
-import webmate.ValidSymbol;
 import webmate.WebmateFactory;
 import webmate.WebmatePackage;
 
@@ -89,13 +88,6 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * @generated
 	 */
 	private EEnum htmlTagEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum validSymbolEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -369,17 +361,8 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSymbol_Sym() {
-		return (EAttribute)symbolEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSymbol_Tag() {
-		return (EReference)symbolEClass.getEStructuralFeatures().get(1);
+		return (EReference)symbolEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -388,7 +371,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * @generated
 	 */
 	public EAttribute getSymbol_Count() {
-		return (EAttribute)symbolEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)symbolEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -416,15 +399,6 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 */
 	public EEnum getHTMLTag() {
 		return htmlTagEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getValidSymbol() {
-		return validSymbolEEnum;
 	}
 
 	/**
@@ -484,7 +458,6 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		createEAttribute(idEClass, ID__ID_NAME);
 
 		symbolEClass = createEClass(SYMBOL);
-		createEAttribute(symbolEClass, SYMBOL__SYM);
 		createEReference(symbolEClass, SYMBOL__TAG);
 		createEAttribute(symbolEClass, SYMBOL__COUNT);
 
@@ -493,7 +466,6 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 
 		// Create enums
 		htmlTagEEnum = createEEnum(HTML_TAG);
-		validSymbolEEnum = createEEnum(VALID_SYMBOL);
 	}
 
 	/**
@@ -530,7 +502,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		initEReference(getHTML_Abbreviation(), this.getAbbreviation(), null, "abbreviation", null, 1, -1, webmate.HTML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abbreviationEClass, Abbreviation.class, "Abbreviation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbbreviation_Ids(), this.getID(), null, "ids", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbbreviation_Ids(), this.getID(), null, "ids", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbbreviation_Symbols(), this.getSymbol(), null, "symbols", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbbreviation_Tags(), this.getTag(), null, "tags", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbbreviation_Classes(), this.getClass_(), null, "classes", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -555,8 +527,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		initEAttribute(getID_IdName(), ecorePackage.getEString(), "idName", null, 0, 1, webmate.ID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSymbol_Sym(), this.getValidSymbol(), "sym", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSymbol_Tag(), this.getTag(), null, "tag", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbol_Tag(), this.getTag(), null, "tag", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSymbol_Count(), ecorePackage.getEInt(), "count", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -569,14 +540,14 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		addEEnumLiteral(htmlTagEEnum, HTMLTag.P);
 		addEEnumLiteral(htmlTagEEnum, HTMLTag.UL);
 		addEEnumLiteral(htmlTagEEnum, HTMLTag.LI);
-
-		initEEnum(validSymbolEEnum, ValidSymbol.class, "ValidSymbol");
-		addEEnumLiteral(validSymbolEEnum, ValidSymbol.PLUS);
-		addEEnumLiteral(validSymbolEEnum, ValidSymbol.MULTIPLY);
-		addEEnumLiteral(validSymbolEEnum, ValidSymbol.DOT);
-		addEEnumLiteral(validSymbolEEnum, ValidSymbol.HASH);
-		addEEnumLiteral(validSymbolEEnum, ValidSymbol.GREATERTHAN);
-		addEEnumLiteral(validSymbolEEnum, ValidSymbol.CARET);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.A);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.IMG);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.FORM);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.INPUT);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.TEXTAREA);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.BUTTON);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.SELECT);
+		addEEnumLiteral(htmlTagEEnum, HTMLTag.OPTION);
 
 		// Create resource
 		createResource(eNS_URI);

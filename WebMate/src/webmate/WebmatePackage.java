@@ -105,7 +105,7 @@ public interface WebmatePackage extends EPackage {
 	int ABBREVIATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ids</b></em>' containment reference.
+	 * The feature id for the '<em><b>Ids</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -380,22 +380,13 @@ public interface WebmatePackage extends EPackage {
 	int SYMBOL = 6;
 
 	/**
-	 * The feature id for the '<em><b>Sym</b></em>' attribute.
+	 * The feature id for the '<em><b>Tag</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL__SYM = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYMBOL__TAG = 1;
+	int SYMBOL__TAG = 0;
 
 	/**
 	 * The feature id for the '<em><b>Count</b></em>' attribute.
@@ -404,7 +395,7 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL__COUNT = 2;
+	int SYMBOL__COUNT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Symbol</em>' class.
@@ -413,7 +404,7 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_FEATURE_COUNT = 3;
+	int SYMBOL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Symbol</em>' class.
@@ -472,17 +463,6 @@ public interface WebmatePackage extends EPackage {
 	int HTML_TAG = 8;
 
 	/**
-	 * The meta object id for the '{@link webmate.ValidSymbol <em>Valid Symbol</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webmate.ValidSymbol
-	 * @see webmate.impl.WebmatePackageImpl#getValidSymbol()
-	 * @generated
-	 */
-	int VALID_SYMBOL = 9;
-
-
-	/**
 	 * Returns the meta object for class '{@link webmate.HTML <em>HTML</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -514,10 +494,10 @@ public interface WebmatePackage extends EPackage {
 	EClass getAbbreviation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link webmate.Abbreviation#getIds <em>Ids</em>}'.
+	 * Returns the meta object for the containment reference list '{@link webmate.Abbreviation#getIds <em>Ids</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Ids</em>'.
+	 * @return the meta object for the containment reference list '<em>Ids</em>'.
 	 * @see webmate.Abbreviation#getIds()
 	 * @see #getAbbreviation()
 	 * @generated
@@ -729,21 +709,10 @@ public interface WebmatePackage extends EPackage {
 	EClass getSymbol();
 
 	/**
-	 * Returns the meta object for the attribute '{@link webmate.Symbol#getSym <em>Sym</em>}'.
+	 * Returns the meta object for the containment reference '{@link webmate.Symbol#getTag <em>Tag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sym</em>'.
-	 * @see webmate.Symbol#getSym()
-	 * @see #getSymbol()
-	 * @generated
-	 */
-	EAttribute getSymbol_Sym();
-
-	/**
-	 * Returns the meta object for the reference '{@link webmate.Symbol#getTag <em>Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tag</em>'.
+	 * @return the meta object for the containment reference '<em>Tag</em>'.
 	 * @see webmate.Symbol#getTag()
 	 * @see #getSymbol()
 	 * @generated
@@ -791,16 +760,6 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getHTMLTag();
-
-	/**
-	 * Returns the meta object for enum '{@link webmate.ValidSymbol <em>Valid Symbol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Valid Symbol</em>'.
-	 * @see webmate.ValidSymbol
-	 * @generated
-	 */
-	EEnum getValidSymbol();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -854,7 +813,7 @@ public interface WebmatePackage extends EPackage {
 		EClass ABBREVIATION = eINSTANCE.getAbbreviation();
 
 		/**
-		 * The meta object literal for the '<em><b>Ids</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Ids</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1024,15 +983,7 @@ public interface WebmatePackage extends EPackage {
 		EClass SYMBOL = eINSTANCE.getSymbol();
 
 		/**
-		 * The meta object literal for the '<em><b>Sym</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SYMBOL__SYM = eINSTANCE.getSymbol_Sym();
-
-		/**
-		 * The meta object literal for the '<em><b>Tag</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1074,16 +1025,6 @@ public interface WebmatePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum HTML_TAG = eINSTANCE.getHTMLTag();
-
-		/**
-		 * The meta object literal for the '{@link webmate.ValidSymbol <em>Valid Symbol</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webmate.ValidSymbol
-		 * @see webmate.impl.WebmatePackageImpl#getValidSymbol()
-		 * @generated
-		 */
-		EEnum VALID_SYMBOL = eINSTANCE.getValidSymbol();
 
 	}
 

@@ -11,6 +11,14 @@
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/p"/>
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/ul"/>
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/li"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/a"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/img"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/form"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/input"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/textarea"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/button"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/select"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/option"/>
     </genEnums>
     <genClasses ecoreClass="WebMate.ecore#//HTML">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//HTML/abbreviation"/>
