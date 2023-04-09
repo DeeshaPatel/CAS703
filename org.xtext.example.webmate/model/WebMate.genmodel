@@ -20,6 +20,11 @@
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/select"/>
       <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//HTMLTag/option"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebMate.ecore#//SYM">
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//SYM/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//SYM/MULTIPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="WebMate.ecore#//SYM/GREATER"/>
+    </genEnums>
     <genClasses ecoreClass="WebMate.ecore#//HTML">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//HTML/abbreviation"/>
     </genClasses>
@@ -51,6 +56,7 @@
     <genClasses ecoreClass="WebMate.ecore#//Symbol">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Symbol/tag"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/count"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Symbol/sym"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Group">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebMate.ecore#//Group/abbreviation"/>

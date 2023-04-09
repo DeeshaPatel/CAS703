@@ -26,7 +26,6 @@ public class InternalWebMateLexer extends Lexer {
     public static final int T__13=13;
     public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -125,10 +124,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:14:7: ( '*' )
-            // InternalWebMate.g:14:9: '*'
+            // InternalWebMate.g:14:7: ( '.' )
+            // InternalWebMate.g:14:9: '.'
             {
-            match('*'); 
+            match('.'); 
 
             }
 
@@ -145,10 +144,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:15:7: ( '+' )
-            // InternalWebMate.g:15:9: '+'
+            // InternalWebMate.g:15:7: ( '[' )
+            // InternalWebMate.g:15:9: '['
             {
-            match('+'); 
+            match('['); 
 
             }
 
@@ -165,10 +164,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:16:7: ( '>' )
-            // InternalWebMate.g:16:9: '>'
+            // InternalWebMate.g:16:7: ( '=' )
+            // InternalWebMate.g:16:9: '='
             {
-            match('>'); 
+            match('='); 
 
             }
 
@@ -185,10 +184,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:17:7: ( '^' )
-            // InternalWebMate.g:17:9: '^'
+            // InternalWebMate.g:17:7: ( ']' )
+            // InternalWebMate.g:17:9: ']'
             {
-            match('^'); 
+            match(']'); 
 
             }
 
@@ -205,10 +204,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:18:7: ( '.' )
-            // InternalWebMate.g:18:9: '.'
+            // InternalWebMate.g:18:7: ( '(' )
+            // InternalWebMate.g:18:9: '('
             {
-            match('.'); 
+            match('('); 
 
             }
 
@@ -225,10 +224,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:19:7: ( '[' )
-            // InternalWebMate.g:19:9: '['
+            // InternalWebMate.g:19:7: ( ')' )
+            // InternalWebMate.g:19:9: ')'
             {
-            match('['); 
+            match(')'); 
 
             }
 
@@ -245,10 +244,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:20:7: ( '=' )
-            // InternalWebMate.g:20:9: '='
+            // InternalWebMate.g:20:7: ( '-' )
+            // InternalWebMate.g:20:9: '-'
             {
-            match('='); 
+            match('-'); 
 
             }
 
@@ -265,10 +264,11 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:21:7: ( ']' )
-            // InternalWebMate.g:21:9: ']'
+            // InternalWebMate.g:21:7: ( 'div' )
+            // InternalWebMate.g:21:9: 'div'
             {
-            match(']'); 
+            match("div"); 
+
 
             }
 
@@ -285,10 +285,11 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:22:7: ( '(' )
-            // InternalWebMate.g:22:9: '('
+            // InternalWebMate.g:22:7: ( 'h1' )
+            // InternalWebMate.g:22:9: 'h1'
             {
-            match('('); 
+            match("h1"); 
+
 
             }
 
@@ -305,10 +306,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:23:7: ( ')' )
-            // InternalWebMate.g:23:9: ')'
+            // InternalWebMate.g:23:7: ( 'p' )
+            // InternalWebMate.g:23:9: 'p'
             {
-            match(')'); 
+            match('p'); 
 
             }
 
@@ -325,10 +326,11 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:24:7: ( '-' )
-            // InternalWebMate.g:24:9: '-'
+            // InternalWebMate.g:24:7: ( 'ul' )
+            // InternalWebMate.g:24:9: 'ul'
             {
-            match('-'); 
+            match("ul"); 
+
 
             }
 
@@ -345,10 +347,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:25:7: ( 'div' )
-            // InternalWebMate.g:25:9: 'div'
+            // InternalWebMate.g:25:7: ( 'li' )
+            // InternalWebMate.g:25:9: 'li'
             {
-            match("div"); 
+            match("li"); 
 
 
             }
@@ -366,11 +368,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:26:7: ( 'h1' )
-            // InternalWebMate.g:26:9: 'h1'
+            // InternalWebMate.g:26:7: ( 'a' )
+            // InternalWebMate.g:26:9: 'a'
             {
-            match("h1"); 
-
+            match('a'); 
 
             }
 
@@ -387,10 +388,11 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:27:7: ( 'p' )
-            // InternalWebMate.g:27:9: 'p'
+            // InternalWebMate.g:27:7: ( 'img' )
+            // InternalWebMate.g:27:9: 'img'
             {
-            match('p'); 
+            match("img"); 
+
 
             }
 
@@ -407,10 +409,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:28:7: ( 'ul' )
-            // InternalWebMate.g:28:9: 'ul'
+            // InternalWebMate.g:28:7: ( 'form' )
+            // InternalWebMate.g:28:9: 'form'
             {
-            match("ul"); 
+            match("form"); 
 
 
             }
@@ -428,10 +430,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:29:7: ( 'li' )
-            // InternalWebMate.g:29:9: 'li'
+            // InternalWebMate.g:29:7: ( 'input' )
+            // InternalWebMate.g:29:9: 'input'
             {
-            match("li"); 
+            match("input"); 
 
 
             }
@@ -449,10 +451,11 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:30:7: ( 'a' )
-            // InternalWebMate.g:30:9: 'a'
+            // InternalWebMate.g:30:7: ( 'button' )
+            // InternalWebMate.g:30:9: 'button'
             {
-            match('a'); 
+            match("button"); 
+
 
             }
 
@@ -469,10 +472,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:31:7: ( 'img' )
-            // InternalWebMate.g:31:9: 'img'
+            // InternalWebMate.g:31:7: ( 'option' )
+            // InternalWebMate.g:31:9: 'option'
             {
-            match("img"); 
+            match("option"); 
 
 
             }
@@ -490,10 +493,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:32:7: ( 'form' )
-            // InternalWebMate.g:32:9: 'form'
+            // InternalWebMate.g:32:7: ( 'select' )
+            // InternalWebMate.g:32:9: 'select'
             {
-            match("form"); 
+            match("select"); 
 
 
             }
@@ -511,11 +514,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:33:7: ( 'input' )
-            // InternalWebMate.g:33:9: 'input'
+            // InternalWebMate.g:33:7: ( '+' )
+            // InternalWebMate.g:33:9: '+'
             {
-            match("input"); 
-
+            match('+'); 
 
             }
 
@@ -532,11 +534,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:34:7: ( 'button' )
-            // InternalWebMate.g:34:9: 'button'
+            // InternalWebMate.g:34:7: ( '*' )
+            // InternalWebMate.g:34:9: '*'
             {
-            match("button"); 
-
+            match('*'); 
 
             }
 
@@ -553,11 +554,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:35:7: ( 'option' )
-            // InternalWebMate.g:35:9: 'option'
+            // InternalWebMate.g:35:7: ( '>' )
+            // InternalWebMate.g:35:9: '>'
             {
-            match("option"); 
-
+            match('>'); 
 
             }
 
@@ -569,36 +569,15 @@ public class InternalWebMateLexer extends Lexer {
     }
     // $ANTLR end "T__35"
 
-    // $ANTLR start "T__36"
-    public final void mT__36() throws RecognitionException {
-        try {
-            int _type = T__36;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:36:7: ( 'select' )
-            // InternalWebMate.g:36:9: 'select'
-            {
-            match("select"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__36"
-
     // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:920:10: ( ( '0' .. '9' )+ )
-            // InternalWebMate.g:920:12: ( '0' .. '9' )+
+            // InternalWebMate.g:933:10: ( ( '0' .. '9' )+ )
+            // InternalWebMate.g:933:12: ( '0' .. '9' )+
             {
-            // InternalWebMate.g:920:12: ( '0' .. '9' )+
+            // InternalWebMate.g:933:12: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -612,7 +591,7 @@ public class InternalWebMateLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalWebMate.g:920:13: '0' .. '9'
+            	    // InternalWebMate.g:933:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -644,10 +623,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:922:13: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalWebMate.g:922:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalWebMate.g:935:13: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '+' | '>' | '^' | '*' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalWebMate.g:935:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '+' | '>' | '^' | '*' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            if ( (input.LA(1)>='*' && input.LA(1)<='+')||input.LA(1)=='>'||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='^' && input.LA(1)<='_')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
 
             }
@@ -656,7 +635,7 @@ public class InternalWebMateLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalWebMate.g:922:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalWebMate.g:935:55: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -705,10 +684,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:924:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalWebMate.g:924:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalWebMate.g:937:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalWebMate.g:937:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalWebMate.g:924:11: ( '^' )?
+            // InternalWebMate.g:937:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -717,7 +696,7 @@ public class InternalWebMateLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalWebMate.g:924:11: '^'
+                    // InternalWebMate.g:937:11: '^'
                     {
                     match('^'); 
 
@@ -735,7 +714,7 @@ public class InternalWebMateLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalWebMate.g:924:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalWebMate.g:937:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -784,12 +763,12 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:926:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalWebMate.g:926:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalWebMate.g:939:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalWebMate.g:939:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalWebMate.g:926:24: ( options {greedy=false; } : . )*
+            // InternalWebMate.g:939:24: ( options {greedy=false; } : . )*
             loop5:
             do {
                 int alt5=2;
@@ -814,7 +793,7 @@ public class InternalWebMateLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalWebMate.g:926:52: .
+            	    // InternalWebMate.g:939:52: .
             	    {
             	    matchAny(); 
 
@@ -844,12 +823,12 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:928:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalWebMate.g:928:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalWebMate.g:941:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalWebMate.g:941:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalWebMate.g:928:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalWebMate.g:941:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop6:
             do {
                 int alt6=2;
@@ -862,7 +841,7 @@ public class InternalWebMateLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalWebMate.g:928:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalWebMate.g:941:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -882,7 +861,7 @@ public class InternalWebMateLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalWebMate.g:928:40: ( ( '\\r' )? '\\n' )?
+            // InternalWebMate.g:941:40: ( ( '\\r' )? '\\n' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -891,9 +870,9 @@ public class InternalWebMateLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalWebMate.g:928:41: ( '\\r' )? '\\n'
+                    // InternalWebMate.g:941:41: ( '\\r' )? '\\n'
                     {
-                    // InternalWebMate.g:928:41: ( '\\r' )?
+                    // InternalWebMate.g:941:41: ( '\\r' )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -902,7 +881,7 @@ public class InternalWebMateLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // InternalWebMate.g:928:41: '\\r'
+                            // InternalWebMate.g:941:41: '\\r'
                             {
                             match('\r'); 
 
@@ -934,10 +913,10 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:930:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalWebMate.g:930:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalWebMate.g:943:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalWebMate.g:943:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalWebMate.g:930:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalWebMate.g:943:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt9=0;
             loop9:
             do {
@@ -991,8 +970,8 @@ public class InternalWebMateLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalWebMate.g:932:16: ( . )
-            // InternalWebMate.g:932:18: .
+            // InternalWebMate.g:945:16: ( . )
+            // InternalWebMate.g:945:18: .
             {
             matchAny(); 
 
@@ -1007,8 +986,8 @@ public class InternalWebMateLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalWebMate.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | RULE_INT | RULE_STRING | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt10=33;
+        // InternalWebMate.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_INT | RULE_STRING | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt10=32;
         alt10 = dfa10.predict(input);
         switch (alt10) {
             case 1 :
@@ -1187,56 +1166,49 @@ public class InternalWebMateLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // InternalWebMate.g:1:160: T__36
-                {
-                mT__36(); 
-
-                }
-                break;
-            case 27 :
-                // InternalWebMate.g:1:166: RULE_INT
+                // InternalWebMate.g:1:160: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 28 :
-                // InternalWebMate.g:1:175: RULE_STRING
+            case 27 :
+                // InternalWebMate.g:1:169: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 29 :
-                // InternalWebMate.g:1:187: RULE_ID
+            case 28 :
+                // InternalWebMate.g:1:181: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 30 :
-                // InternalWebMate.g:1:195: RULE_ML_COMMENT
+            case 29 :
+                // InternalWebMate.g:1:189: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 31 :
-                // InternalWebMate.g:1:211: RULE_SL_COMMENT
+            case 30 :
+                // InternalWebMate.g:1:205: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 32 :
-                // InternalWebMate.g:1:227: RULE_WS
+            case 31 :
+                // InternalWebMate.g:1:221: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 33 :
-                // InternalWebMate.g:1:235: RULE_ANY_OTHER
+            case 32 :
+                // InternalWebMate.g:1:229: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1250,26 +1222,19 @@ public class InternalWebMateLexer extends Lexer {
 
     protected DFA10 dfa10 = new DFA10(this);
     static final String DFA10_eotS =
-        "\7\uffff\1\45\7\uffff\2\60\1\62\2\60\1\65\5\60\1\uffff\1\60\1\36\21\uffff\2\60\1\uffff\1\101\1\uffff\1\102\1\103\1\uffff\6\60\4\uffff\1\112\3\uffff\1\113\5\60\2\uffff\1\60\1\122\3\60\1\126\1\uffff\3\60\1\uffff\1\132\1\133\1\134\3\uffff";
+        "\13\uffff\2\53\1\55\2\53\1\60\5\53\1\67\1\70\1\71\1\uffff\2\53\1\36\14\uffff\2\53\1\uffff\1\100\1\uffff\1\101\1\102\1\uffff\6\53\4\uffff\1\53\3\uffff\1\111\3\uffff\1\112\5\53\2\uffff\1\53\1\121\3\53\1\125\1\uffff\3\53\1\uffff\1\131\1\132\1\133\3\uffff";
     static final String DFA10_eofS =
-        "\135\uffff";
+        "\134\uffff";
     static final String DFA10_minS =
-        "\1\0\6\uffff\1\101\7\uffff\13\60\1\uffff\1\60\1\52\21\uffff\2\60\1\uffff\1\60\1\uffff\2\60\1\uffff\6\60\4\uffff\1\60\3\uffff\6\60\2\uffff\6\60\1\uffff\3\60\1\uffff\3\60\3\uffff";
+        "\1\0\12\uffff\16\60\1\uffff\1\101\1\60\1\52\14\uffff\2\60\1\uffff\1\60\1\uffff\2\60\1\uffff\6\60\4\uffff\1\60\3\uffff\1\60\3\uffff\6\60\2\uffff\6\60\1\uffff\3\60\1\uffff\3\60\3\uffff";
     static final String DFA10_maxS =
-        "\1\uffff\6\uffff\1\172\7\uffff\13\172\1\uffff\1\172\1\57\21\uffff\2\172\1\uffff\1\172\1\uffff\2\172\1\uffff\6\172\4\uffff\1\172\3\uffff\6\172\2\uffff\6\172\1\uffff\3\172\1\uffff\3\172\3\uffff";
+        "\1\uffff\12\uffff\16\172\1\uffff\2\172\1\57\14\uffff\2\172\1\uffff\1\172\1\uffff\2\172\1\uffff\6\172\4\uffff\1\172\3\uffff\1\172\3\uffff\6\172\2\uffff\6\172\1\uffff\3\172\1\uffff\3\172\3\uffff";
     static final String DFA10_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\uffff\1\10\1\11\1\12\1\13\1\14\1\15\1\16\13\uffff\1\33\2\uffff\1\40\1\41\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\35\1\10\1\11\1\12\1\13\1\14\1\15\1\16\2\uffff\1\34\1\uffff\1\21\2\uffff\1\24\6\uffff\1\33\1\36\1\37\1\40\1\uffff\1\20\1\22\1\23\6\uffff\1\17\1\25\6\uffff\1\26\3\uffff\1\27\3\uffff\1\30\1\31\1\32";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\16\uffff\1\32\3\uffff\1\37\1\40\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\2\uffff\1\33\1\uffff\1\15\2\uffff\1\20\6\uffff\1\27\1\30\1\31\1\32\1\uffff\1\35\1\36\1\37\1\uffff\1\14\1\16\1\17\6\uffff\1\13\1\21\6\uffff\1\22\3\uffff\1\23\3\uffff\1\24\1\25\1\26";
     static final String DFA10_specialS =
-        "\1\0\134\uffff}>";
+        "\1\0\133\uffff}>";
     static final String[] DFA10_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\2\36\1\3\4\36\1\14\1\15\1\4\1\5\1\36\1\16\1\10\1\34\12\32\3\36\1\12\1\6\2\36\32\33\1\11\1\36\1\13\1\7\1\33\1\36\1\24\1\27\1\33\1\17\1\33\1\26\1\33\1\20\1\25\2\33\1\23\2\33\1\30\1\21\2\33\1\31\1\33\1\22\5\33\1\1\1\36\1\2\uff82\36",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\11\36\2\35\2\36\1\35\22\36\1\35\2\36\1\3\4\36\1\10\1\11\1\27\1\26\1\36\1\12\1\4\1\34\12\31\3\36\1\6\1\30\2\36\32\33\1\5\1\36\1\7\1\32\1\33\1\36\1\20\1\23\1\33\1\13\1\33\1\22\1\33\1\14\1\21\2\33\1\17\2\33\1\24\1\15\2\33\1\25\1\33\1\16\5\33\1\1\1\36\1\2\uff82\36",
             "",
             "",
             "",
@@ -1277,23 +1242,27 @@ public class InternalWebMateLexer extends Lexer {
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\56\21\57",
-            "\1\57\1\61\10\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\63\16\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\64\21\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\14\57\1\66\1\67\14\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\16\57\1\70\13\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\24\57\1\71\5\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\17\57\1\72\12\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\73\25\57",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\75\4\uffff\1\76",
             "",
             "",
             "",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\10\52\1\51\21\52",
+            "\1\52\1\54\10\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\13\52\1\56\16\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\10\52\1\57\21\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\14\52\1\61\1\62\14\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\16\52\1\63\13\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\24\52\1\64\5\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\17\52\1\65\12\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\4\52\1\66\25\52",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\32\73\4\uffff\1\73\1\uffff\32\73",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\1\74\4\uffff\1\75",
             "",
             "",
             "",
@@ -1306,52 +1275,54 @@ public class InternalWebMateLexer extends Lexer {
             "",
             "",
             "",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\25\52\1\77\4\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
             "",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\25\57\1\100\4\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\6\57\1\104\23\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\17\57\1\105\12\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\21\57\1\106\10\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\23\57\1\107\6\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\23\57\1\110\6\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\111\16\57",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\6\52\1\103\23\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\17\52\1\104\12\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\21\52\1\105\10\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\23\52\1\106\6\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\23\52\1\107\6\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\13\52\1\110\16\52",
             "",
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\24\57\1\114\5\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\14\57\1\115\15\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\23\57\1\116\6\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\117\21\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\120\25\57",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\23\57\1\121\6\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\16\57\1\123\13\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\16\57\1\124\13\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\2\57\1\125\27\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\15\57\1\127\14\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\15\57\1\130\14\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\23\57\1\131\6\57",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\24\52\1\113\5\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\14\52\1\114\15\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\23\52\1\115\6\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\10\52\1\116\21\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\4\52\1\117\25\52",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\23\52\1\120\6\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\16\52\1\122\13\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\16\52\1\123\13\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\2\52\1\124\27\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\15\52\1\126\14\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\15\52\1\127\14\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\23\52\1\130\6\52",
+            "",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
+            "\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\32\52",
             "",
             "",
             ""
@@ -1387,7 +1358,7 @@ public class InternalWebMateLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | RULE_INT | RULE_STRING | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_INT | RULE_STRING | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -1403,51 +1374,51 @@ public class InternalWebMateLexer extends Lexer {
 
                         else if ( (LA10_0=='#') ) {s = 3;}
 
-                        else if ( (LA10_0=='*') ) {s = 4;}
+                        else if ( (LA10_0=='.') ) {s = 4;}
 
-                        else if ( (LA10_0=='+') ) {s = 5;}
+                        else if ( (LA10_0=='[') ) {s = 5;}
 
-                        else if ( (LA10_0=='>') ) {s = 6;}
+                        else if ( (LA10_0=='=') ) {s = 6;}
 
-                        else if ( (LA10_0=='^') ) {s = 7;}
+                        else if ( (LA10_0==']') ) {s = 7;}
 
-                        else if ( (LA10_0=='.') ) {s = 8;}
+                        else if ( (LA10_0=='(') ) {s = 8;}
 
-                        else if ( (LA10_0=='[') ) {s = 9;}
+                        else if ( (LA10_0==')') ) {s = 9;}
 
-                        else if ( (LA10_0=='=') ) {s = 10;}
+                        else if ( (LA10_0=='-') ) {s = 10;}
 
-                        else if ( (LA10_0==']') ) {s = 11;}
+                        else if ( (LA10_0=='d') ) {s = 11;}
 
-                        else if ( (LA10_0=='(') ) {s = 12;}
+                        else if ( (LA10_0=='h') ) {s = 12;}
 
-                        else if ( (LA10_0==')') ) {s = 13;}
+                        else if ( (LA10_0=='p') ) {s = 13;}
 
-                        else if ( (LA10_0=='-') ) {s = 14;}
+                        else if ( (LA10_0=='u') ) {s = 14;}
 
-                        else if ( (LA10_0=='d') ) {s = 15;}
+                        else if ( (LA10_0=='l') ) {s = 15;}
 
-                        else if ( (LA10_0=='h') ) {s = 16;}
+                        else if ( (LA10_0=='a') ) {s = 16;}
 
-                        else if ( (LA10_0=='p') ) {s = 17;}
+                        else if ( (LA10_0=='i') ) {s = 17;}
 
-                        else if ( (LA10_0=='u') ) {s = 18;}
+                        else if ( (LA10_0=='f') ) {s = 18;}
 
-                        else if ( (LA10_0=='l') ) {s = 19;}
+                        else if ( (LA10_0=='b') ) {s = 19;}
 
-                        else if ( (LA10_0=='a') ) {s = 20;}
+                        else if ( (LA10_0=='o') ) {s = 20;}
 
-                        else if ( (LA10_0=='i') ) {s = 21;}
+                        else if ( (LA10_0=='s') ) {s = 21;}
 
-                        else if ( (LA10_0=='f') ) {s = 22;}
+                        else if ( (LA10_0=='+') ) {s = 22;}
 
-                        else if ( (LA10_0=='b') ) {s = 23;}
+                        else if ( (LA10_0=='*') ) {s = 23;}
 
-                        else if ( (LA10_0=='o') ) {s = 24;}
+                        else if ( (LA10_0=='>') ) {s = 24;}
 
-                        else if ( (LA10_0=='s') ) {s = 25;}
+                        else if ( ((LA10_0>='0' && LA10_0<='9')) ) {s = 25;}
 
-                        else if ( ((LA10_0>='0' && LA10_0<='9')) ) {s = 26;}
+                        else if ( (LA10_0=='^') ) {s = 26;}
 
                         else if ( ((LA10_0>='A' && LA10_0<='Z')||LA10_0=='_'||LA10_0=='c'||LA10_0=='e'||LA10_0=='g'||(LA10_0>='j' && LA10_0<='k')||(LA10_0>='m' && LA10_0<='n')||(LA10_0>='q' && LA10_0<='r')||LA10_0=='t'||(LA10_0>='v' && LA10_0<='z')) ) {s = 27;}
 

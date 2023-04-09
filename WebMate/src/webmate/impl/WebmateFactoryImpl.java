@@ -17,6 +17,7 @@ import webmate.Group;
 import webmate.HTML;
 import webmate.HTMLTag;
 import webmate.ID;
+import webmate.SYM;
 import webmate.Symbol;
 import webmate.Tag;
 import webmate.WebmateFactory;
@@ -89,6 +90,8 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 		switch (eDataType.getClassifierID()) {
 			case WebmatePackage.HTML_TAG:
 				return createHTMLTagFromString(eDataType, initialValue);
+			case WebmatePackage.SYM:
+				return createSYMFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -104,6 +107,8 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 		switch (eDataType.getClassifierID()) {
 			case WebmatePackage.HTML_TAG:
 				return convertHTMLTagToString(eDataType, instanceValue);
+			case WebmatePackage.SYM:
+				return convertSYMToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -206,6 +211,26 @@ public class WebmateFactoryImpl extends EFactoryImpl implements WebmateFactory {
 	 * @generated
 	 */
 	public String convertHTMLTagToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SYM createSYMFromString(EDataType eDataType, String initialValue) {
+		SYM result = SYM.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSYMToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

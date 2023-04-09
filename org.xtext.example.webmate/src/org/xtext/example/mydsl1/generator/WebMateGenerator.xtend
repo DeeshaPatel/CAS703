@@ -36,37 +36,81 @@ class WebMateGenerator extends AbstractGenerator {
 		
 		val stack = new Stack()
 		
+		var flag = 0;
+		
 		
 		if (!element.tags.isEmpty) {
 			build.append("<")
 			var s = toHTMLTag(element, tag)
 			build.append(s)
-			build.append(">") 
-			if (!element.symbols.empty && !element.symbols.equals('>')){
-				for (inn_tag : element.symbols) { 
-					build.append("<")
-					var s1 = toHTMLTag(element, inn_tag.tag)
-					build.append(s1)
-					build.append(">")
-					stack.push(inn_tag.tag.tagName)
-				}
-				for (var i = stack.size-1; i>=0;i--) {
-					build.append("</"+stack.pop+">")
-				}
-			}
-			build.append("</"+tag.tagName+">")
-		}	
+			build.append("> \n") 
+			tag = element.tags.head
+			System.out.println("Check me............"+element.symbols.toArray.toString)
 		
-		if (!element.symbols.empty && !element.symbols.equals('*')){
-			for(var i=0; i<element.symbols.head.count-1; i++) {
-				build.append(System.getProperty("line.separator"))
-				build.append("<") 
-				var s = toHTMLTag(element, tag)
-				build.append(s)
-				build.append(">")
-				build.append("</"+tag.tagName+">")
+			if (!element.symbols.empty){
+				for (in_sym : element.symbols) { 
+					System.out.println("HELLO"+ in_sym.sym)
+					switch in_sym.sym {
+						case GREATER: {
+							System.out.println("Check me A............"+element.symbols)
+							for (inn_tag : element.symbols) { 
+								if (in_sym.sym!="GREATER")
+								{
+									
+								}
+								else {
+									System.out.println("Check me B............")
+									build.append("\t <")
+									var s1 = toHTMLTag(element, inn_tag.tag)
+									build.append(s1)
+									build.append(">")
+									stack.push(inn_tag.tag.tagName)
+								}
+							}
+							for (var i = stack.size-1; i>=0;i--) {
+								build.append("</"+stack.pop+">")
+							}
+						}
+						case MULTIPLY: { 
+							if (!element.symbols.empty && !(element.symbols.get(0).count == 0)){
+								System.out.println("Check me 1 ............")
+								for(var i=0; i<element.symbols.head.count-1; i++) {
+									System.out.println("Check me 2............")
+									build.append("<") 
+									var s1 = toHTMLTag(element, tag)
+									build.append(s1)
+									build.append(">")
+									build.append("\n")
+									build.append("</"+tag.tagName+">") 
+									build.append("\n")
+									System.out.println("Check me 3............")
+								}
+							}
+						}
+						case PLUS: {
+//							tag = element.tags.head
+//							build.append("\n</"+tag.tagName+">")
+//							build.append("<") 
+//							var s1 = toHTMLTag(element, tag)
+//							build.append(s1)
+//							build.append(">")
+//							build.append("\n")
+//							build.append("</"+tag.tagName+">") 
+//							build.append("\n")
+//							flag = 1;
+						}
+					}
+				}
 			}
-		}
+			
+			if (flag == 0 )
+			{
+				tag = element.tags.head
+				build.append("\n</"+tag.tagName+">")
+			}
+			flag = 0 ; 
+			
+		}	
 		
 		
 		if (!element.ids.isEmpty) { 
@@ -100,17 +144,5 @@ class WebMateGenerator extends AbstractGenerator {
 			
 			build.toString()
 		}
-	}
-	def toHTMLCode(Resource r)
-	{
-		var html = ""
-		for (element: r.contents)
-		{
-			if (element instanceof Tag)
-			{
-				html += "<" + element.tagName + ">" 
-			}
-		}
-		html
 	}
 }

@@ -64,6 +64,7 @@ public class SymbolItemProvider
 
 			addTagPropertyDescriptor(object);
 			addCountPropertyDescriptor(object);
+			addSymPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +109,28 @@ public class SymbolItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sym feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSymPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Symbol_sym_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Symbol_sym_feature", "_UI_Symbol_type"),
+				 WebmatePackage.Literals.SYMBOL__SYM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -179,6 +202,7 @@ public class SymbolItemProvider
 
 		switch (notification.getFeatureID(Symbol.class)) {
 			case WebmatePackage.SYMBOL__COUNT:
+			case WebmatePackage.SYMBOL__SYM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebmatePackage.SYMBOL__TAG:

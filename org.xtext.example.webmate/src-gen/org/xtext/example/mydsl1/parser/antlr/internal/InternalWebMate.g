@@ -353,10 +353,25 @@ ruleSymbol returns [EObject current=null]
 				}
 			)
 			(
-				otherlv_1='*'
-				{
-					newLeafNode(otherlv_1, grammarAccess.getSymbolAccess().getAsteriskKeyword_0_1_0());
-				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSymbolAccess().getSymSYMEnumRuleCall_0_1_0_0());
+						}
+						lv_sym_1_0=ruleSYM
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSymbolRule());
+							}
+							set(
+								$current,
+								"sym",
+								lv_sym_1_0,
+								"org.xtext.example.mydsl1.WebMate.SYM");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
 				(
 					(
 						{
@@ -380,10 +395,25 @@ ruleSymbol returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_3='+'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getSymbolAccess().getPlusSignKeyword_1_0());
-			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSymbolAccess().getSymSYMEnumRuleCall_1_0_0());
+					}
+					lv_sym_3_0=ruleSYM
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSymbolRule());
+						}
+						set(
+							$current,
+							"sym",
+							lv_sym_3_0,
+							"org.xtext.example.mydsl1.WebMate.SYM");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
 			(
 				(
 					{
@@ -398,58 +428,6 @@ ruleSymbol returns [EObject current=null]
 							$current,
 							"tag",
 							lv_tag_4_0,
-							"org.xtext.example.mydsl1.WebMate.Tag");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_5='>'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getSymbolAccess().getGreaterThanSignKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_2_1_0());
-					}
-					lv_tag_6_0=ruleTag
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getSymbolRule());
-						}
-						set(
-							$current,
-							"tag",
-							lv_tag_6_0,
-							"org.xtext.example.mydsl1.WebMate.Tag");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_7='^'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getSymbolAccess().getCircumflexAccentKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0());
-					}
-					lv_tag_8_0=ruleTag
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getSymbolRule());
-						}
-						set(
-							$current,
-							"tag",
-							lv_tag_8_0,
 							"org.xtext.example.mydsl1.WebMate.Tag");
 						afterParserOrEnumRuleCall();
 					}
@@ -917,9 +895,44 @@ ruleHTMLTag returns [Enumerator current=null]
 	)
 ;
 
+// Rule SYM
+ruleSYM returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='+'
+			{
+				$current = grammarAccess.getSYMAccess().getPLUSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getSYMAccess().getPLUSEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='*'
+			{
+				$current = grammarAccess.getSYMAccess().getMULTIPLYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getSYMAccess().getMULTIPLYEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='>'
+			{
+				$current = grammarAccess.getSYMAccess().getGREATEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getSYMAccess().getGREATEREnumLiteralDeclaration_2());
+			}
+		)
+	)
+;
+
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_STRING : ('a'..'z'|'A'..'Z'|'_'|'+'|'>'|'^'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

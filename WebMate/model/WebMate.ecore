@@ -57,9 +57,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Symbol">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sym" eType="#//SYM"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group">
     <eStructuralFeatures xsi:type="ecore:EReference" name="abbreviation" upperBound="-1"
         eType="#//Abbreviation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SYM">
+    <eLiterals name="PLUS"/>
+    <eLiterals name="MULTIPLY" value="1"/>
+    <eLiterals name="GREATER" value="3" literal="GREATER"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl1.generator;
 
+import com.google.common.base.Objects;
 import java.util.List;
 import java.util.Stack;
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -19,6 +21,7 @@ import webmate.Abbreviation;
 import webmate.Attribute;
 import webmate.HTMLTag;
 import webmate.ID;
+import webmate.SYM;
 import webmate.Symbol;
 import webmate.Tag;
 
@@ -47,57 +50,100 @@ public class WebMateGenerator extends AbstractGenerator {
       Tag tag = IterableExtensions.<Tag>head(element.getTags());
       final StringBuilder build = new StringBuilder();
       final Stack<HTMLTag> stack = new Stack<HTMLTag>();
+      int flag = 0;
       boolean _isEmpty = element.getTags().isEmpty();
       boolean _not = (!_isEmpty);
       if (_not) {
         build.append("<");
         String s = this.toHTMLTag(element, tag);
         build.append(s);
-        build.append(">");
-        if (((!element.getSymbols().isEmpty()) && (!element.getSymbols().equals(">")))) {
+        build.append("> \n");
+        tag = IterableExtensions.<Tag>head(element.getTags());
+        String _string = ((List<Object>)Conversions.doWrapArray(element.getSymbols().toArray())).toString();
+        String _plus = ("Check me............" + _string);
+        System.out.println(_plus);
+        boolean _isEmpty_1 = element.getSymbols().isEmpty();
+        boolean _not_1 = (!_isEmpty_1);
+        if (_not_1) {
           EList<Symbol> _symbols = element.getSymbols();
-          for (final Symbol inn_tag : _symbols) {
+          for (final Symbol in_sym : _symbols) {
             {
-              build.append("<");
-              String s1 = this.toHTMLTag(element, inn_tag.getTag());
-              build.append(s1);
-              build.append(">");
-              stack.push(inn_tag.getTag().getTagName());
+              SYM _sym = in_sym.getSym();
+              String _plus_1 = ("HELLO" + _sym);
+              System.out.println(_plus_1);
+              SYM _sym_1 = in_sym.getSym();
+              if (_sym_1 != null) {
+                switch (_sym_1) {
+                  case GREATER:
+                    EList<Symbol> _symbols_1 = element.getSymbols();
+                    String _plus_2 = ("Check me A............" + _symbols_1);
+                    System.out.println(_plus_2);
+                    EList<Symbol> _symbols_2 = element.getSymbols();
+                    for (final Symbol inn_tag : _symbols_2) {
+                      SYM _sym_2 = in_sym.getSym();
+                      boolean _notEquals = (!Objects.equal(_sym_2, "GREATER"));
+                      if (_notEquals) {
+                      } else {
+                        System.out.println("Check me B............");
+                        build.append("\t <");
+                        String s1 = this.toHTMLTag(element, inn_tag.getTag());
+                        build.append(s1);
+                        build.append(">");
+                        stack.push(inn_tag.getTag().getTagName());
+                      }
+                    }
+                    for (int i = (stack.size() - 1); (i >= 0); i--) {
+                      HTMLTag _pop = stack.pop();
+                      String _plus_3 = ("</" + _pop);
+                      String _plus_4 = (_plus_3 + ">");
+                      build.append(_plus_4);
+                    }
+                    break;
+                  case MULTIPLY:
+                    if (((!element.getSymbols().isEmpty()) && (!(element.getSymbols().get(0).getCount() == 0)))) {
+                      System.out.println("Check me 1 ............");
+                      for (int i = 0; (i < (IterableExtensions.<Symbol>head(element.getSymbols()).getCount() - 1)); i++) {
+                        {
+                          System.out.println("Check me 2............");
+                          build.append("<");
+                          String s1_1 = this.toHTMLTag(element, tag);
+                          build.append(s1_1);
+                          build.append(">");
+                          build.append("\n");
+                          HTMLTag _tagName = tag.getTagName();
+                          String _plus_3 = ("</" + _tagName);
+                          String _plus_4 = (_plus_3 + ">");
+                          build.append(_plus_4);
+                          build.append("\n");
+                          System.out.println("Check me 3............");
+                        }
+                      }
+                    }
+                    break;
+                  case PLUS:
+                    break;
+                  default:
+                    break;
+                }
+              }
             }
           }
-          for (int i = (stack.size() - 1); (i >= 0); i--) {
-            HTMLTag _pop = stack.pop();
-            String _plus = ("</" + _pop);
-            String _plus_1 = (_plus + ">");
-            build.append(_plus_1);
-          }
         }
-        HTMLTag _tagName = tag.getTagName();
-        String _plus = ("</" + _tagName);
-        String _plus_1 = (_plus + ">");
-        build.append(_plus_1);
-      }
-      if (((!element.getSymbols().isEmpty()) && (!element.getSymbols().equals("*")))) {
-        for (int i = 0; (i < (IterableExtensions.<Symbol>head(element.getSymbols()).getCount() - 1)); i++) {
-          {
-            build.append(System.getProperty("line.separator"));
-            build.append("<");
-            String s_1 = this.toHTMLTag(element, tag);
-            build.append(s_1);
-            build.append(">");
-            HTMLTag _tagName_1 = tag.getTagName();
-            String _plus_2 = ("</" + _tagName_1);
-            String _plus_3 = (_plus_2 + ">");
-            build.append(_plus_3);
-          }
+        if ((flag == 0)) {
+          tag = IterableExtensions.<Tag>head(element.getTags());
+          HTMLTag _tagName = tag.getTagName();
+          String _plus_1 = ("\n</" + _tagName);
+          String _plus_2 = (_plus_1 + ">");
+          build.append(_plus_2);
         }
+        flag = 0;
       }
-      boolean _isEmpty_1 = element.getIds().isEmpty();
-      boolean _not_1 = (!_isEmpty_1);
-      if (_not_1) {
+      boolean _isEmpty_2 = element.getIds().isEmpty();
+      boolean _not_2 = (!_isEmpty_2);
+      if (_not_2) {
         String _idName = IterableExtensions.<ID>head(element.getIds()).getIdName();
-        String _plus_2 = (" id= " + _idName);
-        build.append(_plus_2);
+        String _plus_3 = (" id= " + _idName);
+        build.append(_plus_3);
       }
       _xblockexpression = build.toString();
     }
@@ -157,24 +203,5 @@ public class WebMateGenerator extends AbstractGenerator {
       _xifexpression = _xblockexpression;
     }
     return _xifexpression;
-  }
-
-  public String toHTMLCode(final Resource r) {
-    String _xblockexpression = null;
-    {
-      String html = "";
-      EList<EObject> _contents = r.getContents();
-      for (final EObject element : _contents) {
-        if ((element instanceof Tag)) {
-          String _html = html;
-          HTMLTag _tagName = ((Tag)element).getTagName();
-          String _plus = ("<" + _tagName);
-          String _plus_1 = (_plus + ">");
-          html = (_html + _plus_1);
-        }
-      }
-      _xblockexpression = html;
-    }
-    return _xblockexpression;
   }
 }

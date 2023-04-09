@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link webmate.Symbol#getTag <em>Tag</em>}</li>
  *   <li>{@link webmate.Symbol#getCount <em>Count</em>}</li>
+ *   <li>{@link webmate.Symbol#getSym <em>Sym</em>}</li>
  * </ul>
  *
  * @see webmate.WebmatePackage#getSymbol()
@@ -65,5 +66,30 @@ public interface Symbol extends EObject {
 	 * @generated
 	 */
 	void setCount(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Sym</b></em>' attribute.
+	 * The literals are from the enumeration {@link webmate.SYM}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sym</em>' attribute.
+	 * @see webmate.SYM
+	 * @see #setSym(SYM)
+	 * @see webmate.WebmatePackage#getSymbol_Sym()
+	 * @model
+	 * @generated
+	 */
+	SYM getSym();
+
+	/**
+	 * Sets the value of the '{@link webmate.Symbol#getSym <em>Sym</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sym</em>' attribute.
+	 * @see webmate.SYM
+	 * @see #getSym()
+	 * @generated
+	 */
+	void setSym(SYM value);
 
 } // Symbol

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'div'", "'h1'", "'p'", "'ul'", "'li'", "'a'", "'img'", "'form'", "'input'", "'button'", "'option'", "'select'", "'{'", "'}'", "'#'", "'*'", "'+'", "'>'", "'^'", "'.'", "'['", "']'", "'='", "'('", "')'", "'-'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'div'", "'h1'", "'p'", "'ul'", "'li'", "'a'", "'img'", "'form'", "'input'", "'button'", "'option'", "'select'", "'+'", "'*'", "'>'", "'{'", "'}'", "'#'", "'.'", "'['", "']'", "'='", "'('", "')'", "'-'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -38,7 +38,6 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     public static final int T__13=13;
     public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -911,18 +910,65 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleHTMLTag"
 
 
+    // $ANTLR start "ruleSYM"
+    // InternalWebMate.g:319:1: ruleSYM : ( ( rule__SYM__Alternatives ) ) ;
+    public final void ruleSYM() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWebMate.g:323:1: ( ( ( rule__SYM__Alternatives ) ) )
+            // InternalWebMate.g:324:2: ( ( rule__SYM__Alternatives ) )
+            {
+            // InternalWebMate.g:324:2: ( ( rule__SYM__Alternatives ) )
+            // InternalWebMate.g:325:3: ( rule__SYM__Alternatives )
+            {
+             before(grammarAccess.getSYMAccess().getAlternatives()); 
+            // InternalWebMate.g:326:3: ( rule__SYM__Alternatives )
+            // InternalWebMate.g:326:4: rule__SYM__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__SYM__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSYMAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSYM"
+
+
     // $ANTLR start "rule__Abbreviation__Alternatives_2"
-    // InternalWebMate.g:318:1: rule__Abbreviation__Alternatives_2 : ( ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* ) | ( ( rule__Abbreviation__Group_2_1__0 ) ) );
+    // InternalWebMate.g:334:1: rule__Abbreviation__Alternatives_2 : ( ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* ) | ( ( rule__Abbreviation__Group_2_1__0 ) ) );
     public final void rule__Abbreviation__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:322:1: ( ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* ) | ( ( rule__Abbreviation__Group_2_1__0 ) ) )
+            // InternalWebMate.g:338:1: ( ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* ) | ( ( rule__Abbreviation__Group_2_1__0 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( ((LA2_0>=RULE_STRING && LA2_0<=RULE_ID)||LA2_0==24) ) {
+            if ( ((LA2_0>=RULE_STRING && LA2_0<=RULE_ID)||LA2_0==27) ) {
                 alt2=1;
             }
             else if ( ((LA2_0>=11 && LA2_0<=22)) ) {
@@ -936,13 +982,13 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalWebMate.g:323:2: ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* )
+                    // InternalWebMate.g:339:2: ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* )
                     {
-                    // InternalWebMate.g:323:2: ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* )
-                    // InternalWebMate.g:324:3: ( rule__Abbreviation__AbbreviationAssignment_2_0 )*
+                    // InternalWebMate.g:339:2: ( ( rule__Abbreviation__AbbreviationAssignment_2_0 )* )
+                    // InternalWebMate.g:340:3: ( rule__Abbreviation__AbbreviationAssignment_2_0 )*
                     {
                      before(grammarAccess.getAbbreviationAccess().getAbbreviationAssignment_2_0()); 
-                    // InternalWebMate.g:325:3: ( rule__Abbreviation__AbbreviationAssignment_2_0 )*
+                    // InternalWebMate.g:341:3: ( rule__Abbreviation__AbbreviationAssignment_2_0 )*
                     loop1:
                     do {
                         int alt1=2;
@@ -955,7 +1001,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalWebMate.g:325:4: rule__Abbreviation__AbbreviationAssignment_2_0
+                    	    // InternalWebMate.g:341:4: rule__Abbreviation__AbbreviationAssignment_2_0
                     	    {
                     	    pushFollow(FOLLOW_3);
                     	    rule__Abbreviation__AbbreviationAssignment_2_0();
@@ -979,14 +1025,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:329:2: ( ( rule__Abbreviation__Group_2_1__0 ) )
+                    // InternalWebMate.g:345:2: ( ( rule__Abbreviation__Group_2_1__0 ) )
                     {
-                    // InternalWebMate.g:329:2: ( ( rule__Abbreviation__Group_2_1__0 ) )
-                    // InternalWebMate.g:330:3: ( rule__Abbreviation__Group_2_1__0 )
+                    // InternalWebMate.g:345:2: ( ( rule__Abbreviation__Group_2_1__0 ) )
+                    // InternalWebMate.g:346:3: ( rule__Abbreviation__Group_2_1__0 )
                     {
                      before(grammarAccess.getAbbreviationAccess().getGroup_2_1()); 
-                    // InternalWebMate.g:331:3: ( rule__Abbreviation__Group_2_1__0 )
-                    // InternalWebMate.g:331:4: rule__Abbreviation__Group_2_1__0
+                    // InternalWebMate.g:347:3: ( rule__Abbreviation__Group_2_1__0 )
+                    // InternalWebMate.g:347:4: rule__Abbreviation__Group_2_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Abbreviation__Group_2_1__0();
@@ -1021,33 +1067,67 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Alternatives"
-    // InternalWebMate.g:339:1: rule__Symbol__Alternatives : ( ( ( rule__Symbol__Group_0__0 ) ) | ( ( rule__Symbol__Group_1__0 ) ) | ( ( rule__Symbol__Group_2__0 ) ) | ( ( rule__Symbol__Group_3__0 ) ) );
+    // InternalWebMate.g:355:1: rule__Symbol__Alternatives : ( ( ( rule__Symbol__Group_0__0 ) ) | ( ( rule__Symbol__Group_1__0 ) ) );
     public final void rule__Symbol__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:343:1: ( ( ( rule__Symbol__Group_0__0 ) ) | ( ( rule__Symbol__Group_1__0 ) ) | ( ( rule__Symbol__Group_2__0 ) ) | ( ( rule__Symbol__Group_3__0 ) ) )
-            int alt3=4;
+            // InternalWebMate.g:359:1: ( ( ( rule__Symbol__Group_0__0 ) ) | ( ( rule__Symbol__Group_1__0 ) ) )
+            int alt3=2;
             switch ( input.LA(1) ) {
-            case 26:
+            case 23:
                 {
-                alt3=1;
+                int LA3_1 = input.LA(2);
+
+                if ( ((LA3_1>=11 && LA3_1<=22)) ) {
+                    alt3=2;
+                }
+                else if ( (LA3_1==RULE_INT||LA3_1==35) ) {
+                    alt3=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 1, input);
+
+                    throw nvae;
+                }
                 }
                 break;
-            case 27:
+            case 24:
                 {
-                alt3=2;
+                int LA3_2 = input.LA(2);
+
+                if ( ((LA3_2>=11 && LA3_2<=22)) ) {
+                    alt3=2;
+                }
+                else if ( (LA3_2==RULE_INT||LA3_2==35) ) {
+                    alt3=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 2, input);
+
+                    throw nvae;
+                }
                 }
                 break;
-            case 28:
+            case 25:
                 {
-                alt3=3;
+                int LA3_3 = input.LA(2);
+
+                if ( ((LA3_3>=11 && LA3_3<=22)) ) {
+                    alt3=2;
                 }
-                break;
-            case 29:
-                {
-                alt3=4;
+                else if ( (LA3_3==RULE_INT||LA3_3==35) ) {
+                    alt3=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 3, input);
+
+                    throw nvae;
+                }
                 }
                 break;
             default:
@@ -1059,14 +1139,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalWebMate.g:344:2: ( ( rule__Symbol__Group_0__0 ) )
+                    // InternalWebMate.g:360:2: ( ( rule__Symbol__Group_0__0 ) )
                     {
-                    // InternalWebMate.g:344:2: ( ( rule__Symbol__Group_0__0 ) )
-                    // InternalWebMate.g:345:3: ( rule__Symbol__Group_0__0 )
+                    // InternalWebMate.g:360:2: ( ( rule__Symbol__Group_0__0 ) )
+                    // InternalWebMate.g:361:3: ( rule__Symbol__Group_0__0 )
                     {
                      before(grammarAccess.getSymbolAccess().getGroup_0()); 
-                    // InternalWebMate.g:346:3: ( rule__Symbol__Group_0__0 )
-                    // InternalWebMate.g:346:4: rule__Symbol__Group_0__0
+                    // InternalWebMate.g:362:3: ( rule__Symbol__Group_0__0 )
+                    // InternalWebMate.g:362:4: rule__Symbol__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Symbol__Group_0__0();
@@ -1084,14 +1164,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:350:2: ( ( rule__Symbol__Group_1__0 ) )
+                    // InternalWebMate.g:366:2: ( ( rule__Symbol__Group_1__0 ) )
                     {
-                    // InternalWebMate.g:350:2: ( ( rule__Symbol__Group_1__0 ) )
-                    // InternalWebMate.g:351:3: ( rule__Symbol__Group_1__0 )
+                    // InternalWebMate.g:366:2: ( ( rule__Symbol__Group_1__0 ) )
+                    // InternalWebMate.g:367:3: ( rule__Symbol__Group_1__0 )
                     {
                      before(grammarAccess.getSymbolAccess().getGroup_1()); 
-                    // InternalWebMate.g:352:3: ( rule__Symbol__Group_1__0 )
-                    // InternalWebMate.g:352:4: rule__Symbol__Group_1__0
+                    // InternalWebMate.g:368:3: ( rule__Symbol__Group_1__0 )
+                    // InternalWebMate.g:368:4: rule__Symbol__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Symbol__Group_1__0();
@@ -1102,56 +1182,6 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
 
                      after(grammarAccess.getSymbolAccess().getGroup_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalWebMate.g:356:2: ( ( rule__Symbol__Group_2__0 ) )
-                    {
-                    // InternalWebMate.g:356:2: ( ( rule__Symbol__Group_2__0 ) )
-                    // InternalWebMate.g:357:3: ( rule__Symbol__Group_2__0 )
-                    {
-                     before(grammarAccess.getSymbolAccess().getGroup_2()); 
-                    // InternalWebMate.g:358:3: ( rule__Symbol__Group_2__0 )
-                    // InternalWebMate.g:358:4: rule__Symbol__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Symbol__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getSymbolAccess().getGroup_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalWebMate.g:362:2: ( ( rule__Symbol__Group_3__0 ) )
-                    {
-                    // InternalWebMate.g:362:2: ( ( rule__Symbol__Group_3__0 ) )
-                    // InternalWebMate.g:363:3: ( rule__Symbol__Group_3__0 )
-                    {
-                     before(grammarAccess.getSymbolAccess().getGroup_3()); 
-                    // InternalWebMate.g:364:3: ( rule__Symbol__Group_3__0 )
-                    // InternalWebMate.g:364:4: rule__Symbol__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Symbol__Group_3__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getSymbolAccess().getGroup_3()); 
 
                     }
 
@@ -1176,13 +1206,13 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EString__Alternatives"
-    // InternalWebMate.g:372:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
+    // InternalWebMate.g:376:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
     public final void rule__EString__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:376:1: ( ( RULE_STRING ) | ( RULE_ID ) )
+            // InternalWebMate.g:380:1: ( ( RULE_STRING ) | ( RULE_ID ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1200,10 +1230,10 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalWebMate.g:377:2: ( RULE_STRING )
+                    // InternalWebMate.g:381:2: ( RULE_STRING )
                     {
-                    // InternalWebMate.g:377:2: ( RULE_STRING )
-                    // InternalWebMate.g:378:3: RULE_STRING
+                    // InternalWebMate.g:381:2: ( RULE_STRING )
+                    // InternalWebMate.g:382:3: RULE_STRING
                     {
                      before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -1215,10 +1245,10 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:383:2: ( RULE_ID )
+                    // InternalWebMate.g:387:2: ( RULE_ID )
                     {
-                    // InternalWebMate.g:383:2: ( RULE_ID )
-                    // InternalWebMate.g:384:3: RULE_ID
+                    // InternalWebMate.g:387:2: ( RULE_ID )
+                    // InternalWebMate.g:388:3: RULE_ID
                     {
                      before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
                     match(input,RULE_ID,FOLLOW_2); 
@@ -1247,13 +1277,13 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HTMLTag__Alternatives"
-    // InternalWebMate.g:393:1: rule__HTMLTag__Alternatives : ( ( ( 'div' ) ) | ( ( 'h1' ) ) | ( ( 'p' ) ) | ( ( 'ul' ) ) | ( ( 'li' ) ) | ( ( 'a' ) ) | ( ( 'img' ) ) | ( ( 'form' ) ) | ( ( 'input' ) ) | ( ( 'button' ) ) | ( ( 'option' ) ) | ( ( 'select' ) ) );
+    // InternalWebMate.g:397:1: rule__HTMLTag__Alternatives : ( ( ( 'div' ) ) | ( ( 'h1' ) ) | ( ( 'p' ) ) | ( ( 'ul' ) ) | ( ( 'li' ) ) | ( ( 'a' ) ) | ( ( 'img' ) ) | ( ( 'form' ) ) | ( ( 'input' ) ) | ( ( 'button' ) ) | ( ( 'option' ) ) | ( ( 'select' ) ) );
     public final void rule__HTMLTag__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:397:1: ( ( ( 'div' ) ) | ( ( 'h1' ) ) | ( ( 'p' ) ) | ( ( 'ul' ) ) | ( ( 'li' ) ) | ( ( 'a' ) ) | ( ( 'img' ) ) | ( ( 'form' ) ) | ( ( 'input' ) ) | ( ( 'button' ) ) | ( ( 'option' ) ) | ( ( 'select' ) ) )
+            // InternalWebMate.g:401:1: ( ( ( 'div' ) ) | ( ( 'h1' ) ) | ( ( 'p' ) ) | ( ( 'ul' ) ) | ( ( 'li' ) ) | ( ( 'a' ) ) | ( ( 'img' ) ) | ( ( 'form' ) ) | ( ( 'input' ) ) | ( ( 'button' ) ) | ( ( 'option' ) ) | ( ( 'select' ) ) )
             int alt5=12;
             switch ( input.LA(1) ) {
             case 11:
@@ -1325,14 +1355,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
             switch (alt5) {
                 case 1 :
-                    // InternalWebMate.g:398:2: ( ( 'div' ) )
+                    // InternalWebMate.g:402:2: ( ( 'div' ) )
                     {
-                    // InternalWebMate.g:398:2: ( ( 'div' ) )
-                    // InternalWebMate.g:399:3: ( 'div' )
+                    // InternalWebMate.g:402:2: ( ( 'div' ) )
+                    // InternalWebMate.g:403:3: ( 'div' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getDivEnumLiteralDeclaration_0()); 
-                    // InternalWebMate.g:400:3: ( 'div' )
-                    // InternalWebMate.g:400:4: 'div'
+                    // InternalWebMate.g:404:3: ( 'div' )
+                    // InternalWebMate.g:404:4: 'div'
                     {
                     match(input,11,FOLLOW_2); 
 
@@ -1346,14 +1376,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalWebMate.g:404:2: ( ( 'h1' ) )
+                    // InternalWebMate.g:408:2: ( ( 'h1' ) )
                     {
-                    // InternalWebMate.g:404:2: ( ( 'h1' ) )
-                    // InternalWebMate.g:405:3: ( 'h1' )
+                    // InternalWebMate.g:408:2: ( ( 'h1' ) )
+                    // InternalWebMate.g:409:3: ( 'h1' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getH1EnumLiteralDeclaration_1()); 
-                    // InternalWebMate.g:406:3: ( 'h1' )
-                    // InternalWebMate.g:406:4: 'h1'
+                    // InternalWebMate.g:410:3: ( 'h1' )
+                    // InternalWebMate.g:410:4: 'h1'
                     {
                     match(input,12,FOLLOW_2); 
 
@@ -1367,14 +1397,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalWebMate.g:410:2: ( ( 'p' ) )
+                    // InternalWebMate.g:414:2: ( ( 'p' ) )
                     {
-                    // InternalWebMate.g:410:2: ( ( 'p' ) )
-                    // InternalWebMate.g:411:3: ( 'p' )
+                    // InternalWebMate.g:414:2: ( ( 'p' ) )
+                    // InternalWebMate.g:415:3: ( 'p' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getPEnumLiteralDeclaration_2()); 
-                    // InternalWebMate.g:412:3: ( 'p' )
-                    // InternalWebMate.g:412:4: 'p'
+                    // InternalWebMate.g:416:3: ( 'p' )
+                    // InternalWebMate.g:416:4: 'p'
                     {
                     match(input,13,FOLLOW_2); 
 
@@ -1388,14 +1418,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalWebMate.g:416:2: ( ( 'ul' ) )
+                    // InternalWebMate.g:420:2: ( ( 'ul' ) )
                     {
-                    // InternalWebMate.g:416:2: ( ( 'ul' ) )
-                    // InternalWebMate.g:417:3: ( 'ul' )
+                    // InternalWebMate.g:420:2: ( ( 'ul' ) )
+                    // InternalWebMate.g:421:3: ( 'ul' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getUlEnumLiteralDeclaration_3()); 
-                    // InternalWebMate.g:418:3: ( 'ul' )
-                    // InternalWebMate.g:418:4: 'ul'
+                    // InternalWebMate.g:422:3: ( 'ul' )
+                    // InternalWebMate.g:422:4: 'ul'
                     {
                     match(input,14,FOLLOW_2); 
 
@@ -1409,14 +1439,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalWebMate.g:422:2: ( ( 'li' ) )
+                    // InternalWebMate.g:426:2: ( ( 'li' ) )
                     {
-                    // InternalWebMate.g:422:2: ( ( 'li' ) )
-                    // InternalWebMate.g:423:3: ( 'li' )
+                    // InternalWebMate.g:426:2: ( ( 'li' ) )
+                    // InternalWebMate.g:427:3: ( 'li' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getLiEnumLiteralDeclaration_4()); 
-                    // InternalWebMate.g:424:3: ( 'li' )
-                    // InternalWebMate.g:424:4: 'li'
+                    // InternalWebMate.g:428:3: ( 'li' )
+                    // InternalWebMate.g:428:4: 'li'
                     {
                     match(input,15,FOLLOW_2); 
 
@@ -1430,14 +1460,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalWebMate.g:428:2: ( ( 'a' ) )
+                    // InternalWebMate.g:432:2: ( ( 'a' ) )
                     {
-                    // InternalWebMate.g:428:2: ( ( 'a' ) )
-                    // InternalWebMate.g:429:3: ( 'a' )
+                    // InternalWebMate.g:432:2: ( ( 'a' ) )
+                    // InternalWebMate.g:433:3: ( 'a' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getAEnumLiteralDeclaration_5()); 
-                    // InternalWebMate.g:430:3: ( 'a' )
-                    // InternalWebMate.g:430:4: 'a'
+                    // InternalWebMate.g:434:3: ( 'a' )
+                    // InternalWebMate.g:434:4: 'a'
                     {
                     match(input,16,FOLLOW_2); 
 
@@ -1451,14 +1481,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalWebMate.g:434:2: ( ( 'img' ) )
+                    // InternalWebMate.g:438:2: ( ( 'img' ) )
                     {
-                    // InternalWebMate.g:434:2: ( ( 'img' ) )
-                    // InternalWebMate.g:435:3: ( 'img' )
+                    // InternalWebMate.g:438:2: ( ( 'img' ) )
+                    // InternalWebMate.g:439:3: ( 'img' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getImgEnumLiteralDeclaration_6()); 
-                    // InternalWebMate.g:436:3: ( 'img' )
-                    // InternalWebMate.g:436:4: 'img'
+                    // InternalWebMate.g:440:3: ( 'img' )
+                    // InternalWebMate.g:440:4: 'img'
                     {
                     match(input,17,FOLLOW_2); 
 
@@ -1472,14 +1502,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // InternalWebMate.g:440:2: ( ( 'form' ) )
+                    // InternalWebMate.g:444:2: ( ( 'form' ) )
                     {
-                    // InternalWebMate.g:440:2: ( ( 'form' ) )
-                    // InternalWebMate.g:441:3: ( 'form' )
+                    // InternalWebMate.g:444:2: ( ( 'form' ) )
+                    // InternalWebMate.g:445:3: ( 'form' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getFormEnumLiteralDeclaration_7()); 
-                    // InternalWebMate.g:442:3: ( 'form' )
-                    // InternalWebMate.g:442:4: 'form'
+                    // InternalWebMate.g:446:3: ( 'form' )
+                    // InternalWebMate.g:446:4: 'form'
                     {
                     match(input,18,FOLLOW_2); 
 
@@ -1493,14 +1523,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // InternalWebMate.g:446:2: ( ( 'input' ) )
+                    // InternalWebMate.g:450:2: ( ( 'input' ) )
                     {
-                    // InternalWebMate.g:446:2: ( ( 'input' ) )
-                    // InternalWebMate.g:447:3: ( 'input' )
+                    // InternalWebMate.g:450:2: ( ( 'input' ) )
+                    // InternalWebMate.g:451:3: ( 'input' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getInputEnumLiteralDeclaration_8()); 
-                    // InternalWebMate.g:448:3: ( 'input' )
-                    // InternalWebMate.g:448:4: 'input'
+                    // InternalWebMate.g:452:3: ( 'input' )
+                    // InternalWebMate.g:452:4: 'input'
                     {
                     match(input,19,FOLLOW_2); 
 
@@ -1514,14 +1544,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 10 :
-                    // InternalWebMate.g:452:2: ( ( 'button' ) )
+                    // InternalWebMate.g:456:2: ( ( 'button' ) )
                     {
-                    // InternalWebMate.g:452:2: ( ( 'button' ) )
-                    // InternalWebMate.g:453:3: ( 'button' )
+                    // InternalWebMate.g:456:2: ( ( 'button' ) )
+                    // InternalWebMate.g:457:3: ( 'button' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getButtonEnumLiteralDeclaration_9()); 
-                    // InternalWebMate.g:454:3: ( 'button' )
-                    // InternalWebMate.g:454:4: 'button'
+                    // InternalWebMate.g:458:3: ( 'button' )
+                    // InternalWebMate.g:458:4: 'button'
                     {
                     match(input,20,FOLLOW_2); 
 
@@ -1535,14 +1565,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 11 :
-                    // InternalWebMate.g:458:2: ( ( 'option' ) )
+                    // InternalWebMate.g:462:2: ( ( 'option' ) )
                     {
-                    // InternalWebMate.g:458:2: ( ( 'option' ) )
-                    // InternalWebMate.g:459:3: ( 'option' )
+                    // InternalWebMate.g:462:2: ( ( 'option' ) )
+                    // InternalWebMate.g:463:3: ( 'option' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getOptionEnumLiteralDeclaration_10()); 
-                    // InternalWebMate.g:460:3: ( 'option' )
-                    // InternalWebMate.g:460:4: 'option'
+                    // InternalWebMate.g:464:3: ( 'option' )
+                    // InternalWebMate.g:464:4: 'option'
                     {
                     match(input,21,FOLLOW_2); 
 
@@ -1556,14 +1586,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 12 :
-                    // InternalWebMate.g:464:2: ( ( 'select' ) )
+                    // InternalWebMate.g:468:2: ( ( 'select' ) )
                     {
-                    // InternalWebMate.g:464:2: ( ( 'select' ) )
-                    // InternalWebMate.g:465:3: ( 'select' )
+                    // InternalWebMate.g:468:2: ( ( 'select' ) )
+                    // InternalWebMate.g:469:3: ( 'select' )
                     {
                      before(grammarAccess.getHTMLTagAccess().getSelectEnumLiteralDeclaration_11()); 
-                    // InternalWebMate.g:466:3: ( 'select' )
-                    // InternalWebMate.g:466:4: 'select'
+                    // InternalWebMate.g:470:3: ( 'select' )
+                    // InternalWebMate.g:470:4: 'select'
                     {
                     match(input,22,FOLLOW_2); 
 
@@ -1593,15 +1623,128 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__HTMLTag__Alternatives"
 
 
+    // $ANTLR start "rule__SYM__Alternatives"
+    // InternalWebMate.g:478:1: rule__SYM__Alternatives : ( ( ( '+' ) ) | ( ( '*' ) ) | ( ( '>' ) ) );
+    public final void rule__SYM__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWebMate.g:482:1: ( ( ( '+' ) ) | ( ( '*' ) ) | ( ( '>' ) ) )
+            int alt6=3;
+            switch ( input.LA(1) ) {
+            case 23:
+                {
+                alt6=1;
+                }
+                break;
+            case 24:
+                {
+                alt6=2;
+                }
+                break;
+            case 25:
+                {
+                alt6=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt6) {
+                case 1 :
+                    // InternalWebMate.g:483:2: ( ( '+' ) )
+                    {
+                    // InternalWebMate.g:483:2: ( ( '+' ) )
+                    // InternalWebMate.g:484:3: ( '+' )
+                    {
+                     before(grammarAccess.getSYMAccess().getPLUSEnumLiteralDeclaration_0()); 
+                    // InternalWebMate.g:485:3: ( '+' )
+                    // InternalWebMate.g:485:4: '+'
+                    {
+                    match(input,23,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getSYMAccess().getPLUSEnumLiteralDeclaration_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalWebMate.g:489:2: ( ( '*' ) )
+                    {
+                    // InternalWebMate.g:489:2: ( ( '*' ) )
+                    // InternalWebMate.g:490:3: ( '*' )
+                    {
+                     before(grammarAccess.getSYMAccess().getMULTIPLYEnumLiteralDeclaration_1()); 
+                    // InternalWebMate.g:491:3: ( '*' )
+                    // InternalWebMate.g:491:4: '*'
+                    {
+                    match(input,24,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getSYMAccess().getMULTIPLYEnumLiteralDeclaration_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalWebMate.g:495:2: ( ( '>' ) )
+                    {
+                    // InternalWebMate.g:495:2: ( ( '>' ) )
+                    // InternalWebMate.g:496:3: ( '>' )
+                    {
+                     before(grammarAccess.getSYMAccess().getGREATEREnumLiteralDeclaration_2()); 
+                    // InternalWebMate.g:497:3: ( '>' )
+                    // InternalWebMate.g:497:4: '>'
+                    {
+                    match(input,25,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getSYMAccess().getGREATEREnumLiteralDeclaration_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SYM__Alternatives"
+
+
     // $ANTLR start "rule__HTML__Group__0"
-    // InternalWebMate.g:474:1: rule__HTML__Group__0 : rule__HTML__Group__0__Impl rule__HTML__Group__1 ;
+    // InternalWebMate.g:505:1: rule__HTML__Group__0 : rule__HTML__Group__0__Impl rule__HTML__Group__1 ;
     public final void rule__HTML__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:478:1: ( rule__HTML__Group__0__Impl rule__HTML__Group__1 )
-            // InternalWebMate.g:479:2: rule__HTML__Group__0__Impl rule__HTML__Group__1
+            // InternalWebMate.g:509:1: ( rule__HTML__Group__0__Impl rule__HTML__Group__1 )
+            // InternalWebMate.g:510:2: rule__HTML__Group__0__Impl rule__HTML__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__HTML__Group__0__Impl();
@@ -1632,21 +1775,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HTML__Group__0__Impl"
-    // InternalWebMate.g:486:1: rule__HTML__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:517:1: rule__HTML__Group__0__Impl : ( () ) ;
     public final void rule__HTML__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:490:1: ( ( () ) )
-            // InternalWebMate.g:491:1: ( () )
+            // InternalWebMate.g:521:1: ( ( () ) )
+            // InternalWebMate.g:522:1: ( () )
             {
-            // InternalWebMate.g:491:1: ( () )
-            // InternalWebMate.g:492:2: ()
+            // InternalWebMate.g:522:1: ( () )
+            // InternalWebMate.g:523:2: ()
             {
              before(grammarAccess.getHTMLAccess().getHTMLAction_0()); 
-            // InternalWebMate.g:493:2: ()
-            // InternalWebMate.g:493:3: 
+            // InternalWebMate.g:524:2: ()
+            // InternalWebMate.g:524:3: 
             {
             }
 
@@ -1669,14 +1812,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HTML__Group__1"
-    // InternalWebMate.g:501:1: rule__HTML__Group__1 : rule__HTML__Group__1__Impl ;
+    // InternalWebMate.g:532:1: rule__HTML__Group__1 : rule__HTML__Group__1__Impl ;
     public final void rule__HTML__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:505:1: ( rule__HTML__Group__1__Impl )
-            // InternalWebMate.g:506:2: rule__HTML__Group__1__Impl
+            // InternalWebMate.g:536:1: ( rule__HTML__Group__1__Impl )
+            // InternalWebMate.g:537:2: rule__HTML__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__HTML__Group__1__Impl();
@@ -1702,24 +1845,24 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HTML__Group__1__Impl"
-    // InternalWebMate.g:512:1: rule__HTML__Group__1__Impl : ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) ) ;
+    // InternalWebMate.g:543:1: rule__HTML__Group__1__Impl : ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) ) ;
     public final void rule__HTML__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:516:1: ( ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) ) )
-            // InternalWebMate.g:517:1: ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) )
+            // InternalWebMate.g:547:1: ( ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) ) )
+            // InternalWebMate.g:548:1: ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) )
             {
-            // InternalWebMate.g:517:1: ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) )
-            // InternalWebMate.g:518:2: ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* )
+            // InternalWebMate.g:548:1: ( ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* ) )
+            // InternalWebMate.g:549:2: ( ( rule__HTML__AbbreviationAssignment_1 ) ) ( ( rule__HTML__AbbreviationAssignment_1 )* )
             {
-            // InternalWebMate.g:518:2: ( ( rule__HTML__AbbreviationAssignment_1 ) )
-            // InternalWebMate.g:519:3: ( rule__HTML__AbbreviationAssignment_1 )
+            // InternalWebMate.g:549:2: ( ( rule__HTML__AbbreviationAssignment_1 ) )
+            // InternalWebMate.g:550:3: ( rule__HTML__AbbreviationAssignment_1 )
             {
              before(grammarAccess.getHTMLAccess().getAbbreviationAssignment_1()); 
-            // InternalWebMate.g:520:3: ( rule__HTML__AbbreviationAssignment_1 )
-            // InternalWebMate.g:520:4: rule__HTML__AbbreviationAssignment_1
+            // InternalWebMate.g:551:3: ( rule__HTML__AbbreviationAssignment_1 )
+            // InternalWebMate.g:551:4: rule__HTML__AbbreviationAssignment_1
             {
             pushFollow(FOLLOW_5);
             rule__HTML__AbbreviationAssignment_1();
@@ -1733,24 +1876,24 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalWebMate.g:523:2: ( ( rule__HTML__AbbreviationAssignment_1 )* )
-            // InternalWebMate.g:524:3: ( rule__HTML__AbbreviationAssignment_1 )*
+            // InternalWebMate.g:554:2: ( ( rule__HTML__AbbreviationAssignment_1 )* )
+            // InternalWebMate.g:555:3: ( rule__HTML__AbbreviationAssignment_1 )*
             {
              before(grammarAccess.getHTMLAccess().getAbbreviationAssignment_1()); 
-            // InternalWebMate.g:525:3: ( rule__HTML__AbbreviationAssignment_1 )*
-            loop6:
+            // InternalWebMate.g:556:3: ( rule__HTML__AbbreviationAssignment_1 )*
+            loop7:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA6_0==23) ) {
-                    alt6=1;
+                if ( (LA7_0==26) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
-            	    // InternalWebMate.g:525:4: rule__HTML__AbbreviationAssignment_1
+            	    // InternalWebMate.g:556:4: rule__HTML__AbbreviationAssignment_1
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__HTML__AbbreviationAssignment_1();
@@ -1762,7 +1905,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop7;
                 }
             } while (true);
 
@@ -1792,14 +1935,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__0"
-    // InternalWebMate.g:535:1: rule__Abbreviation__Group__0 : rule__Abbreviation__Group__0__Impl rule__Abbreviation__Group__1 ;
+    // InternalWebMate.g:566:1: rule__Abbreviation__Group__0 : rule__Abbreviation__Group__0__Impl rule__Abbreviation__Group__1 ;
     public final void rule__Abbreviation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:539:1: ( rule__Abbreviation__Group__0__Impl rule__Abbreviation__Group__1 )
-            // InternalWebMate.g:540:2: rule__Abbreviation__Group__0__Impl rule__Abbreviation__Group__1
+            // InternalWebMate.g:570:1: ( rule__Abbreviation__Group__0__Impl rule__Abbreviation__Group__1 )
+            // InternalWebMate.g:571:2: rule__Abbreviation__Group__0__Impl rule__Abbreviation__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Abbreviation__Group__0__Impl();
@@ -1830,21 +1973,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__0__Impl"
-    // InternalWebMate.g:547:1: rule__Abbreviation__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:578:1: rule__Abbreviation__Group__0__Impl : ( () ) ;
     public final void rule__Abbreviation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:551:1: ( ( () ) )
-            // InternalWebMate.g:552:1: ( () )
+            // InternalWebMate.g:582:1: ( ( () ) )
+            // InternalWebMate.g:583:1: ( () )
             {
-            // InternalWebMate.g:552:1: ( () )
-            // InternalWebMate.g:553:2: ()
+            // InternalWebMate.g:583:1: ( () )
+            // InternalWebMate.g:584:2: ()
             {
              before(grammarAccess.getAbbreviationAccess().getAbbreviationAction_0()); 
-            // InternalWebMate.g:554:2: ()
-            // InternalWebMate.g:554:3: 
+            // InternalWebMate.g:585:2: ()
+            // InternalWebMate.g:585:3: 
             {
             }
 
@@ -1867,14 +2010,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__1"
-    // InternalWebMate.g:562:1: rule__Abbreviation__Group__1 : rule__Abbreviation__Group__1__Impl rule__Abbreviation__Group__2 ;
+    // InternalWebMate.g:593:1: rule__Abbreviation__Group__1 : rule__Abbreviation__Group__1__Impl rule__Abbreviation__Group__2 ;
     public final void rule__Abbreviation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:566:1: ( rule__Abbreviation__Group__1__Impl rule__Abbreviation__Group__2 )
-            // InternalWebMate.g:567:2: rule__Abbreviation__Group__1__Impl rule__Abbreviation__Group__2
+            // InternalWebMate.g:597:1: ( rule__Abbreviation__Group__1__Impl rule__Abbreviation__Group__2 )
+            // InternalWebMate.g:598:2: rule__Abbreviation__Group__1__Impl rule__Abbreviation__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__Abbreviation__Group__1__Impl();
@@ -1905,20 +2048,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__1__Impl"
-    // InternalWebMate.g:574:1: rule__Abbreviation__Group__1__Impl : ( '{' ) ;
+    // InternalWebMate.g:605:1: rule__Abbreviation__Group__1__Impl : ( '{' ) ;
     public final void rule__Abbreviation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:578:1: ( ( '{' ) )
-            // InternalWebMate.g:579:1: ( '{' )
+            // InternalWebMate.g:609:1: ( ( '{' ) )
+            // InternalWebMate.g:610:1: ( '{' )
             {
-            // InternalWebMate.g:579:1: ( '{' )
-            // InternalWebMate.g:580:2: '{'
+            // InternalWebMate.g:610:1: ( '{' )
+            // InternalWebMate.g:611:2: '{'
             {
              before(grammarAccess.getAbbreviationAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,23,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getAbbreviationAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -1942,14 +2085,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__2"
-    // InternalWebMate.g:589:1: rule__Abbreviation__Group__2 : rule__Abbreviation__Group__2__Impl rule__Abbreviation__Group__3 ;
+    // InternalWebMate.g:620:1: rule__Abbreviation__Group__2 : rule__Abbreviation__Group__2__Impl rule__Abbreviation__Group__3 ;
     public final void rule__Abbreviation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:593:1: ( rule__Abbreviation__Group__2__Impl rule__Abbreviation__Group__3 )
-            // InternalWebMate.g:594:2: rule__Abbreviation__Group__2__Impl rule__Abbreviation__Group__3
+            // InternalWebMate.g:624:1: ( rule__Abbreviation__Group__2__Impl rule__Abbreviation__Group__3 )
+            // InternalWebMate.g:625:2: rule__Abbreviation__Group__2__Impl rule__Abbreviation__Group__3
             {
             pushFollow(FOLLOW_7);
             rule__Abbreviation__Group__2__Impl();
@@ -1980,21 +2123,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__2__Impl"
-    // InternalWebMate.g:601:1: rule__Abbreviation__Group__2__Impl : ( ( rule__Abbreviation__Alternatives_2 ) ) ;
+    // InternalWebMate.g:632:1: rule__Abbreviation__Group__2__Impl : ( ( rule__Abbreviation__Alternatives_2 ) ) ;
     public final void rule__Abbreviation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:605:1: ( ( ( rule__Abbreviation__Alternatives_2 ) ) )
-            // InternalWebMate.g:606:1: ( ( rule__Abbreviation__Alternatives_2 ) )
+            // InternalWebMate.g:636:1: ( ( ( rule__Abbreviation__Alternatives_2 ) ) )
+            // InternalWebMate.g:637:1: ( ( rule__Abbreviation__Alternatives_2 ) )
             {
-            // InternalWebMate.g:606:1: ( ( rule__Abbreviation__Alternatives_2 ) )
-            // InternalWebMate.g:607:2: ( rule__Abbreviation__Alternatives_2 )
+            // InternalWebMate.g:637:1: ( ( rule__Abbreviation__Alternatives_2 ) )
+            // InternalWebMate.g:638:2: ( rule__Abbreviation__Alternatives_2 )
             {
              before(grammarAccess.getAbbreviationAccess().getAlternatives_2()); 
-            // InternalWebMate.g:608:2: ( rule__Abbreviation__Alternatives_2 )
-            // InternalWebMate.g:608:3: rule__Abbreviation__Alternatives_2
+            // InternalWebMate.g:639:2: ( rule__Abbreviation__Alternatives_2 )
+            // InternalWebMate.g:639:3: rule__Abbreviation__Alternatives_2
             {
             pushFollow(FOLLOW_2);
             rule__Abbreviation__Alternatives_2();
@@ -2027,14 +2170,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__3"
-    // InternalWebMate.g:616:1: rule__Abbreviation__Group__3 : rule__Abbreviation__Group__3__Impl ;
+    // InternalWebMate.g:647:1: rule__Abbreviation__Group__3 : rule__Abbreviation__Group__3__Impl ;
     public final void rule__Abbreviation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:620:1: ( rule__Abbreviation__Group__3__Impl )
-            // InternalWebMate.g:621:2: rule__Abbreviation__Group__3__Impl
+            // InternalWebMate.g:651:1: ( rule__Abbreviation__Group__3__Impl )
+            // InternalWebMate.g:652:2: rule__Abbreviation__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Abbreviation__Group__3__Impl();
@@ -2060,20 +2203,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group__3__Impl"
-    // InternalWebMate.g:627:1: rule__Abbreviation__Group__3__Impl : ( '}' ) ;
+    // InternalWebMate.g:658:1: rule__Abbreviation__Group__3__Impl : ( '}' ) ;
     public final void rule__Abbreviation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:631:1: ( ( '}' ) )
-            // InternalWebMate.g:632:1: ( '}' )
+            // InternalWebMate.g:662:1: ( ( '}' ) )
+            // InternalWebMate.g:663:1: ( '}' )
             {
-            // InternalWebMate.g:632:1: ( '}' )
-            // InternalWebMate.g:633:2: '}'
+            // InternalWebMate.g:663:1: ( '}' )
+            // InternalWebMate.g:664:2: '}'
             {
              before(grammarAccess.getAbbreviationAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,24,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getAbbreviationAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -2097,14 +2240,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1__0"
-    // InternalWebMate.g:643:1: rule__Abbreviation__Group_2_1__0 : rule__Abbreviation__Group_2_1__0__Impl rule__Abbreviation__Group_2_1__1 ;
+    // InternalWebMate.g:674:1: rule__Abbreviation__Group_2_1__0 : rule__Abbreviation__Group_2_1__0__Impl rule__Abbreviation__Group_2_1__1 ;
     public final void rule__Abbreviation__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:647:1: ( rule__Abbreviation__Group_2_1__0__Impl rule__Abbreviation__Group_2_1__1 )
-            // InternalWebMate.g:648:2: rule__Abbreviation__Group_2_1__0__Impl rule__Abbreviation__Group_2_1__1
+            // InternalWebMate.g:678:1: ( rule__Abbreviation__Group_2_1__0__Impl rule__Abbreviation__Group_2_1__1 )
+            // InternalWebMate.g:679:2: rule__Abbreviation__Group_2_1__0__Impl rule__Abbreviation__Group_2_1__1
             {
             pushFollow(FOLLOW_8);
             rule__Abbreviation__Group_2_1__0__Impl();
@@ -2135,24 +2278,24 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1__0__Impl"
-    // InternalWebMate.g:655:1: rule__Abbreviation__Group_2_1__0__Impl : ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) ) ;
+    // InternalWebMate.g:686:1: rule__Abbreviation__Group_2_1__0__Impl : ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) ) ;
     public final void rule__Abbreviation__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:659:1: ( ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) ) )
-            // InternalWebMate.g:660:1: ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) )
+            // InternalWebMate.g:690:1: ( ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) ) )
+            // InternalWebMate.g:691:1: ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) )
             {
-            // InternalWebMate.g:660:1: ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) )
-            // InternalWebMate.g:661:2: ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* )
+            // InternalWebMate.g:691:1: ( ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* ) )
+            // InternalWebMate.g:692:2: ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) ) ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* )
             {
-            // InternalWebMate.g:661:2: ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) )
-            // InternalWebMate.g:662:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )
+            // InternalWebMate.g:692:2: ( ( rule__Abbreviation__TagsAssignment_2_1_0 ) )
+            // InternalWebMate.g:693:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )
             {
              before(grammarAccess.getAbbreviationAccess().getTagsAssignment_2_1_0()); 
-            // InternalWebMate.g:663:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )
-            // InternalWebMate.g:663:4: rule__Abbreviation__TagsAssignment_2_1_0
+            // InternalWebMate.g:694:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )
+            // InternalWebMate.g:694:4: rule__Abbreviation__TagsAssignment_2_1_0
             {
             pushFollow(FOLLOW_9);
             rule__Abbreviation__TagsAssignment_2_1_0();
@@ -2166,24 +2309,24 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalWebMate.g:666:2: ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* )
-            // InternalWebMate.g:667:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )*
+            // InternalWebMate.g:697:2: ( ( rule__Abbreviation__TagsAssignment_2_1_0 )* )
+            // InternalWebMate.g:698:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )*
             {
              before(grammarAccess.getAbbreviationAccess().getTagsAssignment_2_1_0()); 
-            // InternalWebMate.g:668:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )*
-            loop7:
+            // InternalWebMate.g:699:3: ( rule__Abbreviation__TagsAssignment_2_1_0 )*
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( ((LA7_0>=11 && LA7_0<=22)) ) {
-                    alt7=1;
+                if ( ((LA8_0>=11 && LA8_0<=22)) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalWebMate.g:668:4: rule__Abbreviation__TagsAssignment_2_1_0
+            	    // InternalWebMate.g:699:4: rule__Abbreviation__TagsAssignment_2_1_0
             	    {
             	    pushFollow(FOLLOW_9);
             	    rule__Abbreviation__TagsAssignment_2_1_0();
@@ -2195,7 +2338,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
@@ -2225,14 +2368,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1__1"
-    // InternalWebMate.g:677:1: rule__Abbreviation__Group_2_1__1 : rule__Abbreviation__Group_2_1__1__Impl ;
+    // InternalWebMate.g:708:1: rule__Abbreviation__Group_2_1__1 : rule__Abbreviation__Group_2_1__1__Impl ;
     public final void rule__Abbreviation__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:681:1: ( rule__Abbreviation__Group_2_1__1__Impl )
-            // InternalWebMate.g:682:2: rule__Abbreviation__Group_2_1__1__Impl
+            // InternalWebMate.g:712:1: ( rule__Abbreviation__Group_2_1__1__Impl )
+            // InternalWebMate.g:713:2: rule__Abbreviation__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Abbreviation__Group_2_1__1__Impl();
@@ -2258,21 +2401,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1__1__Impl"
-    // InternalWebMate.g:688:1: rule__Abbreviation__Group_2_1__1__Impl : ( ( rule__Abbreviation__Group_2_1_1__0 ) ) ;
+    // InternalWebMate.g:719:1: rule__Abbreviation__Group_2_1__1__Impl : ( ( rule__Abbreviation__Group_2_1_1__0 ) ) ;
     public final void rule__Abbreviation__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:692:1: ( ( ( rule__Abbreviation__Group_2_1_1__0 ) ) )
-            // InternalWebMate.g:693:1: ( ( rule__Abbreviation__Group_2_1_1__0 ) )
+            // InternalWebMate.g:723:1: ( ( ( rule__Abbreviation__Group_2_1_1__0 ) ) )
+            // InternalWebMate.g:724:1: ( ( rule__Abbreviation__Group_2_1_1__0 ) )
             {
-            // InternalWebMate.g:693:1: ( ( rule__Abbreviation__Group_2_1_1__0 ) )
-            // InternalWebMate.g:694:2: ( rule__Abbreviation__Group_2_1_1__0 )
+            // InternalWebMate.g:724:1: ( ( rule__Abbreviation__Group_2_1_1__0 ) )
+            // InternalWebMate.g:725:2: ( rule__Abbreviation__Group_2_1_1__0 )
             {
              before(grammarAccess.getAbbreviationAccess().getGroup_2_1_1()); 
-            // InternalWebMate.g:695:2: ( rule__Abbreviation__Group_2_1_1__0 )
-            // InternalWebMate.g:695:3: rule__Abbreviation__Group_2_1_1__0
+            // InternalWebMate.g:726:2: ( rule__Abbreviation__Group_2_1_1__0 )
+            // InternalWebMate.g:726:3: rule__Abbreviation__Group_2_1_1__0
             {
             pushFollow(FOLLOW_2);
             rule__Abbreviation__Group_2_1_1__0();
@@ -2305,14 +2448,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__0"
-    // InternalWebMate.g:704:1: rule__Abbreviation__Group_2_1_1__0 : rule__Abbreviation__Group_2_1_1__0__Impl rule__Abbreviation__Group_2_1_1__1 ;
+    // InternalWebMate.g:735:1: rule__Abbreviation__Group_2_1_1__0 : rule__Abbreviation__Group_2_1_1__0__Impl rule__Abbreviation__Group_2_1_1__1 ;
     public final void rule__Abbreviation__Group_2_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:708:1: ( rule__Abbreviation__Group_2_1_1__0__Impl rule__Abbreviation__Group_2_1_1__1 )
-            // InternalWebMate.g:709:2: rule__Abbreviation__Group_2_1_1__0__Impl rule__Abbreviation__Group_2_1_1__1
+            // InternalWebMate.g:739:1: ( rule__Abbreviation__Group_2_1_1__0__Impl rule__Abbreviation__Group_2_1_1__1 )
+            // InternalWebMate.g:740:2: rule__Abbreviation__Group_2_1_1__0__Impl rule__Abbreviation__Group_2_1_1__1
             {
             pushFollow(FOLLOW_8);
             rule__Abbreviation__Group_2_1_1__0__Impl();
@@ -2343,33 +2486,33 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__0__Impl"
-    // InternalWebMate.g:716:1: rule__Abbreviation__Group_2_1_1__0__Impl : ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* ) ;
+    // InternalWebMate.g:747:1: rule__Abbreviation__Group_2_1_1__0__Impl : ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* ) ;
     public final void rule__Abbreviation__Group_2_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:720:1: ( ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* ) )
-            // InternalWebMate.g:721:1: ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* )
+            // InternalWebMate.g:751:1: ( ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* ) )
+            // InternalWebMate.g:752:1: ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* )
             {
-            // InternalWebMate.g:721:1: ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* )
-            // InternalWebMate.g:722:2: ( rule__Abbreviation__IdsAssignment_2_1_1_0 )*
+            // InternalWebMate.g:752:1: ( ( rule__Abbreviation__IdsAssignment_2_1_1_0 )* )
+            // InternalWebMate.g:753:2: ( rule__Abbreviation__IdsAssignment_2_1_1_0 )*
             {
              before(grammarAccess.getAbbreviationAccess().getIdsAssignment_2_1_1_0()); 
-            // InternalWebMate.g:723:2: ( rule__Abbreviation__IdsAssignment_2_1_1_0 )*
-            loop8:
+            // InternalWebMate.g:754:2: ( rule__Abbreviation__IdsAssignment_2_1_1_0 )*
+            loop9:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA8_0==25) ) {
-                    alt8=1;
+                if ( (LA9_0==28) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt9) {
             	case 1 :
-            	    // InternalWebMate.g:723:3: rule__Abbreviation__IdsAssignment_2_1_1_0
+            	    // InternalWebMate.g:754:3: rule__Abbreviation__IdsAssignment_2_1_1_0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Abbreviation__IdsAssignment_2_1_1_0();
@@ -2381,7 +2524,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop9;
                 }
             } while (true);
 
@@ -2408,14 +2551,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__1"
-    // InternalWebMate.g:731:1: rule__Abbreviation__Group_2_1_1__1 : rule__Abbreviation__Group_2_1_1__1__Impl rule__Abbreviation__Group_2_1_1__2 ;
+    // InternalWebMate.g:762:1: rule__Abbreviation__Group_2_1_1__1 : rule__Abbreviation__Group_2_1_1__1__Impl rule__Abbreviation__Group_2_1_1__2 ;
     public final void rule__Abbreviation__Group_2_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:735:1: ( rule__Abbreviation__Group_2_1_1__1__Impl rule__Abbreviation__Group_2_1_1__2 )
-            // InternalWebMate.g:736:2: rule__Abbreviation__Group_2_1_1__1__Impl rule__Abbreviation__Group_2_1_1__2
+            // InternalWebMate.g:766:1: ( rule__Abbreviation__Group_2_1_1__1__Impl rule__Abbreviation__Group_2_1_1__2 )
+            // InternalWebMate.g:767:2: rule__Abbreviation__Group_2_1_1__1__Impl rule__Abbreviation__Group_2_1_1__2
             {
             pushFollow(FOLLOW_8);
             rule__Abbreviation__Group_2_1_1__1__Impl();
@@ -2446,33 +2589,33 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__1__Impl"
-    // InternalWebMate.g:743:1: rule__Abbreviation__Group_2_1_1__1__Impl : ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* ) ;
+    // InternalWebMate.g:774:1: rule__Abbreviation__Group_2_1_1__1__Impl : ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* ) ;
     public final void rule__Abbreviation__Group_2_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:747:1: ( ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* ) )
-            // InternalWebMate.g:748:1: ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* )
+            // InternalWebMate.g:778:1: ( ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* ) )
+            // InternalWebMate.g:779:1: ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* )
             {
-            // InternalWebMate.g:748:1: ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* )
-            // InternalWebMate.g:749:2: ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )*
+            // InternalWebMate.g:779:1: ( ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )* )
+            // InternalWebMate.g:780:2: ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )*
             {
              before(grammarAccess.getAbbreviationAccess().getSymbolsAssignment_2_1_1_1()); 
-            // InternalWebMate.g:750:2: ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )*
-            loop9:
+            // InternalWebMate.g:781:2: ( rule__Abbreviation__SymbolsAssignment_2_1_1_1 )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( ((LA9_0>=26 && LA9_0<=29)) ) {
-                    alt9=1;
+                if ( ((LA10_0>=23 && LA10_0<=25)) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalWebMate.g:750:3: rule__Abbreviation__SymbolsAssignment_2_1_1_1
+            	    // InternalWebMate.g:781:3: rule__Abbreviation__SymbolsAssignment_2_1_1_1
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__Abbreviation__SymbolsAssignment_2_1_1_1();
@@ -2484,7 +2627,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -2511,14 +2654,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__2"
-    // InternalWebMate.g:758:1: rule__Abbreviation__Group_2_1_1__2 : rule__Abbreviation__Group_2_1_1__2__Impl rule__Abbreviation__Group_2_1_1__3 ;
+    // InternalWebMate.g:789:1: rule__Abbreviation__Group_2_1_1__2 : rule__Abbreviation__Group_2_1_1__2__Impl rule__Abbreviation__Group_2_1_1__3 ;
     public final void rule__Abbreviation__Group_2_1_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:762:1: ( rule__Abbreviation__Group_2_1_1__2__Impl rule__Abbreviation__Group_2_1_1__3 )
-            // InternalWebMate.g:763:2: rule__Abbreviation__Group_2_1_1__2__Impl rule__Abbreviation__Group_2_1_1__3
+            // InternalWebMate.g:793:1: ( rule__Abbreviation__Group_2_1_1__2__Impl rule__Abbreviation__Group_2_1_1__3 )
+            // InternalWebMate.g:794:2: rule__Abbreviation__Group_2_1_1__2__Impl rule__Abbreviation__Group_2_1_1__3
             {
             pushFollow(FOLLOW_8);
             rule__Abbreviation__Group_2_1_1__2__Impl();
@@ -2549,33 +2692,33 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__2__Impl"
-    // InternalWebMate.g:770:1: rule__Abbreviation__Group_2_1_1__2__Impl : ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* ) ;
+    // InternalWebMate.g:801:1: rule__Abbreviation__Group_2_1_1__2__Impl : ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* ) ;
     public final void rule__Abbreviation__Group_2_1_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:774:1: ( ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* ) )
-            // InternalWebMate.g:775:1: ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* )
+            // InternalWebMate.g:805:1: ( ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* ) )
+            // InternalWebMate.g:806:1: ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* )
             {
-            // InternalWebMate.g:775:1: ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* )
-            // InternalWebMate.g:776:2: ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )*
+            // InternalWebMate.g:806:1: ( ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )* )
+            // InternalWebMate.g:807:2: ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )*
             {
              before(grammarAccess.getAbbreviationAccess().getClassesAssignment_2_1_1_2()); 
-            // InternalWebMate.g:777:2: ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )*
-            loop10:
+            // InternalWebMate.g:808:2: ( rule__Abbreviation__ClassesAssignment_2_1_1_2 )*
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==30) ) {
-                    alt10=1;
+                if ( (LA11_0==29) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalWebMate.g:777:3: rule__Abbreviation__ClassesAssignment_2_1_1_2
+            	    // InternalWebMate.g:808:3: rule__Abbreviation__ClassesAssignment_2_1_1_2
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__Abbreviation__ClassesAssignment_2_1_1_2();
@@ -2587,7 +2730,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
@@ -2614,14 +2757,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__3"
-    // InternalWebMate.g:785:1: rule__Abbreviation__Group_2_1_1__3 : rule__Abbreviation__Group_2_1_1__3__Impl rule__Abbreviation__Group_2_1_1__4 ;
+    // InternalWebMate.g:816:1: rule__Abbreviation__Group_2_1_1__3 : rule__Abbreviation__Group_2_1_1__3__Impl rule__Abbreviation__Group_2_1_1__4 ;
     public final void rule__Abbreviation__Group_2_1_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:789:1: ( rule__Abbreviation__Group_2_1_1__3__Impl rule__Abbreviation__Group_2_1_1__4 )
-            // InternalWebMate.g:790:2: rule__Abbreviation__Group_2_1_1__3__Impl rule__Abbreviation__Group_2_1_1__4
+            // InternalWebMate.g:820:1: ( rule__Abbreviation__Group_2_1_1__3__Impl rule__Abbreviation__Group_2_1_1__4 )
+            // InternalWebMate.g:821:2: rule__Abbreviation__Group_2_1_1__3__Impl rule__Abbreviation__Group_2_1_1__4
             {
             pushFollow(FOLLOW_8);
             rule__Abbreviation__Group_2_1_1__3__Impl();
@@ -2652,33 +2795,33 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__3__Impl"
-    // InternalWebMate.g:797:1: rule__Abbreviation__Group_2_1_1__3__Impl : ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* ) ;
+    // InternalWebMate.g:828:1: rule__Abbreviation__Group_2_1_1__3__Impl : ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* ) ;
     public final void rule__Abbreviation__Group_2_1_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:801:1: ( ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* ) )
-            // InternalWebMate.g:802:1: ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* )
+            // InternalWebMate.g:832:1: ( ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* ) )
+            // InternalWebMate.g:833:1: ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* )
             {
-            // InternalWebMate.g:802:1: ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* )
-            // InternalWebMate.g:803:2: ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )*
+            // InternalWebMate.g:833:1: ( ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )* )
+            // InternalWebMate.g:834:2: ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )*
             {
              before(grammarAccess.getAbbreviationAccess().getAttributesAssignment_2_1_1_3()); 
-            // InternalWebMate.g:804:2: ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )*
-            loop11:
+            // InternalWebMate.g:835:2: ( rule__Abbreviation__AttributesAssignment_2_1_1_3 )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==31) ) {
-                    alt11=1;
+                if ( (LA12_0==30) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // InternalWebMate.g:804:3: rule__Abbreviation__AttributesAssignment_2_1_1_3
+            	    // InternalWebMate.g:835:3: rule__Abbreviation__AttributesAssignment_2_1_1_3
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Abbreviation__AttributesAssignment_2_1_1_3();
@@ -2690,7 +2833,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
@@ -2717,14 +2860,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__4"
-    // InternalWebMate.g:812:1: rule__Abbreviation__Group_2_1_1__4 : rule__Abbreviation__Group_2_1_1__4__Impl ;
+    // InternalWebMate.g:843:1: rule__Abbreviation__Group_2_1_1__4 : rule__Abbreviation__Group_2_1_1__4__Impl ;
     public final void rule__Abbreviation__Group_2_1_1__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:816:1: ( rule__Abbreviation__Group_2_1_1__4__Impl )
-            // InternalWebMate.g:817:2: rule__Abbreviation__Group_2_1_1__4__Impl
+            // InternalWebMate.g:847:1: ( rule__Abbreviation__Group_2_1_1__4__Impl )
+            // InternalWebMate.g:848:2: rule__Abbreviation__Group_2_1_1__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Abbreviation__Group_2_1_1__4__Impl();
@@ -2750,33 +2893,33 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__Group_2_1_1__4__Impl"
-    // InternalWebMate.g:823:1: rule__Abbreviation__Group_2_1_1__4__Impl : ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* ) ;
+    // InternalWebMate.g:854:1: rule__Abbreviation__Group_2_1_1__4__Impl : ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* ) ;
     public final void rule__Abbreviation__Group_2_1_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:827:1: ( ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* ) )
-            // InternalWebMate.g:828:1: ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* )
+            // InternalWebMate.g:858:1: ( ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* ) )
+            // InternalWebMate.g:859:1: ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* )
             {
-            // InternalWebMate.g:828:1: ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* )
-            // InternalWebMate.g:829:2: ( rule__Abbreviation__GroupAssignment_2_1_1_4 )*
+            // InternalWebMate.g:859:1: ( ( rule__Abbreviation__GroupAssignment_2_1_1_4 )* )
+            // InternalWebMate.g:860:2: ( rule__Abbreviation__GroupAssignment_2_1_1_4 )*
             {
              before(grammarAccess.getAbbreviationAccess().getGroupAssignment_2_1_1_4()); 
-            // InternalWebMate.g:830:2: ( rule__Abbreviation__GroupAssignment_2_1_1_4 )*
-            loop12:
+            // InternalWebMate.g:861:2: ( rule__Abbreviation__GroupAssignment_2_1_1_4 )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==34) ) {
-                    alt12=1;
+                if ( (LA13_0==33) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // InternalWebMate.g:830:3: rule__Abbreviation__GroupAssignment_2_1_1_4
+            	    // InternalWebMate.g:861:3: rule__Abbreviation__GroupAssignment_2_1_1_4
             	    {
             	    pushFollow(FOLLOW_14);
             	    rule__Abbreviation__GroupAssignment_2_1_1_4();
@@ -2788,7 +2931,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2815,14 +2958,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group__0"
-    // InternalWebMate.g:839:1: rule__ID0__Group__0 : rule__ID0__Group__0__Impl rule__ID0__Group__1 ;
+    // InternalWebMate.g:870:1: rule__ID0__Group__0 : rule__ID0__Group__0__Impl rule__ID0__Group__1 ;
     public final void rule__ID0__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:843:1: ( rule__ID0__Group__0__Impl rule__ID0__Group__1 )
-            // InternalWebMate.g:844:2: rule__ID0__Group__0__Impl rule__ID0__Group__1
+            // InternalWebMate.g:874:1: ( rule__ID0__Group__0__Impl rule__ID0__Group__1 )
+            // InternalWebMate.g:875:2: rule__ID0__Group__0__Impl rule__ID0__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__ID0__Group__0__Impl();
@@ -2853,21 +2996,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group__0__Impl"
-    // InternalWebMate.g:851:1: rule__ID0__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:882:1: rule__ID0__Group__0__Impl : ( () ) ;
     public final void rule__ID0__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:855:1: ( ( () ) )
-            // InternalWebMate.g:856:1: ( () )
+            // InternalWebMate.g:886:1: ( ( () ) )
+            // InternalWebMate.g:887:1: ( () )
             {
-            // InternalWebMate.g:856:1: ( () )
-            // InternalWebMate.g:857:2: ()
+            // InternalWebMate.g:887:1: ( () )
+            // InternalWebMate.g:888:2: ()
             {
              before(grammarAccess.getID0Access().getIDAction_0()); 
-            // InternalWebMate.g:858:2: ()
-            // InternalWebMate.g:858:3: 
+            // InternalWebMate.g:889:2: ()
+            // InternalWebMate.g:889:3: 
             {
             }
 
@@ -2890,14 +3033,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group__1"
-    // InternalWebMate.g:866:1: rule__ID0__Group__1 : rule__ID0__Group__1__Impl ;
+    // InternalWebMate.g:897:1: rule__ID0__Group__1 : rule__ID0__Group__1__Impl ;
     public final void rule__ID0__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:870:1: ( rule__ID0__Group__1__Impl )
-            // InternalWebMate.g:871:2: rule__ID0__Group__1__Impl
+            // InternalWebMate.g:901:1: ( rule__ID0__Group__1__Impl )
+            // InternalWebMate.g:902:2: rule__ID0__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ID0__Group__1__Impl();
@@ -2923,21 +3066,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group__1__Impl"
-    // InternalWebMate.g:877:1: rule__ID0__Group__1__Impl : ( ( rule__ID0__Group_1__0 ) ) ;
+    // InternalWebMate.g:908:1: rule__ID0__Group__1__Impl : ( ( rule__ID0__Group_1__0 ) ) ;
     public final void rule__ID0__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:881:1: ( ( ( rule__ID0__Group_1__0 ) ) )
-            // InternalWebMate.g:882:1: ( ( rule__ID0__Group_1__0 ) )
+            // InternalWebMate.g:912:1: ( ( ( rule__ID0__Group_1__0 ) ) )
+            // InternalWebMate.g:913:1: ( ( rule__ID0__Group_1__0 ) )
             {
-            // InternalWebMate.g:882:1: ( ( rule__ID0__Group_1__0 ) )
-            // InternalWebMate.g:883:2: ( rule__ID0__Group_1__0 )
+            // InternalWebMate.g:913:1: ( ( rule__ID0__Group_1__0 ) )
+            // InternalWebMate.g:914:2: ( rule__ID0__Group_1__0 )
             {
              before(grammarAccess.getID0Access().getGroup_1()); 
-            // InternalWebMate.g:884:2: ( rule__ID0__Group_1__0 )
-            // InternalWebMate.g:884:3: rule__ID0__Group_1__0
+            // InternalWebMate.g:915:2: ( rule__ID0__Group_1__0 )
+            // InternalWebMate.g:915:3: rule__ID0__Group_1__0
             {
             pushFollow(FOLLOW_2);
             rule__ID0__Group_1__0();
@@ -2970,14 +3113,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group_1__0"
-    // InternalWebMate.g:893:1: rule__ID0__Group_1__0 : rule__ID0__Group_1__0__Impl rule__ID0__Group_1__1 ;
+    // InternalWebMate.g:924:1: rule__ID0__Group_1__0 : rule__ID0__Group_1__0__Impl rule__ID0__Group_1__1 ;
     public final void rule__ID0__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:897:1: ( rule__ID0__Group_1__0__Impl rule__ID0__Group_1__1 )
-            // InternalWebMate.g:898:2: rule__ID0__Group_1__0__Impl rule__ID0__Group_1__1
+            // InternalWebMate.g:928:1: ( rule__ID0__Group_1__0__Impl rule__ID0__Group_1__1 )
+            // InternalWebMate.g:929:2: rule__ID0__Group_1__0__Impl rule__ID0__Group_1__1
             {
             pushFollow(FOLLOW_16);
             rule__ID0__Group_1__0__Impl();
@@ -3008,20 +3151,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group_1__0__Impl"
-    // InternalWebMate.g:905:1: rule__ID0__Group_1__0__Impl : ( '#' ) ;
+    // InternalWebMate.g:936:1: rule__ID0__Group_1__0__Impl : ( '#' ) ;
     public final void rule__ID0__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:909:1: ( ( '#' ) )
-            // InternalWebMate.g:910:1: ( '#' )
+            // InternalWebMate.g:940:1: ( ( '#' ) )
+            // InternalWebMate.g:941:1: ( '#' )
             {
-            // InternalWebMate.g:910:1: ( '#' )
-            // InternalWebMate.g:911:2: '#'
+            // InternalWebMate.g:941:1: ( '#' )
+            // InternalWebMate.g:942:2: '#'
             {
              before(grammarAccess.getID0Access().getNumberSignKeyword_1_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getID0Access().getNumberSignKeyword_1_0()); 
 
             }
@@ -3045,14 +3188,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group_1__1"
-    // InternalWebMate.g:920:1: rule__ID0__Group_1__1 : rule__ID0__Group_1__1__Impl ;
+    // InternalWebMate.g:951:1: rule__ID0__Group_1__1 : rule__ID0__Group_1__1__Impl ;
     public final void rule__ID0__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:924:1: ( rule__ID0__Group_1__1__Impl )
-            // InternalWebMate.g:925:2: rule__ID0__Group_1__1__Impl
+            // InternalWebMate.g:955:1: ( rule__ID0__Group_1__1__Impl )
+            // InternalWebMate.g:956:2: rule__ID0__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ID0__Group_1__1__Impl();
@@ -3078,21 +3221,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__Group_1__1__Impl"
-    // InternalWebMate.g:931:1: rule__ID0__Group_1__1__Impl : ( ( rule__ID0__IdNameAssignment_1_1 ) ) ;
+    // InternalWebMate.g:962:1: rule__ID0__Group_1__1__Impl : ( ( rule__ID0__IdNameAssignment_1_1 ) ) ;
     public final void rule__ID0__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:935:1: ( ( ( rule__ID0__IdNameAssignment_1_1 ) ) )
-            // InternalWebMate.g:936:1: ( ( rule__ID0__IdNameAssignment_1_1 ) )
+            // InternalWebMate.g:966:1: ( ( ( rule__ID0__IdNameAssignment_1_1 ) ) )
+            // InternalWebMate.g:967:1: ( ( rule__ID0__IdNameAssignment_1_1 ) )
             {
-            // InternalWebMate.g:936:1: ( ( rule__ID0__IdNameAssignment_1_1 ) )
-            // InternalWebMate.g:937:2: ( rule__ID0__IdNameAssignment_1_1 )
+            // InternalWebMate.g:967:1: ( ( rule__ID0__IdNameAssignment_1_1 ) )
+            // InternalWebMate.g:968:2: ( rule__ID0__IdNameAssignment_1_1 )
             {
              before(grammarAccess.getID0Access().getIdNameAssignment_1_1()); 
-            // InternalWebMate.g:938:2: ( rule__ID0__IdNameAssignment_1_1 )
-            // InternalWebMate.g:938:3: rule__ID0__IdNameAssignment_1_1
+            // InternalWebMate.g:969:2: ( rule__ID0__IdNameAssignment_1_1 )
+            // InternalWebMate.g:969:3: rule__ID0__IdNameAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ID0__IdNameAssignment_1_1();
@@ -3125,14 +3268,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0__0"
-    // InternalWebMate.g:947:1: rule__Symbol__Group_0__0 : rule__Symbol__Group_0__0__Impl rule__Symbol__Group_0__1 ;
+    // InternalWebMate.g:978:1: rule__Symbol__Group_0__0 : rule__Symbol__Group_0__0__Impl rule__Symbol__Group_0__1 ;
     public final void rule__Symbol__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:951:1: ( rule__Symbol__Group_0__0__Impl rule__Symbol__Group_0__1 )
-            // InternalWebMate.g:952:2: rule__Symbol__Group_0__0__Impl rule__Symbol__Group_0__1
+            // InternalWebMate.g:982:1: ( rule__Symbol__Group_0__0__Impl rule__Symbol__Group_0__1 )
+            // InternalWebMate.g:983:2: rule__Symbol__Group_0__0__Impl rule__Symbol__Group_0__1
             {
             pushFollow(FOLLOW_17);
             rule__Symbol__Group_0__0__Impl();
@@ -3163,21 +3306,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0__0__Impl"
-    // InternalWebMate.g:959:1: rule__Symbol__Group_0__0__Impl : ( () ) ;
+    // InternalWebMate.g:990:1: rule__Symbol__Group_0__0__Impl : ( () ) ;
     public final void rule__Symbol__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:963:1: ( ( () ) )
-            // InternalWebMate.g:964:1: ( () )
+            // InternalWebMate.g:994:1: ( ( () ) )
+            // InternalWebMate.g:995:1: ( () )
             {
-            // InternalWebMate.g:964:1: ( () )
-            // InternalWebMate.g:965:2: ()
+            // InternalWebMate.g:995:1: ( () )
+            // InternalWebMate.g:996:2: ()
             {
              before(grammarAccess.getSymbolAccess().getSymbolAction_0_0()); 
-            // InternalWebMate.g:966:2: ()
-            // InternalWebMate.g:966:3: 
+            // InternalWebMate.g:997:2: ()
+            // InternalWebMate.g:997:3: 
             {
             }
 
@@ -3200,14 +3343,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0__1"
-    // InternalWebMate.g:974:1: rule__Symbol__Group_0__1 : rule__Symbol__Group_0__1__Impl ;
+    // InternalWebMate.g:1005:1: rule__Symbol__Group_0__1 : rule__Symbol__Group_0__1__Impl ;
     public final void rule__Symbol__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:978:1: ( rule__Symbol__Group_0__1__Impl )
-            // InternalWebMate.g:979:2: rule__Symbol__Group_0__1__Impl
+            // InternalWebMate.g:1009:1: ( rule__Symbol__Group_0__1__Impl )
+            // InternalWebMate.g:1010:2: rule__Symbol__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__Group_0__1__Impl();
@@ -3233,21 +3376,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0__1__Impl"
-    // InternalWebMate.g:985:1: rule__Symbol__Group_0__1__Impl : ( ( rule__Symbol__Group_0_1__0 ) ) ;
+    // InternalWebMate.g:1016:1: rule__Symbol__Group_0__1__Impl : ( ( rule__Symbol__Group_0_1__0 ) ) ;
     public final void rule__Symbol__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:989:1: ( ( ( rule__Symbol__Group_0_1__0 ) ) )
-            // InternalWebMate.g:990:1: ( ( rule__Symbol__Group_0_1__0 ) )
+            // InternalWebMate.g:1020:1: ( ( ( rule__Symbol__Group_0_1__0 ) ) )
+            // InternalWebMate.g:1021:1: ( ( rule__Symbol__Group_0_1__0 ) )
             {
-            // InternalWebMate.g:990:1: ( ( rule__Symbol__Group_0_1__0 ) )
-            // InternalWebMate.g:991:2: ( rule__Symbol__Group_0_1__0 )
+            // InternalWebMate.g:1021:1: ( ( rule__Symbol__Group_0_1__0 ) )
+            // InternalWebMate.g:1022:2: ( rule__Symbol__Group_0_1__0 )
             {
              before(grammarAccess.getSymbolAccess().getGroup_0_1()); 
-            // InternalWebMate.g:992:2: ( rule__Symbol__Group_0_1__0 )
-            // InternalWebMate.g:992:3: rule__Symbol__Group_0_1__0
+            // InternalWebMate.g:1023:2: ( rule__Symbol__Group_0_1__0 )
+            // InternalWebMate.g:1023:3: rule__Symbol__Group_0_1__0
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__Group_0_1__0();
@@ -3280,14 +3423,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0_1__0"
-    // InternalWebMate.g:1001:1: rule__Symbol__Group_0_1__0 : rule__Symbol__Group_0_1__0__Impl rule__Symbol__Group_0_1__1 ;
+    // InternalWebMate.g:1032:1: rule__Symbol__Group_0_1__0 : rule__Symbol__Group_0_1__0__Impl rule__Symbol__Group_0_1__1 ;
     public final void rule__Symbol__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1005:1: ( rule__Symbol__Group_0_1__0__Impl rule__Symbol__Group_0_1__1 )
-            // InternalWebMate.g:1006:2: rule__Symbol__Group_0_1__0__Impl rule__Symbol__Group_0_1__1
+            // InternalWebMate.g:1036:1: ( rule__Symbol__Group_0_1__0__Impl rule__Symbol__Group_0_1__1 )
+            // InternalWebMate.g:1037:2: rule__Symbol__Group_0_1__0__Impl rule__Symbol__Group_0_1__1
             {
             pushFollow(FOLLOW_18);
             rule__Symbol__Group_0_1__0__Impl();
@@ -3318,21 +3461,31 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0_1__0__Impl"
-    // InternalWebMate.g:1013:1: rule__Symbol__Group_0_1__0__Impl : ( '*' ) ;
+    // InternalWebMate.g:1044:1: rule__Symbol__Group_0_1__0__Impl : ( ( rule__Symbol__SymAssignment_0_1_0 ) ) ;
     public final void rule__Symbol__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1017:1: ( ( '*' ) )
-            // InternalWebMate.g:1018:1: ( '*' )
+            // InternalWebMate.g:1048:1: ( ( ( rule__Symbol__SymAssignment_0_1_0 ) ) )
+            // InternalWebMate.g:1049:1: ( ( rule__Symbol__SymAssignment_0_1_0 ) )
             {
-            // InternalWebMate.g:1018:1: ( '*' )
-            // InternalWebMate.g:1019:2: '*'
+            // InternalWebMate.g:1049:1: ( ( rule__Symbol__SymAssignment_0_1_0 ) )
+            // InternalWebMate.g:1050:2: ( rule__Symbol__SymAssignment_0_1_0 )
             {
-             before(grammarAccess.getSymbolAccess().getAsteriskKeyword_0_1_0()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getSymbolAccess().getAsteriskKeyword_0_1_0()); 
+             before(grammarAccess.getSymbolAccess().getSymAssignment_0_1_0()); 
+            // InternalWebMate.g:1051:2: ( rule__Symbol__SymAssignment_0_1_0 )
+            // InternalWebMate.g:1051:3: rule__Symbol__SymAssignment_0_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Symbol__SymAssignment_0_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSymbolAccess().getSymAssignment_0_1_0()); 
 
             }
 
@@ -3355,14 +3508,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0_1__1"
-    // InternalWebMate.g:1028:1: rule__Symbol__Group_0_1__1 : rule__Symbol__Group_0_1__1__Impl ;
+    // InternalWebMate.g:1059:1: rule__Symbol__Group_0_1__1 : rule__Symbol__Group_0_1__1__Impl ;
     public final void rule__Symbol__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1032:1: ( rule__Symbol__Group_0_1__1__Impl )
-            // InternalWebMate.g:1033:2: rule__Symbol__Group_0_1__1__Impl
+            // InternalWebMate.g:1063:1: ( rule__Symbol__Group_0_1__1__Impl )
+            // InternalWebMate.g:1064:2: rule__Symbol__Group_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__Group_0_1__1__Impl();
@@ -3388,21 +3541,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_0_1__1__Impl"
-    // InternalWebMate.g:1039:1: rule__Symbol__Group_0_1__1__Impl : ( ( rule__Symbol__CountAssignment_0_1_1 ) ) ;
+    // InternalWebMate.g:1070:1: rule__Symbol__Group_0_1__1__Impl : ( ( rule__Symbol__CountAssignment_0_1_1 ) ) ;
     public final void rule__Symbol__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1043:1: ( ( ( rule__Symbol__CountAssignment_0_1_1 ) ) )
-            // InternalWebMate.g:1044:1: ( ( rule__Symbol__CountAssignment_0_1_1 ) )
+            // InternalWebMate.g:1074:1: ( ( ( rule__Symbol__CountAssignment_0_1_1 ) ) )
+            // InternalWebMate.g:1075:1: ( ( rule__Symbol__CountAssignment_0_1_1 ) )
             {
-            // InternalWebMate.g:1044:1: ( ( rule__Symbol__CountAssignment_0_1_1 ) )
-            // InternalWebMate.g:1045:2: ( rule__Symbol__CountAssignment_0_1_1 )
+            // InternalWebMate.g:1075:1: ( ( rule__Symbol__CountAssignment_0_1_1 ) )
+            // InternalWebMate.g:1076:2: ( rule__Symbol__CountAssignment_0_1_1 )
             {
              before(grammarAccess.getSymbolAccess().getCountAssignment_0_1_1()); 
-            // InternalWebMate.g:1046:2: ( rule__Symbol__CountAssignment_0_1_1 )
-            // InternalWebMate.g:1046:3: rule__Symbol__CountAssignment_0_1_1
+            // InternalWebMate.g:1077:2: ( rule__Symbol__CountAssignment_0_1_1 )
+            // InternalWebMate.g:1077:3: rule__Symbol__CountAssignment_0_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__CountAssignment_0_1_1();
@@ -3435,14 +3588,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_1__0"
-    // InternalWebMate.g:1055:1: rule__Symbol__Group_1__0 : rule__Symbol__Group_1__0__Impl rule__Symbol__Group_1__1 ;
+    // InternalWebMate.g:1086:1: rule__Symbol__Group_1__0 : rule__Symbol__Group_1__0__Impl rule__Symbol__Group_1__1 ;
     public final void rule__Symbol__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1059:1: ( rule__Symbol__Group_1__0__Impl rule__Symbol__Group_1__1 )
-            // InternalWebMate.g:1060:2: rule__Symbol__Group_1__0__Impl rule__Symbol__Group_1__1
+            // InternalWebMate.g:1090:1: ( rule__Symbol__Group_1__0__Impl rule__Symbol__Group_1__1 )
+            // InternalWebMate.g:1091:2: rule__Symbol__Group_1__0__Impl rule__Symbol__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__Symbol__Group_1__0__Impl();
@@ -3473,21 +3626,31 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_1__0__Impl"
-    // InternalWebMate.g:1067:1: rule__Symbol__Group_1__0__Impl : ( '+' ) ;
+    // InternalWebMate.g:1098:1: rule__Symbol__Group_1__0__Impl : ( ( rule__Symbol__SymAssignment_1_0 ) ) ;
     public final void rule__Symbol__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1071:1: ( ( '+' ) )
-            // InternalWebMate.g:1072:1: ( '+' )
+            // InternalWebMate.g:1102:1: ( ( ( rule__Symbol__SymAssignment_1_0 ) ) )
+            // InternalWebMate.g:1103:1: ( ( rule__Symbol__SymAssignment_1_0 ) )
             {
-            // InternalWebMate.g:1072:1: ( '+' )
-            // InternalWebMate.g:1073:2: '+'
+            // InternalWebMate.g:1103:1: ( ( rule__Symbol__SymAssignment_1_0 ) )
+            // InternalWebMate.g:1104:2: ( rule__Symbol__SymAssignment_1_0 )
             {
-             before(grammarAccess.getSymbolAccess().getPlusSignKeyword_1_0()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getSymbolAccess().getPlusSignKeyword_1_0()); 
+             before(grammarAccess.getSymbolAccess().getSymAssignment_1_0()); 
+            // InternalWebMate.g:1105:2: ( rule__Symbol__SymAssignment_1_0 )
+            // InternalWebMate.g:1105:3: rule__Symbol__SymAssignment_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Symbol__SymAssignment_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSymbolAccess().getSymAssignment_1_0()); 
 
             }
 
@@ -3510,14 +3673,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_1__1"
-    // InternalWebMate.g:1082:1: rule__Symbol__Group_1__1 : rule__Symbol__Group_1__1__Impl ;
+    // InternalWebMate.g:1113:1: rule__Symbol__Group_1__1 : rule__Symbol__Group_1__1__Impl ;
     public final void rule__Symbol__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1086:1: ( rule__Symbol__Group_1__1__Impl )
-            // InternalWebMate.g:1087:2: rule__Symbol__Group_1__1__Impl
+            // InternalWebMate.g:1117:1: ( rule__Symbol__Group_1__1__Impl )
+            // InternalWebMate.g:1118:2: rule__Symbol__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__Group_1__1__Impl();
@@ -3543,21 +3706,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__Group_1__1__Impl"
-    // InternalWebMate.g:1093:1: rule__Symbol__Group_1__1__Impl : ( ( rule__Symbol__TagAssignment_1_1 ) ) ;
+    // InternalWebMate.g:1124:1: rule__Symbol__Group_1__1__Impl : ( ( rule__Symbol__TagAssignment_1_1 ) ) ;
     public final void rule__Symbol__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1097:1: ( ( ( rule__Symbol__TagAssignment_1_1 ) ) )
-            // InternalWebMate.g:1098:1: ( ( rule__Symbol__TagAssignment_1_1 ) )
+            // InternalWebMate.g:1128:1: ( ( ( rule__Symbol__TagAssignment_1_1 ) ) )
+            // InternalWebMate.g:1129:1: ( ( rule__Symbol__TagAssignment_1_1 ) )
             {
-            // InternalWebMate.g:1098:1: ( ( rule__Symbol__TagAssignment_1_1 ) )
-            // InternalWebMate.g:1099:2: ( rule__Symbol__TagAssignment_1_1 )
+            // InternalWebMate.g:1129:1: ( ( rule__Symbol__TagAssignment_1_1 ) )
+            // InternalWebMate.g:1130:2: ( rule__Symbol__TagAssignment_1_1 )
             {
              before(grammarAccess.getSymbolAccess().getTagAssignment_1_1()); 
-            // InternalWebMate.g:1100:2: ( rule__Symbol__TagAssignment_1_1 )
-            // InternalWebMate.g:1100:3: rule__Symbol__TagAssignment_1_1
+            // InternalWebMate.g:1131:2: ( rule__Symbol__TagAssignment_1_1 )
+            // InternalWebMate.g:1131:3: rule__Symbol__TagAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__TagAssignment_1_1();
@@ -3589,325 +3752,15 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Symbol__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__Symbol__Group_2__0"
-    // InternalWebMate.g:1109:1: rule__Symbol__Group_2__0 : rule__Symbol__Group_2__0__Impl rule__Symbol__Group_2__1 ;
-    public final void rule__Symbol__Group_2__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1113:1: ( rule__Symbol__Group_2__0__Impl rule__Symbol__Group_2__1 )
-            // InternalWebMate.g:1114:2: rule__Symbol__Group_2__0__Impl rule__Symbol__Group_2__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Symbol__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Symbol__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_2__0"
-
-
-    // $ANTLR start "rule__Symbol__Group_2__0__Impl"
-    // InternalWebMate.g:1121:1: rule__Symbol__Group_2__0__Impl : ( '>' ) ;
-    public final void rule__Symbol__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1125:1: ( ( '>' ) )
-            // InternalWebMate.g:1126:1: ( '>' )
-            {
-            // InternalWebMate.g:1126:1: ( '>' )
-            // InternalWebMate.g:1127:2: '>'
-            {
-             before(grammarAccess.getSymbolAccess().getGreaterThanSignKeyword_2_0()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getSymbolAccess().getGreaterThanSignKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__Symbol__Group_2__1"
-    // InternalWebMate.g:1136:1: rule__Symbol__Group_2__1 : rule__Symbol__Group_2__1__Impl ;
-    public final void rule__Symbol__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1140:1: ( rule__Symbol__Group_2__1__Impl )
-            // InternalWebMate.g:1141:2: rule__Symbol__Group_2__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Symbol__Group_2__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_2__1"
-
-
-    // $ANTLR start "rule__Symbol__Group_2__1__Impl"
-    // InternalWebMate.g:1147:1: rule__Symbol__Group_2__1__Impl : ( ( rule__Symbol__TagAssignment_2_1 ) ) ;
-    public final void rule__Symbol__Group_2__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1151:1: ( ( ( rule__Symbol__TagAssignment_2_1 ) ) )
-            // InternalWebMate.g:1152:1: ( ( rule__Symbol__TagAssignment_2_1 ) )
-            {
-            // InternalWebMate.g:1152:1: ( ( rule__Symbol__TagAssignment_2_1 ) )
-            // InternalWebMate.g:1153:2: ( rule__Symbol__TagAssignment_2_1 )
-            {
-             before(grammarAccess.getSymbolAccess().getTagAssignment_2_1()); 
-            // InternalWebMate.g:1154:2: ( rule__Symbol__TagAssignment_2_1 )
-            // InternalWebMate.g:1154:3: rule__Symbol__TagAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Symbol__TagAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSymbolAccess().getTagAssignment_2_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_2__1__Impl"
-
-
-    // $ANTLR start "rule__Symbol__Group_3__0"
-    // InternalWebMate.g:1163:1: rule__Symbol__Group_3__0 : rule__Symbol__Group_3__0__Impl rule__Symbol__Group_3__1 ;
-    public final void rule__Symbol__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1167:1: ( rule__Symbol__Group_3__0__Impl rule__Symbol__Group_3__1 )
-            // InternalWebMate.g:1168:2: rule__Symbol__Group_3__0__Impl rule__Symbol__Group_3__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Symbol__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Symbol__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_3__0"
-
-
-    // $ANTLR start "rule__Symbol__Group_3__0__Impl"
-    // InternalWebMate.g:1175:1: rule__Symbol__Group_3__0__Impl : ( '^' ) ;
-    public final void rule__Symbol__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1179:1: ( ( '^' ) )
-            // InternalWebMate.g:1180:1: ( '^' )
-            {
-            // InternalWebMate.g:1180:1: ( '^' )
-            // InternalWebMate.g:1181:2: '^'
-            {
-             before(grammarAccess.getSymbolAccess().getCircumflexAccentKeyword_3_0()); 
-            match(input,29,FOLLOW_2); 
-             after(grammarAccess.getSymbolAccess().getCircumflexAccentKeyword_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__Symbol__Group_3__1"
-    // InternalWebMate.g:1190:1: rule__Symbol__Group_3__1 : rule__Symbol__Group_3__1__Impl ;
-    public final void rule__Symbol__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1194:1: ( rule__Symbol__Group_3__1__Impl )
-            // InternalWebMate.g:1195:2: rule__Symbol__Group_3__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Symbol__Group_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_3__1"
-
-
-    // $ANTLR start "rule__Symbol__Group_3__1__Impl"
-    // InternalWebMate.g:1201:1: rule__Symbol__Group_3__1__Impl : ( ( rule__Symbol__TagAssignment_3_1 ) ) ;
-    public final void rule__Symbol__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1205:1: ( ( ( rule__Symbol__TagAssignment_3_1 ) ) )
-            // InternalWebMate.g:1206:1: ( ( rule__Symbol__TagAssignment_3_1 ) )
-            {
-            // InternalWebMate.g:1206:1: ( ( rule__Symbol__TagAssignment_3_1 ) )
-            // InternalWebMate.g:1207:2: ( rule__Symbol__TagAssignment_3_1 )
-            {
-             before(grammarAccess.getSymbolAccess().getTagAssignment_3_1()); 
-            // InternalWebMate.g:1208:2: ( rule__Symbol__TagAssignment_3_1 )
-            // InternalWebMate.g:1208:3: rule__Symbol__TagAssignment_3_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Symbol__TagAssignment_3_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSymbolAccess().getTagAssignment_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__Group_3__1__Impl"
-
-
     // $ANTLR start "rule__Tag__Group__0"
-    // InternalWebMate.g:1217:1: rule__Tag__Group__0 : rule__Tag__Group__0__Impl rule__Tag__Group__1 ;
+    // InternalWebMate.g:1140:1: rule__Tag__Group__0 : rule__Tag__Group__0__Impl rule__Tag__Group__1 ;
     public final void rule__Tag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1221:1: ( rule__Tag__Group__0__Impl rule__Tag__Group__1 )
-            // InternalWebMate.g:1222:2: rule__Tag__Group__0__Impl rule__Tag__Group__1
+            // InternalWebMate.g:1144:1: ( rule__Tag__Group__0__Impl rule__Tag__Group__1 )
+            // InternalWebMate.g:1145:2: rule__Tag__Group__0__Impl rule__Tag__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Tag__Group__0__Impl();
@@ -3938,21 +3791,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__0__Impl"
-    // InternalWebMate.g:1229:1: rule__Tag__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:1152:1: rule__Tag__Group__0__Impl : ( () ) ;
     public final void rule__Tag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1233:1: ( ( () ) )
-            // InternalWebMate.g:1234:1: ( () )
+            // InternalWebMate.g:1156:1: ( ( () ) )
+            // InternalWebMate.g:1157:1: ( () )
             {
-            // InternalWebMate.g:1234:1: ( () )
-            // InternalWebMate.g:1235:2: ()
+            // InternalWebMate.g:1157:1: ( () )
+            // InternalWebMate.g:1158:2: ()
             {
              before(grammarAccess.getTagAccess().getTagAction_0()); 
-            // InternalWebMate.g:1236:2: ()
-            // InternalWebMate.g:1236:3: 
+            // InternalWebMate.g:1159:2: ()
+            // InternalWebMate.g:1159:3: 
             {
             }
 
@@ -3975,14 +3828,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__1"
-    // InternalWebMate.g:1244:1: rule__Tag__Group__1 : rule__Tag__Group__1__Impl rule__Tag__Group__2 ;
+    // InternalWebMate.g:1167:1: rule__Tag__Group__1 : rule__Tag__Group__1__Impl rule__Tag__Group__2 ;
     public final void rule__Tag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1248:1: ( rule__Tag__Group__1__Impl rule__Tag__Group__2 )
-            // InternalWebMate.g:1249:2: rule__Tag__Group__1__Impl rule__Tag__Group__2
+            // InternalWebMate.g:1171:1: ( rule__Tag__Group__1__Impl rule__Tag__Group__2 )
+            // InternalWebMate.g:1172:2: rule__Tag__Group__1__Impl rule__Tag__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__Tag__Group__1__Impl();
@@ -4013,21 +3866,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__1__Impl"
-    // InternalWebMate.g:1256:1: rule__Tag__Group__1__Impl : ( ( rule__Tag__TagNameAssignment_1 ) ) ;
+    // InternalWebMate.g:1179:1: rule__Tag__Group__1__Impl : ( ( rule__Tag__TagNameAssignment_1 ) ) ;
     public final void rule__Tag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1260:1: ( ( ( rule__Tag__TagNameAssignment_1 ) ) )
-            // InternalWebMate.g:1261:1: ( ( rule__Tag__TagNameAssignment_1 ) )
+            // InternalWebMate.g:1183:1: ( ( ( rule__Tag__TagNameAssignment_1 ) ) )
+            // InternalWebMate.g:1184:1: ( ( rule__Tag__TagNameAssignment_1 ) )
             {
-            // InternalWebMate.g:1261:1: ( ( rule__Tag__TagNameAssignment_1 ) )
-            // InternalWebMate.g:1262:2: ( rule__Tag__TagNameAssignment_1 )
+            // InternalWebMate.g:1184:1: ( ( rule__Tag__TagNameAssignment_1 ) )
+            // InternalWebMate.g:1185:2: ( rule__Tag__TagNameAssignment_1 )
             {
              before(grammarAccess.getTagAccess().getTagNameAssignment_1()); 
-            // InternalWebMate.g:1263:2: ( rule__Tag__TagNameAssignment_1 )
-            // InternalWebMate.g:1263:3: rule__Tag__TagNameAssignment_1
+            // InternalWebMate.g:1186:2: ( rule__Tag__TagNameAssignment_1 )
+            // InternalWebMate.g:1186:3: rule__Tag__TagNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Tag__TagNameAssignment_1();
@@ -4060,14 +3913,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__2"
-    // InternalWebMate.g:1271:1: rule__Tag__Group__2 : rule__Tag__Group__2__Impl rule__Tag__Group__3 ;
+    // InternalWebMate.g:1194:1: rule__Tag__Group__2 : rule__Tag__Group__2__Impl rule__Tag__Group__3 ;
     public final void rule__Tag__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1275:1: ( rule__Tag__Group__2__Impl rule__Tag__Group__3 )
-            // InternalWebMate.g:1276:2: rule__Tag__Group__2__Impl rule__Tag__Group__3
+            // InternalWebMate.g:1198:1: ( rule__Tag__Group__2__Impl rule__Tag__Group__3 )
+            // InternalWebMate.g:1199:2: rule__Tag__Group__2__Impl rule__Tag__Group__3
             {
             pushFollow(FOLLOW_19);
             rule__Tag__Group__2__Impl();
@@ -4098,42 +3951,42 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__2__Impl"
-    // InternalWebMate.g:1283:1: rule__Tag__Group__2__Impl : ( ( rule__Tag__ClassAssignment_2 )* ) ;
+    // InternalWebMate.g:1206:1: rule__Tag__Group__2__Impl : ( ( rule__Tag__ClassAssignment_2 )* ) ;
     public final void rule__Tag__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1287:1: ( ( ( rule__Tag__ClassAssignment_2 )* ) )
-            // InternalWebMate.g:1288:1: ( ( rule__Tag__ClassAssignment_2 )* )
+            // InternalWebMate.g:1210:1: ( ( ( rule__Tag__ClassAssignment_2 )* ) )
+            // InternalWebMate.g:1211:1: ( ( rule__Tag__ClassAssignment_2 )* )
             {
-            // InternalWebMate.g:1288:1: ( ( rule__Tag__ClassAssignment_2 )* )
-            // InternalWebMate.g:1289:2: ( rule__Tag__ClassAssignment_2 )*
+            // InternalWebMate.g:1211:1: ( ( rule__Tag__ClassAssignment_2 )* )
+            // InternalWebMate.g:1212:2: ( rule__Tag__ClassAssignment_2 )*
             {
              before(grammarAccess.getTagAccess().getClassAssignment_2()); 
-            // InternalWebMate.g:1290:2: ( rule__Tag__ClassAssignment_2 )*
-            loop13:
+            // InternalWebMate.g:1213:2: ( rule__Tag__ClassAssignment_2 )*
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==30) ) {
-                    int LA13_2 = input.LA(2);
+                if ( (LA14_0==29) ) {
+                    int LA14_2 = input.LA(2);
 
-                    if ( (LA13_2==RULE_STRING) ) {
-                        alt13=1;
+                    if ( (LA14_2==RULE_STRING) ) {
+                        alt14=1;
                     }
-                    else if ( (LA13_2==RULE_ID) ) {
-                        alt13=1;
+                    else if ( (LA14_2==RULE_ID) ) {
+                        alt14=1;
                     }
 
 
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
-            	    // InternalWebMate.g:1290:3: rule__Tag__ClassAssignment_2
+            	    // InternalWebMate.g:1213:3: rule__Tag__ClassAssignment_2
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__Tag__ClassAssignment_2();
@@ -4145,7 +3998,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -4172,14 +4025,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__3"
-    // InternalWebMate.g:1298:1: rule__Tag__Group__3 : rule__Tag__Group__3__Impl rule__Tag__Group__4 ;
+    // InternalWebMate.g:1221:1: rule__Tag__Group__3 : rule__Tag__Group__3__Impl rule__Tag__Group__4 ;
     public final void rule__Tag__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1302:1: ( rule__Tag__Group__3__Impl rule__Tag__Group__4 )
-            // InternalWebMate.g:1303:2: rule__Tag__Group__3__Impl rule__Tag__Group__4
+            // InternalWebMate.g:1225:1: ( rule__Tag__Group__3__Impl rule__Tag__Group__4 )
+            // InternalWebMate.g:1226:2: rule__Tag__Group__3__Impl rule__Tag__Group__4
             {
             pushFollow(FOLLOW_19);
             rule__Tag__Group__3__Impl();
@@ -4210,36 +4063,36 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__3__Impl"
-    // InternalWebMate.g:1310:1: rule__Tag__Group__3__Impl : ( ( rule__Tag__IdAssignment_3 )? ) ;
+    // InternalWebMate.g:1233:1: rule__Tag__Group__3__Impl : ( ( rule__Tag__IdAssignment_3 )? ) ;
     public final void rule__Tag__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1314:1: ( ( ( rule__Tag__IdAssignment_3 )? ) )
-            // InternalWebMate.g:1315:1: ( ( rule__Tag__IdAssignment_3 )? )
+            // InternalWebMate.g:1237:1: ( ( ( rule__Tag__IdAssignment_3 )? ) )
+            // InternalWebMate.g:1238:1: ( ( rule__Tag__IdAssignment_3 )? )
             {
-            // InternalWebMate.g:1315:1: ( ( rule__Tag__IdAssignment_3 )? )
-            // InternalWebMate.g:1316:2: ( rule__Tag__IdAssignment_3 )?
+            // InternalWebMate.g:1238:1: ( ( rule__Tag__IdAssignment_3 )? )
+            // InternalWebMate.g:1239:2: ( rule__Tag__IdAssignment_3 )?
             {
              before(grammarAccess.getTagAccess().getIdAssignment_3()); 
-            // InternalWebMate.g:1317:2: ( rule__Tag__IdAssignment_3 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalWebMate.g:1240:2: ( rule__Tag__IdAssignment_3 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==25) ) {
-                int LA14_1 = input.LA(2);
+            if ( (LA15_0==28) ) {
+                int LA15_1 = input.LA(2);
 
-                if ( (LA14_1==RULE_STRING) ) {
-                    alt14=1;
+                if ( (LA15_1==RULE_STRING) ) {
+                    alt15=1;
                 }
-                else if ( (LA14_1==RULE_ID) ) {
-                    alt14=1;
+                else if ( (LA15_1==RULE_ID) ) {
+                    alt15=1;
                 }
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalWebMate.g:1317:3: rule__Tag__IdAssignment_3
+                    // InternalWebMate.g:1240:3: rule__Tag__IdAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Tag__IdAssignment_3();
@@ -4275,14 +4128,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__4"
-    // InternalWebMate.g:1325:1: rule__Tag__Group__4 : rule__Tag__Group__4__Impl ;
+    // InternalWebMate.g:1248:1: rule__Tag__Group__4 : rule__Tag__Group__4__Impl ;
     public final void rule__Tag__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1329:1: ( rule__Tag__Group__4__Impl )
-            // InternalWebMate.g:1330:2: rule__Tag__Group__4__Impl
+            // InternalWebMate.g:1252:1: ( rule__Tag__Group__4__Impl )
+            // InternalWebMate.g:1253:2: rule__Tag__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Tag__Group__4__Impl();
@@ -4308,48 +4161,48 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__Group__4__Impl"
-    // InternalWebMate.g:1336:1: rule__Tag__Group__4__Impl : ( ( rule__Tag__AttributeAssignment_4 )* ) ;
+    // InternalWebMate.g:1259:1: rule__Tag__Group__4__Impl : ( ( rule__Tag__AttributeAssignment_4 )* ) ;
     public final void rule__Tag__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1340:1: ( ( ( rule__Tag__AttributeAssignment_4 )* ) )
-            // InternalWebMate.g:1341:1: ( ( rule__Tag__AttributeAssignment_4 )* )
+            // InternalWebMate.g:1263:1: ( ( ( rule__Tag__AttributeAssignment_4 )* ) )
+            // InternalWebMate.g:1264:1: ( ( rule__Tag__AttributeAssignment_4 )* )
             {
-            // InternalWebMate.g:1341:1: ( ( rule__Tag__AttributeAssignment_4 )* )
-            // InternalWebMate.g:1342:2: ( rule__Tag__AttributeAssignment_4 )*
+            // InternalWebMate.g:1264:1: ( ( rule__Tag__AttributeAssignment_4 )* )
+            // InternalWebMate.g:1265:2: ( rule__Tag__AttributeAssignment_4 )*
             {
              before(grammarAccess.getTagAccess().getAttributeAssignment_4()); 
-            // InternalWebMate.g:1343:2: ( rule__Tag__AttributeAssignment_4 )*
-            loop15:
+            // InternalWebMate.g:1266:2: ( rule__Tag__AttributeAssignment_4 )*
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA15_0==31) ) {
-                    int LA15_2 = input.LA(2);
+                if ( (LA16_0==30) ) {
+                    int LA16_2 = input.LA(2);
 
-                    if ( (LA15_2==RULE_STRING) ) {
-                        int LA15_3 = input.LA(3);
+                    if ( (LA16_2==RULE_STRING) ) {
+                        int LA16_3 = input.LA(3);
 
-                        if ( (LA15_3==33) ) {
-                            int LA15_5 = input.LA(4);
+                        if ( (LA16_3==32) ) {
+                            int LA16_5 = input.LA(4);
 
-                            if ( (LA15_5==RULE_STRING) ) {
-                                int LA15_7 = input.LA(5);
+                            if ( (LA16_5==RULE_STRING) ) {
+                                int LA16_7 = input.LA(5);
 
-                                if ( (LA15_7==32) ) {
-                                    alt15=1;
+                                if ( (LA16_7==31) ) {
+                                    alt16=1;
                                 }
 
 
                             }
-                            else if ( (LA15_5==RULE_ID) ) {
-                                int LA15_8 = input.LA(5);
+                            else if ( (LA16_5==RULE_ID) ) {
+                                int LA16_8 = input.LA(5);
 
-                                if ( (LA15_8==32) ) {
-                                    alt15=1;
+                                if ( (LA16_8==31) ) {
+                                    alt16=1;
                                 }
 
 
@@ -4357,32 +4210,32 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
                         }
-                        else if ( (LA15_3==32) ) {
-                            alt15=1;
+                        else if ( (LA16_3==31) ) {
+                            alt16=1;
                         }
 
 
                     }
-                    else if ( (LA15_2==RULE_ID) ) {
-                        int LA15_4 = input.LA(3);
+                    else if ( (LA16_2==RULE_ID) ) {
+                        int LA16_4 = input.LA(3);
 
-                        if ( (LA15_4==33) ) {
-                            int LA15_5 = input.LA(4);
+                        if ( (LA16_4==32) ) {
+                            int LA16_5 = input.LA(4);
 
-                            if ( (LA15_5==RULE_STRING) ) {
-                                int LA15_7 = input.LA(5);
+                            if ( (LA16_5==RULE_STRING) ) {
+                                int LA16_7 = input.LA(5);
 
-                                if ( (LA15_7==32) ) {
-                                    alt15=1;
+                                if ( (LA16_7==31) ) {
+                                    alt16=1;
                                 }
 
 
                             }
-                            else if ( (LA15_5==RULE_ID) ) {
-                                int LA15_8 = input.LA(5);
+                            else if ( (LA16_5==RULE_ID) ) {
+                                int LA16_8 = input.LA(5);
 
-                                if ( (LA15_8==32) ) {
-                                    alt15=1;
+                                if ( (LA16_8==31) ) {
+                                    alt16=1;
                                 }
 
 
@@ -4390,8 +4243,8 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
                         }
-                        else if ( (LA15_4==32) ) {
-                            alt15=1;
+                        else if ( (LA16_4==31) ) {
+                            alt16=1;
                         }
 
 
@@ -4401,9 +4254,9 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
-            	    // InternalWebMate.g:1343:3: rule__Tag__AttributeAssignment_4
+            	    // InternalWebMate.g:1266:3: rule__Tag__AttributeAssignment_4
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Tag__AttributeAssignment_4();
@@ -4415,7 +4268,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop16;
                 }
             } while (true);
 
@@ -4442,14 +4295,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__Group__0"
-    // InternalWebMate.g:1352:1: rule__Class__Group__0 : rule__Class__Group__0__Impl rule__Class__Group__1 ;
+    // InternalWebMate.g:1275:1: rule__Class__Group__0 : rule__Class__Group__0__Impl rule__Class__Group__1 ;
     public final void rule__Class__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1356:1: ( rule__Class__Group__0__Impl rule__Class__Group__1 )
-            // InternalWebMate.g:1357:2: rule__Class__Group__0__Impl rule__Class__Group__1
+            // InternalWebMate.g:1279:1: ( rule__Class__Group__0__Impl rule__Class__Group__1 )
+            // InternalWebMate.g:1280:2: rule__Class__Group__0__Impl rule__Class__Group__1
             {
             pushFollow(FOLLOW_20);
             rule__Class__Group__0__Impl();
@@ -4480,21 +4333,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__Group__0__Impl"
-    // InternalWebMate.g:1364:1: rule__Class__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:1287:1: rule__Class__Group__0__Impl : ( () ) ;
     public final void rule__Class__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1368:1: ( ( () ) )
-            // InternalWebMate.g:1369:1: ( () )
+            // InternalWebMate.g:1291:1: ( ( () ) )
+            // InternalWebMate.g:1292:1: ( () )
             {
-            // InternalWebMate.g:1369:1: ( () )
-            // InternalWebMate.g:1370:2: ()
+            // InternalWebMate.g:1292:1: ( () )
+            // InternalWebMate.g:1293:2: ()
             {
              before(grammarAccess.getClassAccess().getClassAction_0()); 
-            // InternalWebMate.g:1371:2: ()
-            // InternalWebMate.g:1371:3: 
+            // InternalWebMate.g:1294:2: ()
+            // InternalWebMate.g:1294:3: 
             {
             }
 
@@ -4517,14 +4370,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__Group__1"
-    // InternalWebMate.g:1379:1: rule__Class__Group__1 : rule__Class__Group__1__Impl rule__Class__Group__2 ;
+    // InternalWebMate.g:1302:1: rule__Class__Group__1 : rule__Class__Group__1__Impl rule__Class__Group__2 ;
     public final void rule__Class__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1383:1: ( rule__Class__Group__1__Impl rule__Class__Group__2 )
-            // InternalWebMate.g:1384:2: rule__Class__Group__1__Impl rule__Class__Group__2
+            // InternalWebMate.g:1306:1: ( rule__Class__Group__1__Impl rule__Class__Group__2 )
+            // InternalWebMate.g:1307:2: rule__Class__Group__1__Impl rule__Class__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__Class__Group__1__Impl();
@@ -4555,20 +4408,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__Group__1__Impl"
-    // InternalWebMate.g:1391:1: rule__Class__Group__1__Impl : ( '.' ) ;
+    // InternalWebMate.g:1314:1: rule__Class__Group__1__Impl : ( '.' ) ;
     public final void rule__Class__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1395:1: ( ( '.' ) )
-            // InternalWebMate.g:1396:1: ( '.' )
+            // InternalWebMate.g:1318:1: ( ( '.' ) )
+            // InternalWebMate.g:1319:1: ( '.' )
             {
-            // InternalWebMate.g:1396:1: ( '.' )
-            // InternalWebMate.g:1397:2: '.'
+            // InternalWebMate.g:1319:1: ( '.' )
+            // InternalWebMate.g:1320:2: '.'
             {
              before(grammarAccess.getClassAccess().getFullStopKeyword_1()); 
-            match(input,30,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getClassAccess().getFullStopKeyword_1()); 
 
             }
@@ -4592,14 +4445,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__Group__2"
-    // InternalWebMate.g:1406:1: rule__Class__Group__2 : rule__Class__Group__2__Impl ;
+    // InternalWebMate.g:1329:1: rule__Class__Group__2 : rule__Class__Group__2__Impl ;
     public final void rule__Class__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1410:1: ( rule__Class__Group__2__Impl )
-            // InternalWebMate.g:1411:2: rule__Class__Group__2__Impl
+            // InternalWebMate.g:1333:1: ( rule__Class__Group__2__Impl )
+            // InternalWebMate.g:1334:2: rule__Class__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Class__Group__2__Impl();
@@ -4625,21 +4478,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__Group__2__Impl"
-    // InternalWebMate.g:1417:1: rule__Class__Group__2__Impl : ( ( rule__Class__ClassNameAssignment_2 ) ) ;
+    // InternalWebMate.g:1340:1: rule__Class__Group__2__Impl : ( ( rule__Class__ClassNameAssignment_2 ) ) ;
     public final void rule__Class__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1421:1: ( ( ( rule__Class__ClassNameAssignment_2 ) ) )
-            // InternalWebMate.g:1422:1: ( ( rule__Class__ClassNameAssignment_2 ) )
+            // InternalWebMate.g:1344:1: ( ( ( rule__Class__ClassNameAssignment_2 ) ) )
+            // InternalWebMate.g:1345:1: ( ( rule__Class__ClassNameAssignment_2 ) )
             {
-            // InternalWebMate.g:1422:1: ( ( rule__Class__ClassNameAssignment_2 ) )
-            // InternalWebMate.g:1423:2: ( rule__Class__ClassNameAssignment_2 )
+            // InternalWebMate.g:1345:1: ( ( rule__Class__ClassNameAssignment_2 ) )
+            // InternalWebMate.g:1346:2: ( rule__Class__ClassNameAssignment_2 )
             {
              before(grammarAccess.getClassAccess().getClassNameAssignment_2()); 
-            // InternalWebMate.g:1424:2: ( rule__Class__ClassNameAssignment_2 )
-            // InternalWebMate.g:1424:3: rule__Class__ClassNameAssignment_2
+            // InternalWebMate.g:1347:2: ( rule__Class__ClassNameAssignment_2 )
+            // InternalWebMate.g:1347:3: rule__Class__ClassNameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Class__ClassNameAssignment_2();
@@ -4672,14 +4525,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__0"
-    // InternalWebMate.g:1433:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
+    // InternalWebMate.g:1356:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1437:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
-            // InternalWebMate.g:1438:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
+            // InternalWebMate.g:1360:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
+            // InternalWebMate.g:1361:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
             {
             pushFollow(FOLLOW_21);
             rule__Attribute__Group__0__Impl();
@@ -4710,21 +4563,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__0__Impl"
-    // InternalWebMate.g:1445:1: rule__Attribute__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:1368:1: rule__Attribute__Group__0__Impl : ( () ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1449:1: ( ( () ) )
-            // InternalWebMate.g:1450:1: ( () )
+            // InternalWebMate.g:1372:1: ( ( () ) )
+            // InternalWebMate.g:1373:1: ( () )
             {
-            // InternalWebMate.g:1450:1: ( () )
-            // InternalWebMate.g:1451:2: ()
+            // InternalWebMate.g:1373:1: ( () )
+            // InternalWebMate.g:1374:2: ()
             {
              before(grammarAccess.getAttributeAccess().getAttributeAction_0()); 
-            // InternalWebMate.g:1452:2: ()
-            // InternalWebMate.g:1452:3: 
+            // InternalWebMate.g:1375:2: ()
+            // InternalWebMate.g:1375:3: 
             {
             }
 
@@ -4747,14 +4600,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__1"
-    // InternalWebMate.g:1460:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl ;
+    // InternalWebMate.g:1383:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1464:1: ( rule__Attribute__Group__1__Impl )
-            // InternalWebMate.g:1465:2: rule__Attribute__Group__1__Impl
+            // InternalWebMate.g:1387:1: ( rule__Attribute__Group__1__Impl )
+            // InternalWebMate.g:1388:2: rule__Attribute__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group__1__Impl();
@@ -4780,21 +4633,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__1__Impl"
-    // InternalWebMate.g:1471:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__Group_1__0 ) ) ;
+    // InternalWebMate.g:1394:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__Group_1__0 ) ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1475:1: ( ( ( rule__Attribute__Group_1__0 ) ) )
-            // InternalWebMate.g:1476:1: ( ( rule__Attribute__Group_1__0 ) )
+            // InternalWebMate.g:1398:1: ( ( ( rule__Attribute__Group_1__0 ) ) )
+            // InternalWebMate.g:1399:1: ( ( rule__Attribute__Group_1__0 ) )
             {
-            // InternalWebMate.g:1476:1: ( ( rule__Attribute__Group_1__0 ) )
-            // InternalWebMate.g:1477:2: ( rule__Attribute__Group_1__0 )
+            // InternalWebMate.g:1399:1: ( ( rule__Attribute__Group_1__0 ) )
+            // InternalWebMate.g:1400:2: ( rule__Attribute__Group_1__0 )
             {
              before(grammarAccess.getAttributeAccess().getGroup_1()); 
-            // InternalWebMate.g:1478:2: ( rule__Attribute__Group_1__0 )
-            // InternalWebMate.g:1478:3: rule__Attribute__Group_1__0
+            // InternalWebMate.g:1401:2: ( rule__Attribute__Group_1__0 )
+            // InternalWebMate.g:1401:3: rule__Attribute__Group_1__0
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group_1__0();
@@ -4827,14 +4680,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__0"
-    // InternalWebMate.g:1487:1: rule__Attribute__Group_1__0 : rule__Attribute__Group_1__0__Impl rule__Attribute__Group_1__1 ;
+    // InternalWebMate.g:1410:1: rule__Attribute__Group_1__0 : rule__Attribute__Group_1__0__Impl rule__Attribute__Group_1__1 ;
     public final void rule__Attribute__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1491:1: ( rule__Attribute__Group_1__0__Impl rule__Attribute__Group_1__1 )
-            // InternalWebMate.g:1492:2: rule__Attribute__Group_1__0__Impl rule__Attribute__Group_1__1
+            // InternalWebMate.g:1414:1: ( rule__Attribute__Group_1__0__Impl rule__Attribute__Group_1__1 )
+            // InternalWebMate.g:1415:2: rule__Attribute__Group_1__0__Impl rule__Attribute__Group_1__1
             {
             pushFollow(FOLLOW_16);
             rule__Attribute__Group_1__0__Impl();
@@ -4865,20 +4718,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__0__Impl"
-    // InternalWebMate.g:1499:1: rule__Attribute__Group_1__0__Impl : ( '[' ) ;
+    // InternalWebMate.g:1422:1: rule__Attribute__Group_1__0__Impl : ( '[' ) ;
     public final void rule__Attribute__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1503:1: ( ( '[' ) )
-            // InternalWebMate.g:1504:1: ( '[' )
+            // InternalWebMate.g:1426:1: ( ( '[' ) )
+            // InternalWebMate.g:1427:1: ( '[' )
             {
-            // InternalWebMate.g:1504:1: ( '[' )
-            // InternalWebMate.g:1505:2: '['
+            // InternalWebMate.g:1427:1: ( '[' )
+            // InternalWebMate.g:1428:2: '['
             {
              before(grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_1_0()); 
-            match(input,31,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_1_0()); 
 
             }
@@ -4902,14 +4755,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__1"
-    // InternalWebMate.g:1514:1: rule__Attribute__Group_1__1 : rule__Attribute__Group_1__1__Impl rule__Attribute__Group_1__2 ;
+    // InternalWebMate.g:1437:1: rule__Attribute__Group_1__1 : rule__Attribute__Group_1__1__Impl rule__Attribute__Group_1__2 ;
     public final void rule__Attribute__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1518:1: ( rule__Attribute__Group_1__1__Impl rule__Attribute__Group_1__2 )
-            // InternalWebMate.g:1519:2: rule__Attribute__Group_1__1__Impl rule__Attribute__Group_1__2
+            // InternalWebMate.g:1441:1: ( rule__Attribute__Group_1__1__Impl rule__Attribute__Group_1__2 )
+            // InternalWebMate.g:1442:2: rule__Attribute__Group_1__1__Impl rule__Attribute__Group_1__2
             {
             pushFollow(FOLLOW_22);
             rule__Attribute__Group_1__1__Impl();
@@ -4940,21 +4793,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__1__Impl"
-    // InternalWebMate.g:1526:1: rule__Attribute__Group_1__1__Impl : ( ( rule__Attribute__AttributeNameAssignment_1_1 ) ) ;
+    // InternalWebMate.g:1449:1: rule__Attribute__Group_1__1__Impl : ( ( rule__Attribute__AttributeNameAssignment_1_1 ) ) ;
     public final void rule__Attribute__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1530:1: ( ( ( rule__Attribute__AttributeNameAssignment_1_1 ) ) )
-            // InternalWebMate.g:1531:1: ( ( rule__Attribute__AttributeNameAssignment_1_1 ) )
+            // InternalWebMate.g:1453:1: ( ( ( rule__Attribute__AttributeNameAssignment_1_1 ) ) )
+            // InternalWebMate.g:1454:1: ( ( rule__Attribute__AttributeNameAssignment_1_1 ) )
             {
-            // InternalWebMate.g:1531:1: ( ( rule__Attribute__AttributeNameAssignment_1_1 ) )
-            // InternalWebMate.g:1532:2: ( rule__Attribute__AttributeNameAssignment_1_1 )
+            // InternalWebMate.g:1454:1: ( ( rule__Attribute__AttributeNameAssignment_1_1 ) )
+            // InternalWebMate.g:1455:2: ( rule__Attribute__AttributeNameAssignment_1_1 )
             {
              before(grammarAccess.getAttributeAccess().getAttributeNameAssignment_1_1()); 
-            // InternalWebMate.g:1533:2: ( rule__Attribute__AttributeNameAssignment_1_1 )
-            // InternalWebMate.g:1533:3: rule__Attribute__AttributeNameAssignment_1_1
+            // InternalWebMate.g:1456:2: ( rule__Attribute__AttributeNameAssignment_1_1 )
+            // InternalWebMate.g:1456:3: rule__Attribute__AttributeNameAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__AttributeNameAssignment_1_1();
@@ -4987,14 +4840,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__2"
-    // InternalWebMate.g:1541:1: rule__Attribute__Group_1__2 : rule__Attribute__Group_1__2__Impl rule__Attribute__Group_1__3 ;
+    // InternalWebMate.g:1464:1: rule__Attribute__Group_1__2 : rule__Attribute__Group_1__2__Impl rule__Attribute__Group_1__3 ;
     public final void rule__Attribute__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1545:1: ( rule__Attribute__Group_1__2__Impl rule__Attribute__Group_1__3 )
-            // InternalWebMate.g:1546:2: rule__Attribute__Group_1__2__Impl rule__Attribute__Group_1__3
+            // InternalWebMate.g:1468:1: ( rule__Attribute__Group_1__2__Impl rule__Attribute__Group_1__3 )
+            // InternalWebMate.g:1469:2: rule__Attribute__Group_1__2__Impl rule__Attribute__Group_1__3
             {
             pushFollow(FOLLOW_22);
             rule__Attribute__Group_1__2__Impl();
@@ -5025,29 +4878,29 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__2__Impl"
-    // InternalWebMate.g:1553:1: rule__Attribute__Group_1__2__Impl : ( ( rule__Attribute__Group_1_2__0 )? ) ;
+    // InternalWebMate.g:1476:1: rule__Attribute__Group_1__2__Impl : ( ( rule__Attribute__Group_1_2__0 )? ) ;
     public final void rule__Attribute__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1557:1: ( ( ( rule__Attribute__Group_1_2__0 )? ) )
-            // InternalWebMate.g:1558:1: ( ( rule__Attribute__Group_1_2__0 )? )
+            // InternalWebMate.g:1480:1: ( ( ( rule__Attribute__Group_1_2__0 )? ) )
+            // InternalWebMate.g:1481:1: ( ( rule__Attribute__Group_1_2__0 )? )
             {
-            // InternalWebMate.g:1558:1: ( ( rule__Attribute__Group_1_2__0 )? )
-            // InternalWebMate.g:1559:2: ( rule__Attribute__Group_1_2__0 )?
+            // InternalWebMate.g:1481:1: ( ( rule__Attribute__Group_1_2__0 )? )
+            // InternalWebMate.g:1482:2: ( rule__Attribute__Group_1_2__0 )?
             {
              before(grammarAccess.getAttributeAccess().getGroup_1_2()); 
-            // InternalWebMate.g:1560:2: ( rule__Attribute__Group_1_2__0 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalWebMate.g:1483:2: ( rule__Attribute__Group_1_2__0 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==33) ) {
-                alt16=1;
+            if ( (LA17_0==32) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalWebMate.g:1560:3: rule__Attribute__Group_1_2__0
+                    // InternalWebMate.g:1483:3: rule__Attribute__Group_1_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Attribute__Group_1_2__0();
@@ -5083,14 +4936,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__3"
-    // InternalWebMate.g:1568:1: rule__Attribute__Group_1__3 : rule__Attribute__Group_1__3__Impl ;
+    // InternalWebMate.g:1491:1: rule__Attribute__Group_1__3 : rule__Attribute__Group_1__3__Impl ;
     public final void rule__Attribute__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1572:1: ( rule__Attribute__Group_1__3__Impl )
-            // InternalWebMate.g:1573:2: rule__Attribute__Group_1__3__Impl
+            // InternalWebMate.g:1495:1: ( rule__Attribute__Group_1__3__Impl )
+            // InternalWebMate.g:1496:2: rule__Attribute__Group_1__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group_1__3__Impl();
@@ -5116,20 +4969,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1__3__Impl"
-    // InternalWebMate.g:1579:1: rule__Attribute__Group_1__3__Impl : ( ']' ) ;
+    // InternalWebMate.g:1502:1: rule__Attribute__Group_1__3__Impl : ( ']' ) ;
     public final void rule__Attribute__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1583:1: ( ( ']' ) )
-            // InternalWebMate.g:1584:1: ( ']' )
+            // InternalWebMate.g:1506:1: ( ( ']' ) )
+            // InternalWebMate.g:1507:1: ( ']' )
             {
-            // InternalWebMate.g:1584:1: ( ']' )
-            // InternalWebMate.g:1585:2: ']'
+            // InternalWebMate.g:1507:1: ( ']' )
+            // InternalWebMate.g:1508:2: ']'
             {
              before(grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_1_3()); 
-            match(input,32,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_1_3()); 
 
             }
@@ -5153,14 +5006,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1_2__0"
-    // InternalWebMate.g:1595:1: rule__Attribute__Group_1_2__0 : rule__Attribute__Group_1_2__0__Impl rule__Attribute__Group_1_2__1 ;
+    // InternalWebMate.g:1518:1: rule__Attribute__Group_1_2__0 : rule__Attribute__Group_1_2__0__Impl rule__Attribute__Group_1_2__1 ;
     public final void rule__Attribute__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1599:1: ( rule__Attribute__Group_1_2__0__Impl rule__Attribute__Group_1_2__1 )
-            // InternalWebMate.g:1600:2: rule__Attribute__Group_1_2__0__Impl rule__Attribute__Group_1_2__1
+            // InternalWebMate.g:1522:1: ( rule__Attribute__Group_1_2__0__Impl rule__Attribute__Group_1_2__1 )
+            // InternalWebMate.g:1523:2: rule__Attribute__Group_1_2__0__Impl rule__Attribute__Group_1_2__1
             {
             pushFollow(FOLLOW_16);
             rule__Attribute__Group_1_2__0__Impl();
@@ -5191,20 +5044,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1_2__0__Impl"
-    // InternalWebMate.g:1607:1: rule__Attribute__Group_1_2__0__Impl : ( '=' ) ;
+    // InternalWebMate.g:1530:1: rule__Attribute__Group_1_2__0__Impl : ( '=' ) ;
     public final void rule__Attribute__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1611:1: ( ( '=' ) )
-            // InternalWebMate.g:1612:1: ( '=' )
+            // InternalWebMate.g:1534:1: ( ( '=' ) )
+            // InternalWebMate.g:1535:1: ( '=' )
             {
-            // InternalWebMate.g:1612:1: ( '=' )
-            // InternalWebMate.g:1613:2: '='
+            // InternalWebMate.g:1535:1: ( '=' )
+            // InternalWebMate.g:1536:2: '='
             {
              before(grammarAccess.getAttributeAccess().getEqualsSignKeyword_1_2_0()); 
-            match(input,33,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getEqualsSignKeyword_1_2_0()); 
 
             }
@@ -5228,14 +5081,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1_2__1"
-    // InternalWebMate.g:1622:1: rule__Attribute__Group_1_2__1 : rule__Attribute__Group_1_2__1__Impl ;
+    // InternalWebMate.g:1545:1: rule__Attribute__Group_1_2__1 : rule__Attribute__Group_1_2__1__Impl ;
     public final void rule__Attribute__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1626:1: ( rule__Attribute__Group_1_2__1__Impl )
-            // InternalWebMate.g:1627:2: rule__Attribute__Group_1_2__1__Impl
+            // InternalWebMate.g:1549:1: ( rule__Attribute__Group_1_2__1__Impl )
+            // InternalWebMate.g:1550:2: rule__Attribute__Group_1_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group_1_2__1__Impl();
@@ -5261,21 +5114,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_1_2__1__Impl"
-    // InternalWebMate.g:1633:1: rule__Attribute__Group_1_2__1__Impl : ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) ) ;
+    // InternalWebMate.g:1556:1: rule__Attribute__Group_1_2__1__Impl : ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) ) ;
     public final void rule__Attribute__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1637:1: ( ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) ) )
-            // InternalWebMate.g:1638:1: ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) )
+            // InternalWebMate.g:1560:1: ( ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) ) )
+            // InternalWebMate.g:1561:1: ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) )
             {
-            // InternalWebMate.g:1638:1: ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) )
-            // InternalWebMate.g:1639:2: ( rule__Attribute__AttributeValueAssignment_1_2_1 )
+            // InternalWebMate.g:1561:1: ( ( rule__Attribute__AttributeValueAssignment_1_2_1 ) )
+            // InternalWebMate.g:1562:2: ( rule__Attribute__AttributeValueAssignment_1_2_1 )
             {
              before(grammarAccess.getAttributeAccess().getAttributeValueAssignment_1_2_1()); 
-            // InternalWebMate.g:1640:2: ( rule__Attribute__AttributeValueAssignment_1_2_1 )
-            // InternalWebMate.g:1640:3: rule__Attribute__AttributeValueAssignment_1_2_1
+            // InternalWebMate.g:1563:2: ( rule__Attribute__AttributeValueAssignment_1_2_1 )
+            // InternalWebMate.g:1563:3: rule__Attribute__AttributeValueAssignment_1_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__AttributeValueAssignment_1_2_1();
@@ -5308,14 +5161,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__0"
-    // InternalWebMate.g:1649:1: rule__Group__Group__0 : rule__Group__Group__0__Impl rule__Group__Group__1 ;
+    // InternalWebMate.g:1572:1: rule__Group__Group__0 : rule__Group__Group__0__Impl rule__Group__Group__1 ;
     public final void rule__Group__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1653:1: ( rule__Group__Group__0__Impl rule__Group__Group__1 )
-            // InternalWebMate.g:1654:2: rule__Group__Group__0__Impl rule__Group__Group__1
+            // InternalWebMate.g:1576:1: ( rule__Group__Group__0__Impl rule__Group__Group__1 )
+            // InternalWebMate.g:1577:2: rule__Group__Group__0__Impl rule__Group__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__Group__Group__0__Impl();
@@ -5346,21 +5199,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__0__Impl"
-    // InternalWebMate.g:1661:1: rule__Group__Group__0__Impl : ( () ) ;
+    // InternalWebMate.g:1584:1: rule__Group__Group__0__Impl : ( () ) ;
     public final void rule__Group__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1665:1: ( ( () ) )
-            // InternalWebMate.g:1666:1: ( () )
+            // InternalWebMate.g:1588:1: ( ( () ) )
+            // InternalWebMate.g:1589:1: ( () )
             {
-            // InternalWebMate.g:1666:1: ( () )
-            // InternalWebMate.g:1667:2: ()
+            // InternalWebMate.g:1589:1: ( () )
+            // InternalWebMate.g:1590:2: ()
             {
              before(grammarAccess.getGroupAccess().getGroupAction_0()); 
-            // InternalWebMate.g:1668:2: ()
-            // InternalWebMate.g:1668:3: 
+            // InternalWebMate.g:1591:2: ()
+            // InternalWebMate.g:1591:3: 
             {
             }
 
@@ -5383,14 +5236,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__1"
-    // InternalWebMate.g:1676:1: rule__Group__Group__1 : rule__Group__Group__1__Impl rule__Group__Group__2 ;
+    // InternalWebMate.g:1599:1: rule__Group__Group__1 : rule__Group__Group__1__Impl rule__Group__Group__2 ;
     public final void rule__Group__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1680:1: ( rule__Group__Group__1__Impl rule__Group__Group__2 )
-            // InternalWebMate.g:1681:2: rule__Group__Group__1__Impl rule__Group__Group__2
+            // InternalWebMate.g:1603:1: ( rule__Group__Group__1__Impl rule__Group__Group__2 )
+            // InternalWebMate.g:1604:2: rule__Group__Group__1__Impl rule__Group__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Group__Group__1__Impl();
@@ -5421,20 +5274,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__1__Impl"
-    // InternalWebMate.g:1688:1: rule__Group__Group__1__Impl : ( '(' ) ;
+    // InternalWebMate.g:1611:1: rule__Group__Group__1__Impl : ( '(' ) ;
     public final void rule__Group__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1692:1: ( ( '(' ) )
-            // InternalWebMate.g:1693:1: ( '(' )
+            // InternalWebMate.g:1615:1: ( ( '(' ) )
+            // InternalWebMate.g:1616:1: ( '(' )
             {
-            // InternalWebMate.g:1693:1: ( '(' )
-            // InternalWebMate.g:1694:2: '('
+            // InternalWebMate.g:1616:1: ( '(' )
+            // InternalWebMate.g:1617:2: '('
             {
              before(grammarAccess.getGroupAccess().getLeftParenthesisKeyword_1()); 
-            match(input,34,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getGroupAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -5458,14 +5311,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__2"
-    // InternalWebMate.g:1703:1: rule__Group__Group__2 : rule__Group__Group__2__Impl rule__Group__Group__3 ;
+    // InternalWebMate.g:1626:1: rule__Group__Group__2 : rule__Group__Group__2__Impl rule__Group__Group__3 ;
     public final void rule__Group__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1707:1: ( rule__Group__Group__2__Impl rule__Group__Group__3 )
-            // InternalWebMate.g:1708:2: rule__Group__Group__2__Impl rule__Group__Group__3
+            // InternalWebMate.g:1630:1: ( rule__Group__Group__2__Impl rule__Group__Group__3 )
+            // InternalWebMate.g:1631:2: rule__Group__Group__2__Impl rule__Group__Group__3
             {
             pushFollow(FOLLOW_24);
             rule__Group__Group__2__Impl();
@@ -5496,24 +5349,24 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__2__Impl"
-    // InternalWebMate.g:1715:1: rule__Group__Group__2__Impl : ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) ) ;
+    // InternalWebMate.g:1638:1: rule__Group__Group__2__Impl : ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) ) ;
     public final void rule__Group__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1719:1: ( ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) ) )
-            // InternalWebMate.g:1720:1: ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) )
+            // InternalWebMate.g:1642:1: ( ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) ) )
+            // InternalWebMate.g:1643:1: ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) )
             {
-            // InternalWebMate.g:1720:1: ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) )
-            // InternalWebMate.g:1721:2: ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* )
+            // InternalWebMate.g:1643:1: ( ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* ) )
+            // InternalWebMate.g:1644:2: ( ( rule__Group__AbbreviationAssignment_2 ) ) ( ( rule__Group__AbbreviationAssignment_2 )* )
             {
-            // InternalWebMate.g:1721:2: ( ( rule__Group__AbbreviationAssignment_2 ) )
-            // InternalWebMate.g:1722:3: ( rule__Group__AbbreviationAssignment_2 )
+            // InternalWebMate.g:1644:2: ( ( rule__Group__AbbreviationAssignment_2 ) )
+            // InternalWebMate.g:1645:3: ( rule__Group__AbbreviationAssignment_2 )
             {
              before(grammarAccess.getGroupAccess().getAbbreviationAssignment_2()); 
-            // InternalWebMate.g:1723:3: ( rule__Group__AbbreviationAssignment_2 )
-            // InternalWebMate.g:1723:4: rule__Group__AbbreviationAssignment_2
+            // InternalWebMate.g:1646:3: ( rule__Group__AbbreviationAssignment_2 )
+            // InternalWebMate.g:1646:4: rule__Group__AbbreviationAssignment_2
             {
             pushFollow(FOLLOW_5);
             rule__Group__AbbreviationAssignment_2();
@@ -5527,24 +5380,24 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalWebMate.g:1726:2: ( ( rule__Group__AbbreviationAssignment_2 )* )
-            // InternalWebMate.g:1727:3: ( rule__Group__AbbreviationAssignment_2 )*
+            // InternalWebMate.g:1649:2: ( ( rule__Group__AbbreviationAssignment_2 )* )
+            // InternalWebMate.g:1650:3: ( rule__Group__AbbreviationAssignment_2 )*
             {
              before(grammarAccess.getGroupAccess().getAbbreviationAssignment_2()); 
-            // InternalWebMate.g:1728:3: ( rule__Group__AbbreviationAssignment_2 )*
-            loop17:
+            // InternalWebMate.g:1651:3: ( rule__Group__AbbreviationAssignment_2 )*
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA17_0==23) ) {
-                    alt17=1;
+                if ( (LA18_0==26) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
-            	    // InternalWebMate.g:1728:4: rule__Group__AbbreviationAssignment_2
+            	    // InternalWebMate.g:1651:4: rule__Group__AbbreviationAssignment_2
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__Group__AbbreviationAssignment_2();
@@ -5556,7 +5409,7 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop18;
                 }
             } while (true);
 
@@ -5586,14 +5439,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__3"
-    // InternalWebMate.g:1737:1: rule__Group__Group__3 : rule__Group__Group__3__Impl ;
+    // InternalWebMate.g:1660:1: rule__Group__Group__3 : rule__Group__Group__3__Impl ;
     public final void rule__Group__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1741:1: ( rule__Group__Group__3__Impl )
-            // InternalWebMate.g:1742:2: rule__Group__Group__3__Impl
+            // InternalWebMate.g:1664:1: ( rule__Group__Group__3__Impl )
+            // InternalWebMate.g:1665:2: rule__Group__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Group__Group__3__Impl();
@@ -5619,20 +5472,20 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__Group__3__Impl"
-    // InternalWebMate.g:1748:1: rule__Group__Group__3__Impl : ( ')' ) ;
+    // InternalWebMate.g:1671:1: rule__Group__Group__3__Impl : ( ')' ) ;
     public final void rule__Group__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1752:1: ( ( ')' ) )
-            // InternalWebMate.g:1753:1: ( ')' )
+            // InternalWebMate.g:1675:1: ( ( ')' ) )
+            // InternalWebMate.g:1676:1: ( ')' )
             {
-            // InternalWebMate.g:1753:1: ( ')' )
-            // InternalWebMate.g:1754:2: ')'
+            // InternalWebMate.g:1676:1: ( ')' )
+            // InternalWebMate.g:1677:2: ')'
             {
              before(grammarAccess.getGroupAccess().getRightParenthesisKeyword_3()); 
-            match(input,35,FOLLOW_2); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getGroupAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -5656,14 +5509,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__0"
-    // InternalWebMate.g:1764:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
+    // InternalWebMate.g:1687:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
     public final void rule__EInt__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1768:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
-            // InternalWebMate.g:1769:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
+            // InternalWebMate.g:1691:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
+            // InternalWebMate.g:1692:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
             {
             pushFollow(FOLLOW_18);
             rule__EInt__Group__0__Impl();
@@ -5694,31 +5547,31 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__0__Impl"
-    // InternalWebMate.g:1776:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
+    // InternalWebMate.g:1699:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EInt__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1780:1: ( ( ( '-' )? ) )
-            // InternalWebMate.g:1781:1: ( ( '-' )? )
+            // InternalWebMate.g:1703:1: ( ( ( '-' )? ) )
+            // InternalWebMate.g:1704:1: ( ( '-' )? )
             {
-            // InternalWebMate.g:1781:1: ( ( '-' )? )
-            // InternalWebMate.g:1782:2: ( '-' )?
+            // InternalWebMate.g:1704:1: ( ( '-' )? )
+            // InternalWebMate.g:1705:2: ( '-' )?
             {
              before(grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
-            // InternalWebMate.g:1783:2: ( '-' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalWebMate.g:1706:2: ( '-' )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0==36) ) {
-                alt18=1;
+            if ( (LA19_0==35) ) {
+                alt19=1;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // InternalWebMate.g:1783:3: '-'
+                    // InternalWebMate.g:1706:3: '-'
                     {
-                    match(input,36,FOLLOW_2); 
+                    match(input,35,FOLLOW_2); 
 
                     }
                     break;
@@ -5748,14 +5601,14 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__1"
-    // InternalWebMate.g:1791:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
+    // InternalWebMate.g:1714:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
     public final void rule__EInt__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1795:1: ( rule__EInt__Group__1__Impl )
-            // InternalWebMate.g:1796:2: rule__EInt__Group__1__Impl
+            // InternalWebMate.g:1718:1: ( rule__EInt__Group__1__Impl )
+            // InternalWebMate.g:1719:2: rule__EInt__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EInt__Group__1__Impl();
@@ -5781,17 +5634,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__1__Impl"
-    // InternalWebMate.g:1802:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
+    // InternalWebMate.g:1725:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
     public final void rule__EInt__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1806:1: ( ( RULE_INT ) )
-            // InternalWebMate.g:1807:1: ( RULE_INT )
+            // InternalWebMate.g:1729:1: ( ( RULE_INT ) )
+            // InternalWebMate.g:1730:1: ( RULE_INT )
             {
-            // InternalWebMate.g:1807:1: ( RULE_INT )
-            // InternalWebMate.g:1808:2: RULE_INT
+            // InternalWebMate.g:1730:1: ( RULE_INT )
+            // InternalWebMate.g:1731:2: RULE_INT
             {
              before(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5818,17 +5671,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HTML__AbbreviationAssignment_1"
-    // InternalWebMate.g:1818:1: rule__HTML__AbbreviationAssignment_1 : ( ruleAbbreviation ) ;
+    // InternalWebMate.g:1741:1: rule__HTML__AbbreviationAssignment_1 : ( ruleAbbreviation ) ;
     public final void rule__HTML__AbbreviationAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1822:1: ( ( ruleAbbreviation ) )
-            // InternalWebMate.g:1823:2: ( ruleAbbreviation )
+            // InternalWebMate.g:1745:1: ( ( ruleAbbreviation ) )
+            // InternalWebMate.g:1746:2: ( ruleAbbreviation )
             {
-            // InternalWebMate.g:1823:2: ( ruleAbbreviation )
-            // InternalWebMate.g:1824:3: ruleAbbreviation
+            // InternalWebMate.g:1746:2: ( ruleAbbreviation )
+            // InternalWebMate.g:1747:3: ruleAbbreviation
             {
              before(grammarAccess.getHTMLAccess().getAbbreviationAbbreviationParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5859,21 +5712,21 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__AbbreviationAssignment_2_0"
-    // InternalWebMate.g:1833:1: rule__Abbreviation__AbbreviationAssignment_2_0 : ( ( ruleEString ) ) ;
+    // InternalWebMate.g:1756:1: rule__Abbreviation__AbbreviationAssignment_2_0 : ( ( ruleEString ) ) ;
     public final void rule__Abbreviation__AbbreviationAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1837:1: ( ( ( ruleEString ) ) )
-            // InternalWebMate.g:1838:2: ( ( ruleEString ) )
+            // InternalWebMate.g:1760:1: ( ( ( ruleEString ) ) )
+            // InternalWebMate.g:1761:2: ( ( ruleEString ) )
             {
-            // InternalWebMate.g:1838:2: ( ( ruleEString ) )
-            // InternalWebMate.g:1839:3: ( ruleEString )
+            // InternalWebMate.g:1761:2: ( ( ruleEString ) )
+            // InternalWebMate.g:1762:3: ( ruleEString )
             {
              before(grammarAccess.getAbbreviationAccess().getAbbreviationAbbreviationCrossReference_2_0_0()); 
-            // InternalWebMate.g:1840:3: ( ruleEString )
-            // InternalWebMate.g:1841:4: ruleEString
+            // InternalWebMate.g:1763:3: ( ruleEString )
+            // InternalWebMate.g:1764:4: ruleEString
             {
              before(grammarAccess.getAbbreviationAccess().getAbbreviationAbbreviationEStringParserRuleCall_2_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -5908,17 +5761,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__TagsAssignment_2_1_0"
-    // InternalWebMate.g:1852:1: rule__Abbreviation__TagsAssignment_2_1_0 : ( ruleTag ) ;
+    // InternalWebMate.g:1775:1: rule__Abbreviation__TagsAssignment_2_1_0 : ( ruleTag ) ;
     public final void rule__Abbreviation__TagsAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1856:1: ( ( ruleTag ) )
-            // InternalWebMate.g:1857:2: ( ruleTag )
+            // InternalWebMate.g:1779:1: ( ( ruleTag ) )
+            // InternalWebMate.g:1780:2: ( ruleTag )
             {
-            // InternalWebMate.g:1857:2: ( ruleTag )
-            // InternalWebMate.g:1858:3: ruleTag
+            // InternalWebMate.g:1780:2: ( ruleTag )
+            // InternalWebMate.g:1781:3: ruleTag
             {
              before(grammarAccess.getAbbreviationAccess().getTagsTagParserRuleCall_2_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -5949,17 +5802,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__IdsAssignment_2_1_1_0"
-    // InternalWebMate.g:1867:1: rule__Abbreviation__IdsAssignment_2_1_1_0 : ( ruleID0 ) ;
+    // InternalWebMate.g:1790:1: rule__Abbreviation__IdsAssignment_2_1_1_0 : ( ruleID0 ) ;
     public final void rule__Abbreviation__IdsAssignment_2_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1871:1: ( ( ruleID0 ) )
-            // InternalWebMate.g:1872:2: ( ruleID0 )
+            // InternalWebMate.g:1794:1: ( ( ruleID0 ) )
+            // InternalWebMate.g:1795:2: ( ruleID0 )
             {
-            // InternalWebMate.g:1872:2: ( ruleID0 )
-            // InternalWebMate.g:1873:3: ruleID0
+            // InternalWebMate.g:1795:2: ( ruleID0 )
+            // InternalWebMate.g:1796:3: ruleID0
             {
              before(grammarAccess.getAbbreviationAccess().getIdsID0ParserRuleCall_2_1_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -5990,17 +5843,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__SymbolsAssignment_2_1_1_1"
-    // InternalWebMate.g:1882:1: rule__Abbreviation__SymbolsAssignment_2_1_1_1 : ( ruleSymbol ) ;
+    // InternalWebMate.g:1805:1: rule__Abbreviation__SymbolsAssignment_2_1_1_1 : ( ruleSymbol ) ;
     public final void rule__Abbreviation__SymbolsAssignment_2_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1886:1: ( ( ruleSymbol ) )
-            // InternalWebMate.g:1887:2: ( ruleSymbol )
+            // InternalWebMate.g:1809:1: ( ( ruleSymbol ) )
+            // InternalWebMate.g:1810:2: ( ruleSymbol )
             {
-            // InternalWebMate.g:1887:2: ( ruleSymbol )
-            // InternalWebMate.g:1888:3: ruleSymbol
+            // InternalWebMate.g:1810:2: ( ruleSymbol )
+            // InternalWebMate.g:1811:3: ruleSymbol
             {
              before(grammarAccess.getAbbreviationAccess().getSymbolsSymbolParserRuleCall_2_1_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6031,17 +5884,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__ClassesAssignment_2_1_1_2"
-    // InternalWebMate.g:1897:1: rule__Abbreviation__ClassesAssignment_2_1_1_2 : ( ruleClass ) ;
+    // InternalWebMate.g:1820:1: rule__Abbreviation__ClassesAssignment_2_1_1_2 : ( ruleClass ) ;
     public final void rule__Abbreviation__ClassesAssignment_2_1_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1901:1: ( ( ruleClass ) )
-            // InternalWebMate.g:1902:2: ( ruleClass )
+            // InternalWebMate.g:1824:1: ( ( ruleClass ) )
+            // InternalWebMate.g:1825:2: ( ruleClass )
             {
-            // InternalWebMate.g:1902:2: ( ruleClass )
-            // InternalWebMate.g:1903:3: ruleClass
+            // InternalWebMate.g:1825:2: ( ruleClass )
+            // InternalWebMate.g:1826:3: ruleClass
             {
              before(grammarAccess.getAbbreviationAccess().getClassesClassParserRuleCall_2_1_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6072,17 +5925,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__AttributesAssignment_2_1_1_3"
-    // InternalWebMate.g:1912:1: rule__Abbreviation__AttributesAssignment_2_1_1_3 : ( ruleAttribute ) ;
+    // InternalWebMate.g:1835:1: rule__Abbreviation__AttributesAssignment_2_1_1_3 : ( ruleAttribute ) ;
     public final void rule__Abbreviation__AttributesAssignment_2_1_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1916:1: ( ( ruleAttribute ) )
-            // InternalWebMate.g:1917:2: ( ruleAttribute )
+            // InternalWebMate.g:1839:1: ( ( ruleAttribute ) )
+            // InternalWebMate.g:1840:2: ( ruleAttribute )
             {
-            // InternalWebMate.g:1917:2: ( ruleAttribute )
-            // InternalWebMate.g:1918:3: ruleAttribute
+            // InternalWebMate.g:1840:2: ( ruleAttribute )
+            // InternalWebMate.g:1841:3: ruleAttribute
             {
              before(grammarAccess.getAbbreviationAccess().getAttributesAttributeParserRuleCall_2_1_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -6113,17 +5966,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Abbreviation__GroupAssignment_2_1_1_4"
-    // InternalWebMate.g:1927:1: rule__Abbreviation__GroupAssignment_2_1_1_4 : ( ruleGroup ) ;
+    // InternalWebMate.g:1850:1: rule__Abbreviation__GroupAssignment_2_1_1_4 : ( ruleGroup ) ;
     public final void rule__Abbreviation__GroupAssignment_2_1_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1931:1: ( ( ruleGroup ) )
-            // InternalWebMate.g:1932:2: ( ruleGroup )
+            // InternalWebMate.g:1854:1: ( ( ruleGroup ) )
+            // InternalWebMate.g:1855:2: ( ruleGroup )
             {
-            // InternalWebMate.g:1932:2: ( ruleGroup )
-            // InternalWebMate.g:1933:3: ruleGroup
+            // InternalWebMate.g:1855:2: ( ruleGroup )
+            // InternalWebMate.g:1856:3: ruleGroup
             {
              before(grammarAccess.getAbbreviationAccess().getGroupGroupParserRuleCall_2_1_1_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6154,17 +6007,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ID0__IdNameAssignment_1_1"
-    // InternalWebMate.g:1942:1: rule__ID0__IdNameAssignment_1_1 : ( ruleEString ) ;
+    // InternalWebMate.g:1865:1: rule__ID0__IdNameAssignment_1_1 : ( ruleEString ) ;
     public final void rule__ID0__IdNameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1946:1: ( ( ruleEString ) )
-            // InternalWebMate.g:1947:2: ( ruleEString )
+            // InternalWebMate.g:1869:1: ( ( ruleEString ) )
+            // InternalWebMate.g:1870:2: ( ruleEString )
             {
-            // InternalWebMate.g:1947:2: ( ruleEString )
-            // InternalWebMate.g:1948:3: ruleEString
+            // InternalWebMate.g:1870:2: ( ruleEString )
+            // InternalWebMate.g:1871:3: ruleEString
             {
              before(grammarAccess.getID0Access().getIdNameEStringParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6194,18 +6047,59 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ID0__IdNameAssignment_1_1"
 
 
+    // $ANTLR start "rule__Symbol__SymAssignment_0_1_0"
+    // InternalWebMate.g:1880:1: rule__Symbol__SymAssignment_0_1_0 : ( ruleSYM ) ;
+    public final void rule__Symbol__SymAssignment_0_1_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWebMate.g:1884:1: ( ( ruleSYM ) )
+            // InternalWebMate.g:1885:2: ( ruleSYM )
+            {
+            // InternalWebMate.g:1885:2: ( ruleSYM )
+            // InternalWebMate.g:1886:3: ruleSYM
+            {
+             before(grammarAccess.getSymbolAccess().getSymSYMEnumRuleCall_0_1_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSYM();
+
+            state._fsp--;
+
+             after(grammarAccess.getSymbolAccess().getSymSYMEnumRuleCall_0_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Symbol__SymAssignment_0_1_0"
+
+
     // $ANTLR start "rule__Symbol__CountAssignment_0_1_1"
-    // InternalWebMate.g:1957:1: rule__Symbol__CountAssignment_0_1_1 : ( ruleEInt ) ;
+    // InternalWebMate.g:1895:1: rule__Symbol__CountAssignment_0_1_1 : ( ruleEInt ) ;
     public final void rule__Symbol__CountAssignment_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1961:1: ( ( ruleEInt ) )
-            // InternalWebMate.g:1962:2: ( ruleEInt )
+            // InternalWebMate.g:1899:1: ( ( ruleEInt ) )
+            // InternalWebMate.g:1900:2: ( ruleEInt )
             {
-            // InternalWebMate.g:1962:2: ( ruleEInt )
-            // InternalWebMate.g:1963:3: ruleEInt
+            // InternalWebMate.g:1900:2: ( ruleEInt )
+            // InternalWebMate.g:1901:3: ruleEInt
             {
              before(grammarAccess.getSymbolAccess().getCountEIntParserRuleCall_0_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6235,18 +6129,59 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Symbol__CountAssignment_0_1_1"
 
 
+    // $ANTLR start "rule__Symbol__SymAssignment_1_0"
+    // InternalWebMate.g:1910:1: rule__Symbol__SymAssignment_1_0 : ( ruleSYM ) ;
+    public final void rule__Symbol__SymAssignment_1_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWebMate.g:1914:1: ( ( ruleSYM ) )
+            // InternalWebMate.g:1915:2: ( ruleSYM )
+            {
+            // InternalWebMate.g:1915:2: ( ruleSYM )
+            // InternalWebMate.g:1916:3: ruleSYM
+            {
+             before(grammarAccess.getSymbolAccess().getSymSYMEnumRuleCall_1_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSYM();
+
+            state._fsp--;
+
+             after(grammarAccess.getSymbolAccess().getSymSYMEnumRuleCall_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Symbol__SymAssignment_1_0"
+
+
     // $ANTLR start "rule__Symbol__TagAssignment_1_1"
-    // InternalWebMate.g:1972:1: rule__Symbol__TagAssignment_1_1 : ( ruleTag ) ;
+    // InternalWebMate.g:1925:1: rule__Symbol__TagAssignment_1_1 : ( ruleTag ) ;
     public final void rule__Symbol__TagAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:1976:1: ( ( ruleTag ) )
-            // InternalWebMate.g:1977:2: ( ruleTag )
+            // InternalWebMate.g:1929:1: ( ( ruleTag ) )
+            // InternalWebMate.g:1930:2: ( ruleTag )
             {
-            // InternalWebMate.g:1977:2: ( ruleTag )
-            // InternalWebMate.g:1978:3: ruleTag
+            // InternalWebMate.g:1930:2: ( ruleTag )
+            // InternalWebMate.g:1931:3: ruleTag
             {
              before(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6276,100 +6211,18 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Symbol__TagAssignment_1_1"
 
 
-    // $ANTLR start "rule__Symbol__TagAssignment_2_1"
-    // InternalWebMate.g:1987:1: rule__Symbol__TagAssignment_2_1 : ( ruleTag ) ;
-    public final void rule__Symbol__TagAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:1991:1: ( ( ruleTag ) )
-            // InternalWebMate.g:1992:2: ( ruleTag )
-            {
-            // InternalWebMate.g:1992:2: ( ruleTag )
-            // InternalWebMate.g:1993:3: ruleTag
-            {
-             before(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleTag();
-
-            state._fsp--;
-
-             after(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_2_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__TagAssignment_2_1"
-
-
-    // $ANTLR start "rule__Symbol__TagAssignment_3_1"
-    // InternalWebMate.g:2002:1: rule__Symbol__TagAssignment_3_1 : ( ruleTag ) ;
-    public final void rule__Symbol__TagAssignment_3_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWebMate.g:2006:1: ( ( ruleTag ) )
-            // InternalWebMate.g:2007:2: ( ruleTag )
-            {
-            // InternalWebMate.g:2007:2: ( ruleTag )
-            // InternalWebMate.g:2008:3: ruleTag
-            {
-             before(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleTag();
-
-            state._fsp--;
-
-             after(grammarAccess.getSymbolAccess().getTagTagParserRuleCall_3_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Symbol__TagAssignment_3_1"
-
-
     // $ANTLR start "rule__Tag__TagNameAssignment_1"
-    // InternalWebMate.g:2017:1: rule__Tag__TagNameAssignment_1 : ( ruleHTMLTag ) ;
+    // InternalWebMate.g:1940:1: rule__Tag__TagNameAssignment_1 : ( ruleHTMLTag ) ;
     public final void rule__Tag__TagNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2021:1: ( ( ruleHTMLTag ) )
-            // InternalWebMate.g:2022:2: ( ruleHTMLTag )
+            // InternalWebMate.g:1944:1: ( ( ruleHTMLTag ) )
+            // InternalWebMate.g:1945:2: ( ruleHTMLTag )
             {
-            // InternalWebMate.g:2022:2: ( ruleHTMLTag )
-            // InternalWebMate.g:2023:3: ruleHTMLTag
+            // InternalWebMate.g:1945:2: ( ruleHTMLTag )
+            // InternalWebMate.g:1946:3: ruleHTMLTag
             {
              before(grammarAccess.getTagAccess().getTagNameHTMLTagEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6400,17 +6253,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__ClassAssignment_2"
-    // InternalWebMate.g:2032:1: rule__Tag__ClassAssignment_2 : ( ruleClass ) ;
+    // InternalWebMate.g:1955:1: rule__Tag__ClassAssignment_2 : ( ruleClass ) ;
     public final void rule__Tag__ClassAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2036:1: ( ( ruleClass ) )
-            // InternalWebMate.g:2037:2: ( ruleClass )
+            // InternalWebMate.g:1959:1: ( ( ruleClass ) )
+            // InternalWebMate.g:1960:2: ( ruleClass )
             {
-            // InternalWebMate.g:2037:2: ( ruleClass )
-            // InternalWebMate.g:2038:3: ruleClass
+            // InternalWebMate.g:1960:2: ( ruleClass )
+            // InternalWebMate.g:1961:3: ruleClass
             {
              before(grammarAccess.getTagAccess().getClassClassParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6441,17 +6294,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__IdAssignment_3"
-    // InternalWebMate.g:2047:1: rule__Tag__IdAssignment_3 : ( ruleID0 ) ;
+    // InternalWebMate.g:1970:1: rule__Tag__IdAssignment_3 : ( ruleID0 ) ;
     public final void rule__Tag__IdAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2051:1: ( ( ruleID0 ) )
-            // InternalWebMate.g:2052:2: ( ruleID0 )
+            // InternalWebMate.g:1974:1: ( ( ruleID0 ) )
+            // InternalWebMate.g:1975:2: ( ruleID0 )
             {
-            // InternalWebMate.g:2052:2: ( ruleID0 )
-            // InternalWebMate.g:2053:3: ruleID0
+            // InternalWebMate.g:1975:2: ( ruleID0 )
+            // InternalWebMate.g:1976:3: ruleID0
             {
              before(grammarAccess.getTagAccess().getIdID0ParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -6482,17 +6335,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tag__AttributeAssignment_4"
-    // InternalWebMate.g:2062:1: rule__Tag__AttributeAssignment_4 : ( ruleAttribute ) ;
+    // InternalWebMate.g:1985:1: rule__Tag__AttributeAssignment_4 : ( ruleAttribute ) ;
     public final void rule__Tag__AttributeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2066:1: ( ( ruleAttribute ) )
-            // InternalWebMate.g:2067:2: ( ruleAttribute )
+            // InternalWebMate.g:1989:1: ( ( ruleAttribute ) )
+            // InternalWebMate.g:1990:2: ( ruleAttribute )
             {
-            // InternalWebMate.g:2067:2: ( ruleAttribute )
-            // InternalWebMate.g:2068:3: ruleAttribute
+            // InternalWebMate.g:1990:2: ( ruleAttribute )
+            // InternalWebMate.g:1991:3: ruleAttribute
             {
              before(grammarAccess.getTagAccess().getAttributeAttributeParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6523,17 +6376,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class__ClassNameAssignment_2"
-    // InternalWebMate.g:2077:1: rule__Class__ClassNameAssignment_2 : ( ruleEString ) ;
+    // InternalWebMate.g:2000:1: rule__Class__ClassNameAssignment_2 : ( ruleEString ) ;
     public final void rule__Class__ClassNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2081:1: ( ( ruleEString ) )
-            // InternalWebMate.g:2082:2: ( ruleEString )
+            // InternalWebMate.g:2004:1: ( ( ruleEString ) )
+            // InternalWebMate.g:2005:2: ( ruleEString )
             {
-            // InternalWebMate.g:2082:2: ( ruleEString )
-            // InternalWebMate.g:2083:3: ruleEString
+            // InternalWebMate.g:2005:2: ( ruleEString )
+            // InternalWebMate.g:2006:3: ruleEString
             {
              before(grammarAccess.getClassAccess().getClassNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6564,17 +6417,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__AttributeNameAssignment_1_1"
-    // InternalWebMate.g:2092:1: rule__Attribute__AttributeNameAssignment_1_1 : ( ruleEString ) ;
+    // InternalWebMate.g:2015:1: rule__Attribute__AttributeNameAssignment_1_1 : ( ruleEString ) ;
     public final void rule__Attribute__AttributeNameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2096:1: ( ( ruleEString ) )
-            // InternalWebMate.g:2097:2: ( ruleEString )
+            // InternalWebMate.g:2019:1: ( ( ruleEString ) )
+            // InternalWebMate.g:2020:2: ( ruleEString )
             {
-            // InternalWebMate.g:2097:2: ( ruleEString )
-            // InternalWebMate.g:2098:3: ruleEString
+            // InternalWebMate.g:2020:2: ( ruleEString )
+            // InternalWebMate.g:2021:3: ruleEString
             {
              before(grammarAccess.getAttributeAccess().getAttributeNameEStringParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6605,17 +6458,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__AttributeValueAssignment_1_2_1"
-    // InternalWebMate.g:2107:1: rule__Attribute__AttributeValueAssignment_1_2_1 : ( ruleEString ) ;
+    // InternalWebMate.g:2030:1: rule__Attribute__AttributeValueAssignment_1_2_1 : ( ruleEString ) ;
     public final void rule__Attribute__AttributeValueAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2111:1: ( ( ruleEString ) )
-            // InternalWebMate.g:2112:2: ( ruleEString )
+            // InternalWebMate.g:2034:1: ( ( ruleEString ) )
+            // InternalWebMate.g:2035:2: ( ruleEString )
             {
-            // InternalWebMate.g:2112:2: ( ruleEString )
-            // InternalWebMate.g:2113:3: ruleEString
+            // InternalWebMate.g:2035:2: ( ruleEString )
+            // InternalWebMate.g:2036:3: ruleEString
             {
              before(grammarAccess.getAttributeAccess().getAttributeValueEStringParserRuleCall_1_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6646,17 +6499,17 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Group__AbbreviationAssignment_2"
-    // InternalWebMate.g:2122:1: rule__Group__AbbreviationAssignment_2 : ( ruleAbbreviation ) ;
+    // InternalWebMate.g:2045:1: rule__Group__AbbreviationAssignment_2 : ( ruleAbbreviation ) ;
     public final void rule__Group__AbbreviationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWebMate.g:2126:1: ( ( ruleAbbreviation ) )
-            // InternalWebMate.g:2127:2: ( ruleAbbreviation )
+            // InternalWebMate.g:2049:1: ( ( ruleAbbreviation ) )
+            // InternalWebMate.g:2050:2: ( ruleAbbreviation )
             {
-            // InternalWebMate.g:2127:2: ( ruleAbbreviation )
-            // InternalWebMate.g:2128:3: ruleAbbreviation
+            // InternalWebMate.g:2050:2: ( ruleAbbreviation )
+            // InternalWebMate.g:2051:3: ruleAbbreviation
             {
              before(grammarAccess.getGroupAccess().getAbbreviationAbbreviationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6693,26 +6546,26 @@ public class InternalWebMateParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000004000002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000007FF830L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000004FE000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000273800000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000007FF832L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000003C000002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000003800002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000001000000040L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000000C2000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000003800000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000800000040L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000070000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000400000000L});
 
 }

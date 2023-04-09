@@ -216,43 +216,40 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cSymbolAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Keyword cAsteriskKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Assignment cSymAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
+		private final RuleCall cSymSYMEnumRuleCall_0_1_0_0 = (RuleCall)cSymAssignment_0_1_0.eContents().get(0);
 		private final Assignment cCountAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
 		private final RuleCall cCountEIntParserRuleCall_0_1_1_0 = (RuleCall)cCountAssignment_0_1_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cPlusSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cSymAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cSymSYMEnumRuleCall_1_0_0 = (RuleCall)cSymAssignment_1_0.eContents().get(0);
 		private final Assignment cTagAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cTagTagParserRuleCall_1_1_0 = (RuleCall)cTagAssignment_1_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cGreaterThanSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cTagAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cTagTagParserRuleCall_2_1_0 = (RuleCall)cTagAssignment_2_1.eContents().get(0);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cCircumflexAccentKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTagAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTagTagParserRuleCall_3_1_0 = (RuleCall)cTagAssignment_3_1.eContents().get(0);
 		
 		//Symbol returns Symbol:
 		//    {Symbol}
-		//    ('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag);
+		//    (sym=SYM count=EInt) | (sym=SYM tag=Tag);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Symbol}
-		//('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag)
+		//(sym=SYM count=EInt) | (sym=SYM tag=Tag)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{Symbol}
-		//('*' count=EInt)
+		//(sym=SYM count=EInt)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{Symbol}
 		public Action getSymbolAction_0_0() { return cSymbolAction_0_0; }
 		
-		//('*' count=EInt)
+		//(sym=SYM count=EInt)
 		public Group getGroup_0_1() { return cGroup_0_1; }
 		
-		//'*'
-		public Keyword getAsteriskKeyword_0_1_0() { return cAsteriskKeyword_0_1_0; }
+		//sym=SYM
+		public Assignment getSymAssignment_0_1_0() { return cSymAssignment_0_1_0; }
+		
+		//SYM
+		public RuleCall getSymSYMEnumRuleCall_0_1_0_0() { return cSymSYMEnumRuleCall_0_1_0_0; }
 		
 		//count=EInt
 		public Assignment getCountAssignment_0_1_1() { return cCountAssignment_0_1_1; }
@@ -260,41 +257,20 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//EInt
 		public RuleCall getCountEIntParserRuleCall_0_1_1_0() { return cCountEIntParserRuleCall_0_1_1_0; }
 		
-		//('+' tag=Tag)
+		//(sym=SYM tag=Tag)
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'+'
-		public Keyword getPlusSignKeyword_1_0() { return cPlusSignKeyword_1_0; }
+		//sym=SYM
+		public Assignment getSymAssignment_1_0() { return cSymAssignment_1_0; }
+		
+		//SYM
+		public RuleCall getSymSYMEnumRuleCall_1_0_0() { return cSymSYMEnumRuleCall_1_0_0; }
 		
 		//tag=Tag
 		public Assignment getTagAssignment_1_1() { return cTagAssignment_1_1; }
 		
 		//Tag
 		public RuleCall getTagTagParserRuleCall_1_1_0() { return cTagTagParserRuleCall_1_1_0; }
-		
-		//('>' tag=Tag)
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'>'
-		public Keyword getGreaterThanSignKeyword_2_0() { return cGreaterThanSignKeyword_2_0; }
-		
-		//tag=Tag
-		public Assignment getTagAssignment_2_1() { return cTagAssignment_2_1; }
-		
-		//Tag
-		public RuleCall getTagTagParserRuleCall_2_1_0() { return cTagTagParserRuleCall_2_1_0; }
-		
-		//('^' tag=Tag)
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'^'
-		public Keyword getCircumflexAccentKeyword_3_0() { return cCircumflexAccentKeyword_3_0; }
-		
-		//tag=Tag
-		public Assignment getTagAssignment_3_1() { return cTagAssignment_3_1; }
-		
-		//Tag
-		public RuleCall getTagTagParserRuleCall_3_1_0() { return cTagTagParserRuleCall_3_1_0; }
 	}
 	public class TagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.WebMate.Tag");
@@ -606,6 +582,42 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'select'
 		public Keyword getSelectSelectKeyword_11_0() { return cSelectSelectKeyword_11_0; }
 	}
+	public class SYMElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.WebMate.SYM");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPLUSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPLUSPlusSignKeyword_0_0 = (Keyword)cPLUSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMULTIPLYEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMULTIPLYAsteriskKeyword_1_0 = (Keyword)cMULTIPLYEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cGREATEREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cGREATERGreaterThanSignKeyword_2_0 = (Keyword)cGREATEREnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum SYM returns SYM:
+		//    PLUS = '+' | MULTIPLY = '*' | GREATER = '>'
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//PLUS = '+' | MULTIPLY = '*' | GREATER = '>'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//PLUS = '+'
+		public EnumLiteralDeclaration getPLUSEnumLiteralDeclaration_0() { return cPLUSEnumLiteralDeclaration_0; }
+		
+		//'+'
+		public Keyword getPLUSPlusSignKeyword_0_0() { return cPLUSPlusSignKeyword_0_0; }
+		
+		//MULTIPLY = '*'
+		public EnumLiteralDeclaration getMULTIPLYEnumLiteralDeclaration_1() { return cMULTIPLYEnumLiteralDeclaration_1; }
+		
+		//'*'
+		public Keyword getMULTIPLYAsteriskKeyword_1_0() { return cMULTIPLYAsteriskKeyword_1_0; }
+		
+		//GREATER = '>'
+		public EnumLiteralDeclaration getGREATEREnumLiteralDeclaration_2() { return cGREATEREnumLiteralDeclaration_2; }
+		
+		//'>'
+		public Keyword getGREATERGreaterThanSignKeyword_2_0() { return cGREATERGreaterThanSignKeyword_2_0; }
+	}
 	
 	private final HTMLElements pHTML;
 	private final AbbreviationElements pAbbreviation;
@@ -617,6 +629,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final GroupElements pGroup;
 	private final EStringElements pEString;
 	private final HTMLTagElements eHTMLTag;
+	private final SYMElements eSYM;
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
 	private final EIntElements pEInt;
@@ -640,6 +653,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pGroup = new GroupElements();
 		this.pEString = new EStringElements();
 		this.eHTMLTag = new HTMLTagElements();
+		this.eSYM = new SYMElements();
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.WebMate.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.WebMate.STRING");
 		this.pEInt = new EIntElements();
@@ -715,7 +729,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//Symbol returns Symbol:
 	//    {Symbol}
-	//    ('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag);
+	//    (sym=SYM count=EInt) | (sym=SYM tag=Tag);
 	public SymbolElements getSymbolAccess() {
 		return pSymbol;
 	}
@@ -788,6 +802,17 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getHTMLTagAccess().getRule();
 	}
 	
+	//enum SYM returns SYM:
+	//    PLUS = '+' | MULTIPLY = '*' | GREATER = '>'
+	//;
+	public SYMElements getSYMAccess() {
+		return eSYM;
+	}
+	
+	public EnumRule getSYMRule() {
+		return getSYMAccess().getRule();
+	}
+	
 	//@Override
 	//terminal INT returns ecore::EInt:('0'..'9')+;
 	public TerminalRule getINTRule() {
@@ -795,7 +820,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//@Override
-	//terminal STRING:('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	//terminal STRING:('a'..'z'|'A'..'Z'|'_'|'+' | '>' | '^' | '*' ) ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getSTRINGRule() {
 		return tSTRING;
 	}

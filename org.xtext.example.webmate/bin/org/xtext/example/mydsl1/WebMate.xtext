@@ -26,7 +26,7 @@ ID0 returns ID:
 
 Symbol returns Symbol:
 	{Symbol}
-	('*' count=EInt) | ('+' tag=Tag) | ('>' tag=Tag) | ('^' tag=Tag);
+	(sym=SYM count=EInt) | (sym=SYM tag=Tag);
 
 
 Tag returns Tag:
@@ -50,12 +50,16 @@ EString returns ecore::EString:
 
 enum HTMLTag returns HTMLTag:
 				div = 'div' | h1 = 'h1' | p = 'p' | ul = 'ul' | li = 'li' | a = 'a' | img = 'img' | form = 'form' | input = 'input' | button = 'button' | option = 'option' | select = 'select';
+
+enum SYM returns SYM:
+	PLUS = '+' | MULTIPLY = '*' | GREATER = '>'
+;
 						
 @Override	
 terminal INT returns ecore::EInt:('0'..'9')+;
 
 @Override
-terminal STRING:('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal STRING:('a'..'z'|'A'..'Z'|'_'|'+' | '>' | '^' | '*' ) ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 EInt returns ecore::EInt:
 	'-'? INT;

@@ -398,13 +398,22 @@ public interface WebmatePackage extends EPackage {
 	int SYMBOL__COUNT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Sym</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL__SYM = 2;
+
+	/**
 	 * The number of structural features of the '<em>Symbol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_FEATURE_COUNT = 2;
+	int SYMBOL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Symbol</em>' class.
@@ -461,6 +470,16 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 */
 	int HTML_TAG = 8;
+
+	/**
+	 * The meta object id for the '{@link webmate.SYM <em>SYM</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webmate.SYM
+	 * @see webmate.impl.WebmatePackageImpl#getSYM()
+	 * @generated
+	 */
+	int SYM = 9;
 
 	/**
 	 * Returns the meta object for class '{@link webmate.HTML <em>HTML</em>}'.
@@ -731,6 +750,17 @@ public interface WebmatePackage extends EPackage {
 	EAttribute getSymbol_Count();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webmate.Symbol#getSym <em>Sym</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sym</em>'.
+	 * @see webmate.Symbol#getSym()
+	 * @see #getSymbol()
+	 * @generated
+	 */
+	EAttribute getSymbol_Sym();
+
+	/**
 	 * Returns the meta object for class '{@link webmate.Group <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -760,6 +790,16 @@ public interface WebmatePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getHTMLTag();
+
+	/**
+	 * Returns the meta object for enum '{@link webmate.SYM <em>SYM</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>SYM</em>'.
+	 * @see webmate.SYM
+	 * @generated
+	 */
+	EEnum getSYM();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -999,6 +1039,14 @@ public interface WebmatePackage extends EPackage {
 		EAttribute SYMBOL__COUNT = eINSTANCE.getSymbol_Count();
 
 		/**
+		 * The meta object literal for the '<em><b>Sym</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL__SYM = eINSTANCE.getSymbol_Sym();
+
+		/**
 		 * The meta object literal for the '{@link webmate.impl.GroupImpl <em>Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1025,6 +1073,16 @@ public interface WebmatePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum HTML_TAG = eINSTANCE.getHTMLTag();
+
+		/**
+		 * The meta object literal for the '{@link webmate.SYM <em>SYM</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webmate.SYM
+		 * @see webmate.impl.WebmatePackageImpl#getSYM()
+		 * @generated
+		 */
+		EEnum SYM = eINSTANCE.getSYM();
 
 	}
 

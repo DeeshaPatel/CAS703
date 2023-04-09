@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import webmate.SYM;
 import webmate.Symbol;
 import webmate.Tag;
 import webmate.WebmatePackage;
@@ -25,6 +26,7 @@ import webmate.WebmatePackage;
  * <ul>
  *   <li>{@link webmate.impl.SymbolImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link webmate.impl.SymbolImpl#getCount <em>Count</em>}</li>
+ *   <li>{@link webmate.impl.SymbolImpl#getSym <em>Sym</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +61,26 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @ordered
 	 */
 	protected int count = COUNT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSym() <em>Sym</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSym()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final SYM SYM_EDEFAULT = SYM.PLUS;
+
+	/**
+	 * The cached value of the '{@link #getSym() <em>Sym</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSym()
+	 * @generated
+	 * @ordered
+	 */
+	protected SYM sym = SYM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +170,27 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SYM getSym() {
+		return sym;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSym(SYM newSym) {
+		SYM oldSym = sym;
+		sym = newSym == null ? SYM_EDEFAULT : newSym;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.SYMBOL__SYM, oldSym, sym));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -169,6 +212,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 				return getTag();
 			case WebmatePackage.SYMBOL__COUNT:
 				return getCount();
+			case WebmatePackage.SYMBOL__SYM:
+				return getSym();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,6 +231,9 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 				return;
 			case WebmatePackage.SYMBOL__COUNT:
 				setCount((Integer)newValue);
+				return;
+			case WebmatePackage.SYMBOL__SYM:
+				setSym((SYM)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,6 +253,9 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			case WebmatePackage.SYMBOL__COUNT:
 				setCount(COUNT_EDEFAULT);
 				return;
+			case WebmatePackage.SYMBOL__SYM:
+				setSym(SYM_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,6 +272,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 				return tag != null;
 			case WebmatePackage.SYMBOL__COUNT:
 				return count != COUNT_EDEFAULT;
+			case WebmatePackage.SYMBOL__SYM:
+				return sym != SYM_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -237,6 +290,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (count: ");
 		result.append(count);
+		result.append(", sym: ");
+		result.append(sym);
 		result.append(')');
 		return result.toString();
 	}

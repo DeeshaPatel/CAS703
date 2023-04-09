@@ -90,6 +90,13 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	private EEnum htmlTagEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum symEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -379,6 +386,15 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSymbol_Sym() {
+		return (EAttribute)symbolEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGroup() {
 		return groupEClass;
 	}
@@ -399,6 +415,15 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 */
 	public EEnum getHTMLTag() {
 		return htmlTagEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSYM() {
+		return symEEnum;
 	}
 
 	/**
@@ -460,12 +485,14 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		symbolEClass = createEClass(SYMBOL);
 		createEReference(symbolEClass, SYMBOL__TAG);
 		createEAttribute(symbolEClass, SYMBOL__COUNT);
+		createEAttribute(symbolEClass, SYMBOL__SYM);
 
 		groupEClass = createEClass(GROUP);
 		createEReference(groupEClass, GROUP__ABBREVIATION);
 
 		// Create enums
 		htmlTagEEnum = createEEnum(HTML_TAG);
+		symEEnum = createEEnum(SYM);
 	}
 
 	/**
@@ -529,6 +556,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSymbol_Tag(), this.getTag(), null, "tag", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSymbol_Count(), ecorePackage.getEInt(), "count", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbol_Sym(), this.getSYM(), "sym", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGroup_Abbreviation(), this.getAbbreviation(), null, "abbreviation", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -548,6 +576,11 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		addEEnumLiteral(htmlTagEEnum, HTMLTag.BUTTON);
 		addEEnumLiteral(htmlTagEEnum, HTMLTag.SELECT);
 		addEEnumLiteral(htmlTagEEnum, HTMLTag.OPTION);
+
+		initEEnum(symEEnum, webmate.SYM.class, "SYM");
+		addEEnumLiteral(symEEnum, webmate.SYM.PLUS);
+		addEEnumLiteral(symEEnum, webmate.SYM.MULTIPLY);
+		addEEnumLiteral(symEEnum, webmate.SYM.GREATER);
 
 		// Create resource
 		createResource(eNS_URI);
