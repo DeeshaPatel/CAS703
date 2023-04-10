@@ -36,6 +36,7 @@ import webmate.WebmatePackage;
  *   <li>{@link webmate.impl.TagImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link webmate.impl.TagImpl#getId <em>Id</em>}</li>
  *   <li>{@link webmate.impl.TagImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link webmate.impl.TagImpl#getInputString <em>Input String</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,6 +91,26 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	 * @ordered
 	 */
 	protected EList<webmate.Class> class_;
+
+	/**
+	 * The default value of the '{@link #getInputString() <em>Input String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputString()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INPUT_STRING_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInputString() <em>Input String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputString()
+	 * @generated
+	 * @ordered
+	 */
+	protected String inputString = INPUT_STRING_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,6 +224,27 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInputString() {
+		return inputString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputString(String newInputString) {
+		String oldInputString = inputString;
+		inputString = newInputString;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebmatePackage.TAG__INPUT_STRING, oldInputString, inputString));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -232,6 +274,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 				return getId();
 			case WebmatePackage.TAG__CLASS:
 				return getClass_();
+			case WebmatePackage.TAG__INPUT_STRING:
+				return getInputString();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,6 +303,9 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 				getClass_().clear();
 				getClass_().addAll((Collection<? extends webmate.Class>)newValue);
 				return;
+			case WebmatePackage.TAG__INPUT_STRING:
+				setInputString((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,6 +330,9 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 			case WebmatePackage.TAG__CLASS:
 				getClass_().clear();
 				return;
+			case WebmatePackage.TAG__INPUT_STRING:
+				setInputString(INPUT_STRING_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,6 +353,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 				return id != null;
 			case WebmatePackage.TAG__CLASS:
 				return class_ != null && !class_.isEmpty();
+			case WebmatePackage.TAG__INPUT_STRING:
+				return INPUT_STRING_EDEFAULT == null ? inputString != null : !INPUT_STRING_EDEFAULT.equals(inputString);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -319,6 +371,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tagName: ");
 		result.append(tagName);
+		result.append(", inputString: ");
+		result.append(inputString);
 		result.append(')');
 		return result.toString();
 	}

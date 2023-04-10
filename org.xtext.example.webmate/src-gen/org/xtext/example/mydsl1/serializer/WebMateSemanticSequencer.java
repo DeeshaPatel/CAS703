@@ -193,7 +193,7 @@ public class WebMateSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Tag returns Tag
 	 *
 	 * Constraint:
-	 *     (tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute*)
+	 *     (tagName=HTMLTag class+=Class* id=ID0? attribute+=Attribute* inputString=EString?)
 	 * </pre>
 	 */
 	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {

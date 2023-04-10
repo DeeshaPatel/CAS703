@@ -46,6 +46,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Tag/attribute"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Tag/id"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference WebMate.ecore#//Tag/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Tag/inputString"/>
     </genClasses>
     <genClasses ecoreClass="WebMate.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebMate.ecore#//Class/className"/>

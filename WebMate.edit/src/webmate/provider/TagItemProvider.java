@@ -68,6 +68,7 @@ public class TagItemProvider
 			addAttributePropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addClassPropertyDescriptor(object);
+			addInputStringPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -161,6 +162,28 @@ public class TagItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Input String feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputStringPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Tag_inputString_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_inputString_feature", "_UI_Tag_type"),
+				 WebmatePackage.Literals.TAG__INPUT_STRING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -232,6 +255,7 @@ public class TagItemProvider
 
 		switch (notification.getFeatureID(Tag.class)) {
 			case WebmatePackage.TAG__TAG_NAME:
+			case WebmatePackage.TAG__INPUT_STRING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebmatePackage.TAG__ATTRIBUTE:

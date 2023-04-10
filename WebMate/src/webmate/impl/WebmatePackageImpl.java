@@ -323,6 +323,15 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTag_InputString() {
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getClass_() {
 		return classEClass;
 	}
@@ -475,6 +484,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		createEReference(tagEClass, TAG__ATTRIBUTE);
 		createEReference(tagEClass, TAG__ID);
 		createEReference(tagEClass, TAG__CLASS);
+		createEAttribute(tagEClass, TAG__INPUT_STRING);
 
 		classEClass = createEClass(CLASS);
 		createEAttribute(classEClass, CLASS__CLASS_NAME);
@@ -546,6 +556,7 @@ public class WebmatePackageImpl extends EPackageImpl implements WebmatePackage {
 		initEReference(getTag_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTag_Id(), this.getID(), null, "id", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTag_Class(), this.getClass_(), null, "class", null, 0, -1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_InputString(), ecorePackage.getEString(), "inputString", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classEClass, webmate.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClass_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, webmate.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

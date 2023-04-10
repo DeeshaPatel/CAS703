@@ -31,7 +31,7 @@ Symbol returns Symbol:
 
 Tag returns Tag:
 	{Tag}
-	 tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ;
+	 tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ('{' inputString=EString '}')?;
 
 Class returns Class:
 	{Class}
@@ -59,7 +59,7 @@ enum SYM returns SYM:
 terminal INT returns ecore::EInt:('0'..'9')+;
 
 @Override
-terminal STRING:('a'..'z'|'A'..'Z'|'_'|'+' | '>' | '^' | '*' ) ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal STRING:('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 EInt returns ecore::EInt:
 	'-'? INT;

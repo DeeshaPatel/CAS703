@@ -11,6 +11,7 @@ import webmate.Tag
 import org.eclipse.xtext.EcoreUtil2
 import webmate.Abbreviation
 import java.util.Stack
+import webmate.Symbol
 
 /**
  * Generates code from your model files on save.
@@ -34,51 +35,58 @@ class WebMateGenerator extends AbstractGenerator {
 		
 		val build = new StringBuilder()
 		
-		val stack = new Stack()
-		
 		var flag = 0;
 		
 		
 		if (!element.tags.isEmpty) {
-			build.append("<")
 			var s = toHTMLTag(element, tag)
 			build.append(s)
-			build.append("> \n") 
 			tag = element.tags.head
 			System.out.println("Check me............"+element.symbols.toArray.toString)
 			
+			
 			for (sym : element.symbols)
 			{
+				
 			if (!element.symbols.empty){
-				var in_sym = element.symbols.head
-//				for (in_sym : element.symbols) { 
+				var in_sym = sym
 					System.out.println("HELLO"+ in_sym.sym)
 					switch sym.sym {
+						
 						case GREATER: {
 							System.out.println("Check me A............"+element.symbols)
-							var inn_tag = sym
-//							for (inn_tag : element.symbols) { 			
-									System.out.println("Check me B............")
-									build.append("\t <")
-									var s1 = toHTMLTag(element, inn_tag.tag)
-									build.append(s1)
-									build.append(">")
-									stack.push(inn_tag.tag.tagName)
-//							}
-							for (var i = stack.size-1; i>=0;i--) {
-								build.append("</"+stack.pop+">")
+							var inn_tag = sym	
+							System.out.println("Check me B............")
+							build.append("\t")
+							var s1 = toHTMLTag(element, inn_tag.tag)
+							build.append(s1)
+							build.append("\t</"+inn_tag.tag.tagName+">") 
+							if (element.symbols.toArray.toString.contains("MULTIPLY"))
+							{
+								if (element.symbols.get(element.symbols.indexOf('>')+2).sym.toString.equals("MULTIPLY")) {
+								System.out.println("B")
+								for(var i=0; i<element.symbols.get(element.symbols.indexOf('>')+2).count-1; i++) {
+									System.out.println("Check me A2............")
+									var s2 = toHTMLTag(element, inn_tag.tag)
+									build.append("\n\t"+s2)
+									build.append("</"+inn_tag.tag.tagName+">") 
+									System.out.println("Check me A3............")
+								}
+								}
 							}
+							
 						}
+						
 						case MULTIPLY: { 
-							if (!element.symbols.empty && !(element.symbols.get(0).count == 0)){
+							System.out.println("Check me 1 ............"+in_sym.count)
+							if (!(element.symbols.head.count == 0)){
 								System.out.println("Check me 1 ............")
+								build.append("</"+tag.tagName+">\n" )
 								for(var i=0; i<element.symbols.head.count-1; i++) {
 									System.out.println("Check me 2............")
-									build.append("<") 
+									flag = 1
 									var s1 = toHTMLTag(element, tag)
 									build.append(s1)
-									build.append(">")
-									build.append("\n")
 									build.append("</"+tag.tagName+">") 
 									build.append("\n")
 									System.out.println("Check me 3............")
@@ -88,17 +96,16 @@ class WebMateGenerator extends AbstractGenerator {
 						case PLUS: {
 							if (flag == 0)
 							{
+								System.out.println("HEre is the problem")
 								tag = element.tags.head
 								build.append("</"+tag.tagName+">")
 							}
 							var temp_tag = sym
 //								for (inn_tag : element.symbols) { 			
 									System.out.println("Check me B............")
-									build.append("\n<")
+									build.append("\n")
 									var s1 = toHTMLTag(element, temp_tag.tag)
 									build.append(s1)
-									build.append(">")
-									
 									build.append("\n</"+temp_tag.tag.tagName+">")
 //								}
 								flag = 1;
@@ -127,6 +134,7 @@ class WebMateGenerator extends AbstractGenerator {
 		if (tag.tagName !== null)
 		{
 			val build = new StringBuilder()
+			build.append("<")
 			build.append(tag.tagName)
 			if (tag.id !== null)
 			{
@@ -144,6 +152,13 @@ class WebMateGenerator extends AbstractGenerator {
 			
 			for(att : tag.attribute){ 
 				build.append(" "+att.attributeName+"="+att.attributeValue)
+			}
+			
+			if (tag.inputString !== null) {
+				build.append(">") 
+				build.append(tag.inputString)
+			} else {
+				build.append("> \n") 
 			}
 			
 			build.toString()

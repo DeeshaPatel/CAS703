@@ -536,6 +536,35 @@ ruleTag returns [EObject current=null]
 				}
 			)
 		)*
+		(
+			otherlv_5='{'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTagAccess().getLeftCurlyBracketKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTagAccess().getInputStringEStringParserRuleCall_5_1_0());
+					}
+					lv_inputString_6_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTagRule());
+						}
+						set(
+							$current,
+							"inputString",
+							lv_inputString_6_0,
+							"org.xtext.example.mydsl1.WebMate.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_7='}'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getTagAccess().getRightCurlyBracketKeyword_5_2());
+			}
+		)?
 	)
 ;
 
@@ -932,7 +961,7 @@ ruleSYM returns [Enumerator current=null]
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('a'..'z'|'A'..'Z'|'_'|'+'|'>'|'^'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_STRING : ('a'..'z'|'A'..'Z'|'_'|' ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

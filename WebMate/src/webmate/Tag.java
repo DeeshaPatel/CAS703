@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link webmate.Tag#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link webmate.Tag#getId <em>Id</em>}</li>
  *   <li>{@link webmate.Tag#getClass_ <em>Class</em>}</li>
+ *   <li>{@link webmate.Tag#getInputString <em>Input String</em>}</li>
  * </ul>
  *
  * @see webmate.WebmatePackage#getTag()
@@ -96,5 +97,27 @@ public interface Tag extends EObject {
 	 * @generated
 	 */
 	EList<webmate.Class> getClass_();
+
+	/**
+	 * Returns the value of the '<em><b>Input String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input String</em>' attribute.
+	 * @see #setInputString(String)
+	 * @see webmate.WebmatePackage#getTag_InputString()
+	 * @model
+	 * @generated
+	 */
+	String getInputString();
+
+	/**
+	 * Sets the value of the '{@link webmate.Tag#getInputString <em>Input String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input String</em>' attribute.
+	 * @see #getInputString()
+	 * @generated
+	 */
+	void setInputString(String value);
 
 } // Tag

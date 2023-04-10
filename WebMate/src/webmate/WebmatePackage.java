@@ -278,13 +278,22 @@ public interface WebmatePackage extends EPackage {
 	int TAG__CLASS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Input String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__INPUT_STRING = 4;
+
+	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_FEATURE_COUNT = 4;
+	int TAG_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Tag</em>' class.
@@ -676,6 +685,17 @@ public interface WebmatePackage extends EPackage {
 	EReference getTag_Class();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webmate.Tag#getInputString <em>Input String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input String</em>'.
+	 * @see webmate.Tag#getInputString()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_InputString();
+
+	/**
 	 * Returns the meta object for class '{@link webmate.Class <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -975,6 +995,14 @@ public interface WebmatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TAG__CLASS = eINSTANCE.getTag_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Input String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__INPUT_STRING = eINSTANCE.getTag_InputString();
 
 		/**
 		 * The meta object literal for the '{@link webmate.impl.ClassImpl <em>Class</em>}' class.

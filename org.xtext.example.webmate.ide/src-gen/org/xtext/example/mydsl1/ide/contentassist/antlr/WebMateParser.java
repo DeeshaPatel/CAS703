@@ -46,6 +46,7 @@ public class WebMateParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSymbolAccess().getGroup_0_1(), "rule__Symbol__Group_0_1__0");
 			builder.put(grammarAccess.getSymbolAccess().getGroup_1(), "rule__Symbol__Group_1__0");
 			builder.put(grammarAccess.getTagAccess().getGroup(), "rule__Tag__Group__0");
+			builder.put(grammarAccess.getTagAccess().getGroup_5(), "rule__Tag__Group_5__0");
 			builder.put(grammarAccess.getClassAccess().getGroup(), "rule__Class__Group__0");
 			builder.put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
 			builder.put(grammarAccess.getAttributeAccess().getGroup_1(), "rule__Attribute__Group_1__0");
@@ -69,6 +70,7 @@ public class WebMateParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTagAccess().getClassAssignment_2(), "rule__Tag__ClassAssignment_2");
 			builder.put(grammarAccess.getTagAccess().getIdAssignment_3(), "rule__Tag__IdAssignment_3");
 			builder.put(grammarAccess.getTagAccess().getAttributeAssignment_4(), "rule__Tag__AttributeAssignment_4");
+			builder.put(grammarAccess.getTagAccess().getInputStringAssignment_5_1(), "rule__Tag__InputStringAssignment_5_1");
 			builder.put(grammarAccess.getClassAccess().getClassNameAssignment_2(), "rule__Class__ClassNameAssignment_2");
 			builder.put(grammarAccess.getAttributeAccess().getAttributeNameAssignment_1_1(), "rule__Attribute__AttributeNameAssignment_1_1");
 			builder.put(grammarAccess.getAttributeAccess().getAttributeValueAssignment_1_2_1(), "rule__Attribute__AttributeValueAssignment_1_2_1");

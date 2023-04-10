@@ -284,14 +284,19 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cIdID0ParserRuleCall_3_0 = (RuleCall)cIdAssignment_3.eContents().get(0);
 		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cAttributeAttributeParserRuleCall_4_0 = (RuleCall)cAttributeAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cInputStringAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cInputStringEStringParserRuleCall_5_1_0 = (RuleCall)cInputStringAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		
 		//Tag returns Tag:
 		//    {Tag}
-		//     tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ;
+		//     tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ('{' inputString=EString '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Tag}
-		// tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute*
+		// tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ('{' inputString=EString '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//{Tag}
@@ -320,6 +325,21 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_4_0() { return cAttributeAttributeParserRuleCall_4_0; }
+		
+		//('{' inputString=EString '}')?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_5_0() { return cLeftCurlyBracketKeyword_5_0; }
+		
+		//inputString=EString
+		public Assignment getInputStringAssignment_5_1() { return cInputStringAssignment_5_1; }
+		
+		//EString
+		public RuleCall getInputStringEStringParserRuleCall_5_1_0() { return cInputStringEStringParserRuleCall_5_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5_2() { return cRightCurlyBracketKeyword_5_2; }
 	}
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.WebMate.Class");
@@ -740,7 +760,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//Tag returns Tag:
 	//    {Tag}
-	//     tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ;
+	//     tagName=HTMLTag (class+=Class)* id=ID0? attribute+=Attribute* ('{' inputString=EString '}')?;
 	public TagElements getTagAccess() {
 		return pTag;
 	}
@@ -820,7 +840,7 @@ public class WebMateGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//@Override
-	//terminal STRING:('a'..'z'|'A'..'Z'|'_'|'+' | '>' | '^' | '*' ) ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	//terminal STRING:('a'..'z'|'A'..'Z'|'_'|' ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getSTRINGRule() {
 		return tSTRING;
 	}
