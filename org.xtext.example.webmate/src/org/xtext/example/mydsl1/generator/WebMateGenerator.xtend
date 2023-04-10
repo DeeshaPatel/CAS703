@@ -46,27 +46,25 @@ class WebMateGenerator extends AbstractGenerator {
 			build.append("> \n") 
 			tag = element.tags.head
 			System.out.println("Check me............"+element.symbols.toArray.toString)
-		
+			
+			for (sym : element.symbols)
+			{
 			if (!element.symbols.empty){
-				for (in_sym : element.symbols) { 
+				var in_sym = element.symbols.head
+//				for (in_sym : element.symbols) { 
 					System.out.println("HELLO"+ in_sym.sym)
-					switch in_sym.sym {
+					switch sym.sym {
 						case GREATER: {
 							System.out.println("Check me A............"+element.symbols)
-							for (inn_tag : element.symbols) { 
-								if (in_sym.sym!="GREATER")
-								{
-									
-								}
-								else {
+							var inn_tag = sym
+//							for (inn_tag : element.symbols) { 			
 									System.out.println("Check me B............")
 									build.append("\t <")
 									var s1 = toHTMLTag(element, inn_tag.tag)
 									build.append(s1)
 									build.append(">")
 									stack.push(inn_tag.tag.tagName)
-								}
-							}
+//							}
 							for (var i = stack.size-1; i>=0;i--) {
 								build.append("</"+stack.pop+">")
 							}
@@ -88,16 +86,22 @@ class WebMateGenerator extends AbstractGenerator {
 							}
 						}
 						case PLUS: {
-//							tag = element.tags.head
-//							build.append("\n</"+tag.tagName+">")
-//							build.append("<") 
-//							var s1 = toHTMLTag(element, tag)
-//							build.append(s1)
-//							build.append(">")
-//							build.append("\n")
-//							build.append("</"+tag.tagName+">") 
-//							build.append("\n")
-//							flag = 1;
+							if (flag == 0)
+							{
+								tag = element.tags.head
+								build.append("</"+tag.tagName+">")
+							}
+							var temp_tag = sym
+//								for (inn_tag : element.symbols) { 			
+									System.out.println("Check me B............")
+									build.append("\n<")
+									var s1 = toHTMLTag(element, temp_tag.tag)
+									build.append(s1)
+									build.append(">")
+									
+									build.append("\n</"+temp_tag.tag.tagName+">")
+//								}
+								flag = 1;
 						}
 					}
 				}
