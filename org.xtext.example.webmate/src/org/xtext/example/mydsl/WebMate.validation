@@ -1,2 +1,0 @@
-@namespace(uri="http://cas703.webmate", prefix="cas703.webmate")
-@validator(type="EVL", uri="platform:/resource/WebMate/model/WebMate.evl")
